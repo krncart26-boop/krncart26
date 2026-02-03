@@ -1,0 +1,237 @@
+/* Global mobile-first styles for KRN CART */
+:root{
+  --sky: #0ea5e9; /* sky blue */
+  --accent: #ff0033; /* red accent */
+  --bg: #ffffff;
+  --muted: #6b7280;
+  --rounded: 12px;
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+}
+
+.app-root{min-height:100vh;display:flex;flex-direction:column;padding-bottom:70px;} /* space for bottom nav */
+.app-content{flex:1;padding:16px;padding-bottom:90px;}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:8px 0}
+.logo{font-weight:700;color:var(--sky);font-size:20px}
+.header-right{display:flex;align-items:center;gap:8px}
+.header-btn{background:transparent;border:0;color:var(--muted);font-size:14px;padding:8px;border-radius:8px}
+.cart-icon{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:10px;background:rgba(14,165,233,0.08)}
+.cart-count{background:var(--accent);color:white;padding:4px 8px;border-radius:999px;font-weight:700;font-size:12px}
+
+/* Search */
+.search-bar{margin-top:20px}
+.search-input{width:100%;padding:12px;border-radius:10px;border:1px solid #e5e7eb;font-size:16px}
+
+/* Hero card (bold promotional red) */
+.hero-card{margin-top:18px;padding:18px;border-radius:16px;background:linear-gradient(180deg,#D32F2F 0%, #B71C1C 100%);color:#fff;box-shadow:0 6px 16px rgba(16,22,26,0.06)}
+.hero-card h3{margin:0;font-size:16px;color:#ffffff}
+.hero-card p{margin:6px 0 0;color:rgba(255,255,255,0.9);font-weight:600}
+.hero-card .hero-subtext{margin-top:6px;font-size:13px;font-weight:500;color:rgba(255,255,255,0.9);text-align:center} 
+
+/* Hotel grid */
+.hotel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.hotel-card{display:flex;align-items:center;justify-content:center;height:72px;width:72px;border-radius:50%;background:#1565C0;border:1px solid rgba(8,37,87,0.15);color:#fff;font-weight:800;font-size:14px;letter-spacing:0.2px;text-align:center;padding:8px;box-shadow:0 6px 14px rgba(8,37,87,0.08);position:relative;transition:transform 140ms ease,box-shadow 140ms ease,background 140ms ease}
+.hotel-card::after{content:"";position:absolute;top:8px;left:8px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.06);filter:blur(2px);transform:translate(-10%,-10%);opacity:0.6}
+.hotel-card:hover{transform:scale(1.03);background:#0D47A1;box-shadow:0 10px 24px rgba(8,37,87,0.12)}
+.hotel-card:active{transform:scale(0.99);box-shadow:0 6px 12px rgba(8,37,87,0.08)}
+.hotel-card:focus{outline:2px solid rgba(13,71,161,0.12);outline-offset:4px}  
+
+/* Special utility action button (Order Your Own) */
+.order-card{display:flex;align-items:center;justify-content:center;height:72px;padding:12px;border-radius:14px;background:#388E3C;color:#fff;font-weight:800;font-size:14px;text-align:center;border:1px solid rgba(36,98,44,0.12);box-shadow:0 8px 22px rgba(36,98,44,0.08);cursor:pointer;transition:transform 140ms ease,background 140ms ease}
+.order-card:active{transform:scale(0.995);box-shadow:0 6px 18px rgba(36,98,44,0.06)}
+.order-card:hover{transform:scale(1.04);background:#2E7D32}
+.order-card span{display:inline-block} 
+
+/* Make grid nicer on slightly larger screens */
+@media(min-width:480px){
+  .hotel-grid{grid-template-columns:repeat(5,1fr);gap:14px}
+}
+
+/* Bottom nav */
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;height:62px;background:#fff;border-top:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-around;padding:8px 16px}
+.nav-item{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--muted)}
+.nav-item.active{color:#D32F2F;font-weight:700}
+
+
+
+/* Splash */
+.splash{height:100vh;display:flex;align-items:center;justify-content:center}
+.splash-text{font-size:24px;font-weight:800;color:var(--sky)}
+.splash-text .accent{color:var(--accent);margin-left:6px}
+
+/* Hotel page */
+.page-heading{font-size:20px;margin:6px 0 14px}
+
+/* Keshava Chats menu styles */
+.menu{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.menu-item{display:flex;align-items:center;justify-content:space-between;background:#fff;border-radius:12px;padding:12px;box-shadow:0 1px 3px rgba(2,6,23,0.04)}
+.menu-item .meta{display:flex;flex-direction:column}
+.menu-item .name{font-weight:700}
+.menu-item .unit{font-size:13px;color:var(--muted)}
+.menu-item .price{font-weight:800}
+.menu-controls{display:flex;gap:8px;align-items:center}
+.qty-btn{background:transparent;border:1px solid #e5e7eb;padding:8px 12px;border-radius:8px;font-weight:700}
+.add-btn{background:var(--sky);color:#fff;padding:8px 12px;border-radius:10px;border:0;font-weight:700}
+
+/* Cart item styles */
+.cart-item{border-radius:12px;padding:12px;background:#fff}
+
+/* Make buttons touch friendly */
+.qty-btn, .add-btn{min-width:44px}
+
+/* Toast / snackbar */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;background:var(--sky);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 6px 20px rgba(14,165,233,0.18);z-index:40;font-weight:700;min-width:160px;text-align:center}
+
+/* KRN Restaurant section cards */
+.section-list{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+
+/* Full blue filled cards (consistent across all sections) */
+.section-card{display:flex;flex-direction:column;gap:6px;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.06);border:0;cursor:pointer;transition:transform 140ms ease,box-shadow 140ms ease;width:100%;text-align:left;background:var(--sky);color:#fff}
+.section-card:active{transform:scale(0.98)}
+.section-card:focus{outline:2px solid rgba(74,163,223,0.28);outline-offset:2px}
+
+/* Text styles */
+.section-card .section-title{font-weight:800;color:#fff;font-size:16px}
+.section-card .section-kannada{font-size:13px;color:rgba(255,255,255,0.92)}
+.section-card .section-subtitle{font-size:12px;color:rgba(255,255,255,0.85);margin-top:6px}
+
+/* Hover / focus states (subtle lift) */
+.section-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(10,63,95,0.10)}
+
+/* ensure any old accent variant doesn't override */
+.section-card.accent, .section-card.blue{background:var(--sky);border-left:0;color:#fff}
+
+/* Timing banner (KRN Restaurant) */
+.timing-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:var(--sky);color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px}
+.timing-icon{position:relative;min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center}
+.clock-emoji{font-size:18px}
+.status-dot{position:absolute;top:6px;right:8px;width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 2px rgba(255,255,255,0.06)}
+.timing-text{display:flex;flex-direction:column}
+.timing-title{font-weight:800}
+.timing-time{font-weight:700;margin-top:2px}
+.timing-sub{font-size:13px;color:rgba(255,255,255,0.92);margin-top:6px}
+
+/* Ice Magic timing banner (darker tint than section cards) */
+.ice-timing-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,rgba(2,6,23,0.12),rgba(14,165,233,1))}
+.ice-timing-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.ice-timing-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.92);margin-top:6px}
+
+/* Gowda Palav Centre timing banner (alternate darker blue shade) */
+.gowda-timing-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,#0b5fa5,#053f6b)}
+.gowda-timing-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.gowda-timing-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.92);margin-top:6px}
+
+/* Small note text shown above Gowda items */
+.special-note{font-size:13px;color:rgba(17,24,39,0.6);margin-top:8px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.special-note .info-icon{font-size:14px;line-height:14px}
+
+/* Shri Tiffany's banner (muted red tone within app family) */
+.tiffany-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,rgba(255,0,51,0.12),#c11515)}
+.tiffany-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.tiffany-banner .timing-title{font-weight:800}
+
+/* Info box for Rice Item daily list */
+.info-box{background:rgba(14,165,233,0.06);padding:12px;border-radius:10px;margin-top:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+.info-box ul{margin:0;padding-left:16px}
+.info-box li{margin-bottom:6px}
+/* Sanju Gobi House timing banner (alternate darker blue shade) */
+.sanju-timing-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,rgba(2,6,23,0.08),rgba(14,165,233,1))}
+.sanju-timing-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
+.sanju-timing-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.92);margin-top:6px}
+
+/* Coming Soon page/banner (used for temporary placeholders) */
+.coming-soon-page{display:flex;align-items:center;justify-content:center;padding-top:8px}
+.coming-soon-banner{width:100%;max-width:520px;background:linear-gradient(135deg,#0b5fa5,#053f6b);color:#fff;padding:28px;border-radius:16px;box-shadow:0 12px 30px rgba(5,63,115,0.12);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;margin:20px auto}
+.coming-soon-title{font-size:22px;font-weight:900;letter-spacing:0.3px}
+.coming-soon-quote{margin-top:10px;font-size:15px;opacity:0.95}
+
+/* Item cards (menu items) */
+/* Use existing app colors for consistency: sky blue via var(--sky) and body text color #111827 */
+.item-card{display:flex;align-items:center;justify-content:space-between;padding:14px;border-radius:12px;background:rgba(14,165,233,0.06);box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+.item-meta{display:flex;flex-direction:column;gap:6px}
+.item-name{font-weight:800;color:#111827}
+.item-kannada{font-size:13px;color:var(--muted)}
+.item-price{font-weight:800;min-width:72px;text-align:right;color:var(--sky)}
+
+/* Controls are touch-friendly */
+.controls{display:flex;gap:8px;align-items:center}
+.qty-controls{display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;background:#fff}
+.qty-btn{background:transparent;border:0;padding:6px 10px;border-radius:8px;font-weight:700}
+.add-btn{background:var(--sky);color:#fff;padding:8px 12px;border-radius:10px;border:0;font-weight:700;min-width:96px}
+
+/* Mobile (≤480px) responsive tweaks for item cards */
+@media (max-width:480px){
+  /* Stack main content vertically */
+  .item-card-row{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; width:100% }
+
+  /* Make meta and price full-width and left aligned */
+  .item-meta{width:100%}
+  .item-card-right{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:100%}
+  .item-price{width:100%;text-align:left;font-size:15px;margin-top:4px;min-width:0}
+
+  /* Item name: max 2 lines with ellipsis and slightly smaller font */
+  .item-name{font-size:15px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;max-height:2.4em}
+
+  /* Controls: stack vertically, quantity pill full width and add button full width */
+  .controls{width:100%;display:flex;flex-direction:column;gap:8px;align-items:stretch;justify-content:flex-start}
+  .qty-controls{width:100%;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:999px;background:#fff;min-height:44px}
+  .qty-controls .qty-btn{padding:10px 12px;min-width:44px;border-radius:8px;min-height:44px}
+  .qty-number{min-width:28px;text-align:center;font-weight:700}
+  .add-btn{width:100%;min-height:44px;padding:10px 12px;border-radius:10px;flex:none}
+
+  /* Ensure no overflow and nice spacing */
+  .item-card{padding:12px}
+}
+
+/* Desktop helpers: maintain original row layout using explicit classes */
+.item-card-row{display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%}
+.item-card-right{display:flex;align-items:center;gap:12px}
+
+/* Ensure qty number alignment on all viewports */
+.qty-number{min-width:28px;text-align:center;font-weight:700}
+
+/* Toast remains the same */
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;background:var(--sky);color:#fff;padding:10px 16px;border-radius:12px;box-shadow:0 6px 20px rgba(14,165,233,0.18);z-index:40;font-weight:700;min-width:160px;text-align:center}
+
+/* Delivery notice on Cart page */
+.delivery-notice{font-size:14px;background:#fff7ed;border:1px solid #ffedd5;border-radius:10px;padding:12px;color:#92400e}
+@media(min-width:480px){
+  .menu-item{padding:16px}
+}
+
+/* Account form */
+.form{display:flex;flex-direction:column;gap:10px}
+.input{padding:12px;border-radius:10px;border:1px solid #e5e7eb;font-size:16px}
+.form-row{display:flex;gap:8px}
+.privacy{margin-top:12px;font-size:13px;color:var(--muted)}
+.button{padding:10px 14px;border-radius:10px;border:0;background:var(--sky);color:white;font-weight:700}
+.button.secondary{background:transparent;border:1px solid #e5e7eb;color:#111}
+
+/* Cart empty */
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;margin-top:40px;color:var(--muted)}
+
+/* Small helpers */
+.center{display:flex;align-items:center;justify-content:center}
+
+/* Search results dropdown */
+.search-results{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.search-result-card{display:flex;flex-direction:column;align-items:flex-start;background:rgba(14,165,233,0.06);padding:12px;border-radius:10px;border:0;text-align:left;box-shadow:0 6px 18px rgba(2,6,23,0.04);width:100%}
+.search-result-card:active{transform:scale(0.998)}
+.search-result-card div{line-height:1.1}
+
+
+/* Desktop tweaks for larger screens */
+@media(min-width:768px){
+  .app-content{max-width:720px;margin:0 auto;padding:20px}
+  .hotel-grid{grid-template-columns:repeat(6,1fr)}
+}
