@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { DATA as TIRUMALA_DATA, SECTION_MAP as TIRUMALA_SECTION_MAP } from "./TirumalaSection";
 
 const SECTIONS = [
   { english: "🍹 Fresh Juice", kannada: "ಫ್ರೆಶ್ ಜ್ಯೂಸ್", slug: "fresh-juice" },
@@ -35,3 +36,9 @@ export default function TirumalaJuice(){
     </div>
   );
 }
+
+export const hotelId = 'tirumala-juice';
+export const hotelName = 'Tirumala Juice Centre';
+export const menu = TIRUMALA_DATA;
+export const sectionMap = TIRUMALA_SECTION_MAP;
+export const routePrefix = 'tirumala-juice';

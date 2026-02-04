@@ -6,7 +6,7 @@ function prettify(slug){
   return slug.replace(/[-_]/g,' ').replace(/\b\w/g, c => c.toUpperCase());
 }
 
-const SECTION_MAP = {
+export const SECTION_MAP = {
   'fresh-juice': { english: '🍹 Fresh Juice', kannada: 'ಫ್ರೆಶ್ ಜ್ಯೂಸ್' },
   'lassi': { english: '🥤 Lassi', kannada: 'ಲಸ್ಸಿ' },
   'milk-shakes': { english: '🥛 Milk Shakes', kannada: 'ಮಿಲ್ಕ್ ಶೇಕ್' },
@@ -14,7 +14,7 @@ const SECTION_MAP = {
   'health-juice': { english: '🥗 Health Juice', kannada: 'ಹೆಲ್ತ್ ಜ್ಯೂಸ್' },
 };
 
-const DATA = {
+export const DATA = {
   'fresh-juice': [
     ["Mosambi","ಮೋಸಂಬಿ",34.99],
     ["Rich Mosambi","ರಿಚ್ ಮೋಸಂಬಿ",34.99],

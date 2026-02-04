@@ -49,7 +49,8 @@ export function CartProvider({ children }){
       'Rajkumar Panipuri': 1.99,
       'Sanju Gobi House': 2.50,
       'Keshava Chats': 1.99,
-      'Juice Junction': 10.00,
+      'Lakshmi Juice Corner': 10.00,
+      'ShreeSha India': 5.99,
     };
     return rates[hotelName] ?? 10; // default to 10 for other hotels
   }

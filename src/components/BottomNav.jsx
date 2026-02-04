@@ -15,6 +15,11 @@ export default function BottomNav(){
         <div>Cart</div>
       </NavLink>
 
+      <NavLink to="/help" className={({isActive})=>"nav-item" + (isActive?" active":"")}>
+        <div>❓</div>
+        <div>Help</div>
+      </NavLink>
+
       <NavLink to="/account" className={({isActive})=>"nav-item" + (isActive?" active":"")}>
         <div>👤</div>
         <div>Account</div>

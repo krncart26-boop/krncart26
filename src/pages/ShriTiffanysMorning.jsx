@@ -3,18 +3,18 @@ import { useNavigate } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
 
 const MORNING_ITEMS = [
-  { id: 'tiff-idli', name: 'Idli (1 piece)', kannada: '', price: 18.00 },
-  { id: 'tiff-vada', name: 'Vada (1 piece)', kannada: '', price: 20.00 },
-  { id: 'tiff-kesari', name: 'Kesari Bath', kannada: '', price: 25.00 },
-  { id: 'tiff-kara', name: 'Kara Bath', kannada: '', price: 25.00 },
-  { id: 'tiff-chow', name: 'Chow Chow Bath', kannada: '', price: 45.00 },
-  { id: 'tiff-rice', name: 'Rice Item', kannada: '', price: 35.00 },
+  { id: 'tiff-idli', name: 'Idli', kannada: 'ಇಡ್ಲಿ', price: 18.00 },
+  { id: 'tiff-vada', name: 'Vada', kannada: 'ವಡೆ', price: 20.00 },
+  { id: 'tiff-kesari', name: 'Kesari Bath', kannada: 'ಕೇಸರಿ ಬಾತ್', price: 25.00 },
+  { id: 'tiff-kara', name: 'Kara Bath', kannada: 'ಖಾರ ಬಾತ್', price: 25.00 },
+  { id: 'tiff-chow', name: 'Chow Chow Bath', kannada: 'ಚೌ ಚೌ ಬಾತ್', price: 45.00 },
+  { id: 'tiff-rice', name: 'Rice Item (Daily Special)', kannada: 'ಅನ್ನ ಪದಾರ್ಥ (ದಿನ ವಿಶೇಷ)', price: 35.00 },
 ];
 
 const RICE_DAILY = [
   { day: 'Monday', item: 'Rice Bath' },
   { day: 'Wednesday', item: 'Tomato Bath' },
-  { day: 'Thursday', item: 'Bisibelebath' },
+  { day: 'Thursday', item: 'Bisi Bele Bath' },
   { day: 'Friday', item: 'Vani Bath' },
   { day: 'Saturday', item: 'Veg Pulao' },
   { day: 'Sunday', item: 'Bisi Bele Bath' },

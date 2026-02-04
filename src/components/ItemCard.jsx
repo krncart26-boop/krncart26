@@ -27,7 +27,7 @@ export default function ItemCard({ id, name, kannada, price }){
       'rajkumar': 'Rajkumar Panipuri',
       'sanju-gobi-house': 'Sanju Gobi House',
       'keshava-chats': 'Keshava Chats',
-      'juice-junction': 'Juice Junction',
+      'juice-junction': 'Lakshmi Juice Corner',
     };
 
     if(map[first]) return map[first];

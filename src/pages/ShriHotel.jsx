@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { SHRI_MORNING_ITEMS } from "../data/menus/shriHotelMorning";
+import { SHRI_EVENING_ITEMS } from "../data/menus/shriHotelEvening";
 
 export default function ShriHotel(){
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ export default function ShriHotel(){
           <span className="clock-emoji">⚠️</span>
         </div>
         <div className="timing-text">
-          <div className="timing-title">Closed on Tuesdays</div>
+          <div className="timing-title">Closed on Thursdays</div>
         </div>
       </div>
 

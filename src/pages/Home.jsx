@@ -1,14 +1,18 @@
 // Home page: header provided by Header component; includes search, hero card, and hotels grid
 import React, { useState, useRef, useEffect } from "react";
 import HeroCard from "../components/HeroCard";
-import HotelGrid from "../components/HotelGrid";
+import HotelGrid, { hotelDatabase } from "../components/HotelGrid";
 import SearchResults from "../components/SearchResults";
-import SEARCH_INDEX from "../data/searchIndex";
+import SEARCH_INDEX from "../data/searchIndexAuto";
+
+const CATEGORIES = ["All", "Breakfast", "Lunch", "Evening Food", "Snacks", "Juices", "Chats", "Bakery"];
 
 export default function Home(){
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [activeCategory, setActiveCategory] = useState('All');
   const containerRef = useRef(null);
+  const tabsRef = useRef(null);
 
   useEffect(() => {
     if(!query || query.trim().length === 0){
@@ -17,9 +21,15 @@ export default function Home(){
     }
 
     const q = query.trim().toLowerCase();
-
-    // Simple substring match against itemName (case-insensitive)
-    const matches = SEARCH_INDEX.filter(item => item.itemName.toLowerCase().includes(q)).slice(0, 8);
+    // Match against itemName, kannada, hotelName, sectionName
+    const matches = SEARCH_INDEX.filter(item => {
+      return (
+        (item.itemName && item.itemName.toLowerCase().includes(q)) ||
+        (item.kannada && item.kannada.toLowerCase().includes(q)) ||
+        (item.hotelName && item.hotelName.toLowerCase().includes(q)) ||
+        (item.sectionName && item.sectionName.toLowerCase().includes(q))
+      );
+    }).slice(0, 12); // Show up to 12 results for better coverage
     setResults(matches);
   }, [query]);
 
@@ -34,6 +44,11 @@ export default function Home(){
     return ()=>window.removeEventListener('click', onClick);
   },[]);
 
+  // Filter hotels based on active category
+  const filteredHotels = activeCategory === 'All' 
+    ? hotelDatabase 
+    : hotelDatabase.filter(hotel => hotel.categories.includes(activeCategory));
+
   return (
     <div>
       <div style={{display:'flex',flexDirection:'column'}} ref={containerRef}>
@@ -46,13 +61,33 @@ export default function Home(){
             onChange={e=>setQuery(e.target.value)}
           />
 
-          <SearchResults results={results} onClose={()=>{ setResults([]); setQuery(''); }} />
+          {query && results.length === 0 ? (
+            <div className="search-results" style={{padding:12,background:'#fff',borderRadius:12,color:'var(--muted)',marginTop:4}}>
+              No matching items found
+            </div>
+          ) : (
+            <SearchResults results={results} onClose={()=>{ setResults([]); setQuery(''); }} />
+          )}
         </div>
 
         <HeroCard />
 
-        <h4 style={{marginTop:18, marginBottom:6}}>Hotels</h4>
-        <HotelGrid />
+        <div className="category-tabs-container" ref={tabsRef}>
+          <div className="category-tabs">
+            {CATEGORIES.map(category => (
+              <button
+                key={category}
+                className={`category-tab ${activeCategory === category ? 'active' : ''}`}
+                onClick={() => setActiveCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <h4 style={{marginTop:12, marginBottom:6}}>Hotels</h4>
+        <HotelGrid hotels={filteredHotels} activeFilter={activeCategory} />
 
       </div>
     </div>

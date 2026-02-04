@@ -29,9 +29,29 @@ import GanisRestaurant from "./pages/GanisRestaurant";
 import SanjuGobiHouse from "./pages/SanjuGobiHouse";
 import JuiceJunction from "./pages/JuiceJunction";
 import JuiceSection from "./pages/JuiceSection";
+import ShreeShaIndia from "./pages/ShreeShaIndia";
+import ShreeShaIndiaSection from "./pages/ShreeShaIndiaSection";
 import Cart from "./pages/Cart"; 
 import Account from "./pages/Account";
+import Help from "./pages/Help";
 import OrderHistory from "./pages/OrderHistory";
+
+// Filtered hotel pages
+import UdupiPalaceFiltered from "./pages/UdupiPalaceFiltered";
+import IceMagicFiltered from "./pages/IceMagicFiltered";
+import KRNRestaurantFiltered from "./pages/KRNRestaurantFiltered";
+import ShriTiffanysFiltered from "./pages/ShriTiffanysFiltered";
+import ShriHotelFiltered from "./pages/ShriHotelFiltered";
+import RajkumarPanipuriFiltered from "./pages/RajkumarPanipuriFiltered";
+import GowdaPalavCentreFiltered from "./pages/GowdaPalavCentreFiltered";
+import VBBakeryFiltered from "./pages/VBBakeryFiltered";
+import SanjuGobiBouseFiltered from "./pages/SanjuGobiBouseFiltered";
+import KeshavaChatsFiltered from "./pages/KeshavaChatsFiltered";
+import TirumalaJuiceFiltered from "./pages/TirumalaJuiceFiltered";
+import AyyangarssBakeryFiltered from "./pages/AyyangarssBakeryFiltered";
+import LakshmiJuiceCornerFiltered from "./pages/LakshmiJuiceCornerFiltered";
+import GanisRestaurantFiltered from "./pages/GanisRestaurantFiltered";
+import ShreeShaCafeFiltered from "./pages/ShreeShaCafeFiltered";
 
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
@@ -53,6 +73,25 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/home" element={<Home />} />
+            
+            {/* Filtered hotel routes MUST come before generic :sectionSlug routes */}
+            <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
+            <Route path="/ice-magic/filter/:categorySlug" element={<IceMagicFiltered />} />
+            <Route path="/krn-restaurant/filter/:categorySlug" element={<KRNRestaurantFiltered />} />
+            <Route path="/shri-tiffanys/filter/:categorySlug" element={<ShriTiffanysFiltered />} />
+            <Route path="/shri-hotel/filter/:categorySlug" element={<ShriHotelFiltered />} />
+            <Route path="/rajkumar/filter/:categorySlug" element={<RajkumarPanipuriFiltered />} />
+            <Route path="/gowda-palav-centre/filter/:categorySlug" element={<GowdaPalavCentreFiltered />} />
+            <Route path="/vb-bakery/filter/:categorySlug" element={<VBBakeryFiltered />} />
+            <Route path="/sanju-gobi-house/filter/:categorySlug" element={<SanjuGobiBouseFiltered />} />
+            <Route path="/keshava-chats/filter/:categorySlug" element={<KeshavaChatsFiltered />} />
+            <Route path="/tirumala-juice/filter/:categorySlug" element={<TirumalaJuiceFiltered />} />
+            <Route path="/ayyangars-bakery/filter/:categorySlug" element={<AyyangarssBakeryFiltered />} />
+            <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
+            <Route path="/ganis-restaurant/filter/:categorySlug" element={<GanisRestaurantFiltered />} />
+            <Route path="/shreesha-india/filter/:categorySlug" element={<ShreeShaCafeFiltered />} />
+            
+            {/* Regular hotel routes with their sections */}
             <Route path="/keshava-chats" element={<KeshavaChats />} />
             <Route path="/krn-restaurant" element={<KRNRestaurant />} />
             <Route path="/krn-restaurant/:sectionSlug" element={<SectionPlaceholder />} />
@@ -77,8 +116,12 @@ export default function App() {
             <Route path="/sanju-gobi-house" element={<SanjuGobiHouse />} />
             <Route path="/juice-junction" element={<JuiceJunction />} />
             <Route path="/juice-junction/:sectionSlug" element={<JuiceSection />} />
+            <Route path="/shreesha-india" element={<ShreeShaIndia />} />
+            <Route path="/shreesha-india/:sectionSlug" element={<ShreeShaIndiaSection />} />
+            
             <Route path="/hotel/:hotelName" element={<Hotel />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/help" element={<Help />} />
             <Route path="/account" element={<Account />} />
             <Route path="/order-history" element={<OrderHistory />} />
           </Routes>

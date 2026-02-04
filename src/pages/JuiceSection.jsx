@@ -1,4 +1,4 @@
-// Juice Junction section page: renders items for 'juices' and empty states for other sections
+// Lakshmi Juice Corner section page: renders items for 'juices' and empty states for other sections
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
@@ -15,37 +15,39 @@ const SECTION_MAP = {
 
 const DATA = {
   "juices": [
-    ["Grapes Juice", "", 30],
-    ["Musk Melon Juice", "", 30],
-    ["Pineapple Juice", "", 30],
-    ["Mosambi Juice", "", 30],
-    ["Orange Juice", "", 30],
-    ["Carrot & Beetroot Juice", "", 30],
-    ["Lemon Juice", "", 20],
+    ["Grapes Juice", "", 35],
+    ["Musk Melon Juice", "", 35],
+    ["Pineapple Juice", "", 35],
+    ["Mosambi Juice", "", 35],
+    ["Orange Juice", "", 35],
+    ["Carrot & Beetroot Juice", "", 35],
+    ["Lemon Juice", "", 25],
   ],
 
   "soda": [
-    ["Lemon Salt", "", 20],
-    ["Lemon Sweet", "", 25],
-    ["Herale Kayi Salt", "", 20],
-    ["Herale Kayi Sweet", "", 25],
+    ["Lemon masala", "", 25],
+    ["Lemon Sweet", "", 30],
+    ["Lemon sweet and salt","",30],
+    ["Erlikayi masala", "", 25],
+    ["Erlikayi sweet and salt ", "", 30],
   ],
 
   "milk-shake": [
-    ["Apple Milkshake", "", 40],
-    ["Pomegranate Milkshake", "", 40],
-    ["Sapota Milkshake", "", 40],
-    ["Strawberry Milkshake", "", 40],
-    ["Protein Milkshake", "", 40],
-    ["Oreo Milkshake", "", 40],
-    ["Cold Coffee", "", 40],
-    ["Karbuja / Musk Melon Milkshake", "", 40],
-    ["Dry Fruit Milkshake", "", 50],
-    ["Chocolate Milkshake", "", 40],
-    ["Boost Milkshake", "", 40],
-    ["Vanilla Milkshake", "", 40],
-    ["Black Current Milkshake", "", 40],
-    ["Anjoora Milkshake", "", 40],
+    ["Apple Milkshake", "", 45],
+    ["banana milkshake","",35],
+    ["Pomegranate Milkshake", "", 45],
+    ["Sapota Milkshake", "", 45],
+    ["Strawberry Milkshake", "", 45],
+    ["Protein Milkshake", "", 45],
+    ["Oreo Milkshake", "", 45],
+    ["Cold Coffee", "", 45],
+    ["Karbuja / Musk Melon Milkshake", "", 45],
+    ["Dry Fruit Milkshake", "", 55],
+    ["Chocolate Milkshake", "", 45],
+    ["Boost Milkshake", "", 45],
+    ["Vanilla Milkshake", "", 45],
+    ["Black Current Milkshake", "", 45],
+    ["Anjoora Milkshake", "", 45],
   ],
 };
 

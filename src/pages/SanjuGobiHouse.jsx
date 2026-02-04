@@ -51,3 +51,9 @@ export default function SanjuGobiHouse(){
     </div>
   );
 }
+
+export const hotelId = 'sanju-gobi-house';
+export const hotelName = 'Sanju Gobi House';
+export const menu = { 'gobi': ITEMS };
+export const sectionMap = { 'gobi': { english: 'Gobi Items', kannada: '' } };
+export const routePrefix = 'sanju-gobi-house';

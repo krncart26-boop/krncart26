@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { VB_DATA, VB_SECTION_MAP } from "../data/menus/vbBakery";
 
 const SECTIONS = [
   { english: "BAKERY & SWEETS", kannada: "", slug: "bakery-sweets" },
@@ -49,3 +50,10 @@ export default function VBBakery(){
     </div>
   );
 }
+
+export const hotelId = 'vb-bakery';
+export const hotelName = 'VB Bakery';
+export const menu = VB_DATA;
+export const sectionMap = VB_SECTION_MAP;
+export const routePrefix = 'vb-bakery';
+

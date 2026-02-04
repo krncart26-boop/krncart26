@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { UDUPI_DATA, UDUPI_SECTION_MAP } from "../data/menus/udupi";
 
 const SECTIONS = [
   { english: "SOUTH INDIAN MEALS", kannada: "", slug: "south-indian-meals" },
@@ -45,3 +46,9 @@ export default function UdupiHotel(){
     </div>
   );
 }
+
+export const hotelId = 'udupi-hotel';
+export const hotelName = 'Udupi Hotel';
+export const menu = UDUPI_DATA;
+export const sectionMap = UDUPI_SECTION_MAP;
+export const routePrefix = 'udupi-hotel';

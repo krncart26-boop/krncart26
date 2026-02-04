@@ -51,3 +51,9 @@ export default function KeshavaChats(){
     </div>
   );
 }
+
+export const hotelId = 'keshava-chats';
+export const hotelName = 'Keshava Chats';
+export const menu = { 'items': ITEMS };
+export const sectionMap = { 'items': { english: 'Chats', kannada: '' } };
+export const routePrefix = 'keshava-chats';

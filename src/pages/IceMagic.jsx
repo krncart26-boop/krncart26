@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { ICE_MAGIC_DATA, ICE_MAGIC_SECTION_MAP } from "../data/menus/iceMagic";
 
 const SECTIONS = [
   { english: "IM SPECIAL ICE CREAM", kannada: "", slug: "im-special-ice-cream" },
@@ -72,3 +73,10 @@ export default function IceMagic(){
     </div>
   );
 }
+
+// Exports to make menu data available programmatically
+export const hotelId = 'ice-magic';
+export const hotelName = 'Ice Magic';
+export const menu = ICE_MAGIC_DATA;
+export const sectionMap = ICE_MAGIC_SECTION_MAP;
+export const routePrefix = 'ice-magic';

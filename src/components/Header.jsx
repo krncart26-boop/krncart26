@@ -13,7 +13,6 @@ export default function Header() {
 
       <div className="header-right">
         <button className="header-btn" onClick={() => navigate("/order-history")}>Order History</button>
-        <button className="header-btn" onClick={() => { alert("Logged out (placeholder)"); navigate('/home'); }}>Logout</button>
 
         <div className="cart-icon" style={{cursor:'pointer'}} onClick={()=>navigate('/cart')}>
           <span style={{fontSize:18}}>🛒</span>

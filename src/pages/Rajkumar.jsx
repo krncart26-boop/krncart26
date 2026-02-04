@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import { RAJKUMAR_DATA, RAJKUMAR_SECTION_MAP } from "../data/menus/rajkumar";
 
 const SECTIONS = [
   { english: "Gobi Items", kannada: "", slug: "gobi" },
@@ -45,3 +46,9 @@ export default function Rajkumar(){
     </div>
   );
 }
+
+export const hotelId = 'rajkumar';
+export const hotelName = 'Rajkumar';
+export const menu = RAJKUMAR_DATA;
+export const sectionMap = RAJKUMAR_SECTION_MAP;
+export const routePrefix = 'rajkumar';
