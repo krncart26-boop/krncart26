@@ -1,0 +1,92 @@
+// Udupi Palace Juice Filter Menu Data
+// Only used when filter === "juice" AND hotel === "Udupi Palace"
+
+export const UDUPI_JUICE_SECTIONS = [
+  { english: "JUICES", kannada: "ಜೂಸ್", slug: "juices" },
+  { english: "MILKSHAKE", kannada: "ಮಿಲ್ಕ್ ಶೇಕ್", slug: "milkshake" },
+  { english: "LASSI", kannada: "ಲಸ್ಸಿ", slug: "lassi" },
+  { english: "COFFEE", kannada: "ಕಾಫಿ", slug: "coffee" },
+  { english: "MOCKTAIL / MASTHANI", kannada: "ಮಾಸ್ತಾನಿ", slug: "mocktail" },
+];
+
+export const UDUPI_JUICE_ITEMS = {
+  "juices": [
+    { itemName: "Musambi Juice", kannadaName: "ಮೋಸಂಬಿ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Orange Juice", kannadaName: "ಕಿತ್ತಳೆ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Pineapple Juice", kannadaName: "ಅನಾನಸ್ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Water Melon Juice", kannadaName: "ಕರಬೂಜ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Grape Juice", kannadaName: "ದ್ರಾಕ್ಷೆ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Apple Juice", kannadaName: "ಹಣ್ಣು ಜೂಸ್", price: 100, category: "Juice" },
+    { itemName: "Fresh Lime Juice", kannadaName: "ತಾಜಾ ನೀಬು ಜೂಸ್", price: 50, category: "Juice" },
+    { itemName: "Fresh Lime Soda", kannadaName: "ತಾಜಾ ನೀಬು ಸೋಡಾ", price: 70, category: "Juice" },
+    { itemName: "Musk Melon Juice", kannadaName: "ಸಂಸ್ಕೃತ ತರಬೂಜ ಜೂಸ್", price: 80, category: "Juice" },
+    { itemName: "Papaya Juice", kannadaName: "ಪಪ್ಪಾಯಾ ಜೂಸ್", price: 80, category: "Juice" },
+  ],
+
+  "milkshake": [
+    { itemName: "Apple Milkshake", kannadaName: "ಹಣ್ಣು ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Pomegranate Milkshake", kannadaName: "ದಾಳಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Banana Milkshake", kannadaName: "ಬಾಳೆ ಮಿಲ್ಕ್ ಶೇಕ್", price: 90, category: "Milkshake" },
+    { itemName: "Butter Fruit Milkshake", kannadaName: "ಅವೊಕಾಡೊ ಮಿಲ್ಕ್ ಶೇಕ್", price: 110, category: "Milkshake" },
+    { itemName: "Kiwi Fruit Milkshake (Seasonal)", kannadaName: "ಕಿವಿ ಮಿಲ್ಕ್ ಶೇಕ್ (ತುಂಬ)", price: 110, category: "Milkshake" },
+    { itemName: "Musk Melon Milkshake", kannadaName: "ಸಂಸ್ಕೃತ ತರಬೂಜ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Sapota Milkshake", kannadaName: "ಚಿಕ್ಕಾಲಂಗಡಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Mango Fruit Milkshake (Seasonal)", kannadaName: "ಮಾವಿನ ಮಿಲ್ಕ್ ಶೇಕ್ (ತುಂಬ)", price: 120, category: "Milkshake" },
+    { itemName: "Raagi Milkshake", kannadaName: "ರಾಗಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Cold Coffee / Cold Badam", kannadaName: "ಶೀತ ಕಾಫಿ / ಶೀತ ಬಾದಾಮಿ", price: 100, category: "Milkshake" },
+    { itemName: "Custard Apple Milkshake", kannadaName: "ಸೀತಾಫಲ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Licchi Milkshake", kannadaName: "ಲಿಚ್ಚಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Dry Fruit Milkshake", kannadaName: "ಒಣ ಫಲ ಮಿಲ್ಕ್ ಶೇಕ್", price: 150, category: "Milkshake" },
+    { itemName: "Dates Milkshake", kannadaName: "ಖರ್ಜೂರ ಮಿಲ್ಕ್ ಶೇಕ್", price: 100, category: "Milkshake" },
+    { itemName: "Anjur Milkshake", kannadaName: "ಅಂಜೀರ ಮಿಲ್ಕ್ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Chocolate Milkshake", kannadaName: "ಚಾಕೋಲೇಟ್ ಮಿಲ್ಕ್ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Vanilla Milkshake", kannadaName: "ವೆನಿಲ್ಲಾ ಮಿಲ್ಕ್ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Strawberry Milkshake", kannadaName: "ಸ್ಟ್ರೌಬೇರಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Butterscotch Milkshake", kannadaName: "ಬಟರ್ಸ್ಕಾಚ್ ಮಿಲ್ಕ್ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Pista Shake", kannadaName: "ಪಿಸ್ತಾ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Black Current Shake", kannadaName: "ಕಪ್ಪು ಪ್ರವಾಹ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Oreo Shake", kannadaName: "ಓರಿಯೋ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Mango Shake", kannadaName: "ಮಾವಿನ ಶೇಕ್", price: 120, category: "Milkshake" },
+    { itemName: "Tutti Fruity Shake", kannadaName: "ತುತ್ತಿ ಫ್ರೂಟಿ ಶೇಕ್", price: 120, category: "Milkshake" },
+  ],
+
+  "lassi": [
+    { itemName: "Plain Lassi", kannadaName: "ಸರಳ ಲಸ್ಸಿ", price: 60, category: "Lassi" },
+    { itemName: "Sweet Lassi", kannadaName: "ಸಿಹಿ ಲಸ್ಸಿ", price: 80, category: "Lassi" },
+    { itemName: "Strawberry Lassi", kannadaName: "ಸ್ಟ್ರೌಬೇರಿ ಲಸ್ಸಿ", price: 80, category: "Lassi" },
+    { itemName: "Mango Lassi", kannadaName: "ಮಾವಿನ ಲಸ್ಸಿ", price: 80, category: "Lassi" },
+    { itemName: "Banana Lassi", kannadaName: "ಬಾಳೆ ಲಸ್ಸಿ", price: 80, category: "Lassi" },
+    { itemName: "Mango Banana Lassi", kannadaName: "ಮಾವಿನ ಬಾಳೆ ಲಸ್ಸಿ", price: 90, category: "Lassi" },
+    { itemName: "Gulcan Lassi", kannadaName: "ಗುಲ್ಕನ್ ಲಸ್ಸಿ", price: 90, category: "Lassi" },
+    { itemName: "Gulcan Banana Lassi", kannadaName: "ಗುಲ್ಕನ್ ಬಾಳೆ ಲಸ್ಸಿ", price: 100, category: "Lassi" },
+    { itemName: "Dry Fruit Lassi", kannadaName: "ಒಣ ಫಲ ಲಸ್ಸಿ", price: 110, category: "Lassi" },
+    { itemName: "Fruit Lassi", kannadaName: "ಫಲ ಲಸ್ಸಿ", price: 90, category: "Lassi" },
+    { itemName: "Gudbud Lassi", kannadaName: "ಗುಡ್ಬುಡ್ ಲಸ್ಸಿ", price: 110, category: "Lassi" },
+    { itemName: "Mango Strawberry Lassi", kannadaName: "ಮಾವಿನ ಸ್ಟ್ರೌಬೇರಿ ಲಸ್ಸಿ", price: 90, category: "Lassi" },
+    { itemName: "Saffron Lassi", kannadaName: "ಕೇಸರಿ ಲಸ್ಸಿ", price: 90, category: "Lassi" },
+    { itemName: "Butter Milk", kannadaName: "ಮೊಸರು", price: 40, category: "Lassi" },
+  ],
+
+  "coffee": [
+    { itemName: "Hard Rock Coffee", kannadaName: "ಹಾರ್ಡ್ ರಾಕ್ ಕಾಫಿ", price: 90, category: "Coffee" },
+    { itemName: "Ferrero Coffee", kannadaName: "ಫೆರೆರೋ ಕಾಫಿ", price: 90, category: "Coffee" },
+    { itemName: "Belgium Coffee", kannadaName: "ಬೆಲ್ಜಿಯಮ್ ಕಾಫಿ", price: 90, category: "Coffee" },
+    { itemName: "Nutella Coffee", kannadaName: "ನುಟೆಲ್ಲಾ ಕಾಫಿ", price: 110, category: "Coffee" },
+    { itemName: "Mud Coffee", kannadaName: "ಮಣ್ಣಿನ ಕಾಫಿ", price: 130, category: "Coffee" },
+    { itemName: "Caramel Coffee", kannadaName: "ಕ್ಯಾರಮೆಲ್ ಕಾಫಿ", price: 130, category: "Coffee" },
+  ],
+
+  "mocktail": [
+    { itemName: "Kitkat Masthani", kannadaName: "ಕಿಟ್ ಕ್ಯಾಟ್ ಮಾಸ್ತಾನಿ", price: 130, category: "Masthani" },
+    { itemName: "Oreo Masthani", kannadaName: "ಓರಿಯೋ ಮಾಸ್ತಾನಿ", price: 130, category: "Masthani" },
+    { itemName: "Dry Fruit Masthani", kannadaName: "ಒಣ ಫಲ ಮಾಸ್ತಾನಿ", price: 130, category: "Masthani" },
+    { itemName: "Avacado Pista Honey", kannadaName: "ಅವೊಕಾಡೊ ಪಿಸ್ತಾ ಜೇನು", price: 110, category: "Masthani" },
+    { itemName: "Mango Avacado", kannadaName: "ಮಾವಿನ ಅವೊಕಾಡೊ", price: 100, category: "Masthani" },
+    { itemName: "Strawberry Avacado", kannadaName: "ಸ್ಟ್ರೌಬೇರಿ ಅವೊಕಾಡೊ", price: 100, category: "Masthani" },
+    { itemName: "Mango Masthani", kannadaName: "ಮಾವಿನ ಮಾಸ್ತಾನಿ", price: 110, category: "Masthani" },
+    { itemName: "Litchi Mango", kannadaName: "ಲಿಚ್ಚಿ ಮಾವಿನ", price: 100, category: "Masthani" },
+    { itemName: "Berry Berry Strawberry", kannadaName: "ಬೆರಿ ಬೆರಿ ಸ್ಟ್ರೌಬೇರಿ", price: 90, category: "Masthani" },
+    { itemName: "Blue Berry Shake", kannadaName: "ನೀಲ ಬೆರಿ ಶೇಕ್", price: 90, category: "Masthani" },
+    { itemName: "Scot Blue Berry", kannadaName: "ಸ್ಕಾಟ್ ನೀಲ ಬೆರಿ", price: 90, category: "Masthani" },
+  ],
+};
