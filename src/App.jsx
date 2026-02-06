@@ -118,6 +118,8 @@ export default function App() {
             <Route path="/sanju-gobi-house/filter/chats/:sectionSlug" element={<SanjuGobiHouseChatsFilter />} />
             <Route path="/sanju-gobi-house/filter/chats" element={<SanjuGobiHouseChatsFilter />} />
             <Route path="/sanju-gobi-house/filter/:categorySlug" element={<SanjuGobiBouseFiltered />} />
+            {/* Keshava Chats filter with all items directly */}
+            <Route path="/keshava-chats/filter/chats" element={<KeshavaChatsFiltered />} />
             <Route path="/keshava-chats/filter/:categorySlug" element={<KeshavaChatsFiltered />} />
             <Route path="/tirumala-juice/filter/juices/:sectionSlug" element={<TirumalaJuiceFiltered />} />
             <Route path="/tirumala-juice/filter/:categorySlug" element={<TirumalaJuiceFiltered />} />
