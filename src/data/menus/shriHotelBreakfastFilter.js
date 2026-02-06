@@ -1,0 +1,25 @@
+// Shri Hotel Breakfast Filter Items
+
+export const SHRI_HOTEL_BREAKFAST_ITEMS = [
+  { id: "sh-breakfast-idli", name: "Idli", kannada: "ಇಡ್ಲಿ", price: 20.99 },
+  { id: "sh-breakfast-vada", name: "Vada", kannada: "ವಡೆ", price: 26.99 },
+  { id: "sh-breakfast-khali-dosa", name: "Khali Dosa", kannada: "ಖಾಲಿ ದೋಸೆ", price: 20.99 },
+  { id: "sh-breakfast-special-khali", name: "Special Khali Dosa", kannada: "ಸ್ಪೆಷಲ್ ಖಾಲಿ ದೋಸೆ", price: 30.99 },
+  { id: "sh-breakfast-masala-dosa", name: "Masala Dosa", kannada: "ಮಸಾಲೆ ದೋಸೆ", price: 57.99 },
+  { id: "sh-breakfast-set-masala", name: "Set Masala Dosa", kannada: "ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ", price: 59.99 },
+  { id: "sh-breakfast-butter-set", name: "Butter Set Masala", kannada: "ಬೆಣ್ಣೆ ಸೆಟ್ ಮಸಾಲೆ", price: 68.99 },
+  { id: "sh-breakfast-butter-masala", name: "Butter Masala", kannada: "ಬೆಣ್ಣೆ ಮಸಾಲೆ", price: 68.99 },
+  { id: "sh-breakfast-plain-dosa", name: "Plain Dosa", kannada: "ಪ್ಲೇನ್ ದೋಸೆ", price: 52.99 },
+  { id: "sh-breakfast-butter-plain", name: "Butter Plain Dosa", kannada: "ಬೆಣ್ಣೆ ಪ್ಲೇನ್ ದೋಸೆ", price: 62.99 },
+  { id: "sh-breakfast-rice-bath", name: "Rice Bath", kannada: "ರೈಸ್ ಬಾತ್", price: 42.99 },
+  { id: "sh-breakfast-bisi-bele", name: "Bisi Bele Bath", kannada: "ಬಿಸಿ ಬೆಳೆ ಬಾತ್", price: 42.99 },
+  { id: "sh-breakfast-pongal", name: "Pongal", kannada: "ಪೊಂಗಲ್", price: 42.99 },
+  { id: "sh-breakfast-poori", name: "Poori", kannada: "ಪೂರಿ", price: 57.99 },
+  { id: "sh-breakfast-kesari-bath", name: "Kesari Bath", kannada: "ಕೇಸರಿ ಬಾತ್", price: 27.99 },
+  { id: "sh-breakfast-khara-bath", name: "Khara Bath", kannada: "ಖಾರ ಬಾತ್", price: 27.99 },
+  { id: "sh-breakfast-chou-chou", name: "Chou Chou Bath", kannada: "ಚೌ ಚೌ ಬಾತ್", price: 47.99 },
+  { id: "sh-breakfast-curd-vada", name: "Curd Vada", kannada: "ಮೊಸರು ವಡೆ", price: 47.99 },
+  { id: "sh-breakfast-tomato-dosa", name: "Tomato Dosa", kannada: "ಟೊಮೋಟೊ ದೋಸೆ", price: 52.99 },
+  { id: "sh-breakfast-butter-set-single", name: "Butter Set Masala (Single)", kannada: "ಬೆಣ್ಣೆ ಸೆಟ್ ಮಸಾಲೆ ಸಿಂಗಲ್", price: 37.99 },
+  { id: "sh-breakfast-single-set", name: "Single Set Masala", kannada: "ಸಿಂಗಲ್ ಸೆಟ್ ಮಸಾಲೆ", price: 29.99 },
+];

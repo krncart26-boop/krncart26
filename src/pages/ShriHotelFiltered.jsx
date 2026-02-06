@@ -1,7 +1,8 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
 import ItemCard from "../components/ItemCard";
+import { SHRI_HOTEL_BREAKFAST_ITEMS } from "../data/menus/shriHotelBreakfastFilter";
 
 const EVENING_ITEMS = [
   { id: "sh-e-onion-dosa", name: "Onion Dosa", kannada: "ಈರುಳ್ಳಿ ದೋಸೆ", price: 62.99 },
@@ -28,6 +29,32 @@ const EVENING_ITEMS = [
 export default function ShriHotelFiltered() {
   const { categorySlug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if current path is breakfast-related
+  const isBreakfastHandler = location.pathname.includes('/filter/breakfast') || categorySlug === 'breakfast';
+
+  // Handle Breakfast filter - show all items
+  if (isBreakfastHandler) {
+    return (
+      <div>
+        <div style={{position:'relative',padding:'8px 0'}}>
+          <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/home')}>← Back</button>
+          <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+            <h2 style={{margin:0}} className="page-heading">Shri Hotel</h2>
+          </div>
+        </div>
+
+        <div style={{marginTop:12}}>
+          <div style={{display:'flex',flexDirection:'column',gap:12}}>
+            {SHRI_HOTEL_BREAKFAST_ITEMS.map(it => (
+              <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   // Handle Evening Food filter - show all items
   if (categorySlug === 'evening-food') {

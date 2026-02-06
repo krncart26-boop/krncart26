@@ -110,6 +110,8 @@ export default function App() {
             {/* Shri Tiffany's Evening Food filter with sections */}
             <Route path="/shri-tiffanys/evening/:sectionSlug" element={<ShriTiffanysFiltered />} />
             <Route path="/shri-tiffanys/filter/evening-food" element={<ShriTiffanysFiltered />} />
+            {/* Shri Hotel Breakfast filter with all items directly */}
+            <Route path="/shri-hotel/filter/breakfast" element={<ShriHotelFiltered />} />
             <Route path="/shri-hotel/filter/:categorySlug" element={<ShriHotelFiltered />} />
             {/* Rajkumar Chats filter with sections and landing page */}
             <Route path="/rajkumar/chats/:sectionSlug" element={<RajkumarPanipuriFiltered />} />
