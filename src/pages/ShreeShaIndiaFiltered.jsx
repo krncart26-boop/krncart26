@@ -302,9 +302,26 @@ export default function ShreeShaIndiaFiltered() {
     );
   }
 
-  // Handle all filter subsection (/shreesha-cafe/:sectionSlug) - delegate to section handler
+  // Handle all filter subsection (/shreesha-cafe/:sectionSlug) - route to snacks or juices
   if (isAllSubsection && sectionSlug) {
-    navigate(`/shreesha-india/${sectionSlug}`);
+    // Map ALL_CATEGORIES slugs to SNACKS/JUICE_SECTIONS slugs
+    const slugMappings = {
+      'fresh-fruit-juice': 'fresh-juices',
+      'mojitos': 'mojito',
+      'ice-creams': null, // Not in any section
+    };
+    
+    const mappedSlug = slugMappings[sectionSlug] || sectionSlug;
+    
+    // Check if this category belongs to snacks or juices
+    const isSnacksCategory = SNACKS_SECTIONS.some(s => s.slug === sectionSlug);
+    const isJuicesCategory = JUICE_SECTIONS.some(s => s.slug === mappedSlug);
+    
+    if (isSnacksCategory) {
+      navigate(`/shreesha-cafe/snacks/${sectionSlug}`);
+    } else if (isJuicesCategory && mappedSlug) {
+      navigate(`/shreesha-cafe/juice/${mappedSlug}`);
+    }
     return null;
   }
 

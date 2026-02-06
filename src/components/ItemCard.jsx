@@ -35,6 +35,22 @@ export default function ItemCard({ id, name, kannada, price }){
     return undefined;
   }
 
+  // Extract subsection from current route
+  function getSubsectionFromPath(pathname){
+    const parts = pathname.split('/').filter(Boolean);
+    if(parts.length <= 1) return null; // No subsection if only hotel name
+    
+    // Get everything after the hotel name as subsection
+    const subsectionParts = parts.slice(1);
+    
+    // Format: convert slugs to readable names
+    const formatted = subsectionParts.map(part => {
+      return part.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    }).join(' > ');
+    
+    return formatted || null;
+  }
+
   function inc(){ setQty(q => q + 1); }
   function dec(){ setQty(q => Math.max(1, q - 1)); }
 
@@ -47,7 +63,8 @@ export default function ItemCard({ id, name, kannada, price }){
 
   function handleAdd(){
     const hotelName = getHotelNameFromPath(location.pathname);
-    addToCart({ id, name, basePrice: price, hotelName }, qty);
+    const subsection = getSubsectionFromPath(location.pathname);
+    addToCart({ id, name, basePrice: price, hotelName, subsection }, qty);
     showToast(`${name} x${qty} added to cart`);
     setQty(1);
   }

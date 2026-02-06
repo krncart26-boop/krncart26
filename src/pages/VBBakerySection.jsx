@@ -98,10 +98,10 @@ const DATA = {
   ],
 
   "chocolates": [
-    ["Dairy Milk (₹10 pack)", "ಡೈರಿ ಮಿಲ್ಕ್", 12.99],
-    ["Dairy Milk (₹20 pack)", "ಡೈರಿ ಮಿಲ್ಕ್", 22.99],
-    ["Dairy Milk (₹45 pack)", "ಡೈರಿ ಮಿಲ್ಕ್", 47.99],
-    ["Dairy Milk (₹100 pack)", "ಡೈರಿ ಮಿಲ್ಕ್", 102.99],
+    ["Dairy Milk", "ಡೈರಿ ಮಿಲ್ಕ್", 12.99],
+    ["Dairy Milk", "ಡೈರಿ ಮಿಲ್ಕ್", 22.99],
+    ["Dairy Milk", "ಡೈರಿ ಮಿಲ್ಕ್", 47.99],
+    ["Dairy Milk", "ಡೈರಿ ಮಿಲ್ಕ್", 102.99],
   ],
 
   "ice-cream": [

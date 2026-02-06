@@ -148,7 +148,7 @@ export default function Cart(){
           customerAddress: finalAddress,
           items: cartItems.map(i => {
             const br = computeItemBreakdown(i);
-            return { id: i.id, name: i.name, qty: i.qty, base: Number((i.basePrice * i.qty).toFixed(2)), parcelRate: br.parcelRate, parcelFee: br.parcelFee, lineTotal: br.total };
+            return { id: i.id, name: i.name, qty: i.qty, base: Number((i.basePrice * i.qty).toFixed(2)), parcelRate: br.parcelRate, parcelFee: br.parcelFee, lineTotal: br.total, hotelName: i.hotelName, subsection: i.subsection };
           }),
           totals: {
             base: Number(totals.base),

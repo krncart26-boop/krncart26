@@ -13,9 +13,38 @@ export default function OrderHistory(){
     }
   }, []);
 
+  function clearAllOrders(){
+    if(window.confirm('Are you sure you want to clear all order history? This cannot be undone.')){
+      localStorage.removeItem('orderHistory');
+      setOrders([]);
+    }
+  }
+
   return (
     <div>
-      <h2 className="page-heading">Order History</h2>
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:12}}>
+        <h2 className="page-heading" style={{margin:0}}>Order History</h2>
+        {orders.length > 0 && (
+          <button 
+            onClick={clearAllOrders}
+            style={{
+              background:'transparent',
+              color:'var(--accent)',
+              border:'1px solid var(--accent)',
+              padding:'6px 12px',
+              borderRadius:'8px',
+              fontWeight:600,
+              fontSize:'13px',
+              cursor:'pointer',
+              transition:'all 0.18s'
+            }}
+            onMouseEnter={e => e.target.style.background = 'rgba(211,47,47,0.08)'}
+            onMouseLeave={e => e.target.style.background = 'transparent'}
+          >
+            Clear All
+          </button>
+        )}
+      </div>
       {orders.length === 0 ? (
         <p style={{color:'var(--muted)'}}>No orders yet — this page will list past orders in the future.</p>
       ) : (
@@ -36,7 +65,10 @@ export default function OrderHistory(){
                 <strong>Items</strong>
                 <ul>
                   {o.items.map(it => (
-                    <li key={it.id}>{it.name} x {it.qty} — Parcel ₹{it.parcelRate.toFixed(2)} each → ₹{it.parcelFee.toFixed(2)}</li>
+                    <li key={it.id}>
+                      <div>{it.name} x {it.qty} — Parcel ₹{it.parcelRate.toFixed(2)} each → ₹{it.parcelFee.toFixed(2)}</div>
+                      {it.hotelName && <div style={{fontSize:12,color:'var(--muted)',marginLeft:16}}>{it.hotelName}{it.subsection && ` > ${it.subsection}`}</div>}
+                    </li>
                   ))}
                 </ul>
               </div>

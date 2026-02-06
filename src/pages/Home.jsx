@@ -55,7 +55,7 @@ export default function Home(){
         <div className="search-bar">
           <input
             className="search-input"
-            placeholder="Search food (e.g., 'Masala Dosa')"
+            placeholder="🔍 Search food (e.g., 'Masala Dosa')"
             aria-label="Search"
             value={query}
             onChange={e=>setQuery(e.target.value)}

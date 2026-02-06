@@ -141,6 +141,7 @@ export default function App() {
             {/* ShreeSha Café Juice filter with sections */}
             <Route path="/shreesha-cafe/juice/:sectionSlug" element={<ShreeShaIndiaFiltered />} />
             <Route path="/shreesha-cafe/juice" element={<ShreeShaIndiaFiltered />} />
+            <Route path="/shreesha-cafe/:sectionSlug" element={<ShreeShaIndiaFiltered />} />
             <Route path="/shreesha-cafe/filter/:categorySlug" element={<ShreeShaIndiaFiltered />} />
             
             {/* Regular hotel routes with their sections */}

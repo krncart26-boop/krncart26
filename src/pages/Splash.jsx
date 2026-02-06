@@ -1,4 +1,4 @@
-// Splash screen: shows welcome message for 3 seconds then navigates to Home
+// Splash screen: shows modern welcome with logo for 3 seconds then navigates to Home
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -12,12 +12,12 @@ export default function Splash(){
 
   return (
     <div className="splash">
-      <div className="splash-text">
-        <span>Welcome to</span>
-        <span style={{display:'block'}}>
-          <span style={{color:'var(--sky)'}}>KRN</span>
-          <span className="accent" style={{color:'var(--accent)'}}> CART</span>
-        </span>
+      <div className="splash-container">
+        {/* Brand Heading */}
+        <h1 className="splash-heading">KRN CART</h1>
+
+        {/* Company Tagline */}
+        <p className="splash-tagline">We Care, We Deliver</p>
       </div>
     </div>
   );

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <!-- Blue running figure -->
+  <g fill="#4A9FBE">
+    <!-- Head -->
+    <circle cx="175" cy="75" r="20" />
+    
+    <!-- Body -->
+    <rect x="160" y="100" width="30" height="50" rx="5" />
+    
+    <!-- Left arm extended back -->
+    <rect x="90" y="110" width="70" height="15" rx="7" transform="rotate(-30 90 117)" />
+    
+    <!-- Right arm extended forward -->
+    <rect x="190" y="100" width="60" height="12" rx="6" />
+    
+    <!-- Left leg forward -->
+    <line x1="165" y1="150" x2="145" y2="200" strokeWidth="12" stroke="#4A9FBE" strokeLinecap="round" />
+    
+    <!-- Right leg back -->
+    <line x1="185" y1="150" x2="210" y2="200" strokeWidth="12" stroke="#4A9FBE" strokeLinecap="round" />
+    
+    <!-- Motion lines -->
+    <g stroke="#4A9FBE" strokeWidth="6" strokeLinecap="round" opacity="0.6">
+      <line x1="40" y1="100" x2="80" y2="100" />
+      <line x1="35" y1="130" x2="85" y2="130" />
+      <line x1="40" y1="160" x2="90" y2="160" />
+    </g>
+  </g>
+  
+  <!-- KRN Text - Red -->
+  <text x="280" y="150" fontSize="90" fontWeight="bold" fill="#C41E3A" fontFamily="Arial, sans-serif">KRN</text>
+  
+  <!-- Cart Text - Dark Red -->
+  <text x="280" y="230" fontSize="50" fontWeight="300" fill="#C41E3A" fontFamily="Arial, sans-serif">Cart</text>
+</svg>
