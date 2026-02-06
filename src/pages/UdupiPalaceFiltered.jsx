@@ -11,14 +11,12 @@ export default function UdupiPalaceFiltered() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Detect category from URL path since it's hardcoded in the route
-  const isBreakfastPath = location.pathname.includes('/breakfast/');
-  const isLunchPath = location.pathname.includes('/lunch/');
-  const isBreakfastLanding = location.pathname === '/udupi-hotel/filter/breakfast' || categorySlug === 'breakfast';
-  const isLunchLanding = location.pathname === '/udupi-hotel/filter/lunch' || categorySlug === 'lunch';
+  // Detect category from URL path
+  const isBreakfastHandler = location.pathname.includes('/breakfast/') || categorySlug === 'breakfast';
+  const isLunchHandler = location.pathname.includes('/lunch/') || categorySlug === 'lunch';
 
-  // Handle Breakfast filter - show sections then items
-  if (isBreakfastLanding) {
+  // Handle Breakfast filter - show sections or items
+  if (isBreakfastHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
       return (
@@ -87,8 +85,8 @@ export default function UdupiPalaceFiltered() {
     );
   }
 
-  // Handle Lunch filter - show sections then items
-  if (isLunchLanding) {
+  // Handle Lunch filter - show sections or items
+  if (isLunchHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
       return (
