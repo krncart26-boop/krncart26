@@ -39,6 +39,16 @@ const SECTIONS = [
 export default function IceMagic(){
   const navigate = useNavigate();
 
+  const handleSectionClick = (slug) => {
+    // Route juice-related sections to the juice filter instead of IceSection
+    const juiceSlugs = ['fresh-juice', 'mojito', 'special-soda', 'smoothie', 'special-lassi'];
+    if (juiceSlugs.includes(slug)) {
+      navigate(`/ice-magic/filter/juice`);
+    } else {
+      navigate(`/ice-magic/${slug}`);
+    }
+  };
+
   return (
     <div>
       <div style={{display:'flex',alignItems:'center',gap:8}}>
@@ -66,7 +76,7 @@ export default function IceMagic(){
             key={s.slug}
             english={s.english}
             kannada={s.kannada}
-            onClick={()=>navigate(`/ice-magic/${s.slug}`)}
+            onClick={() => handleSectionClick(s.slug)}
           />
         ))}
       </div>
