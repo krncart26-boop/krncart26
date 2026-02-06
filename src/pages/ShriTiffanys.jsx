@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
 import ItemCard from "../components/ItemCard";
@@ -28,8 +28,22 @@ const EVENING_ITEMS = [
   { id: 'tiff-shavige', name: 'Shavige Bath', kannada: 'ಶಾವಿಗೆ ಬಾತ್', price: 35.00 },
 ];
 
+const DOSA_ITEMS = [
+  { id: 'tiff-set-dosa', name: 'Set Dosa', kannada: 'ಸೆಟ್ ದೋಸೆ', price: 18.00 },
+  { id: 'tiff-benne-dosa-1', name: 'Benne Dosa (1)', kannada: 'ಬೆಣ್ಣೆ ದೋಸೆ (1)', price: 28.00 },
+  { id: 'tiff-benne-dosa-2', name: 'Benne Dosa (2)', kannada: 'ಬೆಣ್ಣೆ ದೋಸೆ (2)', price: 55.00 },
+  { id: 'tiff-plain-dosa', name: 'Plain Dosa', kannada: 'ಪ್ಲೇನ್ ದೋಸೆ', price: 50.00 },
+  { id: 'tiff-masala-dosa', name: 'Masala Dosa', kannada: 'ಮಸಾಲೆ ದೋಸೆ', price: 55.00 },
+  { id: 'tiff-set-masala-2', name: 'Set Masala Dosa (2)', kannada: 'ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ (2)', price: 55.00 },
+  { id: 'tiff-single-set', name: 'Single Set Masala', kannada: 'ಸಿಂಗಲ್ ಸೆಟ್ ಮಸಾಲೆ', price: 28.00 },
+  { id: 'tiff-benne-set-masala', name: 'Benne Set Masala Dosa', kannada: 'ಬೆಣ್ಣೆ ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ', price: 65.00 },
+  { id: 'tiff-benne-masala', name: 'Benne Masala Dosa', kannada: 'ಬೆಣ್ಣೆ ಮಸಾಲೆ ದೋಸೆ', price: 65.00 },
+  { id: 'tiff-onion-dosa', name: 'Onion Dosa', kannada: 'ಈರುಳ್ಳಿ ದೋಸೆ', price: 65.00 },
+];
+
 export default function ShriTiffanys(){
   const navigate = useNavigate();
+  const [showDosaItems, setShowDosaItems] = useState(false);
 
   return (
     <div>
@@ -51,6 +65,30 @@ export default function ShriTiffanys(){
           </div>
         </div>
       </div>
+
+      {/* Dosa Items Section (clickable card) */}
+      <div style={{marginTop:12}}>
+        <SectionCard 
+          english="Dosa Items" 
+          kannada="ದೋಸೆ ಪದಾರ್ಥಗಳು" 
+          onClick={() => setShowDosaItems(!showDosaItems)} 
+        />
+      </div>
+
+      {/* Dosa Items List */}
+      {showDosaItems && (
+        <div className="items-list" style={{marginTop: 12}}>
+          {DOSA_ITEMS.map(item => (
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              kannada={item.kannada}
+              price={item.price}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Morning section (tappable) */}
       <div style={{marginTop:12}}>

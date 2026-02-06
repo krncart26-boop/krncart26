@@ -57,6 +57,12 @@ export default function HotelGrid({ hotels, activeFilter = 'All' }){
   const handleHotelClick = (hotelName) => {
     const baseRoute = getHotelRoute(hotelName);
     
+    // Ayyangars Bakery always shows filtered page with coming soon banner
+    if (hotelName === 'Ayyangars Bakery') {
+      navigate(`${baseRoute}/filter/bakery`);
+      return;
+    }
+    
     // If "All" filter is active, navigate to the full hotel menu
     if (activeFilter === 'All') {
       navigate(baseRoute);

@@ -75,8 +75,15 @@ export default function App() {
             <Route path="/home" element={<Home />} />
             
             {/* Filtered hotel routes MUST come before generic :sectionSlug routes */}
+            {/* Udupi Palace Breakfast filter with sections */}
+            <Route path="/udupi-hotel/filter/breakfast/:sectionSlug" element={<UdupiPalaceFiltered />} />
             <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
             <Route path="/ice-magic/filter/:categorySlug" element={<IceMagicFiltered />} />
+            {/* KRN Restaurant Snacks filter with sections */}
+            <Route path="/krn-restaurant/snacks/:sectionSlug" element={<KRNRestaurantFiltered />} />
+            <Route path="/krn-restaurant/filter/snacks" element={<KRNRestaurantFiltered />} />
+            {/* KRN Restaurant Lunch filter with sections */}
+            <Route path="/krn-restaurant/lunch/:sectionSlug" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/:categorySlug" element={<KRNRestaurantFiltered />} />
             <Route path="/shri-tiffanys/filter/:categorySlug" element={<ShriTiffanysFiltered />} />
             <Route path="/shri-hotel/filter/:categorySlug" element={<ShriHotelFiltered />} />
