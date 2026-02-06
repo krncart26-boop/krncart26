@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
 import ItemCard from "../components/ItemCard";
 import SectionCard from "../components/SectionCard";
@@ -7,11 +7,18 @@ import { UDUPI_BREAKFAST_SECTIONS, UDUPI_BREAKFAST_ITEMS } from "../data/menus/u
 import { UDUPI_LUNCH_SECTIONS, UDUPI_LUNCH_ITEMS } from "../data/menus/udupiLunch";
 
 export default function UdupiPalaceFiltered() {
-  const { categorySlug, sectionSlug } = useParams();
+  const { sectionSlug, categorySlug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Detect category from URL path since it's hardcoded in the route
+  const isBreakfastPath = location.pathname.includes('/breakfast/');
+  const isLunchPath = location.pathname.includes('/lunch/');
+  const isBreakfastLanding = location.pathname === '/udupi-hotel/filter/breakfast' || categorySlug === 'breakfast';
+  const isLunchLanding = location.pathname === '/udupi-hotel/filter/lunch' || categorySlug === 'lunch';
 
   // Handle Breakfast filter - show sections then items
-  if (categorySlug === "breakfast") {
+  if (isBreakfastLanding) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
       return (
@@ -81,7 +88,7 @@ export default function UdupiPalaceFiltered() {
   }
 
   // Handle Lunch filter - show sections then items
-  if (categorySlug === "lunch") {
+  if (isLunchLanding) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
       return (
