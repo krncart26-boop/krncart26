@@ -20,7 +20,8 @@ export default function KRNRestaurant(){
   const navigate = useNavigate();
 
   const handleSectionClick = (slug) => {
-    // Route all section clicks to the evening food filter
+    // Route all section clicks to the evening food filter landing page
+    // (showing all section cards, not items)
     navigate(`/krn-restaurant/filter/evening`);
   };
 

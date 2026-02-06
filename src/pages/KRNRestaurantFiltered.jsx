@@ -35,7 +35,17 @@ export default function KRNRestaurantFiltered() {
   const isLunchPath = location.pathname.includes('/lunch/');
   const isLunchLanding = categorySlug === 'lunch';
   const isEveningPath = location.pathname.includes('/filter/evening');
-  const isEveningLanding = location.pathname === '/krn-restaurant/filter/evening';
+  const isEveningLanding = location.pathname === '/krn-restaurant/filter/evening' || categorySlug === 'evening-food';
+
+  // Debug logs
+  console.log('🔍 KRNRestaurantFiltered Debug:', {
+    pathname: location.pathname,
+    categorySlug,
+    sectionSlug,
+    isEveningPath,
+    isEveningLanding,
+    LUNCH_SECTIONS_length: LUNCH_SECTIONS.length
+  });
 
   // Handle Snacks filter - section detail page (URL: /krn-restaurant/snacks/:sectionSlug)
   if (sectionSlug && isSnacksPath) {
@@ -220,6 +230,12 @@ export default function KRNRestaurantFiltered() {
 
   // Handle Evening Food filter - landing page with section cards (URL: /krn-restaurant/filter/evening)
   if (isEveningLanding) {
+    console.log('✅ Evening landing page detected!', {
+      isEveningLanding,
+      LUNCH_SECTIONS_length: LUNCH_SECTIONS.length,
+      sections: LUNCH_SECTIONS.map(s => s.slug)
+    });
+
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -242,15 +258,27 @@ export default function KRNRestaurantFiltered() {
         </div>
 
         <div className="section-list">
-          {LUNCH_SECTIONS.map(s => (
-            <SectionCard
-              key={s.slug}
-              english={s.english}
-              kannada={s.kannada}
-              subtitle={s.subtitle}
-              onClick={() => navigate(`/krn-restaurant/filter/evening/${s.slug}`)}
-            />
-          ))}
+          {LUNCH_SECTIONS.length > 0 ? (
+            LUNCH_SECTIONS.map(s => {
+              console.log('Rendering section card:', s.english);
+              return (
+                <SectionCard
+                  key={s.slug}
+                  english={s.english}
+                  kannada={s.kannada}
+                  subtitle={s.subtitle}
+                  onClick={() => {
+                    console.log('Section clicked:', s.slug);
+                    navigate(`/krn-restaurant/filter/evening/${s.slug}`);
+                  }}
+                />
+              );
+            })
+          ) : (
+            <div style={{ padding: '20px', textAlign: 'center', color: '#999' }}>
+              No sections available
+            </div>
+          )}
         </div>
       </div>
     );

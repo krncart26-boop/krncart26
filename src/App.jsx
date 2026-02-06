@@ -48,6 +48,7 @@ import RajkumarPanipuriFiltered from "./pages/RajkumarPanipuriFiltered";
 import GowdaPalavCentreFiltered from "./pages/GowdaPalavCentreFiltered";
 import VBBakeryFiltered from "./pages/VBBakeryFiltered";
 import SanjuGobiBouseFiltered from "./pages/SanjuGobiBouseFiltered";
+import SanjuGobiHouseChatsFilter from "./pages/SanjuGobiHouseChatsFilter";
 import KeshavaChatsFiltered from "./pages/KeshavaChatsFiltered";
 import TirumalaJuiceFiltered from "./pages/TirumalaJuiceFiltered";
 import AyyangarssBakeryFiltered from "./pages/AyyangarssBakeryFiltered";
@@ -113,6 +114,9 @@ export default function App() {
             <Route path="/rajkumar/filter/:categorySlug" element={<RajkumarPanipuriFiltered />} />
             <Route path="/gowda-palav-centre/filter/:categorySlug" element={<GowdaPalavCentreFiltered />} />
             <Route path="/vb-bakery/filter/:categorySlug" element={<VBBakeryFiltered />} />
+            {/* Sanju Gobi House Chats filter with sections */}
+            <Route path="/sanju-gobi-house/filter/chats/:sectionSlug" element={<SanjuGobiHouseChatsFilter />} />
+            <Route path="/sanju-gobi-house/filter/chats" element={<SanjuGobiHouseChatsFilter />} />
             <Route path="/sanju-gobi-house/filter/:categorySlug" element={<SanjuGobiBouseFiltered />} />
             <Route path="/keshava-chats/filter/:categorySlug" element={<KeshavaChatsFiltered />} />
             <Route path="/tirumala-juice/filter/juices/:sectionSlug" element={<TirumalaJuiceFiltered />} />

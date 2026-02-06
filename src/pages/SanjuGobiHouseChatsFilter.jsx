@@ -68,19 +68,15 @@ export default function SanjuGobiHouseChatsFilter() {
       <div style={{ padding: '12px' }}>
         {items.length > 0 ? (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {items.map((item) => {
-              // Create unique ID for each chats item
-              const itemId = `sanju-gobi-chats-${sectionSlug}-${item.itemName.toLowerCase().replace(/\s+/g, '-')}`;
-              return (
-                <ItemCard
-                  key={itemId}
-                  id={itemId}
-                  name={item.itemName}
-                  kannada={item.kannadaName}
-                  price={item.price}
-                />
-              );
-            })}
+            {items.map((item) => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                name={item.itemName}
+                kannada={item.kannadaName}
+                price={item.price}
+              />
+            ))}
           </div>
         ) : (
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '20px' }}>
