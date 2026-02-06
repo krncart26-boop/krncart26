@@ -103,6 +103,9 @@ export default function App() {
             <Route path="/krn-restaurant/filter/evening/:sectionSlug" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/evening" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/:categorySlug" element={<KRNRestaurantFiltered />} />
+            {/* Shri Tiffany's Breakfast filter with sections */}
+            <Route path="/shri-tiffanys/filter/breakfast/:sectionSlug" element={<ShriTiffanysFiltered />} />
+            <Route path="/shri-tiffanys/filter/breakfast" element={<ShriTiffanysFiltered />} />
             <Route path="/shri-tiffanys/filter/:categorySlug" element={<ShriTiffanysFiltered />} />
             {/* Shri Tiffany's Evening Food filter with sections */}
             <Route path="/shri-tiffanys/evening/:sectionSlug" element={<ShriTiffanysFiltered />} />
