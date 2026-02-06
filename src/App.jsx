@@ -85,6 +85,8 @@ export default function App() {
             <Route path="/udupi-hotel/filter/snacks/:sectionSlug" element={<UdupiPalaceFiltered />} />
             {/* Udupi Palace Juice filter with sections */}
             <Route path="/udupi-hotel/filter/juice/:sectionSlug" element={<UdupiPalaceFiltered />} />
+            {/* Udupi Palace Chats filter with sections */}
+            <Route path="/udupi-hotel/filter/chats/:sectionSlug" element={<UdupiPalaceFiltered />} />
             <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
             <Route path="/ice-magic/snacks/:sectionSlug" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/snacks" element={<IceMagicFiltered />} />
