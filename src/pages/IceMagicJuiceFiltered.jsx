@@ -5,14 +5,14 @@ import SectionCard from "../components/SectionCard";
 import ItemCard from "../components/ItemCard";
 
 export default function IceMagicJuiceFiltered() {
-  const { sectionSlug, categorySlug } = useParams();
+  const { sectionSlug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Detect path type
-  const isJuicePath = location.pathname.includes('/juice/');
-  const isJuiceLanding = location.pathname === '/ice-magic/filter/juice' || categorySlug === 'juice';
-  const isJuiceDetail = sectionSlug && isJuicePath;
+  // Detect if this is a detail page or landing page
+  // Landing page: /ice-magic/filter/juice OR /ice-magic/filter/juices
+  const isJuiceLanding = location.pathname === '/ice-magic/filter/juice' || location.pathname === '/ice-magic/filter/juices';
+  const isJuiceDetail = sectionSlug !== undefined;
 
   // Handle juice detail page (/ice-magic/filter/juice/:sectionSlug)
   if (isJuiceDetail) {

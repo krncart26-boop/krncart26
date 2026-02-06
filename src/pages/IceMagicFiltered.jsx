@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
+import IceMagicJuiceFiltered from "./IceMagicJuiceFiltered";
 import SectionCard from "../components/SectionCard";
 import ItemCard from "../components/ItemCard";
 
@@ -124,6 +125,11 @@ export default function IceMagicFiltered() {
   const { sectionSlug, categorySlug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
+
+  // Handle juice/juices category - redirect to IceMagicJuiceFiltered
+  if (categorySlug === 'juice' || categorySlug === 'juices') {
+    return <IceMagicJuiceFiltered />;
+  }
 
   // Detect path type
   const isSnacksPath = location.pathname.includes('/snacks/');
