@@ -78,6 +78,8 @@ export default function App() {
             {/* Filtered hotel routes MUST come before generic :sectionSlug routes */}
             {/* Udupi Palace Breakfast filter with sections */}
             <Route path="/udupi-hotel/filter/breakfast/:sectionSlug" element={<UdupiPalaceFiltered />} />
+            {/* Udupi Palace Lunch filter with sections */}
+            <Route path="/udupi-hotel/filter/lunch/:sectionSlug" element={<UdupiPalaceFiltered />} />
             <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
             <Route path="/ice-magic/snacks/:sectionSlug" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/snacks" element={<IceMagicFiltered />} />
