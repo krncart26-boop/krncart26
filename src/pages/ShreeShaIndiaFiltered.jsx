@@ -99,18 +99,19 @@ const SNACKS_ITEMS = {
 };
 
 export default function ShreeShaIndiaFiltered() {
-  const { sectionSlug } = useParams();
+  const { sectionSlug, categorySlug } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
   // Detect path type
   const isSnacksPath = location.pathname.includes('/snacks/');
-  const isSnacksLanding = location.pathname === '/shreesha-cafe/snacks';
+  const isSnacksLanding = location.pathname === '/shreesha-cafe/snacks' || categorySlug === 'snacks';
+  const isSnacksFilterDetail = sectionSlug && isSnacksPath;
   const isAllFilter = location.pathname === '/shreesha-cafe';
   const isAllSubsection = location.pathname.match(/^\/shreesha-cafe\/[^\/]+$/) && sectionSlug && !isSnacksPath;
 
   // Handle snacks detail page (/shreesha-cafe/snacks/:sectionSlug)
-  if (sectionSlug && isSnacksPath) {
+  if (isSnacksFilterDetail) {
     const section = SNACKS_SECTIONS.find(s => s.slug === sectionSlug);
     const items = SNACKS_ITEMS[sectionSlug] || [];
 
@@ -140,7 +141,7 @@ export default function ShreeShaIndiaFiltered() {
     );
   }
 
-  // Handle snacks landing page (/shreesha-cafe/snacks)
+  // Handle snacks landing page (/shreesha-cafe/snacks or /shreesha-cafe/filter/snacks)
   if (isSnacksLanding) {
     return (
       <div>
