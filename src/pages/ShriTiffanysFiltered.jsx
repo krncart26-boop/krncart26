@@ -1,8 +1,100 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
+import SectionCard from "../components/SectionCard";
+import ItemCard from "../components/ItemCard";
+import { SHRI_TIFFANYS_EVENING_DOSA, SHRI_TIFFANYS_EVENING_OTHERS } from "../data/menus/shriTiffanysEvening";
+
+const EVENING_SECTIONS = [
+  { english: "Dosa", kannada: "ದೋಸೆ", slug: "dosa" },
+  { english: "Others", kannada: "ಇತರೆ", slug: "others" },
+];
 
 export default function ShriTiffanysFiltered() {
-  const { categorySlug } = useParams();
+  const { categorySlug, sectionSlug } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if current path is evening-related
+  const isEveningPath = location.pathname.includes('/evening/');
+  const isEveningLanding = location.pathname === '/shri-tiffanys/filter/evening-food';
+
+  // Handle Evening Food filter - section detail page (URL: /shri-tiffanys/evening/:sectionSlug)
+  if (sectionSlug && isEveningPath) {
+    const section = EVENING_SECTIONS.find(s => s.slug === sectionSlug);
+    let items = [];
+
+    if (sectionSlug === 'dosa') {
+      items = SHRI_TIFFANYS_EVENING_DOSA;
+    } else if (sectionSlug === 'others') {
+      items = SHRI_TIFFANYS_EVENING_OTHERS;
+    }
+
+    if (!section) {
+      return <FilteredHotelPage hotelName="Shri Tiffany's" categorySlug={categorySlug} />;
+    }
+
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/shri-tiffanys/filter/evening-food')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
+        </div>
+
+        {/* Timing banner - only for Others section */}
+        {sectionSlug === 'others' && (
+          <div className="ice-timing-banner" role="region" aria-label="Evening opening hours">
+            <div className="timing-icon" aria-hidden="true">
+              <span className="clock-emoji">⏰</span>
+              <span className="status-dot" />
+            </div>
+
+            <div className="timing-text">
+              <div className="timing-title">Evening</div>
+              <div className="timing-time">4:30 PM – 8:30 PM</div>
+            </div>
+          </div>
+        )}
+
+        <div className="items-list">
+          {items.map(item => (
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              kannada={item.kannada}
+              price={item.price}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle Evening Food filter - landing page with section cards (URL: /shri-tiffanys/filter/evening-food)
+  if (isEveningLanding) {
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">Shri Tiffany's</h2>
+        </div>
+
+        <div className="section-list">
+          {EVENING_SECTIONS.map(s => (
+            <SectionCard
+              key={s.slug}
+              english={s.english}
+              kannada={s.kannada}
+              subtitle={s.subtitle}
+              onClick={() => navigate(`/shri-tiffanys/evening/${s.slug}`)}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Shri Tiffany's" categorySlug={categorySlug} />;
 }

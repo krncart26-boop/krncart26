@@ -31,6 +31,7 @@ import JuiceJunction from "./pages/JuiceJunction";
 import JuiceSection from "./pages/JuiceSection";
 import ShreeShaIndia from "./pages/ShreeShaIndia";
 import ShreeShaIndiaSection from "./pages/ShreeShaIndiaSection";
+import ShreeShaIndiaFiltered from "./pages/ShreeShaIndiaFiltered";
 import Cart from "./pages/Cart"; 
 import Account from "./pages/Account";
 import Help from "./pages/Help";
@@ -86,7 +87,13 @@ export default function App() {
             <Route path="/krn-restaurant/lunch/:sectionSlug" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/:categorySlug" element={<KRNRestaurantFiltered />} />
             <Route path="/shri-tiffanys/filter/:categorySlug" element={<ShriTiffanysFiltered />} />
+            {/* Shri Tiffany's Evening Food filter with sections */}
+            <Route path="/shri-tiffanys/evening/:sectionSlug" element={<ShriTiffanysFiltered />} />
+            <Route path="/shri-tiffanys/filter/evening-food" element={<ShriTiffanysFiltered />} />
             <Route path="/shri-hotel/filter/:categorySlug" element={<ShriHotelFiltered />} />
+            {/* Rajkumar Chats filter with sections and landing page */}
+            <Route path="/rajkumar/chats/:sectionSlug" element={<RajkumarPanipuriFiltered />} />
+            <Route path="/rajkumar/filter/chats" element={<RajkumarPanipuriFiltered />} />
             <Route path="/rajkumar/filter/:categorySlug" element={<RajkumarPanipuriFiltered />} />
             <Route path="/gowda-palav-centre/filter/:categorySlug" element={<GowdaPalavCentreFiltered />} />
             <Route path="/vb-bakery/filter/:categorySlug" element={<VBBakeryFiltered />} />
@@ -97,6 +104,10 @@ export default function App() {
             <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
             <Route path="/ganis-restaurant/filter/:categorySlug" element={<GanisRestaurantFiltered />} />
             <Route path="/shreesha-india/filter/:categorySlug" element={<ShreeShaCafeFiltered />} />
+            {/* ShreeSha Café Snacks filter with sections */}
+            <Route path="/shreesha-cafe/snacks/:sectionSlug" element={<ShreeShaIndiaFiltered />} />
+            <Route path="/shreesha-cafe/snacks" element={<ShreeShaIndiaFiltered />} />
+            <Route path="/shreesha-cafe/filter/:categorySlug" element={<ShreeShaIndiaFiltered />} />
             
             {/* Regular hotel routes with their sections */}
             <Route path="/keshava-chats" element={<KeshavaChats />} />
@@ -125,6 +136,7 @@ export default function App() {
             <Route path="/juice-junction/:sectionSlug" element={<JuiceSection />} />
             <Route path="/shreesha-india" element={<ShreeShaIndia />} />
             <Route path="/shreesha-india/:sectionSlug" element={<ShreeShaIndiaSection />} />
+            <Route path="/shreesha-cafe" element={<ShreeShaIndiaFiltered />} />
             
             <Route path="/hotel/:hotelName" element={<Hotel />} />
             <Route path="/cart" element={<Cart />} />

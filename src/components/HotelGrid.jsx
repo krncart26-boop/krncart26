@@ -36,7 +36,7 @@ function getHotelRoute(hotelName) {
     case 'Rajkumar Panipuri': return '/rajkumar';
     case "Gani's Restaurant": return '/ganis-restaurant';
     case 'ShreeSha India': return '/shreesha-india';
-    case 'ShreeSha cafe': return '/shreesha-india';
+    case 'ShreeSha cafe': return '/shreesha-cafe';
     case 'Lakshmi Juice Corner': return '/juice-junction';
     case 'Udupi Hotel':
     case 'Udupi Palace': return '/udupi-hotel';
