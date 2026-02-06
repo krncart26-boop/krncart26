@@ -34,6 +34,8 @@ export default function KRNRestaurantFiltered() {
   const isSnacksLanding = location.pathname === '/krn-restaurant/filter/snacks';
   const isLunchPath = location.pathname.includes('/lunch/');
   const isLunchLanding = categorySlug === 'lunch';
+  const isEveningPath = location.pathname.includes('/filter/evening');
+  const isEveningLanding = location.pathname === '/krn-restaurant/filter/evening';
 
   // Handle Snacks filter - section detail page (URL: /krn-restaurant/snacks/:sectionSlug)
   if (sectionSlug && isSnacksPath) {
@@ -178,6 +180,75 @@ export default function KRNRestaurantFiltered() {
               kannada={s.kannada}
               subtitle={s.subtitle}
               onClick={() => navigate(`/krn-restaurant/lunch/${s.slug}`)}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle Evening Food filter - section detail page (URL: /krn-restaurant/filter/evening/:sectionSlug)
+  if (sectionSlug && isEveningPath) {
+    const section = LUNCH_SECTIONS.find(s => s.slug === sectionSlug);
+    const items = KRN_LUNCH_MENU[sectionSlug] || [];
+
+    if (!section) {
+      return <FilteredHotelPage hotelName="KRN Restaurant" categorySlug="evening" />;
+    }
+
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant/filter/evening')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
+        </div>
+
+        <div className="items-list">
+          {items.map(item => (
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              kannada={item.kannada}
+              price={item.price}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle Evening Food filter - landing page with section cards (URL: /krn-restaurant/filter/evening)
+  if (isEveningLanding) {
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">KRN Restaurant</h2>
+        </div>
+
+        {/* Timing banner - informational only */}
+        <div className="timing-banner" role="region" aria-label="Restaurant opening hours">
+          <div className="timing-icon" aria-hidden="true">
+            <span className="clock-emoji">⏰</span>
+            <span className="status-dot" />
+          </div>
+
+          <div className="timing-text">
+            <div className="timing-title">Open Today</div>
+            <div className="timing-time">1:00 PM – 9:00 PM</div>
+            <div className="timing-sub">Freshly prepared after opening hours</div>
+          </div>
+        </div>
+
+        <div className="section-list">
+          {LUNCH_SECTIONS.map(s => (
+            <SectionCard
+              key={s.slug}
+              english={s.english}
+              kannada={s.kannada}
+              subtitle={s.subtitle}
+              onClick={() => navigate(`/krn-restaurant/filter/evening/${s.slug}`)}
             />
           ))}
         </div>

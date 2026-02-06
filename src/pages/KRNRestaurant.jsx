@@ -19,6 +19,11 @@ const SECTIONS = [
 export default function KRNRestaurant(){
   const navigate = useNavigate();
 
+  const handleSectionClick = (slug) => {
+    // Route all section clicks to the evening food filter
+    navigate(`/krn-restaurant/filter/evening`);
+  };
+
   return (
     <div>
       <div style={{display:'flex',alignItems:'center',gap:8}}>
@@ -47,7 +52,7 @@ export default function KRNRestaurant(){
             english={s.english}
             kannada={s.kannada}
             subtitle={s.subtitle}
-            onClick={()=>navigate(`/krn-restaurant/${s.slug}`)}
+            onClick={() => handleSectionClick(s.slug)}
           />
         ))}
       </div>
