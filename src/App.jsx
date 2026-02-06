@@ -101,6 +101,7 @@ export default function App() {
             <Route path="/vb-bakery/filter/:categorySlug" element={<VBBakeryFiltered />} />
             <Route path="/sanju-gobi-house/filter/:categorySlug" element={<SanjuGobiBouseFiltered />} />
             <Route path="/keshava-chats/filter/:categorySlug" element={<KeshavaChatsFiltered />} />
+            <Route path="/tirumala-juice/filter/juices/:sectionSlug" element={<TirumalaJuiceFiltered />} />
             <Route path="/tirumala-juice/filter/:categorySlug" element={<TirumalaJuiceFiltered />} />
             <Route path="/ayyangars-bakery/filter/:categorySlug" element={<AyyangarssBakeryFiltered />} />
             <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
