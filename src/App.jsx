@@ -113,6 +113,8 @@ export default function App() {
             <Route path="/rajkumar/filter/chats" element={<RajkumarPanipuriFiltered />} />
             <Route path="/rajkumar/filter/:categorySlug" element={<RajkumarPanipuriFiltered />} />
             <Route path="/gowda-palav-centre/filter/:categorySlug" element={<GowdaPalavCentreFiltered />} />
+            {/* VB Bakery Bakery filter with all items directly */}
+            <Route path="/vb-bakery/filter/bakery" element={<VBBakeryFiltered />} />
             <Route path="/vb-bakery/filter/:categorySlug" element={<VBBakeryFiltered />} />
             {/* Sanju Gobi House Chats filter with sections */}
             <Route path="/sanju-gobi-house/filter/chats/:sectionSlug" element={<SanjuGobiHouseChatsFilter />} />

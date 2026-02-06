@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
 import ItemCard from "../components/ItemCard";
 import { KESHAVA_CHATS_ITEMS } from "../data/menus/keshavaChatsFilter";
@@ -7,9 +7,21 @@ import { KESHAVA_CHATS_ITEMS } from "../data/menus/keshavaChatsFilter";
 export default function KeshavaChatsFiltered() {
   const { categorySlug } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Check if this is the chats filter by path or categorySlug
+  const isChatsHandler = location.pathname.includes('/filter/chats') || categorySlug === 'chats';
+
+  console.log('🔍 KeshavaChatsFiltered Debug:', { 
+    categorySlug, 
+    pathname: location.pathname,
+    isChatsHandler,
+    KESHAVA_CHATS_ITEMS_length: KESHAVA_CHATS_ITEMS.length 
+  });
 
   // Handle Chats filter - show all items directly (no sections)
-  if (categorySlug === 'chats') {
+  if (isChatsHandler) {
+    console.log('✅ Chats filter detected!', { items_count: KESHAVA_CHATS_ITEMS.length });
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
