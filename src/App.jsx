@@ -40,6 +40,7 @@ import OrderHistory from "./pages/OrderHistory";
 // Filtered hotel pages
 import UdupiPalaceFiltered from "./pages/UdupiPalaceFiltered";
 import IceMagicFiltered from "./pages/IceMagicFiltered";
+import IceMagicJuiceFiltered from "./pages/IceMagicJuiceFiltered";
 import KRNRestaurantFiltered from "./pages/KRNRestaurantFiltered";
 import ShriTiffanysFiltered from "./pages/ShriTiffanysFiltered";
 import ShriHotelFiltered from "./pages/ShriHotelFiltered";
@@ -85,6 +86,8 @@ export default function App() {
             <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
             <Route path="/ice-magic/snacks/:sectionSlug" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/snacks" element={<IceMagicFiltered />} />
+            <Route path="/ice-magic/filter/juice/:sectionSlug" element={<IceMagicJuiceFiltered />} />
+            <Route path="/ice-magic/filter/juice" element={<IceMagicJuiceFiltered />} />
             <Route path="/ice-magic/filter/:categorySlug" element={<IceMagicFiltered />} />
             {/* KRN Restaurant Snacks filter with sections */}
             <Route path="/krn-restaurant/snacks/:sectionSlug" element={<KRNRestaurantFiltered />} />
