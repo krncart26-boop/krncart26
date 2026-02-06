@@ -27,6 +27,14 @@ const SNACKS_SECTIONS = [
   { english: "Combos Special", kannada: "ಕಾಂಬೋ ವಿಶೇಷ", slug: "combos-special" },
 ];
 
+// Juice filter sections
+const JUICE_SECTIONS = [
+  { english: "Fresh Fruit Juices", kannada: "ತಾಜೆ ಹಣ್ಣಿನ ರಸ", slug: "fresh-juices" },
+  { english: "Mojito", kannada: "ಮೋಜಿಟೋ", slug: "mojito" },
+  { english: "Milk Shakes", kannada: "ಮಿಲ್ಕ್ ಶೇಕ್", slug: "milkshakes" },
+  { english: "Cold Coffee", kannada: "ಕೋಲ್ಡ್ ಕಾಫಿ", slug: "cold-coffee" },
+];
+
 // Snacks-specific items
 const SHREESHA_SANDWICHES = [
   { id: "sc-veg-sandwich", name: "Veg Sandwich / Burger", kannada: "ವೆಜ್ ಸ್ಯಾಂಡ್ವಿಚ್", price: 61 },
@@ -90,12 +98,62 @@ const SHREESHA_COMBOS = [
   { id: "sc-combo-corn-pakoda", name: "Sandwich & Burger + Corn Pakoda (5 pcs)", kannada: "ಸ್ಯಾಂಡ್ವಿಚ್ + ಕಾರ್ನ್ ಪಕೋಡೆ", price: 151 }
 ];
 
+// Juice filter items
+const FRESH_JUICES = [
+  { id: "sc-lemon", name: "Lemon Juice", kannada: "ನಿಂಬೆ ರಸ", price: 22 },
+  { id: "sc-watermelon", name: "Watermelon Juice", kannada: "ಕಲ್ಲಿಝೋಟ ರಸ", price: 27 },
+  { id: "sc-mosambi", name: "Mosambi Juice", kannada: "ಮೋಸಂಬಿ ರಸ", price: 31 },
+  { id: "sc-pineapple", name: "Pineapple Juice", kannada: "ಅನೇನಸ ರಸ", price: 41 },
+  { id: "sc-chikko", name: "Chikko Juice", kannada: "ಚಿಕ್ಕೋ ರಸ", price: 41 },
+  { id: "sc-muskmelon", name: "Muskmelon Juice", kannada: "ಕಸುವೆ ಇಪ್ಪಳಿ ರಸ", price: 41 },
+  { id: "sc-apple", name: "Apple Juice", kannada: "ಸೇಬೆ ರಸ", price: 51 },
+  { id: "sc-pomegranate", name: "Pomegranate Juice", kannada: "ದಾಲಿಂಬೆ ರಸ", price: 51 },
+  { id: "sc-orange", name: "Orange Juice", kannada: "ಕೂಸುಮ್ಬೆ ರಸ", price: 41 }
+];
+
+const MOJITOS = [
+  { id: "sc-blue-lime", name: "Blue Lime Mojito", kannada: "ಬ್ಲೂ ನಿಂಬೆ ಮೋಜಿಟೋ", price: 51 },
+  { id: "sc-watermelon-mojito", name: "Watermelon Mojito", kannada: "ಕಲ್ಲಿಝೋಟ ಮೋಜಿಟೋ", price: 51 },
+  { id: "sc-pineapple-mojito", name: "Pineapple Mojito", kannada: "ಅನೇನಸ ಮೋಜಿಟೋ", price: 51 },
+  { id: "sc-pomegranate-mojito", name: "Pomegranate Mojito", kannada: "ದಾಲಿಂಬೆ ಮೋಜಿಟೋ", price: 61 },
+  { id: "sc-kacha-mango", name: "Kacha Mango Mojito", kannada: "ಕಚ್ಚ ಮೆಂತೆ ಮೋಜಿಟೋ", price: 61 },
+  { id: "sc-pulse", name: "Pulse Mojito", kannada: "ಪಲ್ಸ್ ಮೋಜಿಟೋ", price: 61 },
+  { id: "sc-chill-mango", name: "Chill Mango Mojito", kannada: "ಚಿಲ್ಲ್ ಮೆಂತೆ ಮೋಜಿಟೋ", price: 61 }
+];
+
+const MILK_SHAKES = [
+  { id: "sc-chikko-ms", name: "Chikko Milk Shake", kannada: "ಚಿಕ್ಕೋ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-pomegranate-ms", name: "Pomegranate Milk Shake", kannada: "ದಾಲಿಂಬೆ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-chocolate-ms", name: "Chocolate Milk Shake", kannada: "ಚಾಕೋಲೇಟ್ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-apple-ms", name: "Apple Milk Shake", kannada: "ಸೇಬೆ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-cold-boost", name: "Cold Boost", kannada: "ಕೋಲ್ಡ್ ಬೂಸ್ಟ್", price: 71 },
+  { id: "sc-mango-ms", name: "Mango Milk Shake", kannada: "ಮೆಂತೆ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-strawberry-ms", name: "Strawberry Milk Shake", kannada: "ಸ್ಟ್ರಾಬೆರಿ ಮಿಲ್ಕ್ ಶೇಕ್", price: 71 },
+  { id: "sc-oreo-ms", name: "Oreo Milk Shake", kannada: "ಓರಿಯೋ ಮಿಲ್ಕ್ ಶೇಕ್", price: 81 },
+  { id: "sc-kitkat-ms", name: "Kit Kat Milk Shake", kannada: "ಕಿಟ್ ಕ್ಯಾಟ್ ಮಿಲ್ಕ್ ಶೇಕ್", price: 81 },
+  { id: "sc-butterscotch-ms", name: "Butterscotch Milk Shake", kannada: "ಬಟರ್ಸ್ಕೋಚ್ ಮಿಲ್ಕ್ ಶೇಕ್", price: 81 }
+];
+
+const COLD_COFFEE = [
+  { id: "sc-vanilla-cc", name: "Vanilla Cold Coffee", kannada: "ವೆನಿಲ್ಲಾ ಕೋಲ್ಡ್ ಕಾಫಿ", price: 77 },
+  { id: "sc-butterscotch-cc", name: "Butterscotch Cold Coffee", kannada: "ಬಟರ್ಸ್ಕೋಚ್ ಕೋಲ್ಡ್ ಕಾಫಿ", price: 81 },
+  { id: "sc-classic-cc", name: "Classic Cold Coffee", kannada: "ಕ್ಲಾಸಿಕ್ ಕೋಲ್ಡ್ ಕಾಫಿ", price: 81 },
+  { id: "sc-continental-cc", name: "Continental Cold Coffee", kannada: "ಕಾಂಟಿನೆಂಟಲ್ ಕೋಲ್ಡ್ ಕಾಫಿ", price: 81 }
+];
+
 const SNACKS_ITEMS = {
   "sandwiches": SHREESHA_SANDWICHES,
   "pasta": SHREESHA_PASTA,
   "corn-special": SHREESHA_CORN_SPECIAL,
   "cafe-special": SHREESHA_CAFE_SPECIAL,
   "combos-special": SHREESHA_COMBOS,
+};
+
+const JUICE_ITEMS = {
+  "fresh-juices": FRESH_JUICES,
+  "mojito": MOJITOS,
+  "milkshakes": MILK_SHAKES,
+  "cold-coffee": COLD_COFFEE,
 };
 
 export default function ShreeShaIndiaFiltered() {
@@ -107,8 +165,11 @@ export default function ShreeShaIndiaFiltered() {
   const isSnacksPath = location.pathname.includes('/snacks/');
   const isSnacksLanding = location.pathname === '/shreesha-cafe/snacks' || categorySlug === 'snacks';
   const isSnacksFilterDetail = sectionSlug && isSnacksPath;
+  const isJuicePath = location.pathname.includes('/juice/');
+  const isJuiceLanding = location.pathname === '/shreesha-cafe/juice' || categorySlug === 'juices';
+  const isJuiceFilterDetail = sectionSlug && isJuicePath;
   const isAllFilter = location.pathname === '/shreesha-cafe';
-  const isAllSubsection = location.pathname.match(/^\/shreesha-cafe\/[^\/]+$/) && sectionSlug && !isSnacksPath;
+  const isAllSubsection = location.pathname.match(/^\/shreesha-cafe\/[^\/]+$/) && sectionSlug && !isSnacksPath && !isJuicePath;
 
   // Handle snacks detail page (/shreesha-cafe/snacks/:sectionSlug)
   if (isSnacksFilterDetail) {
@@ -157,6 +218,60 @@ export default function ShreeShaIndiaFiltered() {
               english={s.english}
               kannada={s.kannada}
               onClick={() => navigate(`/shreesha-cafe/snacks/${s.slug}`)}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle juice detail page (/shreesha-cafe/juice/:sectionSlug)
+  if (isJuiceFilterDetail) {
+    const section = JUICE_SECTIONS.find(s => s.slug === sectionSlug);
+    const items = JUICE_ITEMS[sectionSlug] || [];
+
+    if (!section) {
+      return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug="juices" />;
+    }
+
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/shreesha-cafe/juice')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
+        </div>
+
+        <div className="items-list">
+          {items.map(item => (
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              kannada={item.kannada}
+              price={item.price}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle juice landing page (/shreesha-cafe/juice or /shreesha-cafe/filter/juices)
+  if (isJuiceLanding) {
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
+        </div>
+
+        <div className="section-list">
+          {JUICE_SECTIONS.map(s => (
+            <SectionCard
+              key={s.slug}
+              english={s.english}
+              kannada={s.kannada}
+              onClick={() => navigate(`/shreesha-cafe/juice/${s.slug}`)}
             />
           ))}
         </div>
