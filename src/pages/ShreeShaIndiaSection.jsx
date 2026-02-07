@@ -96,15 +96,12 @@ const DATA = {
     ["Salted Fries - Full", "", 81],
     ["Masala Fries - Half", "", 51],
     ["Masala Fries - Full", "", 81],
-    ["Vada Pav", "", 37],
-    ["Cheese Vada Pav", "", 47],
     ["Veg Roll (2)", "", 61],
     ["Cheese Veg Roll (2)", "", 51],
     ["Crispy Paneer Roll", "", 61],
     ["Corn Cheese Nuggets", "", 71],
     ["Corn Cheese Momos", "", 81],
     ["Veg Cutlet (2)", "", 61],
-    ["Pav Bhaji", "", 62],
     ["Peri Peri PVR Popcorn", "", 32],
     ["Mexican Cheese PVR Popcorn", "", 32],
     ["Salted PVR Popcorn", "", 32],
@@ -145,7 +142,7 @@ export default function ShreeShaIndiaSection(){
   if(!section){
     return (
       <div>
-        <button className="header-btn" onClick={()=>navigate('/shreesha-india')}>← Back</button>
+        <button className="header-btn" onClick={()=>navigate(-1)}>← Back</button>
         <h2 className="page-heading">Section not found</h2>
       </div>
     );
@@ -154,7 +151,7 @@ export default function ShreeShaIndiaSection(){
   return (
     <div>
       <div style={{position:'relative',padding:'8px 0'}}>
-        <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/shreesha-india')}>← Back</button>
+        <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate(-1)}>← Back</button>
 
         <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
           <h2 style={{margin:0}} className="page-heading">{section.english}</h2>

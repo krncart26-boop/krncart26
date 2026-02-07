@@ -3,6 +3,8 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import FilteredHotelPage from "./FilteredHotelPage";
 import SectionCard from "../components/SectionCard";
 import ItemCard from "../components/ItemCard";
+import { SHREESHA_CAFE_ICECREAM_ITEMS } from "../data/menus/shreeshaCafeIceCream";
+import { SHREESHA_CAFE_COMBO_ITEMS } from "../data/menus/shreeshaCafeCombo";
 
 // All filter categories
 const ALL_CATEGORIES = [
@@ -78,15 +80,12 @@ const SHREESHA_CAFE_SPECIAL = [
   { id: "sc-salted-fries-full", name: "Salted Fries - Full", kannada: "ಉಪ್ಪಿನ ಫ್ರೆಂಚ್ ಫ್ರೈಸ್ - ಪೂರ್ಣ", price: 81 },
   { id: "sc-masala-fries-half", name: "Masala Fries - Half", kannada: "ಮಸಾಲೆ ಫ್ರೆಂಚ್ ಫ್ರೈಸ್ - ಅರ್ಧ", price: 51 },
   { id: "sc-masala-fries-full", name: "Masala Fries - Full", kannada: "ಮಸಾಲೆ ಫ್ರೆಂಚ್ ಫ್ರೈಸ್ - ಪೂರ್ಣ", price: 81 },
-  { id: "sc-vada-pav", name: "Vada Pav", kannada: "ವಡೆ ಪಾವ್", price: 37 },
-  { id: "sc-cheese-vada-pav", name: "Cheese Vada Pav", kannada: "ಚೀಸ್ ವಡೆ ಪಾವ್", price: 47 },
   { id: "sc-veg-roll", name: "Veg Roll (2)", kannada: "ವೆಜ್ ರೋಲ್ (2)", price: 61 },
   { id: "sc-cheese-veg-roll", name: "Cheese Veg Roll (2)", kannada: "ಚೀಸ್ ವೆಜ್ ರೋಲ್ (2)", price: 51 },
   { id: "sc-crispy-paneer-roll", name: "Crispy Paneer Roll", kannada: "ಕ್ರಿಸ್ಪಿ ಪನೀರ್ ರೋಲ್", price: 61 },
   { id: "sc-corn-cheese-nuggets", name: "Corn Cheese Nuggets", kannada: "ಕಾರ್ನ್ ಚೀಸ್ ನಗೆಟ್ಸ್", price: 71 },
   { id: "sc-corn-cheese-momos", name: "Corn Cheese Momos", kannada: "ಕಾರ್ನ್ ಚೀಸ್ ಮೋಮೋ", price: 81 },
   { id: "sc-veg-cutlet", name: "Veg Cutlet (2)", kannada: "ವೆಜ್ ಕಟ್ಲೆಟ್ (2)", price: 61 },
-  { id: "sc-pav-bhaji", name: "Pav Bhaji", kannada: "ಪಾವ್ ಭಾಜಾ", price: 62 },
   { id: "sc-popcorn-periperi", name: "Peri Peri PVR Popcorn", kannada: "ಪೆರಿ ಪೆರಿ ಪಾಪ್ಕಾರ್ನ್", price: 32 },
   { id: "sc-popcorn-cheese", name: "Mexican Cheese PVR Popcorn", kannada: "ಮೆಕ್ಸಿಕನ್ ಚೀಸ್ ಪಾಪ್ಕಾರ್ನ್", price: 32 },
   { id: "sc-popcorn-salted", name: "Salted PVR Popcorn", kannada: "ಉಪ್ಪಿನ ಪಾಪ್ಕಾರ್ನ್", price: 32 }
@@ -183,7 +182,7 @@ export default function ShreeShaIndiaFiltered() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/shreesha-cafe/snacks')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -207,7 +206,7 @@ export default function ShreeShaIndiaFiltered() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
         </div>
 
@@ -237,7 +236,7 @@ export default function ShreeShaIndiaFiltered() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/shreesha-cafe/juice')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -261,7 +260,7 @@ export default function ShreeShaIndiaFiltered() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
         </div>
 
@@ -284,7 +283,7 @@ export default function ShreeShaIndiaFiltered() {
     return (
       <div>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
         </div>
 
@@ -304,25 +303,115 @@ export default function ShreeShaIndiaFiltered() {
 
   // Handle all filter subsection (/shreesha-cafe/:sectionSlug) - route to snacks or juices
   if (isAllSubsection && sectionSlug) {
-    // Map ALL_CATEGORIES slugs to SNACKS/JUICE_SECTIONS slugs
-    const slugMappings = {
+    // Handle ice-creams directly
+    if (sectionSlug === 'ice-creams') {
+      return (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
+            <h2 style={{ margin: 0 }} className="page-heading">Ice Creams</h2>
+          </div>
+
+          <div className="items-list">
+            {SHREESHA_CAFE_ICECREAM_ITEMS.map(item => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                kannada={item.kannada}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Handle combos-specials directly
+    if (sectionSlug === 'combos-specials') {
+      return (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
+            <h2 style={{ margin: 0 }} className="page-heading">Combos Specials</h2>
+          </div>
+
+          <div className="items-list">
+            {SHREESHA_CAFE_COMBO_ITEMS.map(item => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                kannada={item.kannada}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Handle snacks items directly (sandwiches, pasta, corn-special, cafe-special)
+    const snacksItems = SNACKS_ITEMS[sectionSlug];
+    if (snacksItems) {
+      const sectionName = sectionSlug.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
+            <h2 style={{ margin: 0 }} className="page-heading">{sectionName}</h2>
+          </div>
+          <div className="items-list">
+            {snacksItems.map(item => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                kannada={item.kannada}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Handle juice items directly (fresh-fruit-juice, mojitos, milkshakes, cold-coffee)
+    // Map ALL_CATEGORIES slugs to JUICE_ITEMS slugs
+    const juiceMappings = {
       'fresh-fruit-juice': 'fresh-juices',
       'mojitos': 'mojito',
-      'ice-creams': null, // Not in any section
+      'milkshakes': 'milkshakes',
+      'cold-coffee': 'cold-coffee',
     };
+    const juiceSlug = juiceMappings[sectionSlug];
+    const juiceItems = juiceSlug ? JUICE_ITEMS[juiceSlug] : null;
     
-    const mappedSlug = slugMappings[sectionSlug] || sectionSlug;
-    
-    // Check if this category belongs to snacks or juices
-    const isSnacksCategory = SNACKS_SECTIONS.some(s => s.slug === sectionSlug);
-    const isJuicesCategory = JUICE_SECTIONS.some(s => s.slug === mappedSlug);
-    
-    if (isSnacksCategory) {
-      navigate(`/shreesha-cafe/snacks/${sectionSlug}`);
-    } else if (isJuicesCategory && mappedSlug) {
-      navigate(`/shreesha-cafe/juice/${mappedSlug}`);
+    if (juiceItems) {
+      const sectionName = sectionSlug.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      return (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
+            <h2 style={{ margin: 0 }} className="page-heading">{sectionName}</h2>
+          </div>
+          <div className="items-list">
+            {juiceItems.map(item => (
+              <ItemCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                kannada={item.kannada}
+                price={item.price}
+              />
+            ))}
+          </div>
+        </div>
+      );
     }
-    return null;
+
+    // Fallback for unknown category
+    return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug={sectionSlug} />;
   }
 
   // Default fallback
