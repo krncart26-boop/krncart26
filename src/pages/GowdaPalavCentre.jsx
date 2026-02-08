@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
 
 const ITEMS = [
-  { id: 'chicken-pulav-full', name: 'Chicken Pulav (Full)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 139.99 },
-  { id: 'chicken-pulav-half', name: 'Chicken Pulav (Half)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 89.99 },
+  { id: 'chicken-palav-full', name: 'Chicken Palav (Full)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 139.99 },
+  { id: 'chicken-palav-half', name: 'Chicken Palav (Half)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 89.99 },
 
   { id: 'mutton-pulav-full', name: 'Mutton Pulav (Full)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 239.99 },
   { id: 'mutton-pulav-half', name: 'Mutton Pulav (Half)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 139.99 },
@@ -33,8 +33,8 @@ const ITEMS = [
   { id: 'keema-fry-full', name: 'Keema Fry (Full)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 209.99 },
   { id: 'keema-fry-half', name: 'Keema Fry (Half)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 109.99 },
 
-  { id: 'nati-koli-pulav-full', name: 'Nati Koli Pulav (Full)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 159.99 },
-  { id: 'nati-koli-pulav-half', name: 'Nati Koli Pulav (Half)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 99.99 },
+  { id: 'nati-koli-palav-full', name: 'Nati Koli Palav (Full)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 159.99 },
+  { id: 'nati-koli-palav-half', name: 'Nati Koli Palav (Half)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 99.99 },
 ];
 
 export default function GowdaPalavCentre(){
@@ -58,6 +58,15 @@ export default function GowdaPalavCentre(){
           <div className="timing-title">Available Today</div>
           <div className="timing-time">12:00 PM – 5:00 PM</div>
           <div className="timing-sub">Limited hours – order early</div>
+        </div>
+      </div>
+
+      {/* Monday Closed Banner */}
+      <div style={{ backgroundColor: '#fee2e2', borderLeft: '4px solid #dc2626', padding: '12px 16px', margin: '12px 0', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <span style={{ fontSize: '20px' }}>🚫</span>
+        <div>
+          <div style={{ fontWeight: '600', color: '#991b1b', marginBottom: '2px' }}>Closed on Mondays</div>
+          <div style={{ fontSize: '0.9em', color: '#b91c1c' }}>We're closed every Monday. Please plan your order accordingly.</div>
         </div>
       </div>
 

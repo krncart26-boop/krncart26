@@ -19,6 +19,7 @@ export default function ItemCard({ id, name, kannada, price }){
       'vb-bakery': 'VB Bakery',
       'ice-magic': 'Ice Magic',
       'udupi-hotel': 'Udupi Hotel',
+      'udupi-palace': 'Udupi Palace',
       'krn-restaurant': 'KRN Restaurant',
       'gowda-palav-centre': 'Gowda Palav Centre',
       'tirumala-juice': 'Tirumala Juice',
@@ -28,6 +29,12 @@ export default function ItemCard({ id, name, kannada, price }){
       'sanju-gobi-house': 'Sanju Gobi House',
       'keshava-chats': 'Keshava Chats',
       'juice-junction': 'Lakshmi Juice Corner',
+      'lakshmi-juice-corner': 'Lakshmi Juice Corner',
+      'ayyangars-bakery': 'Ayyangars Bakery',
+      'shreesha-india': 'ShreeSha India',
+      'shreesha-cafe': 'ShreeSha cafe',
+      'ganis-restaurant': "Gani's Restaurant",
+      'popular-biriyani-palace': 'Popular Biriyani Palace',
     };
 
     if(map[first]) return map[first];
@@ -40,8 +47,13 @@ export default function ItemCard({ id, name, kannada, price }){
     const parts = pathname.split('/').filter(Boolean);
     if(parts.length <= 1) return null; // No subsection if only hotel name
     
-    // Get everything after the hotel name as subsection
-    const subsectionParts = parts.slice(1);
+    // Remove the hotel name and 'filter' keyword from path
+    let subsectionParts = parts.slice(1);
+    if(subsectionParts[0] === 'filter') {
+      subsectionParts = subsectionParts.slice(1);
+    }
+    
+    if(subsectionParts.length === 0) return null;
     
     // Format: convert slugs to readable names
     const formatted = subsectionParts.map(part => {

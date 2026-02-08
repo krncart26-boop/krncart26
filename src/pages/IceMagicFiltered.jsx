@@ -5,6 +5,21 @@ import IceMagicJuiceFiltered from "./IceMagicJuiceFiltered";
 import SectionCard from "../components/SectionCard";
 import ItemCard from "../components/ItemCard";
 
+const ICE_CREAM_SUNDAES_SECTIONS = [
+  { english: "IM SPECIAL ICE CREAM", kannada: "ಐಎಂ ಸ್ಪೆಶಲ್ ಐಸ್ ಕ್ರೀಮ್", slug: "im-special-ice-cream" },
+  { english: "PASTRY", kannada: "ಪೇಸ್ಟ್ರಿ", slug: "pastry" },
+  { english: "ICE CREAM SHAKES", kannada: "ಐಸ್ ಕ್ರೀಮ್ ಶೇಕ್ಸ್", slug: "ice-cream-shakes" },
+  { english: "MILK SHAKE WITH ICE CREAM", kannada: "ಮಿಲ್ಕ್ ಶೇಕ್ ವಿಥ್ ಐಸ್ ಕ್ರೀಮ್", slug: "milk-shake-with-ice-cream" },
+  { english: "MILK SHAKES", kannada: "ಮಿಲ್ಕ್ ಶೇಕ್ಸ್", slug: "milk-shakes" },
+  { english: "GUDBUD & SPECIAL SUNDAES", kannada: "ಗುಡ್ಬುಡ್ ಸ್ಪೆಷಲ್ ಸುಂಡೆ", slug: "gudbud" },
+  { english: "MAGIC SUNDAES", kannada: "ಮ್ಯಾಜಿಕ್ ಸುಂಡೆ", slug: "magic-sundaes" },
+  { english: "FALOODA", kannada: "ಫಾಲೂದಾ", slug: "falooda" },
+  { english: "ROYAL SUNDAES", kannada: "ರಾಯಲ್ ಸುಂಡೆ", slug: "royal-sundaes" },
+  { english: "KIDS ZONE", kannada: "ಕಿಡ್ಸ್ জೋನ್", slug: "kids-zone" },
+  { english: "CHOCOLATE SUNDAES", kannada: "ಚಾಕೊಲೇಟ್ ಸುಂಡೆ", slug: "chocolate-sundaes" },
+  { english: "CAKE WITH ICE CREAM", kannada: "ಕೇಕ್ ವಿಥ್ ಐಸ್ ಕ್ರೀಮ್", slug: "cake-with-ice-cream" }
+];
+
 const SNACKS_SECTIONS = [
   { english: "Starters", kannada: "ಸ್ಟಾರ್ಟರ್ಸ್", slug: "starters" },
   { english: "Veg Momos", kannada: "ವೆಜ್ ಮೋಮೋ", slug: "veg-momos" },
@@ -121,6 +136,168 @@ const SNACKS_ITEMS = {
   "shawarma": IM_SHAWARMA,
 };
 
+// Ice Cream & Sundaes Items
+const IM_SPECIAL_ICE_CREAM = [
+  { id: "im-ice-1", name: "Train Cassatta", kannada: "ಟ್ರೈನ್ ಕಸಾಟಾ", price: 210 },
+  { id: "im-ice-2", name: "Premium Falooda", kannada: "ಪ್ರೀಮಿಯಂ ಫಾಲೂದಾ", price: 210 },
+  { id: "im-ice-3", name: "Hot DBC with Ice Cream", kannada: "ಹಾಟ್ ಡಿಬಿಸಿ ವಿತ್ ಐಸ್ ಕ್ರೀಮ್", price: 160 },
+  { id: "im-ice-4", name: "Hot Brownie with Ice Cream", kannada: "ಹಾಟ್ ಬ್ರೌನಿ ವಿತ್ ಐಸ್ ಕ್ರೀಮ್", price: 140 }
+];
+
+const IM_PASTRY = [
+  { id: "im-pas-1", name: "Hot Choco Lava", kannada: "ಹಾಟ್ ಚಾಕೊ ಲಾವಾ", price: 70 },
+  { id: "im-pas-2", name: "Caramel Dry Fruit", kannada: "ಕ್ಯಾರೆಮೆಲ್ ಡ್ರೈ ಫ್ರೂಟ್", price: 90 },
+  { id: "im-pas-3", name: "Black Forest", kannada: "ಬ್ಲ್ಯಾಕ್ ಫಾರೆಸ್ಟ್", price: 85 },
+  { id: "im-pas-4", name: "Pineapple", kannada: "ಪೈನಾಪಲ್", price: 75 },
+  { id: "im-pas-5", name: "Chocolate Truffle", kannada: "ಚಾಕೊಲೇಟ್ ಟ್ರಫಲ್", price: 90 },
+  { id: "im-pas-6", name: "Red Velvet", kannada: "ರೆಡ್ ವೆಲ್ವೆಟ್", price: 100 },
+  { id: "im-pas-7", name: "Donuts", kannada: "ಡೋನಟ್ಸ್", price: 50 }
+];
+
+const IM_ICE_CREAM_SHAKES = [
+  { id: "im-ics-1", name: "Vanilla", kannada: "ವನಿಲ್ಲ", price: 90 },
+  { id: "im-ics-2", name: "Strawberry", kannada: "ಹಸುಬೆರಿ", price: 90 },
+  { id: "im-ics-3", name: "Pista", kannada: "ಪಿಸ್ತಾ", price: 100 },
+  { id: "im-ics-4", name: "Mango", kannada: "ಮಾವಿನ", price: 100 },
+  { id: "im-ics-5", name: "Chocolate", kannada: "ಚಾಕೊಲೇಟ್", price: 100 },
+  { id: "im-ics-6", name: "Coffee", kannada: "ಕಾಫಿ", price: 100 },
+  { id: "im-ics-7", name: "Butterscotch", kannada: "ಬಟರ್‌ಸ್ಕಾಚ್", price: 110 },
+  { id: "im-ics-8", name: "Spanish Delight", kannada: "ಸ್ಪ್ಯಾನಿಷ್ ಡೆಲೈಟ್", price: 110 },
+  { id: "im-ics-9", name: "Black Current", kannada: "ಕಪ್ಪು ಕರಪಾಯ", price: 100 },
+  { id: "im-ics-10", name: "Kesar Pista", kannada: "ಕೇಸರಿ ಪಿಸ್ತಾ", price: 100 },
+  { id: "im-ics-11", name: "Pineapple", kannada: "ಪೈನಾಪಲ್", price: 100 },
+  { id: "im-ics-12", name: "Orange", kannada: "ಕಿತ್ತಳೆ", price: 100 },
+  { id: "im-ics-13", name: "Fig / Honey", kannada: "ಅಂಜೂರ / ಹನಿ", price: 110 },
+  { id: "im-ics-14", name: "Kulfi", kannada: "ಕುಲ್ಫಿ", price: 110 },
+  { id: "im-ics-15", name: "Dry Fruits", kannada: "ಡ್ರೈ ಫ್ರೂಟ್ಸ್", price: 110 }
+];
+
+const IM_MILK_SHAKE_WITH_ICE_CREAM = [
+  { id: "im-mswic-1", name: "Sharjah with Chocolate", kannada: "ಶಾರ್ಜಾ ವಿತ್ ಚಾಕೊಲೇಟ್", price: 100 },
+  { id: "im-mswic-2", name: "Coffee with Vanilla", kannada: "ಕಾಫಿ ವಿತ್ ವನಿಲ್ಲ", price: 100 },
+  { id: "im-mswic-3", name: "Mango with Vanilla", kannada: "ಮಾವಿನ ವಿತ್ ವನಿಲ್ಲ", price: 110 },
+  { id: "im-mswic-4", name: "Chicku with Vanilla", kannada: "ಚಿಕ್ಕು ವಿತ್ ವನಿಲ್ಲ", price: 100 },
+  { id: "im-mswic-5", name: "Dates with Vanilla", kannada: "ಖಜೂರ ವಿತ್ ವನಿಲ್ಲ", price: 110 },
+  { id: "im-mswic-6", name: "Anar with Vanilla", kannada: "ದಾಳಿಂಬೆ ವಿತ್ ವನಿಲ್ಲ", price: 110 },
+  { id: "im-mswic-7", name: "Apple with Vanilla", kannada: "ಸೇಬು ವಿತ್ ವನಿಲ್ಲ", price: 110 },
+  { id: "im-mswic-8", name: "Anjeer with Vanilla", kannada: "ಅಂಜೂರ ವಿತ್ ವನಿಲ್ಲ", price: 120 },
+  { id: "im-mswic-9", name: "Dry Fruits with Vanilla", kannada: "ಡ್ರೈ ಫ್ರೂಟ್ಸ್ ವಿತ್ ವನಿಲ್ಲ", price: 120 }
+];
+
+const IM_MILK_SHAKES = [
+  { id: "im-ms-1", name: "Apple Shake", kannada: "ಸೇಬು ಶೇಕ್", price: 80 },
+  { id: "im-ms-2", name: "Chicku Shake", kannada: "ಚಿಕ್ಕು ಶೇಕ್", price: 80 },
+  { id: "im-ms-3", name: "Mango Shake (Seasonal)", kannada: "ಮಾವಿನ ಶೇಕ್", price: 90 },
+  { id: "im-ms-4", name: "Sharjah Shake", kannada: "ಶಾರ್ಜಾ ಶೇಕ್", price: 80 },
+  { id: "im-ms-5", name: "Anar Shake", kannada: "ದಾಳಿಂಬೆ ಶೇಕ್", price: 90 },
+  { id: "im-ms-6", name: "Dates Shake", kannada: "ಖಜೂರ ಶೇಕ್", price: 100 },
+  { id: "im-ms-7", name: "Cold Coffee Shake", kannada: "ಕೋಲ್ಡ್ ಕಾಫಿ ಶೇಕ್", price: 80 },
+  { id: "im-ms-8", name: "Kiwi Shake", kannada: "ಕಿವಿ ಶೇಕ್", price: 90 },
+  { id: "im-ms-9", name: "Ice Magic Special Shake", kannada: "ಐಸ್ ಮ್ಯಾಜಿಕ್ ಸ್ಪೆಷಲ್ ಶೇಕ್", price: 100 },
+  { id: "im-ms-10", name: "Nerale Hannu (Seasonal)", kannada: "ನೆರಳೆ ಹನ್ನು", price: 90 },
+  { id: "im-ms-11", name: "Papaya Shake", kannada: "ಪಪ್ಪಾಯ ಶೇಕ್", price: 80 },
+  { id: "im-ms-12", name: "Cocktail Shake", kannada: "ಕಾಕ್ಟೈಲ್ ಶೇಕ್", price: 90 },
+  { id: "im-ms-13", name: "Rose Shake", kannada: "ರೋಜೆ ಶೇಕ್", price: 80 },
+  { id: "im-ms-14", name: "Butter Shake (Seasonal)", kannada: "ಬೆಣ್ಣೆ ಶೇಕ್", price: 100 },
+  { id: "im-ms-15", name: "Guava Shake", kannada: "ಕಾಯಿ ಶೇಕ್", price: 90 },
+  { id: "im-ms-16", name: "Red Cherry Shake", kannada: "ಕೆಂಪು ಚೆರಿ ಶೇಕ್", price: 80 },
+  { id: "im-ms-17", name: "Musk Melon Shake", kannada: "ಕಸ್ತೂರಿ ಕ್ಷೀರಸ ಶೇಕ್", price: 70 },
+  { id: "im-ms-18", name: "Water Melon Shake", kannada: "ಮಣ್ಣಿನ ಕುಂಬಳಕಾಯ ಶೇಕ್", price: 80 },
+  { id: "im-ms-19", name: "Fresh Strawberry Shake", kannada: "ತಾಜೆ ಹಸುಬೆರಿ ಶೇಕ್", price: 90 },
+  { id: "im-ms-20", name: "Sitaphala Shake (Seasonal)", kannada: "ಸೀತಾಫಲ ಶೇಕ್", price: 90 },
+  { id: "im-ms-21", name: "Blue Berry Shake", kannada: "ನೀಲಿ ಬೆರಿ ಶೇಕ್", price: 90 },
+  { id: "im-ms-22", name: "Grapes Shake (Seasonal)", kannada: "ದ್ರಾಕ್ಷೆ ಶೇಕ್", price: 90 },
+  { id: "im-ms-23", name: "Anjeer Shake", kannada: "ಅಂಜೂರ ಶೇಕ್", price: 110 },
+  { id: "im-ms-24", name: "Badam Shake", kannada: "ಬಾದಾಮ ಶೇಕ್", price: 90 },
+  { id: "im-ms-25", name: "Oreo Shake", kannada: "ಓರಿಯೋ ಶೇಕ್", price: 90 },
+  { id: "im-ms-26", name: "Dry Fruits Shake", kannada: "ಡ್ರೈ ಫ್ರೂಟ್ಸ್ ಶೇಕ್", price: 110 },
+  { id: "im-ms-27", name: "Kit Kat Shake", kannada: "ಕಿಟ್ ಕ್ಯಾಟ್ ಶೇಕ್", price: 110 }
+];
+
+const IM_GUDBUD = [
+  { id: "im-gub-1", name: "Exotic Fruits Salad", kannada: "ಎಕ್ಸೋಟಿಕ್ ಫ್ರೂಟ್ಸ್ ಸಾಲೆಡ್", price: 90 },
+  { id: "im-gub-2", name: "Mix Beauty", kannada: "ಮಿಕ್ಸ್ ಬ್ಯೂಟಿ", price: 130 },
+  { id: "im-gub-3", name: "Pink Berry Gudbud", kannada: "ಪಿಂಕ್ ಬೆರಿ ಗುಡ್ಬುಡ್", price: 130 },
+  { id: "im-gub-4", name: "Dry Fruits Custard", kannada: "ಡ್ರೈ ಫ್ರೂಟ್ಸ್ ಕಸ್ಟರ್ಡ್", price: 110 },
+  { id: "im-gub-5", name: "Toffee Sneak", kannada: "ಟಾಫಿ ಸ್ನೀಕ್", price: 160 }
+];
+
+const IM_MAGIC_SUNDAES = [
+  { id: "im-ms-1", name: "Honeymoon Dreams", kannada: "ಹನಿಮೂನ್ ಡ್ರೀಮ್ಸ್", price: 120 },
+  { id: "im-ms-2", name: "Teenage Craze", kannada: "ಟೀನೇಜ್ ಕ್ರೇಜ್", price: 130 },
+  { id: "im-ms-3", name: "Ocean Deep", kannada: "ಓಷನ್ ಡೀಪ್", price: 130 },
+  { id: "im-ms-4", name: "Pistachio", kannada: "ಪಿಸ್ತಾಚುಷ್ಟ", price: 130 },
+  { id: "im-ms-5", name: "Honey Nuts", kannada: "ಹನಿ ನಟ್ಸ್", price: 140 },
+  { id: "im-ms-6", name: "Touch Me Not", kannada: "ಟಚ್ ಮೀ ನಾಟ್", price: 130 },
+  { id: "im-ms-7", name: "Mimosa Floats", kannada: "ಮಿಮೋಸಾ ಫ್ಲೋಟ್ಸ್", price: 130 },
+  { id: "im-ms-8", name: "Punch Bowl", kannada: "ಪಂಚ್ ಬೌಲ್", price: 130 },
+  { id: "im-ms-9", name: "Candy Crush", kannada: "ಕ್ಯಾಂಡಿ ಕ್ರಷ್", price: 130 },
+  { id: "im-ms-10", name: "Berry Blast", kannada: "ಬೆರಿ ಬ್ಲಾಸ್ಟ್", price: 130 },
+  { id: "im-ms-11", name: "Temptation", kannada: "ಟೆಮ್ಪ್ಟೇಶನ್", price: 140 }
+];
+
+const IM_FALOODA = [
+  { id: "im-fal-1", name: "Falooda Queen", kannada: "ಫಾಲೂದಾ ಕ್ವೀನ್", price: 120 },
+  { id: "im-fal-2", name: "Royal Falooda", kannada: "ರಾಯಲ್ ಫಾಲೂದಾ", price: 140 },
+  { id: "im-fal-3", name: "Mango Light", kannada: "ಮಾವಿನ ಲೈಟ್", price: 150 },
+  { id: "im-fal-4", name: "Kesar Knights", kannada: "ಕೇಸರಿ ನೈಟ್ಸ್", price: 150 },
+  { id: "im-fal-5", name: "Badam Corniche", kannada: "ಬಾದಾಮ್ ಕಾರ್ನಿಸ್", price: 150 },
+  { id: "im-fal-6", name: "IM Special Falooda", kannada: "ಐಎಂ ಸ್ಪೆಷಲ್ ಫಾಲೂದಾ", price: 170 }
+];
+
+const IM_ROYAL_SUNDAES = [
+  { id: "im-rs-1", name: "Titanic Sundae", kannada: "ಟೈಟಾನಿಕ್ ಸುಂಡೆ", price: 150 },
+  { id: "im-rs-2", name: "Triangle Love", kannada: "ಟ್ರಾಂಗೆಲ್ ಲವ್", price: 160 },
+  { id: "im-rs-3", name: "Caribbean Snow Ball", kannada: "ಕ್ಯಾರಿಬಿಯನ್ ಸ್ನೋ ಬಾಲ್", price: 160 },
+  { id: "im-rs-4", name: "Island Fish", kannada: "ಐಲ್ಯಾಂಡ್ ಫಿಶ್", price: 160 },
+  { id: "im-rs-5", name: "Apple Split", kannada: "ಸೇಬು ಸ್ಪ್ಲಿಟ್", price: 160 },
+  { id: "im-rs-6", name: "Banana Split", kannada: "ಬನಾನಾ ಸ್ಪ್ಲಿಟ್", price: 160 },
+  { id: "im-rs-7", name: "Cashew Delight", kannada: "ಕಾಜು ಡೆಲೈಟ್", price: 170 },
+  { id: "im-rs-8", name: "The Great Pyramid", kannada: "ದ್য ಗ್ರೇಟ್ ಪಿರಾಮಿಡ್", price: 170 }
+];
+
+const IM_KIDS_ZONE = [
+  { id: "im-kz-1", name: "Disneyland", kannada: "ಡಿಸ್ನೆಲ್ಯಾಂಡ್", price: 140 },
+  { id: "im-kz-2", name: "Snow White", kannada: "ಸ್ನೋ ವೈಟ್", price: 140 },
+  { id: "im-kz-3", name: "Tom & Jerry", kannada: "ಟಾಮ್ ಆಂಡ್ ಜೆರಿ", price: 140 }
+];
+
+const IM_CHOCOLATE_SUNDAES = [
+  { id: "im-cs-1", name: "Chocolate Fudge", kannada: "ಚಾಕೊಲೇಟ್ ಫಡ್ಜ್", price: 140 },
+  { id: "im-cs-2", name: "Chocolate Darling", kannada: "ಚಾಕೊಲೇಟ್ ಡಾರ್ಲಿಂಗ್", price: 140 },
+  { id: "im-cs-3", name: "Oreo Delight", kannada: "ಓರಿಯೋ ಡೆಲೈಟ್", price: 140 },
+  { id: "im-cs-4", name: "Kit Kat Kiss", kannada: "ಕಿಟ್ ಕ್ಯಾಟ್ ಕಿಸ್", price: 140 },
+  { id: "im-cs-5", name: "Hot Chocolate Fudge", kannada: "ಹಾಟ್ ಚಾಕೊಲೇಟ್ ಫಡ್ಜ್", price: 150 },
+  { id: "im-cs-6", name: "Choco Mellow", kannada: "ಚಾಕೊ ಮೆಲೋ", price: 150 },
+  { id: "im-cs-7", name: "Chocolate Fantasy", kannada: "ಚಾಕೊಲೇಟ್ ಫ್ಯಾಂಟಸಿ", price: 160 },
+  { id: "im-cs-8", name: "Choco Spider", kannada: "ಚಾಕೊ ಸ್ಪೈಡರ್", price: 160 },
+  { id: "im-cs-9", name: "Hot Chocolate Fantasy", kannada: "ಹಾಟ್ ಚಾಕೊಲೇಟ್ ಫ್ಯಾಂಟಸಿ", price: 170 },
+  { id: "im-cs-10", name: "Choco Heaven", kannada: "ಚಾಕೊ ಹೆವನ್", price: 170 },
+  { id: "im-cs-11", name: "Choco Toast", kannada: "ಚಾಕೊ ಟೋಸ್ಟ್", price: 170 }
+];
+
+const IM_CAKE_WITH_ICE_CREAM = [
+  { id: "im-cwic-1", name: "French Vanilla", kannada: "ಫ್ರೆಂಚ್ ವನಿಲ್ಲ", price: 150 },
+  { id: "im-cwic-2", name: "Caribbean Chocolate", kannada: "ಕ್ಯಾರಿಬಿಯನ್ ಚಾಕೊಲೇಟ್", price: 160 },
+  { id: "im-cwic-3", name: "Pine Magic", kannada: "ಪೈನ್ ಮ್ಯಾಜಿಕ್", price: 160 },
+  { id: "im-cwic-4", name: "Black Magic", kannada: "ಬ್ಲ್ಯಾಕ್ ಮ್ಯಾಜಿಕ್", price: 160 }
+];
+
+const ICE_CREAM_ITEMS = {
+  "im-special-ice-cream": IM_SPECIAL_ICE_CREAM,
+  "pastry": IM_PASTRY,
+  "ice-cream-shakes": IM_ICE_CREAM_SHAKES,
+  "milk-shake-with-ice-cream": IM_MILK_SHAKE_WITH_ICE_CREAM,
+  "milk-shakes": IM_MILK_SHAKES,
+  "gudbud": IM_GUDBUD,
+  "magic-sundaes": IM_MAGIC_SUNDAES,
+  "falooda": IM_FALOODA,
+  "royal-sundaes": IM_ROYAL_SUNDAES,
+  "kids-zone": IM_KIDS_ZONE,
+  "chocolate-sundaes": IM_CHOCOLATE_SUNDAES,
+  "cake-with-ice-cream": IM_CAKE_WITH_ICE_CREAM
+};
+
 export default function IceMagicFiltered() {
   const { sectionSlug, categorySlug } = useParams();
   const navigate = useNavigate();
@@ -135,6 +312,63 @@ export default function IceMagicFiltered() {
   const isSnacksPath = location.pathname.includes('/snacks/');
   const isSnacksLanding = location.pathname === '/ice-magic/snacks' || categorySlug === 'snacks';
   const isSnacksDetail = sectionSlug && isSnacksPath;
+
+  const isIceCreamPath = location.pathname.includes('/ice-cream-sundaes/');
+  const isIceCreamLanding = location.pathname === '/ice-magic/filter/ice-cream-sundaes' || location.pathname === '/ice-magic/ice-cream-sundaes' || categorySlug === 'ice-cream-sundaes';
+  const isIceCreamDetail = sectionSlug && isIceCreamPath;
+
+  // Handle ice cream detail page (/ice-magic/ice-cream-sundaes/:sectionSlug)
+  if (isIceCreamDetail) {
+    const section = ICE_CREAM_SUNDAES_SECTIONS.find(s => s.slug === sectionSlug);
+    const items = ICE_CREAM_ITEMS[sectionSlug] || [];
+
+    if (!section) {
+      return <FilteredHotelPage hotelName="Ice Magic" categorySlug="ice-cream-sundaes" />;
+    }
+
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/ice-magic/ice-cream-sundaes')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
+        </div>
+
+        <div className="items-list">
+          {items.map(item => (
+            <ItemCard
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              kannada={item.kannada}
+              price={item.price}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  // Handle ice cream landing page (/ice-magic/filter/ice-cream-sundaes)
+  if (isIceCreamLanding) {
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <h2 style={{ margin: 0 }} className="page-heading">Ice Magic - Ice Cream & Sundaes</h2>
+        </div>
+        <div className="section-list">
+          {ICE_CREAM_SUNDAES_SECTIONS.map(section => (
+            <SectionCard
+              key={section.slug}
+              english={section.english}
+              kannada={section.kannada}
+              onClick={() => navigate(`/ice-magic/ice-cream-sundaes/${section.slug}`)}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   // Handle snacks detail page (/ice-magic/snacks/:sectionSlug)
   if (isSnacksDetail) {

@@ -14,7 +14,6 @@ const SECTIONS = [
   { english: "🧒 KIDS ZONE", kannada: "", slug: "kids-zone" },
   { english: "🍫 CHOCOLATE SUNDAES", kannada: "", slug: "chocolate-sundaes" },
   { english: "🍰 CAKE WITH ICE CREAM", kannada: "", slug: "cake-with-ice-cream" },
-  { english: "🍨 ICE CREAM SCOOPS", kannada: "", slug: "ice-cream-scoops" },
   { english: "🥤 ICE CREAM SHAKES", kannada: "ಐಸ್ ಕ್ರೀಮ್ ಶೇಕ್ಸ್", slug: "ice-cream-shakes" },
   { english: "🥛 MILK SHAKE WITH ICE CREAM", kannada: "ಐಸ್ ಕ್ರೀಮ್ ಮಿಲ್ಕ್ ಶೇಕ್", slug: "milk-shake-with-ice-cream" },
   { english: "🥤 MILK SHAKES", kannada: "ಮಿಲ್ಕ್ ಶೇಕ್ಸ್", slug: "milk-shakes" },

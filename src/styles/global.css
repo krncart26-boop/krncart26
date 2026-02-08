@@ -4,72 +4,77 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
   }
   .hotel-card {
-    width: calc(50% - 5px);
-    min-width: 130px;
-    height: 170px;
-    font-size: 12px;
-    padding: 10px;
-    border-radius: 12px;
+    width: calc(33.333% - 4px);
+    min-width: 100px;
+    height: 80px;
+    font-size: 10px;
+    padding: 6px;
+    border-radius: 10px;
   }
   .hotel-card .hotel-image {
-    height: 70px;
-    font-size: 28px;
-    margin-bottom: 6px;
+    height: 30px;
+    font-size: 18px;
+    margin-bottom: 2px;
   }
   .hotel-card .hotel-name {
-    font-size: 12px;
+    font-size: 9px;
+    font-weight: 800;
+    line-height: 1.05;
   }
   .hotel-card .hotel-meta {
-    font-size: 10px;
+    font-size: 7px;
   }
 }
 @media (max-width: 480px) {
   .hotel-grid {
     flex-direction: row;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
     justify-content: flex-start;
   }
   .hotel-card {
-    width: calc(50% - 4px);
-    min-width: 120px;
-    height: 160px;
-    font-size: 11px;
-    padding: 8px;
+    width: calc(33.333% - 4px);
+    min-width: 95px;
+    height: 78px;
+    font-size: 9px;
+    padding: 6px;
     border-radius: 10px;
     margin: 0;
   }
   .hotel-card .hotel-image {
-    height: 65px;
-    font-size: 26px;
-    margin-bottom: 4px;
+    height: 28px;
+    font-size: 16px;
+    margin-bottom: 2px;
   }
   .hotel-card .hotel-name {
-    font-size: 11px;
-    line-height: 1.2;
+    font-size: 8px;
+    line-height: 1.05;
+    font-weight: 800;
   }
   .hotel-card .hotel-meta {
-    font-size: 9px;
-    gap: 2px;
+    font-size: 6px;
+    gap: 1px;
   }
 }
 
 @media (max-width: 320px) {
   .hotel-card {
-    font-size: 10px;
-    padding: 6px;
-    height: 150px;
-    width: calc(50% - 3px);
+    font-size: 8px;
+    padding: 5px;
+    height: 75px;
+    width: calc(33.333% - 4px);
   }
   .hotel-card .hotel-image {
-    height: 60px;
-    font-size: 24px;
+    height: 26px;
+    font-size: 14px;
+    margin-bottom: 1px;
   }
   .hotel-card .hotel-name {
-    font-size: 10px;
+    font-size: 8px;
+    font-weight: 800;
   }
 }
 
@@ -251,7 +256,7 @@
   --rounded: 14px;
   --header-gradient: linear-gradient(135deg, #4DB8E8 0%, #3A9DD4 100%);
   --card-gradient: linear-gradient(135deg, #C41E3A 0%, #A91B2F 100%);
-  --promo-gradient: linear-gradient(135deg, #C41E3A 0%, #A91B2F 50%, #8B1428 100%);
+  --promo-gradient: linear-gradient(135deg, #E87722 0%, #F58B52 100%);
   --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
   --shadow-lg: 0 8px 24px rgba(0,0,0,0.15);
@@ -272,7 +277,7 @@ body{
 }
 
 .app-root{min-height:100vh;display:flex;flex-direction:column;padding-bottom:70px;overflow-x:hidden;width:100%;} /* space for bottom nav */
-.app-content{flex:1;padding:12px;padding-bottom:90px;width:100%;max-width:100%;box-sizing:border-box;overflow-x:hidden;}
+.app-content{flex:1;padding:6px;padding-bottom:80px;width:100%;max-width:100%;box-sizing:border-box;overflow-x:hidden;}
 
 /* Header */
 
@@ -399,16 +404,16 @@ body{
 
 /* Search */
 .search-bar { 
-  margin-top: 12px; 
+  margin-top: 6px; 
   width: 100%; 
   position: relative;
 }
 .search-input {
   width: 100%;
-  padding: 12px 40px 12px 16px;
-  border-radius: 16px;
+  padding: 9px 36px 9px 12px;
+  border-radius: 12px;
   border: 2px solid #E5E7EB;
-  font-size: 14px;
+  font-size: 12px;
   background: #fff;
   box-shadow: var(--shadow-sm);
   transition: border 0.25s, box-shadow 0.25s, background 0.25s;
@@ -423,27 +428,27 @@ body{
 }
 
 @media (min-width: 481px) {
-  .search-bar { margin-top: 16px; max-width: 90%; margin-left: auto; margin-right: auto; }
-  .search-input { padding: 14px 44px 14px 18px; font-size: 15px; border-radius: 18px; }
+  .search-bar { margin-top: 7px; max-width: 90%; margin-left: auto; margin-right: auto; }
+  .search-input { padding: 10px 40px 10px 15px; font-size: 13px; border-radius: 14px; }
 }
 
 @media (min-width: 768px) {
-  .search-bar { margin-top: 18px; max-width: 85%; }
-  .search-input { padding: 16px 48px 16px 20px; font-size: 16px; border-radius: 20px; }
+  .search-bar { margin-top: 8px; max-width: 85%; }
+  .search-input { padding: 11px 44px 11px 16px; font-size: 13px; border-radius: 16px; }
 }
 
 /* Hero card (promo banner) */
 .hero-card {
-  margin-top: 12px;
-  padding: 16px 14px 14px 14px;
-  border-radius: 16px;
+  margin-top: 6px;
+  padding: 8px 8px 6px 8px;
+  border-radius: 10px;
   background: var(--promo-gradient);
   color: #fff;
   box-shadow: var(--shadow-md);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
+  gap: 1px;
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   overflow: hidden;
   position: relative;
@@ -458,7 +463,7 @@ body{
 }
 .hero-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 12px;
   color: #fff;
   font-weight: 800;
   letter-spacing: 0.3px;
@@ -466,17 +471,17 @@ body{
   z-index: 1;
 }
 .hero-card p {
-  margin: 4px 0 0;
+  margin: 0px 0 0;
   color: rgba(255,255,255,0.98);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 9px;
   position: relative;
   z-index: 1;
-  line-height: 1.4;
+  line-height: 1.1;
 }
 .hero-card .hero-subtext {
-  margin-top: 6px;
-  font-size: 12px;
+  margin-top: 1px;
+  font-size: 8px;
   font-weight: 600;
   color: rgba(255,255,255,0.94);
   text-align: left;
@@ -487,37 +492,37 @@ body{
 
 @media (min-width: 481px) {
   .hero-card {
-    margin-top: 16px;
-    padding: 18px 16px 14px 16px;
-    border-radius: 18px;
-    gap: 8px;
+    margin-top: 7px;
+    padding: 8px 8px 7px 8px;
+    border-radius: 11px;
+    gap: 1px;
   }
   .hero-card h3 {
-    font-size: 20px;
+    font-size: 13px;
   }
   .hero-card p {
-    font-size: 14px;
+    font-size: 10px;
   }
   .hero-card .hero-subtext {
-    font-size: 13px;
+    font-size: 9px;
   }
 }
 
 @media (min-width: 768px) {
   .hero-card {
-    margin-top: 20px;
-    padding: 22px 20px 18px 20px;
-    border-radius: 20px;
-    gap: 8px;
+    margin-top: 8px;
+    padding: 9px 9px 8px 9px;
+    border-radius: 11px;
+    gap: 1px;
   }
   .hero-card h3 {
-    font-size: 22px;
+    font-size: 14px;
   }
   .hero-card p {
-    font-size: 15px;
+    font-size: 10px;
   }
   .hero-card .hero-subtext {
-    font-size: 14px;
+    font-size: 9px;
     text-align: right;
     width: 100%;
   }
@@ -527,9 +532,104 @@ body{
 .hotel-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 6px;
+  margin-top: 6px;
   justify-content: flex-start;
+}
+
+/* New Hotel Grid with Circular Badges */
+.hotel-grid-new {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+  padding: 8px 0;
+}
+
+.hotel-badge-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.hotel-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 28px;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.hotel-badge:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.hotel-badge:active {
+  transform: scale(0.96);
+}
+
+.hotel-badge-icon {
+  display: block;
+  line-height: 1;
+}
+
+.hotel-badge-name {
+  font-size: 11px;
+  font-weight: 600;
+  text-align: center;
+  color: #111827;
+  max-width: 70px;
+  line-height: 1.2;
+  word-break: break-word;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 480px) {
+  .hotel-grid-new {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .hotel-badge {
+    width: 66px;
+    height: 66px;
+    font-size: 32px;
+  }
+
+  .hotel-badge-name {
+    font-size: 12px;
+    max-width: 75px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hotel-grid-new {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+
+  .hotel-badge {
+    width: 72px;
+    height: 72px;
+    font-size: 36px;
+  }
+
+  .hotel-badge-name {
+    font-size: 12px;
+    max-width: 80px;
+  }
 }
 
 .hotel-card {
@@ -537,18 +637,18 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: calc(50% - 5px);
-  min-width: 140px;
-  height: 180px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #C41E3A, #A91B2F);
+  width: calc(33.333% - 4px);
+  min-width: 100px;
+  height: 80px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #14B8A6, #10B981);
   border: none;
   color: #fff;
   font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.3px;
+  font-size: 10px;
+  letter-spacing: 0.2px;
   text-align: center;
-  padding: 12px;
+  padding: 6px;
   box-shadow: var(--shadow-md);
   position: relative;
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s, background 0.3s;
@@ -570,14 +670,14 @@ body{
 
 .hotel-card .hotel-image {
   width: 100%;
-  height: 80px;
+  height: 30px;
   background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-  border-radius: 8px;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
-  margin-bottom: 8px;
+  font-size: 18px;
+  margin-bottom: 2px;
   position: relative;
   z-index: 1;
 }
@@ -585,29 +685,29 @@ body{
 .hotel-card .hotel-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   width: 100%;
   position: relative;
   z-index: 1;
 }
 
 .hotel-card .hotel-name {
-  font-weight: 700;
-  font-size: 13px;
-  line-height: 1.3;
+  font-weight: 800;
+  font-size: 9px;
+  line-height: 1.05;
 }
 
 .hotel-card .hotel-meta {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  font-size: 11px;
+  gap: 2px;
+  font-size: 7px;
 }
 
 .hotel-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  background: linear-gradient(135deg, #A91B2F, #8B1428);
+  transform: translateY(-4px) scale(1.02);
+  background: linear-gradient(135deg, #0D9488, #059669);
   box-shadow: var(--shadow-lg);
 }
 
@@ -618,31 +718,53 @@ body{
 
 @media (min-width: 481px) {
   .hotel-grid {
-    gap: 12px;
-    margin-top: 20px;
+    gap: 7px;
+    margin-top: 8px;
   }
   .hotel-card {
-    width: calc(33.333% - 8px);
-    height: 200px;
-    min-width: 110px;
-    border-radius: 16px;
-    padding: 14px;
-    font-size: 13px;
+    width: calc(25% - 5px);
+    height: 90px;
+    min-width: 95px;
+    border-radius: 11px;
+    padding: 7px;
+    font-size: 10px;
+  }
+  .hotel-card .hotel-image {
+    height: 34px;
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  .hotel-card .hotel-name {
+    font-size: 10px;
+  }
+  .hotel-card .hotel-meta {
+    font-size: 7px;
   }
 }
 
 @media (min-width: 768px) {
   .hotel-grid {
-    gap: 14px;
-    margin-top: 24px;
+    gap: 8px;
+    margin-top: 9px;
   }
   .hotel-card {
-    width: calc(25% - 11px);
-    height: 220px;
-    min-width: 140px;
-    border-radius: 16px;
-    padding: 16px;
-    font-size: 14px;
+    width: calc(25% - 6px);
+    height: 100px;
+    min-width: 125px;
+    border-radius: 11px;
+    padding: 8px;
+    font-size: 11px;
+  }
+  .hotel-card .hotel-image {
+    height: 36px;
+    font-size: 22px;
+    margin-bottom: 2px;
+  }
+  .hotel-card .hotel-name {
+    font-size: 10px;
+  }
+  .hotel-card .hotel-meta {
+    font-size: 8px;
   }
 }
 
@@ -1098,8 +1220,8 @@ body{
 
 /* Category Tabs */
 .category-tabs-container {
-  margin-top: 12px;
-  margin-bottom: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   overflow-x: auto;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
@@ -1122,18 +1244,18 @@ body{
 
 .category-tabs {
   display: flex;
-  gap: 8px;
-  padding: 0 0 6px 0;
+  gap: 5px;
+  padding: 0 0 3px 0;
   white-space: nowrap;
 }
 
 .category-tab {
-  padding: 10px 16px;
+  padding: 7px 12px;
   border: none;
-  border-radius: 18px;
+  border-radius: 14px;
   background-color: #fff;
   color: #666;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1160,25 +1282,25 @@ body{
 
 @media (min-width: 481px) {
   .category-tabs-container {
-    margin-top: 14px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 5px;
   }
   .category-tab {
-    padding: 11px 18px;
-    font-size: 13px;
-    border-radius: 20px;
+    padding: 8px 13px;
+    font-size: 11px;
+    border-radius: 16px;
   }
 }
 
 @media (min-width: 768px) {
   .category-tabs-container {
-    margin-top: 16px;
-    margin-bottom: 12px;
+    margin-top: 7px;
+    margin-bottom: 6px;
   }
   .category-tab {
-    padding: 12px 20px;
-    font-size: 14px;
-    border-radius: 22px;
+    padding: 8px 14px;
+    font-size: 12px;
+    border-radius: 18px;
   }
 }
 

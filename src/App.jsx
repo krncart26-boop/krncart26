@@ -32,6 +32,7 @@ import JuiceSection from "./pages/JuiceSection";
 import ShreeShaIndia from "./pages/ShreeShaIndia";
 import ShreeShaIndiaSection from "./pages/ShreeShaIndiaSection";
 import ShreeShaIndiaFiltered from "./pages/ShreeShaIndiaFiltered";
+import PopularBiriyaniPalace from "./pages/PopularBiriyaniPalace";
 import Cart from "./pages/Cart"; 
 import Account from "./pages/Account";
 import Help from "./pages/Help";
@@ -55,6 +56,7 @@ import AyyangarssBakeryFiltered from "./pages/AyyangarssBakeryFiltered";
 import LakshmiJuiceCornerFiltered from "./pages/LakshmiJuiceCornerFiltered";
 import GanisRestaurantFiltered from "./pages/GanisRestaurantFiltered";
 import ShreeShaCafeFiltered from "./pages/ShreeShaCafeFiltered";
+import PopularBiriyaniPalaceFiltered from "./pages/PopularBiriyaniPalaceFiltered";
 
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
@@ -88,9 +90,16 @@ export default function App() {
             <Route path="/udupi-hotel/filter/juice/:sectionSlug" element={<UdupiPalaceFiltered />} />
             {/* Udupi Palace Chats filter with sections */}
             <Route path="/udupi-hotel/filter/chats/:sectionSlug" element={<UdupiPalaceFiltered />} />
+            {/* Udupi Palace Ice Cream & Sundaes filter with sections */}
+            <Route path="/udupi-hotel/ice-cream-sundaes/:sectionSlug" element={<UdupiPalaceFiltered />} />
+            <Route path="/udupi-hotel/ice-cream-sundaes" element={<UdupiPalaceFiltered />} />
+            <Route path="/udupi-hotel/filter/ice-cream-sundaes" element={<UdupiPalaceFiltered />} />
             <Route path="/udupi-hotel/filter/:categorySlug" element={<UdupiPalaceFiltered />} />
             <Route path="/ice-magic/snacks/:sectionSlug" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/snacks" element={<IceMagicFiltered />} />
+            <Route path="/ice-magic/ice-cream-sundaes/:sectionSlug" element={<IceMagicFiltered />} />
+            <Route path="/ice-magic/ice-cream-sundaes" element={<IceMagicFiltered />} />
+            <Route path="/ice-magic/filter/ice-cream-sundaes" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/filter/juice/:sectionSlug" element={<IceMagicJuiceFiltered />} />
             <Route path="/ice-magic/filter/juice" element={<IceMagicJuiceFiltered />} />
             <Route path="/ice-magic/filter/:categorySlug" element={<IceMagicFiltered />} />
@@ -172,6 +181,8 @@ export default function App() {
             <Route path="/shreesha-india" element={<ShreeShaIndia />} />
             <Route path="/shreesha-india/:sectionSlug" element={<ShreeShaIndiaSection />} />
             <Route path="/shreesha-cafe" element={<ShreeShaIndiaFiltered />} />
+            <Route path="/popular-biriyani-palace" element={<PopularBiriyaniPalace />} />
+            <Route path="/popular-biriyani-palace/filter/:categorySlug" element={<PopularBiriyaniPalaceFiltered />} />
             
             <Route path="/hotel/:hotelName" element={<Hotel />} />
             <Route path="/cart" element={<Cart />} />

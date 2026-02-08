@@ -67,7 +67,10 @@ export default function OrderHistory(){
                   {o.items.map(it => (
                     <li key={it.id}>
                       <div>{it.name} x {it.qty} — Parcel ₹{it.parcelRate.toFixed(2)} each → ₹{it.parcelFee.toFixed(2)}</div>
-                      {it.hotelName && <div style={{fontSize:12,color:'var(--muted)',marginLeft:16}}>{it.hotelName}{it.subsection && ` > ${it.subsection}`}</div>}
+                      <div style={{fontSize:12,color:'var(--muted)',marginLeft:16}}>
+                        {it.hotelName && <span>{it.hotelName}</span>}
+                        {it.subsection && <span> > {it.subsection}</span>}
+                      </div>
                     </li>
                   ))}
                 </ul>

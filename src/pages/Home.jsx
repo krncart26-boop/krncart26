@@ -5,7 +5,7 @@ import HotelGrid, { hotelDatabase } from "../components/HotelGrid";
 import SearchResults from "../components/SearchResults";
 import SEARCH_INDEX from "../data/searchIndexAuto";
 
-const CATEGORIES = ["All", "Breakfast", "Lunch", "Evening Food", "Snacks", "Juices", "Chats", "Bakery"];
+const CATEGORIES = ["All", "Breakfast", "Lunch", "Evening Food", "Snacks", "Juices", "Chats", "Bakery", "Ice Cream & Sundaes"];
 
 export default function Home(){
   const [query, setQuery] = useState('');
@@ -86,7 +86,7 @@ export default function Home(){
           </div>
         </div>
 
-        <h4 style={{marginTop:12, marginBottom:6}}>Hotels</h4>
+        <h4 style={{marginTop:3, marginBottom:2}}>Hotels</h4>
         <HotelGrid hotels={filteredHotels} activeFilter={activeCategory} />
 
       </div>

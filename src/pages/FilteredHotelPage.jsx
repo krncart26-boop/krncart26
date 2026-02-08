@@ -32,6 +32,13 @@ export default function FilteredHotelPage({ hotelName, categorySlug }) {
             {hotelName} will be available soon on our platform. Stay tuned!
           </p>
         </div>
+      ) : hotelName === 'Popular Biriyani Palace' ? (
+        <div style={{padding:'20px', textAlign:'center', marginTop:'40px'}}>
+          <h3 style={{color:'var(--muted)'}}>🔜 MENU COMING SOON</h3>
+          <p style={{color:'var(--muted)', fontSize:'14px', marginTop:'10px'}}>
+            {hotelName} – Menu will be added soon
+          </p>
+        </div>
       ) : (
         <div style={{padding:'20px', textAlign:'center', marginTop:'40px'}}>
           <h3 style={{color:'var(--muted)'}}>{categoryName.toUpperCase()}</h3>
