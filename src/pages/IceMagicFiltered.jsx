@@ -52,43 +52,43 @@ const IM_VEG_MOMOS = [
 ];
 
 const IM_SANDWICH = [
-  { id: "im-sandwich-classic", name: "Classic", kannada: "ಕ್ಲಾಸಿಕ್", price: 79.99 },
-  { id: "im-sandwich-cheesy", name: "Cheesy", kannada: "ಚೀಸಿ", price: 89.99 },
-  { id: "im-sandwich-club", name: "Club", kannada: "ಕ್ಲಬ್", price: 109.99 },
-  { id: "im-sandwich-paneer", name: "Paneer", kannada: "ಪನೀರ್", price: 119.99 },
-  { id: "im-sandwich-corn", name: "Roasted Corn", kannada: "ರೋಸ್ಟೆಡ್ ಕಾರ್ನ್", price: 109.99 },
-  { id: "im-sandwich-mushroom", name: "Mushroom", kannada: "ಮಶ್ರೂಮ್", price: 119.99 },
-  { id: "im-sandwich-mexican", name: "Mexican", kannada: "ಮೆಕ್ಸಿಕನ್", price: 109.99 },
-  { id: "im-sandwich-italian", name: "Italian", kannada: "ಇಟಾಲಿಯನ್", price: 109.99 },
-  { id: "im-sandwich-special", name: "IM Special (with fries)", kannada: "ಸ್ಪೆಷಲ್ (ಫ್ರೈಸ್ ಸಹ)", price: 129.99 }
+  { id: "im-sandwich-classic", name: "Classic sandwitch", kannada: "ಕ್ಲಾಸಿಕ್", price: 79.99 },
+  { id: "im-sandwich-cheesy", name: "Cheesy sandwitch", kannada: "ಚೀಸಿ", price: 89.99 },
+  { id: "im-sandwich-club", name: "Club sandwitch", kannada: "ಕ್ಲಬ್", price: 109.99 },
+  { id: "im-sandwich-paneer", name: "Paneer SANDWICH", kannada: "ಪನೀರ್", price: 119.99 },
+  { id: "im-sandwich-corn", name: "Roasted Corn SANDWICH", kannada: "ರೋಸ್ಟೆಡ್ ಕಾರ್ನ್", price: 109.99 },
+  { id: "im-sandwich-mushroom", name: "Mushroom SANDWICH", kannada: "ಮಶ್ರೂಮ್", price: 119.99 },
+  { id: "im-sandwich-mexican", name: "Mexican SANDWICH", kannada: "ಮೆಕ್ಸಿಕನ್", price: 109.99 },
+  { id: "im-sandwich-italian", name: "Italian SANDWICH", kannada: "ಇಟಾಲಿಯನ್", price: 109.99 },
+  { id: "im-sandwich-special", name: "IM Special (with fries) SANDWICH", kannada: "ಸ್ಪೆಷಲ್ (ಫ್ರೈಸ್ ಸಹ)", price: 129.99 }
 ];
 
 const IM_BURGER = [
-  { id: "im-burger-classic", name: "Classic", kannada: "ಕ್ಲಾಸಿಕ್", price: 79.99 },
-  { id: "im-burger-cheesy", name: "Cheesy", kannada: "ಚೀಸಿ", price: 89.99 },
-  { id: "im-burger-paneer", name: "Paneer Crunchy", kannada: "ಪನೀರ್ ಕ್ರಂಚಿ", price: 119.99 },
-  { id: "im-burger-corn", name: "Roasted Corn", kannada: "ರೋಸ್ಟೆಡ್ ಕಾರ್ನ್", price: 109.99 },
-  { id: "im-burger-mexican", name: "Mexican", kannada: "ಮೆಕ್ಸಿಕನ್", price: 109.99 },
-  { id: "im-burger-italian", name: "Italian", kannada: "ಇಟಾಲಿಯನ್", price: 109.99 }
+  { id: "im-burger-classic", name: "Classic BURGER", kannada: "ಕ್ಲಾಸಿಕ್", price: 79.99 },
+  { id: "im-burger-cheesy", name: "Cheesy BURGER", kannada: "ಚೀಸಿ", price: 89.99 },
+  { id: "im-burger-paneer", name: "Paneer Crunchy BURGER", kannada: "ಪನೀರ್ ಕ್ರಂಚಿ", price: 119.99 },
+  { id: "im-burger-corn", name: "Roasted Corn BURGER", kannada: "ರೋಸ್ಟೆಡ್ ಕಾರ್ನ್", price: 109.99 },
+  { id: "im-burger-mexican", name: "Mexican BURGER", kannada: "ಮೆಕ್ಸಿಕನ್", price: 109.99 },
+  { id: "im-burger-italian", name: "Italian BURGER", kannada: "ಇಟಾಲಿಯನ್", price: 109.99 }
 ];
 
 const IM_SPECIAL_BURGER = [
-  { id: "im-special-paneer", name: "Jumbo Paneer", kannada: "ಜುಂಬೋ ಪನೀರ್", price: 139.99 },
+  { id: "im-special-paneer", name: "Jumbo Paneer BURGER", kannada: "ಜುಂಬೋ ಪನೀರ್", price: 139.99 },
   { id: "im-special-mushroom", name: "Mushroom", kannada: "ಮಶ್ರೂಮ್", price: 119.99 },
-  { id: "im-special-humburger", name: "Humburger", kannada: "ಹಾಂಬರ್ಗರ್", price: 139.99 },
-  { id: "im-special-fries", name: "IM Special (with fries)", kannada: "ಸ್ಪೆಷಲ್ (ಫ್ರೈಸ್ ಸಹ)", price: 139.99 }
+  { id: "im-special-humburger", name: "Humburger BURGER", kannada: "ಹಾಂಬರ್ಗರ್", price: 139.99 },
+  { id: "im-special-fries", name: "IM Special (with fries) BURGER", kannada: "ಸ್ಪೆಷಲ್ (ಫ್ರೈಸ್ ಸಹ)", price: 139.99 }
 ];
 
 const IM_PIZZA = [
-  { id: "im-pizza-classic-s", name: "Classic Hot (Small)", kannada: "ಕ್ಲಾಸಿಕ್ (ಸಣ್ಣ)", price: 140 },
-  { id: "im-pizza-classic-m", name: "Classic Hot (Medium)", kannada: "ಕ್ಲಾಸಿಕ್ (ಮಿಡಿಯಂ)", price: 170 },
-  { id: "im-pizza-pineapple-s", name: "Pineapple Cheese (Small)", kannada: "ಪೈನಾಪಲ್ (ಸಣ್ಣ)", price: 160 },
-  { id: "im-pizza-pineapple-m", name: "Pineapple Cheese (Medium)", kannada: "ಪೈನಾಪಲ್ (ಮಿಡಿಯಂ)", price: 190 },
-  { id: "im-pizza-double-s", name: "Double Cheesy (Small)", kannada: "ಡಬಲ್ ಚೀಸಿ (ಸಣ್ಣ)", price: 160 },
-  { id: "im-pizza-double-m", name: "Double Cheesy (Medium)", kannada: "ಡಬಲ್ ಚೀಸಿ (ಮಿಡಿಯಂ)", price: 190 },
-  { id: "im-pizza-paneer-s", name: "Paneer Makhani (Small)", kannada: "ಪನೀರ್ (ಸಣ್ಣ)", price: 170 },
-  { id: "im-pizza-paneer-m", name: "Paneer Makhani (Medium)", kannada: "ಪನೀರ್ (ಮಿಡಿಯಂ)", price: 200 },
-  { id: "im-pizza-special-s", name: "IM Special Pizza (Small)", kannada: "ಸ್ಪೆಷಲ್ (ಸಣ್ಣ)", price: 190 },
+  { id: "im-pizza-classic-s", name: "Classic Hot (Small) PIZZA", kannada: "ಕ್ಲಾಸಿಕ್ (ಸಣ್ಣ)", price: 140 },
+  { id: "im-pizza-classic-m", name: "Classic Hot (Medium) PIZZA", kannada: "ಕ್ಲಾಸಿಕ್ (ಮಿಡಿಯಂ)", price: 170 },
+  { id: "im-pizza-pineapple-s", name: "Pineapple Cheese (Small) PIZZA", kannada: "ಪೈನಾಪಲ್ (ಸಣ್ಣ)", price: 160 },
+  { id: "im-pizza-pineapple-m", name: "Pineapple Cheese (Medium) PIZZA", kannada: "ಪೈನಾಪಲ್ (ಮಿಡಿಯಂ)", price: 190 },
+  { id: "im-pizza-double-s", name: "Double Cheesy (Small) PIZZA", kannada: "ಡಬಲ್ ಚೀಸಿ (ಸಣ್ಣ)", price: 160 },
+  { id: "im-pizza-double-m", name: "Double Cheesy (Medium) PIZZA", kannada: "ಡಬಲ್ ಚೀಸಿ (ಮಿಡಿಯಂ)", price: 190 },
+  { id: "im-pizza-paneer-s", name: "Paneer Makhani (Small) PIZZA", kannada: "ಪನೀರ್ (ಸಣ್ಣ)", price: 170 },
+  { id: "im-pizza-paneer-m", name: "Paneer Makhani (Medium) PIZZA", kannada: "ಪನೀರ್ (ಮಿಡಿಯಂ)", price: 200 },
+  { id: "im-pizza-special-s", name: "IM Special Pizza (Small) PIZZA", kannada: "ಸ್ಪೆಷಲ್ (ಸಣ್ಣ)", price: 190 },
   { id: "im-pizza-special-m", name: "IM Special Pizza (Medium)", kannada: "ಸ್ಪೆಷಲ್ (ಮಿಡಿಯಂ)", price: 220 }
 ];
 
@@ -138,37 +138,37 @@ const SNACKS_ITEMS = {
 
 // Ice Cream & Sundaes Items
 const IM_SPECIAL_ICE_CREAM = [
-  { id: "im-ice-1", name: "Train Cassatta", kannada: "ಟ್ರೈನ್ ಕಸಾಟಾ", price: 210 },
+  { id: "im-ice-1", name: "Train Cassatta special ice cream", kannada: "ಟ್ರೈನ್ ಕಸಾಟಾ", price: 210 },
   { id: "im-ice-2", name: "Premium Falooda", kannada: "ಪ್ರೀಮಿಯಂ ಫಾಲೂದಾ", price: 210 },
   { id: "im-ice-3", name: "Hot DBC with Ice Cream", kannada: "ಹಾಟ್ ಡಿಬಿಸಿ ವಿತ್ ಐಸ್ ಕ್ರೀಮ್", price: 160 },
   { id: "im-ice-4", name: "Hot Brownie with Ice Cream", kannada: "ಹಾಟ್ ಬ್ರೌನಿ ವಿತ್ ಐಸ್ ಕ್ರೀಮ್", price: 140 }
 ];
 
 const IM_PASTRY = [
-  { id: "im-pas-1", name: "Hot Choco Lava", kannada: "ಹಾಟ್ ಚಾಕೊ ಲಾವಾ", price: 70 },
-  { id: "im-pas-2", name: "Caramel Dry Fruit", kannada: "ಕ್ಯಾರೆಮೆಲ್ ಡ್ರೈ ಫ್ರೂಟ್", price: 90 },
-  { id: "im-pas-3", name: "Black Forest", kannada: "ಬ್ಲ್ಯಾಕ್ ಫಾರೆಸ್ಟ್", price: 85 },
-  { id: "im-pas-4", name: "Pineapple", kannada: "ಪೈನಾಪಲ್", price: 75 },
-  { id: "im-pas-5", name: "Chocolate Truffle", kannada: "ಚಾಕೊಲೇಟ್ ಟ್ರಫಲ್", price: 90 },
-  { id: "im-pas-6", name: "Red Velvet", kannada: "ರೆಡ್ ವೆಲ್ವೆಟ್", price: 100 },
-  { id: "im-pas-7", name: "Donuts", kannada: "ಡೋನಟ್ಸ್", price: 50 }
+  { id: "im-pas-1", name: "Hot Choco Lava pastry", kannada: "ಹಾಟ್ ಚಾಕೊ ಲಾವಾ", price: 70 },
+  { id: "im-pas-2", name: "Caramel Dry Fruit pastry", kannada: "ಕ್ಯಾರೆಮೆಲ್ ಡ್ರೈ ಫ್ರೂಟ್", price: 90 },
+  { id: "im-pas-3", name: "Black Forest pastry", kannada: "ಬ್ಲ್ಯಾಕ್ ಫಾರೆಸ್ಟ್", price: 85 },
+  { id: "im-pas-4", name: "Pineapple pastry", kannada: "ಪೈನಾಪಲ್", price: 75 },
+  { id: "im-pas-5", name: "Chocolate Truffle pastry", kannada: "ಚಾಕೊಲೇಟ್ ಟ್ರಫಲ್", price: 90 },
+  { id: "im-pas-6", name: "Red Velvet pastry", kannada: "ರೆಡ್ ವೆಲ್ವೆಟ್", price: 100 },
+  { id: "im-pas-7", name: "Donuts pastry", kannada: "ಡೋನಟ್ಸ್", price: 50 }
 ];
 
 const IM_ICE_CREAM_SHAKES = [
-  { id: "im-ics-1", name: "Vanilla", kannada: "ವನಿಲ್ಲ", price: 90 },
-  { id: "im-ics-2", name: "Strawberry", kannada: "ಹಸುಬೆರಿ", price: 90 },
-  { id: "im-ics-3", name: "Pista", kannada: "ಪಿಸ್ತಾ", price: 100 },
-  { id: "im-ics-4", name: "Mango", kannada: "ಮಾವಿನ", price: 100 },
-  { id: "im-ics-5", name: "Chocolate", kannada: "ಚಾಕೊಲೇಟ್", price: 100 },
-  { id: "im-ics-6", name: "Coffee", kannada: "ಕಾಫಿ", price: 100 },
-  { id: "im-ics-7", name: "Butterscotch", kannada: "ಬಟರ್‌ಸ್ಕಾಚ್", price: 110 },
-  { id: "im-ics-8", name: "Spanish Delight", kannada: "ಸ್ಪ್ಯಾನಿಷ್ ಡೆಲೈಟ್", price: 110 },
-  { id: "im-ics-9", name: "Black Current", kannada: "ಕಪ್ಪು ಕರಪಾಯ", price: 100 },
-  { id: "im-ics-10", name: "Kesar Pista", kannada: "ಕೇಸರಿ ಪಿಸ್ತಾ", price: 100 },
-  { id: "im-ics-11", name: "Pineapple", kannada: "ಪೈನಾಪಲ್", price: 100 },
-  { id: "im-ics-12", name: "Orange", kannada: "ಕಿತ್ತಳೆ", price: 100 },
-  { id: "im-ics-13", name: "Fig / Honey", kannada: "ಅಂಜೂರ / ಹನಿ", price: 110 },
-  { id: "im-ics-14", name: "Kulfi", kannada: "ಕುಲ್ಫಿ", price: 110 },
+  { id: "im-ics-1", name: "Vanilla ICE_CREAM_SHAKES", kannada: "ವನಿಲ್ಲ", price: 90 },
+  { id: "im-ics-2", name: "Strawberry ICE_CREAM_SHAKES", kannada: "ಹಸುಬೆರಿ", price: 90 },
+  { id: "im-ics-3", name: "Pista ICE_CREAM_SHAKES", kannada: "ಪಿಸ್ತಾ", price: 100 },
+  { id: "im-ics-4", name: "Mango ICE_CREAM_SHAKES", kannada: "ಮಾವಿನ", price: 100 },
+  { id: "im-ics-5", name: "Chocolate ICE_CREAM_SHAKES" , kannada: "ಚಾಕೊಲೇಟ್", price: 100 },
+  { id: "im-ics-6", name: "Coffee ICE_CREAM_SHAKES", kannada: "ಕಾಫಿ", price: 100 },
+  { id: "im-ics-7", name: "Butterscotch ICE_CREAM_SHAKES", kannada: "ಬಟರ್‌ಸ್ಕಾಚ್", price: 110 },
+  { id: "im-ics-8", name: "Spanish Delight ICE_CREAM_SHAKES", kannada: "ಸ್ಪ್ಯಾನಿಷ್ ಡೆಲೈಟ್", price: 110 },
+  { id: "im-ics-9", name: "Black Current ICE_CREAM_SHAKES", kannada: "ಕಪ್ಪು ಕರಪಾಯ", price: 100 },
+  { id: "im-ics-10", name: "Kesar Pista ICE_CREAM_SHAKES", kannada: "ಕೇಸರಿ ಪಿಸ್ತಾ", price: 100 },
+  { id: "im-ics-11", name: "Pineapple ICE_CREAM_SHAKES", kannada: "ಪೈನಾಪಲ್", price: 100 },
+  { id: "im-ics-12", name: "Orange ICE_CREAM_SHAKES", kannada: "ಕಿತ್ತಳೆ", price: 100 },
+  { id: "im-ics-13", name: "Fig / Honey ICE_CREAM_SHAKES", kannada: "ಅಂಜೂರ / ಹನಿ", price: 110 },
+  { id: "im-ics-14", name: "Kulfi ICE_CREAM_SHAKES", kannada: "ಕುಲ್ಫಿ", price: 110 },
   { id: "im-ics-15", name: "Dry Fruits", kannada: "ಡ್ರೈ ಫ್ರೂಟ್ಸ್", price: 110 }
 ];
 
@@ -341,6 +341,7 @@ export default function IceMagicFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>
@@ -394,6 +395,7 @@ export default function IceMagicFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>

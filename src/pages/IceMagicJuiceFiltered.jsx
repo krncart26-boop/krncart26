@@ -43,6 +43,7 @@ export default function IceMagicJuiceFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>

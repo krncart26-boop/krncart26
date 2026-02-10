@@ -14,7 +14,7 @@ export const UDUPI_JUICE_ITEMS = {
     { id: "up-juice-musambi", name: "Musambi", kannada: "ಮೋಸಂಬಿ", price: 80, category: "Juice" },
     { id: "up-juice-orange", name: "Orange", kannada: "ಕಿತ್ತಳೆ", price: 80, category: "Juice" },
     { id: "up-juice-pineapple", name: "Pineapple", kannada: "ಅನೇನಸ", price: 80, category: "Juice" },
-    { id: "up-juice-watermelon", name: "Water Melon", kannada: "ಕಲ್ಲಿಝೋಟ", price: 80, category: "Juice" },
+    { id: "up-juice-watermelon", name: "Water Melon", kannada: "watermelon", price: 80, category: "Juice" },
     { id: "up-juice-grape", name: "Grape", kannada: "ದ್ರಾಕ್ಷೆ", price: 80, category: "Juice" },
     { id: "up-juice-apple", name: "Apple", kannada: "ಸೇಬೆ", price: 100, category: "Juice" },
     { id: "up-juice-fresh-lime", name: "Fresh Lime Juice", kannada: "ತಾಜೆ ನಿಂಬೆ ರಸ", price: 50, category: "Juice" },

@@ -107,17 +107,6 @@ const DATA = {
     ["Salted PVR Popcorn", "", 32],
   ],
 
-  "ice-creams": [
-    ["Vanilla", "", 41],
-    ["Strawberry", "", 41],
-    ["Chocolate", "", 41],
-    ["Mango", "", 51],
-    ["Butterscotch", "", 41],
-    ["Ice Cream + Jamun Desserts Special", "", 71],
-    ["Triveni Desserts", "", 81],
-    ["DBC", "", 91],
-  ],
-
   "combos-specials": [
     ["Sandwich & Burger + Any Fresh Juice", "", 151],
     ["French Fries + Sandwich + Ice Cream Scoop", "", 151],

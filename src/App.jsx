@@ -142,6 +142,8 @@ export default function App() {
             <Route path="/ayyangars-bakery/filter/:categorySlug" element={<AyyangarssBakeryFiltered />} />
             <Route path="/juice-junction/filter/juices/:sectionSlug" element={<LakshmiJuiceCornerFiltered />} />
             <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
+            {/* Gani's Restaurant ALL filter with sections */}
+            <Route path="/ganis-restaurant/filter/all/:sectionSlug" element={<GanisRestaurantFiltered />} />
             <Route path="/ganis-restaurant/filter/:categorySlug" element={<GanisRestaurantFiltered />} />
             <Route path="/shreesha-india/filter/:categorySlug" element={<ShreeShaCafeFiltered />} />
             {/* ShreeSha Café Snacks filter with sections */}

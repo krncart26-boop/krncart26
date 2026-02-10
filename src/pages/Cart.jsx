@@ -127,12 +127,12 @@ export default function Cart(){
     }).join('\n\n');
 
     const subtotalNum = Number(totals.subtotal || 0);
-    const gstNum = Number((subtotalNum * 0.05).toFixed(2));
+    const gstNum = Number((subtotalNum * 0.03).toFixed(2));
     const platformFeeNum = Number((subtotalNum * 0.02).toFixed(2));
     const deliveryNum = subtotalNum < 100 ? 20 : 0;
     const grandTotalNum = Number((subtotalNum + gstNum + platformFeeNum + deliveryNum).toFixed(2));
 
-    const finalMsg = `🌟 KRN Cart — Order Confirmation 🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nGST (5%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
+    const finalMsg = `🌟 KRN Cart — Order Confirmation 🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
 
     // Redirect using exact method (open in new tab with encoded message)
     window.open("https://wa.me/8660769547?text=" + encodeURIComponent(finalMsg), '_blank');
@@ -194,7 +194,7 @@ export default function Cart(){
 
                 <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
                   <div style={{minWidth:160}}>
-                    <div style={{fontSize:13,color:'var(--muted)'}}>Hotel: <strong style={{color:'#111827'}}>{item.hotelName || 'Unknown'}</strong></div>
+                    <div style={{fontSize:13,color:'var(--muted)'}}>Hotel: <strong style={{color:'#111827'}}>{item.hotelName || 'Unknown'}</strong>{item.subsection && <span>{' > '}<strong style={{color:'#111827'}}>{item.subsection}</strong></span>}</div>
                     <div>Base: <strong>₹{breakdown.base.toFixed(2)}</strong></div>
                     <div>Parcel Charge (@ ₹{breakdown.parcelRate.toFixed(2)}): <strong>₹{breakdown.parcelFee.toFixed(2)}</strong></div>
                     <div style={{marginTop:6}}>Line Total: <strong>₹{breakdown.total.toFixed(2)}</strong></div>
@@ -225,7 +225,7 @@ export default function Cart(){
             </div>
 
             <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div>GST (5%)</div>
+              <div>Service Charge (3%)</div>
               <div>₹{totals.gst.toFixed(2)}</div>
             </div>
 

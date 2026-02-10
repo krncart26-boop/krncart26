@@ -2,7 +2,7 @@
 // Items organized by category for filter support
 
 export const POPULAR_BIRIYANI_PALACE_LUNCH = [
-  { id: "pbp-chicken-biriyani", name: "Chicken Biriyani", kannada: "ಚಿಕನ್ ಬಿರಿಯಾನಿ", price: 50 },
+  { id: "pbp-chicken-biriyani", name: "Chicken Biriyani", kannada: "ಚಿಕನ್ ಬಿರಿಯಾನಿ", price: 150 },
   { id: "pbp-mutton-biriyani", name: "Mutton Biriyani", kannada: "ಮಟನ್ ಬಿರಿಯಾನಿ", price: 260 },
   { id: "pbp-biriyani-rice", name: "Biriyani Rice", kannada: "ಬಿರಿಯಾನಿ ರೈಸ್", price: 80 },
   { id: "pbp-ghee-rice", name: "Ghee Rice", kannada: "ತುಪ್ಪ ಅನ್ನ", price: 60 },
@@ -16,7 +16,7 @@ export const POPULAR_BIRIYANI_PALACE_LUNCH = [
 ];
 
 export const POPULAR_BIRIYANI_PALACE_EVENING = [
-  { id: "pbp-chicken-biriyani", name: "Chicken Biriyani", kannada: "ಚಿಕನ್ ಬಿರಿಯಾನಿ", price: 50 },
+  { id: "pbp-chicken-biriyani", name: "Chicken Biriyani", kannada: "ಚಿಕನ್ ಬಿರಿಯಾನಿ", price: 150 },
   { id: "pbp-mutton-biriyani", name: "Mutton Biriyani", kannada: "ಮಟನ್ ಬಿರಿಯಾನಿ", price: 260 },
   { id: "pbp-biriyani-rice", name: "Biriyani Rice", kannada: "ಬಿರಿಯಾನಿ ರೈಸ್", price: 80 },
   { id: "pbp-ghee-rice", name: "Ghee Rice", kannada: "ತುಪ್ಪ ಅನ್ನ", price: 60 },

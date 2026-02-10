@@ -52,21 +52,21 @@ const DATA = {
   ],
 
   "pastry": [
-    ["Hot Choco Lava","",69.99],
-    ["Caramel Dry Fruit","",89.99],
-    ["Black Forest","",84.99],
-    ["Pineapple","",74.99],
-    ["Chocolate Truffle","",89.99],
-    ["Red Velvet","",99.99],
-    ["Donuts","",49.99],
+    ["Hot Choco Lava pastry","",69.99],
+    ["Caramel Dry Fruit pastry","",89.99],
+    ["Black Forest pastry","",84.99],
+    ["Pineapple pastry","",74.99],
+    ["Chocolate Truffle pastry","",89.99],
+    ["Red Velvet pastry","",99.99],
+    ["Donuts pastry","",49.99],
   ],
 
   "falooda-special": [
     ["Falooda Queen","ಕಲೋಡಾ ಕ್ವೀನ್",119.99],
     ["Royal Falooda","ರಾಯಲ್ ಫಾಲೂಡಾ",139.99],
     ["Mango Light"," ಮ್ಯಾಂಗೋ ಲೈಟ್",149.99],
-    ["Kesar Knights","ಕೇಸರ್ ನೈಟ್ಸ್",149.99],
-    ["Badam Corniche","ಬಾದಾಮ್ ಕಾರ್ನಿಷ್",149.99],
+    ["Kesar Knights falooda","ಕೇಸರ್ ನೈಟ್ಸ್",149.99],
+    ["Badam Corniche falooda","ಬಾದಾಮ್ ಕಾರ್ನಿಷ್",149.99],
     ["IM Special Falooda","ಐ ಎಂ ஸ್ಪெಶல் ಫಾಲೂಡா",169.99],
   ],
 
@@ -124,44 +124,30 @@ const DATA = {
   ],
 
   "cake-with-ice-cream": [
-    ["French Vanilla","ಫ್ರೆಂಚ್ ವನಿಲ್ಲಾ",149.99],
-    ["Caribbean Chocolate","ಕ್ಯಾರಿಬಿಯನ್ ಚಾಕೊಲೇಟ್",159.99],
-    ["Pine Magic","ಪೈನ್ ಮಾಜಿಕ್",159.99],
-    ["Black Magic","ಬ್ಲ್ಯಾಕ್ ಮಾಜಿಕ್",159.99],
+    ["French Vanilla cake-with-ice-cream","ಫ್ರೆಂಚ್ ವನಿಲ್ಲಾ",149.99],
+    ["Caribbean Chocolate cake-with-ice-cream","ಕ್ಯಾರಿಬಿಯನ್ ಚಾಕೊಲೇಟ್",159.99],
+    ["Pine Magic cake-with-ice-cream","ಪೈನ್ ಮಾಜಿಕ್",159.99],
+    ["Black Magic cake-with-ice-cream","ಬ್ಲ್ಯಾಕ್ ಮಾಜಿಕ್",159.99],
   ],
 
-  "ice-cream-scoops": [
-    ["Vanilla","ವನಿಲ್ಲಾ",54.99],
-    ["Strawberry","ಸ್ಟ್ರಾಬೆರಿ",54.99],
-    ["Pista","ಪిస్టಾ",59.99],
-    ["Mango","ಮ್ಯಾಂಗೋ",59.99],
-    ["Chocolate","ಚಾಕೊಲೇಟ್",59.99],
-    ["Coffee","ಕಾಫಿ",64.99],
-    ["Butterscotch","ಬಟರ್ಸ್ಕಾಚ್",64.99],
-    ["Spanish Delight","ಸ್ಪ್ಯಾನಿಶ್ ಡಿಲೈಟ್",64.99],
-    ["Black Current","ಬ್ಲ್ಯಾಕ್ ಕರಂಟ್",64.99],
-    ["Kesar Pista","ಕೇಸರ್ ಪಿಸ್ತಾ",64.99],
-    ["Pineapple","ಅನಾನಸ್",64.99],
-    ["Fig O Honey","ಫಿಗ್ ಓ ಹನಿ",69.99],
-    ["Dry Fruits","ಡ್ರೈ ಫ್ರೂಟ್ಸ್",69.99],
-  ],
+  
 
   "ice-cream-shakes": [
-    ["Vanilla","",89.99],
-    ["Strawberry","",89.99],
-    ["Pista","",99.99],
-    ["Mango","",99.99],
-    ["Chocolate","",99.99],
-    ["Coffee","",99.99],
-    ["Butterscotch","",109.99],
-    ["Spanish Delight","",109.99],
-    ["Black Current","",99.99],
-    ["Kesar Pista","",99.99],
-    ["Pineapple","",99.99],
-    ["Orange","",99.99],
-    ["Fig O Honey","",109.99],
-    ["Kulfi","",109.99],
-    ["Dry Fruits","",109.99],
+    ["Vanilla ice-cream-shakes","",89.99],
+    ["Strawberry ice-cream-shakes","",89.99],
+    ["Pista ice-cream-shakes","",99.99],
+    ["Mango ice-cream-shakes","",99.99],
+    ["Chocolate ice-cream-shakes","",99.99],
+    ["Coffee ice-cream-shakes","",99.99],
+    ["Butterscotch ice-cream-shakes","",109.99],
+    ["Spanish Delight ice-cream-shakes","",109.99],
+    ["Black Current ice-cream-shakes","",99.99],
+    ["Kesar Pista ice-cream-shakes","",99.99],
+    ["Pineapple ice-cream-shakes","",99.99],
+    ["Orange ice-cream-shakes","",99.99],
+    ["Fig O Honey ice-cream-shakes","",109.99],
+    ["Kulfi ice-cream-shakes","",109.99],
+    ["Dry Fruits ice-cream-shakes","",109.99],
   ],
 
   "starters": [
@@ -177,31 +163,31 @@ const DATA = {
   ],
 
   "sandwich": [
-    ["Classic","",79.99],
-    ["Cheesy","",89.99],
-    ["Club","",109.99],
-    ["Paneer","",119.99],
-    ["Roasted Corn","",109.99],
-    ["Mushroom","",119.99],
-    ["Mexican","",109.99],
-    ["Italian","",109.99],
-    ["IM Special (with fries)","",129.99],
+    ["Classic sandwich","",79.99],
+    ["Cheesy sandwich","",89.99],
+    ["Club sandwich","",109.99],
+    ["Paneer sandwich","",119.99],
+    ["Roasted Corn sandwich","",109.99],
+    ["Mushroom sandwich","",119.99],
+    ["Mexican sandwich","",109.99],
+    ["Italian sandwich ","",109.99],
+    ["IM Special (with fries) sandwich","",129.99],
   ],
 
   "burger": [
-    ["Classic","",79.99],
-    ["Cheesy","",89.99],
-    ["Paneer Crunchy","",119.99],
-    ["Roasted Corn","",109.99],
-    ["Mexican","",109.99],
-    ["Italian","",109.99],
+    ["Classic burger","",79.99],
+    ["Cheesy burger","",89.99],
+    ["Paneer Crunchy burger","",119.99],
+    ["Roasted Corn burger","",109.99],
+    ["Mexican burger","",109.99],
+    ["Italian burger","",109.99],
   ],
 
   "special-burger": [
-    ["Jumbo Paneer","",139.99],
-    ["Mushroom","",119.99],
-    ["Humburger","",139.99],
-    ["IM Special (with fries)","",139.99],
+    ["Jumbo Paneer burger","",139.99],
+    ["Mushroom burger","",119.99],
+    ["Humburger burger","",139.99],
+    ["IM Special (with fries) burger","",139.99],
   ],
 
   /* Added sections and items per menu (prices already include +₹10) */
@@ -243,12 +229,12 @@ const DATA = {
   ],
 
   "mojito": [
-    ["Water Melon","ಕಲ್ಲಂಗಡಿ",90],
-    ["Mint Lemon","ಮಿಂಟ್ ಲೆಮನ್",90],
-    ["Blue Berry","ಬ್ಲೂ ಬೆರಿ",90],
-    ["Passion Fruit","ಪ್ಯಾಷನ್",90],
-    ["Kala Khatta","ಕಾಲಾ ಖಟ್ಟ",90],
-    ["Peach Ice Tea","ಪೀಚ್ ಐಸ್ ಟೀ",90],
+    ["Water Melon mojito","ಕಲ್ಲಂಗಡಿ",90],
+    ["Mint Lemon mojito","ಮಿಂಟ್ ಲೆಮನ್",90],
+    ["Blue Berry mojito","ಬ್ಲೂ ಬೆರಿ",90],
+    ["Passion Fruit mojito","ಪ್ಯಾಷನ್",90],
+    ["Kala Khatta mojito","ಕಾಲಾ ಖಟ್ಟ",90],
+    ["Peach Ice Tea mojito","ಪೀಚ್ ಐಸ್ ಟೀ",90],
     ["Green Apple","ಗ್ರೀನ್ ಆಪಲ್",90],
   ],
 
@@ -274,8 +260,8 @@ const DATA = {
   ],
 
   "smoothie": [
-    ["Morning Magic","ಮಾನಿಂಗ್ ಮ್ಯಾಜಿಕ್",100],
-    ["Very Berry","ವೆರಿ ಬೆರಿ",100],
+    ["Morning Magic smoothie","ಮಾನಿಂಗ್ ಮ್ಯಾಜಿಕ್",100],
+    ["Very Berry smoothie","ವೆರಿ ಬೆರಿ",100],
   ],
 
   "special-lassi": [
@@ -286,16 +272,16 @@ const DATA = {
   ],
 
   "pizza": [
-    ["Classic Hot (Small)","",140],
-    ["Classic Hot (Medium)","",170],
-    ["Pineapple Cheese (Small)","",160],
-    ["Pineapple Cheese (Medium)","",190],
-    ["Double Cheesy (Small)","",160],
-    ["Double Cheesy (Medium)","",190],
-    ["Paneer Makhani (Small)","",170],
-    ["Paneer Makhani (Medium)","",200],
-    ["IM Special Pizza (Small)","",190],
-    ["IM Special Pizza (Medium)","",220],
+    ["Classic Hot (Small) pizza","",140],
+    ["Classic Hot (Medium) pizza","",170],
+    ["Pineapple Cheese (Small) pizza","",160],
+    ["Pineapple Cheese (Medium) pizza","",190],
+    ["Double Cheesy (Small) pizza","",160],
+    ["Double Cheesy (Medium) pizza","",190],
+    ["Paneer Makhani (Small) pizza","",170],
+    ["Paneer Makhani (Medium) pizza","",200],
+    ["IM Special Pizza (Small) pizza","",190],
+    ["IM Special Pizza (Medium) pizza","",220],
   ],
 
   "chinese": [
@@ -309,24 +295,33 @@ const DATA = {
     ["Classic Noodles","",100],
     ["Tomato Noodles","",110],
     ["Chilly Garlic Noodles","",110],
+    ["mexican chilly noodles","",130],
+    ["Butter noodles","",110],
+    ["Paneer chilly noodles","",130],
   ],
 
   "fried-rice": [
     ["Butter Fried Rice","",110],
     ["Mexican Fried Rice","",130],
     ["Shezwan Fried Rice","",120],
+    ["classical fried rice","",120],
   ],
 
   "pasta": [
     ["Tomato Chilly Pasta","",110],
     ["White Sauce Pasta","",110],
     ["Paneer Pasta","",130],
+    ["Spicy creamy pastha","",110],
+    ["Garlic cheese pastha","",110],
+    ["Pesto pastha","",120],
   ],
 
   "shawarma": [
     ["Classic Shawarma","",90],
     ["Cheesy Shawarma","",100],
     ["Mexican Shawarma","",120],
+    ["Roasted corn cheese shavarma","",110],
+    ["Mushroom cheesy shavarma","",120],
   ],
 };
 

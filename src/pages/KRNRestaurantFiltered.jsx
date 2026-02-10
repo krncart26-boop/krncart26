@@ -77,6 +77,7 @@ export default function KRNRestaurantFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>
@@ -114,6 +115,7 @@ export default function KRNRestaurantFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>
@@ -221,6 +223,7 @@ export default function KRNRestaurantFiltered() {
               name={item.name}
               kannada={item.kannada}
               price={item.price}
+              subsection={section.english}
             />
           ))}
         </div>

@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 
 import { useLocation } from "react-router-dom";
 
-export default function ItemCard({ id, name, kannada, price }){
+export default function ItemCard({ id, name, kannada, price, subsection: propSubsection }){
   const { addToCart } = useCart();
   const [qty, setQty] = useState(1);
   const location = useLocation();
@@ -75,7 +75,8 @@ export default function ItemCard({ id, name, kannada, price }){
 
   function handleAdd(){
     const hotelName = getHotelNameFromPath(location.pathname);
-    const subsection = getSubsectionFromPath(location.pathname);
+    // Use prop subsection if provided, otherwise extract from path
+    const subsection = propSubsection || getSubsectionFromPath(location.pathname);
     addToCart({ id, name, basePrice: price, hotelName, subsection }, qty);
     showToast(`${name} x${qty} added to cart`);
     setQty(1);
@@ -99,7 +100,7 @@ export default function ItemCard({ id, name, kannada, price }){
               <button className="qty-btn" onClick={inc}>+</button>
             </div>
 
-            <button className="add-btn" onClick={handleAdd}>Add to Cart</button>
+            <button className="add-btn" onClick={handleAdd}>Add</button>
           </div>
         </div>
       </div>

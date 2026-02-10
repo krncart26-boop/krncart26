@@ -3,11 +3,11 @@ import React from "react";
 
 // Emoji mapping for different hotel types
 const hotelEmojis = {
-  "Udupi Palace": "🍳",
+  "Udupi Palace": "🍴",
   "Ice Magic": "🍨",
-  "KRN Restaurant": "🍽️",
+  "Gani's Restaurant": "🍲",
   "Shri Tiffany's": "🥘",
-  "Shri Hotel": "🍲",
+  "Shri Hotel": "🍽️",
   "Rajkumar Panipuri": "🍜",
   "Gowda Palav Centre": "🍚",
   "VB Bakery": "🥐",
@@ -16,7 +16,7 @@ const hotelEmojis = {
   "Tirumala Juice": "🧃",
   "Ayyangars Bakery": "🍰",
   "Lakshmi Juice Corner": "🥤",
-  "Gani's Restaurant": "🍴",
+  "KRN Restaurant": "🍽️",
   "ShreeSha cafe": "☕",
 };
 

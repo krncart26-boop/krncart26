@@ -51,6 +51,7 @@ export function CartProvider({ children }){
       'Keshava Chats': 1.99,
       'Lakshmi Juice Corner': 10.00,
       'ShreeSha India': 5.99,
+      "Gani's Restaurant": 9.99,
     };
     return rates[hotelName] ?? 10; // default to 10 for other hotels
   }
@@ -76,7 +77,7 @@ export function CartProvider({ children }){
     const parcelFee = Number(parcelRaw.toFixed(2));
 
     const subtotal = Number((base + parcelFee).toFixed(2));
-    const gst = Number((subtotal * 0.05).toFixed(2));
+    const gst = Number((subtotal * 0.03).toFixed(2));
     const platformFee = Number((subtotal * 0.02).toFixed(2));
 
     const total = Number((subtotal + gst + platformFee).toFixed(2));

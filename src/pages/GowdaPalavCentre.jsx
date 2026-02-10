@@ -47,26 +47,15 @@ export default function GowdaPalavCentre(){
         <h2 style={{margin:0}} className="page-heading">Gowda Palav Centre</h2>
       </div>
 
-      {/* Timing banner (unique darker blue) */}
-      <div className="gowda-timing-banner" role="region" aria-label="Gowda Palav Centre opening hours">
+      {/* Unified blue banner with hours and closure info */}
+      <div className="gowda-unified-banner" role="region" aria-label="Gowda Palav Centre hours and notice">
         <div className="timing-icon" aria-hidden="true">
           <span className="clock-emoji">⏰</span>
-          <span className="status-dot" />
         </div>
-
         <div className="timing-text">
-          <div className="timing-title">Available Today</div>
-          <div className="timing-time">12:00 PM – 5:00 PM</div>
-          <div className="timing-sub">Limited hours – order early</div>
-        </div>
-      </div>
-
-      {/* Monday Closed Banner */}
-      <div style={{ backgroundColor: '#fee2e2', borderLeft: '4px solid #dc2626', padding: '12px 16px', margin: '12px 0', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <span style={{ fontSize: '20px' }}>🚫</span>
-        <div>
-          <div style={{ fontWeight: '600', color: '#991b1b', marginBottom: '2px' }}>Closed on Mondays</div>
-          <div style={{ fontSize: '0.9em', color: '#b91c1c' }}>We're closed every Monday. Please plan your order accordingly.</div>
+          <div className="timing-title">Gowda Palav Centre</div>
+          <div className="timing-sub" style={{fontSize:'12px', marginTop:'4px'}}>12:00 PM – 5:00 PM</div>
+          <div className="timing-sub" style={{fontSize:'12px', marginTop:'2px'}}>Closed on Mondays</div>
         </div>
       </div>
 

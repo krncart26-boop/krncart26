@@ -268,7 +268,7 @@ html,body,#root{height:100%;width:100%;overflow-x:hidden;}
 body{
   margin:0;
   font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F0 50%, #E8F4F8 100%);
+  background: #faf8f6;
   color:#1f2937;
   -webkit-font-smoothing:antialiased;
   font-size:16px;
@@ -276,8 +276,8 @@ body{
   min-height: 100vh;
 }
 
-.app-root{min-height:100vh;display:flex;flex-direction:column;padding-bottom:70px;overflow-x:hidden;width:100%;} /* space for bottom nav */
-.app-content{flex:1;padding:6px;padding-bottom:80px;width:100%;max-width:100%;box-sizing:border-box;overflow-x:hidden;}
+.app-root{min-height:100vh;display:flex;flex-direction:column;padding-bottom:70px;overflow-x:hidden;width:100%;background:#faf8f6;}
+.app-content{flex:1;padding:6px;padding-bottom:80px;width:100%;max-width:100%;box-sizing:border-box;overflow-x:hidden;background:#faf8f6;}
 
 /* Header */
 
@@ -814,6 +814,7 @@ body{
   text-shadow: 0 1px 3px rgba(13,71,161,0.08);
   flex-direction: column;
   gap: 1px;
+  text-decoration: none;
 }
 .nav-item:hover {
   background: rgba(255,255,255,0.22);
@@ -1002,51 +1003,37 @@ body{
 }
 
 /* KRN Restaurant section cards */
-.section-list{display:flex;flex-direction:column;gap:12px;margin-top:8px;width:100%;box-sizing:border-box;}
+.section-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;width:100%;box-sizing:border-box;justify-content:flex-start;}
 
 /* Full blue filled cards (consistent across all sections) */
-.section-card{display:flex;flex-direction:column;gap:6px;border-radius:12px;padding:14px;box-shadow:0 6px 18px rgba(2,6,23,0.06);border:0;cursor:pointer;transition:transform 140ms ease,box-shadow 140ms ease;width:100%;text-align:left;background:var(--sky);color:#fff;word-wrap:break-word;overflow-wrap:break-word;}
-.section-card:active{transform:scale(0.98)}
-.section-card:focus{outline:2px solid rgba(74,163,223,0.28);outline-offset:2px}
+.section-card{display:flex;flex-direction:column;gap:4px;border-radius:10px;padding:8px;box-shadow:var(--shadow-md);border:none;cursor:pointer;transition:transform 0.3s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.3s,background 0.3s;width:calc(33.333% - 7px);aspect-ratio:1/1;text-align:center;background:linear-gradient(135deg,#1976d2,#42a5f5);color:#fff;word-wrap:break-word;overflow-wrap:break-word;position:relative;overflow:hidden;justify-content:center;align-items:center;}
+.section-card::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at top right,rgba(255,255,255,0.5),transparent);pointer-events:none}
+.section-card:active{transform:scale(0.98);box-shadow:var(--shadow-sm)}
+.section-card:focus{outline:2px solid rgba(77,184,232,0.4);outline-offset:2px}
 
 /* Text styles */
-.section-card .section-title{font-weight:800;color:#fff;font-size:16px}
-.section-card .section-kannada{font-size:13px;color:rgba(255,255,255,0.92)}
-.section-card .section-subtitle{font-size:12px;color:rgba(255,255,255,0.85);margin-top:6px}
+.section-card .section-title{font-weight:900;color:#fff;font-size:13px;position:relative;z-index:1;line-height:1.2}
+.section-card .section-kannada{font-size:10px;color:rgba(255,255,255,0.85);position:relative;z-index:1;font-weight:600}
+.section-card .section-subtitle{font-size:9px;color:rgba(255,255,255,0.75);margin-top:2px;position:relative;z-index:1}
 
 /* Hover / focus states (subtle lift) */
-.section-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(10,63,95,0.10)}
+.section-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);background:linear-gradient(135deg,#1565c0,#2196f3)}
 
 /* ensure any old accent variant doesn't override */
-.section-card.accent, .section-card.blue{background:var(--sky);border-left:0;color:#fff}
+.section-card.accent, .section-card.blue{background:linear-gradient(135deg,#1976d2,#42a5f5);border-left:0;color:#fff}
 
 /* Responsive styles for section cards on mobile */
 @media (max-width: 767px) {
+  .section-list {
+    gap: 10px;
+  }
+
   .section-card {
-    padding: 12px;
+    padding: 10px;
     border-radius: 10px;
-    gap: 4px;
-  }
-
-  .section-card .section-title {
-    font-size: 15px;
-  }
-
-  .section-card .section-kannada {
-    font-size: 12px;
-  }
-
-  .section-card .section-subtitle {
-    font-size: 11px;
-    margin-top: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-card {
-    padding: 10px 12px;
-    border-radius: 8px;
     gap: 3px;
+    width: calc(33.333% - 7px);
+    aspect-ratio: 1/1;
   }
 
   .section-card .section-title {
@@ -1060,6 +1047,118 @@ body{
   .section-card .section-subtitle {
     font-size: 10px;
     margin-top: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-list {
+    gap: 8px;
+  }
+
+  .section-card {
+    padding: 9px;
+    border-radius: 9px;
+    gap: 2px;
+    width: calc(33.333% - 5px);
+    aspect-ratio: 1/1;
+  }
+
+  .section-card .section-title {
+    font-size: 12px;
+    line-height: 1.15;
+  }
+
+  .section-card .section-kannada {
+    font-size: 10px;
+  }
+
+  .section-card .section-subtitle {
+    font-size: 9px;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 375px) {
+  .section-list {
+    gap: 7px;
+  }
+
+  .section-card {
+    padding: 8px;
+    border-radius: 8px;
+    gap: 2px;
+    width: calc(33.333% - 5px);
+    aspect-ratio: 1/1;
+  }
+
+  .section-card .section-title {
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .section-card .section-kannada {
+    font-size: 9px;
+  }
+
+  .section-card .section-subtitle {
+    font-size: 8px;
+    margin-top: 1px;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-list {
+    gap: 6px;
+  }
+
+  .section-card {
+    padding: 7px;
+    border-radius: 7px;
+    gap: 1px;
+    width: calc(33.333% - 4px);
+    aspect-ratio: 1/1;
+  }
+
+  .section-card .section-title {
+    font-size: 10px;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .section-card .section-kannada {
+    font-size: 8px;
+  }
+
+  .section-card .section-subtitle {
+    font-size: 7px;
+    margin-top: 1px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-list {
+    gap: 12px;
+  }
+
+  .section-card {
+    padding: 13px;
+    border-radius: 11px;
+    gap: 4px;
+    width: calc(33.333% - 8px);
+    aspect-ratio: 1/1;
+  }
+
+  .section-card .section-title {
+    font-size: 16px;
+  }
+
+  .section-card .section-kannada {
+    font-size: 13px;
+  }
+
+  .section-card .section-subtitle {
+    font-size: 12px;
+    margin-top: 4px;
   }
 }
 
@@ -1083,6 +1182,12 @@ body{
 .gowda-timing-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
 .gowda-timing-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.92);margin-top:6px}
 
+/* Gowda Palav Centre unified banner (blue) */
+.gowda-unified-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,#1976d2,#42a5f5)}
+.gowda-unified-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:24px}
+.gowda-unified-banner .timing-title{font-weight:800;font-size:16px}
+.gowda-unified-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.95)}
+
 /* Small note text shown above Gowda items */
 .special-note{font-size:13px;color:rgba(17,24,39,0.6);margin-top:8px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
 .special-note .info-icon{font-size:14px;line-height:14px}
@@ -1091,6 +1196,12 @@ body{
 .tiffany-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,rgba(255,0,51,0.12),#c11515)}
 .tiffany-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center}
 .tiffany-banner .timing-title{font-weight:800}
+
+/* Shri Hotel timing banner (blue) */
+.shri-hotel-banner{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;color:#fff;box-shadow:0 8px 24px rgba(2,6,23,0.08);margin-top:12px;background:linear-gradient(135deg,#1976d2,#42a5f5)}
+.shri-hotel-banner .timing-icon{min-width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;font-size:24px}
+.shri-hotel-banner .timing-title{font-weight:800;font-size:16px}
+.shri-hotel-banner .timing-sub{font-size:13px;color:rgba(255,255,255,0.95)}
 
 /* Info box for Rice Item daily list */
 .info-box{background:rgba(14,165,233,0.06);padding:12px;border-radius:10px;margin-top:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}

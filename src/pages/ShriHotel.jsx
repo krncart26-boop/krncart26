@@ -14,17 +14,19 @@ export default function ShriHotel(){
         <h2 style={{margin:0}} className="page-heading">Shri Hotel</h2>
       </div>
 
-      {/* Top banner: weekly closure (reuse Tiffany's alert style) */}
-      <div className="tiffany-banner" role="region" aria-label="Shri Hotel notice">
+      {/* Top banner: Shri Hotel timing and notice */}
+      <div className="shri-hotel-banner" role="region" aria-label="Shri Hotel timings">
         <div className="timing-icon" aria-hidden="true">
-          <span className="clock-emoji">⚠️</span>
+          <span className="clock-emoji">⏰</span>
         </div>
         <div className="timing-text">
-          <div className="timing-title">Closed on Thursdays</div>
+          <div className="timing-title">Shri Hotel</div>
+          <div className="timing-sub" style={{fontSize:'12px', marginTop:'4px'}}>Morning: 7:15 AM – 11:45 AM</div>
+          <div className="timing-sub" style={{fontSize:'12px', marginTop:'2px'}}>Evening: 3:15 PM – 7:45 PM</div>
         </div>
       </div>
 
-      {/* Sub-section cards (no items) */}
+      {/* Sub-section cards */}
       <div style={{marginTop:12}}>
         <SectionCard english="Morning" kannada="" subtitle="7:15 AM – 11:45 AM" onClick={()=>navigate('/shri-hotel/morning')} />
       </div>

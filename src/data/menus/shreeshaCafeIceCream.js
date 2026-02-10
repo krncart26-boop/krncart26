@@ -1,10 +1,9 @@
-// ShreeSha Cafe Ice Cream Menu
+// ShreeSha Cafe Ice Cream Items
 export const SHREESHA_CAFE_ICECREAM_ITEMS = [
-  { id: "sc-ice-vanilla", name: "Vanilla Ice Cream", kannada: "ವನಿಲ್ಲಾ ಐಸ್ ಕ್ರೀಮ್", price: 40 },
-  { id: "sc-ice-strawberry", name: "Strawberry Ice Cream", kannada: "ಸ್ಟ್ರಾಬೆರಿ ಐಸ್ ಕ್ರೀಮ್", price: 40 },
-  { id: "sc-ice-chocolate", name: "Chocolate Ice Cream", kannada: "ಚಾಕೊಲೇಟ್ ಐಸ್ ಕ್ರೀಮ್", price: 45 },
-  { id: "sc-ice-butterscotch", name: "Butterscotch Ice Cream", kannada: "ಬಟರ್ ಸ್ಕಾಚ್ ಐಸ್ ಕ್ರೀಮ್", price: 45 },
-  { id: "sc-ice-mango", name: "Mango Ice Cream", kannada: "ಮಾವಿನ ಐಸ್ ಕ್ರೀಮ್", price: 45 },
-  { id: "sc-ice-blackcurrant", name: "Black Currant Ice Cream", kannada: "ಬ್ಲ್ಯಾಕ್ ಕರೆಂಟ್ ಐಸ್ ಕ್ರೀಮ್", price: 50 },
-  { id: "sc-ice-kesar-pista", name: "Kesar Pista Ice Cream", kannada: "ಕೇಸರ್ ಪಿಸ್ತಾ ಐಸ್ ಕ್ರೀಮ್", price: 55 }
+  { id: "sc-ice-vanilla", name: "Vanilla", kannada: "ವನಿಲ್ಲಾ", price: 50 },
+  { id: "sc-ice-chocolate", name: "Chocolate", kannada: "ಚಾಕೋಲೇಟ್", price: 50 },
+  { id: "sc-ice-strawberry", name: "Strawberry", kannada: "ಸ್ಟ್ರಾಬೆರಿ", price: 50 },
+  { id: "sc-ice-mango", name: "Mango", kannada: "ಮಾವಿನೆ", price: 60 },
+  { id: "sc-ice-butterscotch", name: "Butterscotch", kannada: "ಬಟರ್ಸ್ಕಚ್", price: 60 },
+  { id: "sc-ice-kulfi", name: "Kulfi", kannada: "ಕುಲ್ಫಿ", price: 40 },
 ];

@@ -15,7 +15,6 @@ export const SHRI_EVENING_ITEMS = [
   { id: 'sh-rava-idli', name: 'Rava Idli', kannada: 'ರವ ಇಡ್ಲಿ', price: 30.99 },
   { id: 'sh-bonda-soup', name: 'Bonda Soup', kannada: 'ಬೊಂಡಾ ಸೂಪ್', price: 32.99 },
   { id: 'sh-sweet', name: 'Sweet', kannada: 'ಸಿಹಿ', price: 27.99 },
-  { id: 'sh-curd-vada', name: 'Curd Vada', kannada: 'ಮೊಸರು ವಡೆ', price: 47.99 },
   { id: 'sh-tomato-dosa', name: 'Tomato Dosa', kannada: 'ಟೊಮೋಟೋ ದೋಸೆ', price: 52.99 },
   { id: 'sh-butter-set-single', name: 'Butter Set Masala (Single)', kannada: 'ಬೆಣ್ಣೆ ಸೆಟ್ ಮಸಾಲೆ ಸಿಂಗಲ್', price: 37.99 },
   { id: 'sh-single-set', name: 'Single Set Masala', kannada: 'ಸಿಂಗಲ್ ಸೆಟ್ ಮಸಾಲೆ', price: 29.99 },
