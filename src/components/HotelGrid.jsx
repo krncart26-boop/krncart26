@@ -3,23 +3,23 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const hotelDatabase = [
-  { name: "Tirumala Juice", categories: ["Juices"] },
-  { name: "Lakshmi Juice Corner", categories: ["Juices"] },
   { name: "Ice Magic", categories: ["Lunch", "Evening Food", "Juices", "Snacks", "Ice Cream & Sundaes"] },
   { name: "Udupi Palace", categories: ["Breakfast", "Lunch", "Juices", "Snacks", "Chats", "Ice Cream & Sundaes"] },
   { name: "Shri Hotel", categories: ["Breakfast", "Evening Food"] },
-  { name: "Gani's Restaurant", categories: ["Lunch"] },
-  { name: "KRN Restaurant", categories: ["Lunch", "Evening Food", "Snacks"] },
+  { name: "Shri Tiffany's", categories: ["Breakfast", "Evening Food"] },
   { name: "Gowda Palav Centre", categories: ["Lunch"] },
   { name: "Popular Biriyani Palace", categories: ["Lunch", "Evening Food"] },
-  { name: "Shri Tiffany's", categories: ["Breakfast", "Evening Food"] },
+  { name: "KRN Restaurant", categories: ["Lunch", "Evening Food", "Snacks"] },
+  { name: "Keshava Chats", categories: ["Chats"] },
+  { name: "Rajkumar Panipuri", categories: ["Chats"] },
+  { name: "Sanju Gobi House", categories: ["Chats"] },
+  { name: "Ayyangars Cake House", categories: ["Bakery"] },
+  { name: "Tirumala Juice", categories: ["Juices"] },
+  { name: "Lakshmi Juice Corner", categories: ["Juices"] },
+  { name: "Gani's Restaurant", categories: ["Lunch"] },
   { name: "VB Bakery", categories: ["Bakery"] },
   { name: "ShreeSha cafe", categories: ["Juices", "Snacks"] },
-  { name: "Sanju Gobi House", categories: ["Chats"] },
-  { name: "Rajkumar Panipuri", categories: ["Chats"] },
-  { name: "Keshava Chats", categories: ["Chats"] },
   { name: "Ayyangars Bakery", categories: ["Bakery"] },
-  { name: "Ayyangars Cake House", categories: ["Bakery"] },
 ];
 
 // Color palette for each hotel
