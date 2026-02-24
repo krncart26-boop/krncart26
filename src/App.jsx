@@ -29,6 +29,8 @@ import VBBakery from "./pages/VBBakery";
 import VBBakerySection from "./pages/VBBakerySection";
 import AyyangarsSection from "./pages/AyyangarsSection";
 import AyyangarssBakery from "./pages/AyyangarssBakery";
+import AyyangarssCakeHouse from "./pages/AyyangarssCakeHouse";
+import AyyangarssCakeHouseSection from "./pages/AyyangarssCakeHouseSection";
 import GanisRestaurant from "./pages/GanisRestaurant";
 import SanjuGobiHouse from "./pages/SanjuGobiHouse";
 import JuiceJunction from "./pages/JuiceJunction";
@@ -57,6 +59,7 @@ import SanjuGobiHouseChatsFilter from "./pages/SanjuGobiHouseChatsFilter";
 import KeshavaChatsFiltered from "./pages/KeshavaChatsFiltered";
 import TirumalaJuiceFiltered from "./pages/TirumalaJuiceFiltered";
 import AyyangarssBakeryFiltered from "./pages/AyyangarssBakeryFiltered";
+import AyyangarssCakeHouseFiltered from "./pages/AyyangarssCakeHouseFiltered";
 import LakshmiJuiceCornerFiltered from "./pages/LakshmiJuiceCornerFiltered";
 import GanisRestaurantFiltered from "./pages/GanisRestaurantFiltered";
 import ShreeShaCafeFiltered from "./pages/ShreeShaCafeFiltered";
@@ -149,6 +152,7 @@ export default function App() {
             <Route path="/tirumala-juice/filter/juices/:sectionSlug" element={<TirumalaJuiceFiltered />} />
             <Route path="/tirumala-juice/filter/:categorySlug" element={<TirumalaJuiceFiltered />} />
             <Route path="/ayyangars-bakery/filter/:categorySlug" element={<AyyangarssBakeryFiltered />} />
+            <Route path="/ayyangars-cake-house/filter/:categorySlug" element={<AyyangarssCakeHouseFiltered />} />
             <Route path="/juice-junction/filter/juices/:sectionSlug" element={<LakshmiJuiceCornerFiltered />} />
             <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
             {/* Gani's Restaurant ALL filter with sections */}
@@ -187,6 +191,8 @@ export default function App() {
             <Route path="/vb-bakery/:sectionSlug" element={<VBBakerySection />} />
             <Route path="/ayyangars-bakery" element={<AyyangarssBakery />} />
             <Route path="/ayyangars-bakery/:sectionSlug" element={<AyyangarsSection />} />
+            <Route path="/ayyangars-cake-house" element={<AyyangarssCakeHouse />} />
+            <Route path="/ayyangars-cake-house/:sectionSlug" element={<AyyangarssCakeHouseSection />} />
             <Route path="/ganis-restaurant" element={<GanisRestaurant />} />
             <Route path="/sanju-gobi-house" element={<SanjuGobiHouse />} />
             <Route path="/juice-junction" element={<JuiceJunction />} />

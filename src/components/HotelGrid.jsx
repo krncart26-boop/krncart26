@@ -19,6 +19,7 @@ const hotelDatabase = [
   { name: "Rajkumar Panipuri", categories: ["Chats"] },
   { name: "Keshava Chats", categories: ["Chats"] },
   { name: "Ayyangars Bakery", categories: ["Bakery"] },
+  { name: "Ayyangars Cake House", categories: ["Bakery"] },
 ];
 
 // Color palette for each hotel
@@ -35,6 +36,7 @@ const hotelColors = {
   "Keshava Chats": "#D8B5E8",
   "Tirumala Juice": "#D0E8A8",
   "Ayyangars Bakery": "#E8D0B8",
+  "Ayyangars Cake House": "#F0D8C8",
   "Lakshmi Juice Corner": "#A8E8D8",
   "Gani's Restaurant": "#E0D8B0",
   "ShreeSha cafe": "#E8B8D0",
@@ -56,6 +58,7 @@ function getHotelIcon(hotelName) {
     "Keshava Chats": "🥘",
     "Tirumala Juice": "🧃",
     "Ayyangars Bakery": "🥖",
+    "Ayyangars Cake House": "🍰",
     "Lakshmi Juice Corner": "🍹",
     "Gani's Restaurant": "🍳",
     "ShreeSha cafe": "🥤",
@@ -84,6 +87,7 @@ function getHotelRoute(hotelName) {
     case 'Udupi Hotel':
     case 'Udupi Palace': return '/udupi-hotel';
     case 'Ayyangars Bakery': return '/ayyangars-bakery';
+    case 'Ayyangars Cake House': return '/ayyangars-cake-house';
     case 'Popular Biriyani Palace': return '/popular-biriyani-palace';
     default: return `/hotel/${encodeURIComponent(hotelName)}`;
   }

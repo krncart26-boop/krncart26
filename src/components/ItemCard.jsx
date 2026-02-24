@@ -31,6 +31,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, subse
       'juice-junction': 'Lakshmi Juice Corner',
       'lakshmi-juice-corner': 'Lakshmi Juice Corner',
       'ayyangars-bakery': 'Ayyangars Bakery',
+      'ayyangars-cake-house': 'Ayyangars Cake House',
       'shreesha-india': 'ShreeSha India',
       'shreesha-cafe': 'ShreeSha cafe',
       'ganis-restaurant': "Gani's Restaurant",
