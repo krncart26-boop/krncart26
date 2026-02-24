@@ -96,30 +96,46 @@ const IM_CHINESE = [
   { id: "im-gobi-manchu", name: "Gobi Manchurian", kannada: "ಗೋಬಿ ಮಂಚುರಿಯನ್", price: 80 },
   { id: "im-paneer-manchu", name: "Paneer Manchurian", kannada: "ಪನೀರ್ ಮಂಚುರಿಯನ್", price: 120 },
   { id: "im-mushroom-manchu", name: "Mushroom Manchurian", kannada: "ಮಶ್ರೂಮ್ ಮಂಚುರಿಯನ್", price: 120 },
-  { id: "im-chilli-paneer", name: "Chilly Paneer", kannada: "ಚಿಲ್ಲಿ ಪನೀರ್", price: 130 }
-];
-
-const IM_NOODLES = [
-  { id: "im-noodles-veg", name: "Veg Noodles", kannada: "ವೆಜ್ ನೂಡಲ್ಸ್", price: 110 },
-  { id: "im-noodles-hakka", name: "Hakka Noodles", kannada: "ಹಕ್ಕಾ ನೂಡಲ್ಸ್", price: 120 },
-  { id: "im-noodles-schezwan", name: "Schezwan Noodles", kannada: "ಶೆಜುವಾನ್ ನೂಡಲ್ಸ್", price: 120 }
+  { id: "im-chilli-paneer", name: "Chilly Paneer", kannada: "ಚಿಲ್ಲಿ ಪನೀರ್", price: 130 },
+  { id: "im-bbq-paneer", name: "BBQ Paneer", kannada: "ಬಿಬಿಕ್ಯೂ ಪನೀರ್", price: 130 },
+  { id: "im-babycorn-chilly", name: "Babycorn Chilly", kannada: "ಬೇಬಿಕಾರ್ನ್ ಚಿಲ್ಲಿ", price: 110 },
+  { id: "im-paneer-kabab", name: "Paneer Kabab", kannada: "ಪನೀರ್ ಕಬಾಬ್", price: 120 },
+  { id: "im-mushroom-kabab", name: "Mushroom Kabab", kannada: "ಮಶ್ರೂಮ್ ಕಬಾಬ್", price: 120 }
 ];
 
 const IM_FRIED_RICE = [
   { id: "im-butter-rice", name: "Butter Fried Rice", kannada: "ಬೆಣ್ಣೆ ಫ್ರೈಡ್ ರೈಸ್", price: 110 },
   { id: "im-mexican-rice", name: "Mexican Fried Rice", kannada: "ಮೆಕ್ಸಿಕನ್ ಫ್ರೈಡ್ ರೈಸ್", price: 130 },
-  { id: "im-schezwan-rice", name: "Shezwan Fried Rice", kannada: "ಶೆಜುವಾನ್ ಫ್ರೈಡ್ ರೈಸ್", price: 120 }
+  { id: "im-schezwan-rice", name: "Shezwan Fried Rice", kannada: "ಶೆಜುವಾನ್ ಫ್ರೈಡ್ ರೈಸ್", price: 120 },
+  { id: "im-classic-rice", name: "Classic Fried Rice", kannada: "ಕ್ಲಾಸಿಕ್ ಫ್ರೈಡ್ ರೈಸ್", price: 120 }
+];
+
+const IM_NOODLES = [
+  { id: "im-classic-noodles", name: "Classic Noodles", kannada: "ಕ್ಲಾಸಿಕ್ ನೂಡಲ್ಸ್", price: 100 },
+  { id: "im-tomato-noodles", name: "Tomato Noodles", kannada: "ಟೊಮಾಟೋ ನೂಡಲ್ಸ್", price: 110 },
+  { id: "im-chilly-garlic-noodles", name: "Chilly Garlic Noodles", kannada: "ಚಿಲ್ಲಿ ಗಾರ್ಲಿಕ್ ನೂಡಲ್ಸ್", price: 110 },
+  { id: "im-mexican-chilly-noodles", name: "Mexican Chilly Noodles", kannada: "ಮೆಕ್ಸಿಕನ್ ಚಿಲ್ಲಿ ನೂಡಲ್ಸ್", price: 130 },
+  { id: "im-butter-noodles", name: "Butter Noodles", kannada: "ಬಟರ್ ನೂಡಲ್ಸ್", price: 110 },
+  { id: "im-paneer-chilly-noodles", name: "Paneer Chilly Noodles", kannada: "ಪನೀರ್ ಚಿಲ್ಲಿ ನೂಡಲ್ಸ್", price: 130 }
 ];
 
 const IM_PASTA = [
   { id: "im-pasta-tomato", name: "Tomato Chilly Pasta", kannada: "ಟೊಮೋಟೊ ಪಾಸ್ತಾ", price: 110 },
   { id: "im-pasta-white", name: "White Sauce Pasta", kannada: "ವೈಟ್ ಸಾಸ್ ಪಾಸ್ತಾ", price: 110 },
-  { id: "im-pasta-paneer", name: "Paneer Pasta", kannada: "ಪನೀರ್ ಪಾಸ್ತಾ", price: 130 }
+  { id: "im-pasta-paneer", name: "Paneer Pasta", kannada: "ಪನೀರ್ ಪಾಸ್ತಾ", price: 130 },
+  { id: "im-pasta-spicy-creamy", name: "Spicy Creamy Pasta", kannada: "ಸ್ಪೈಸಿ ಕ್ರೀಮಿ ಪಾಸ್ತಾ", price: 110 },
+  { id: "im-pasta-garlic-cheese", name: "Garlic Cheese Pasta", kannada: "ಗಾರ್ಲಿಕ್ ಚೀಸ್ ಪಾಸ್ತಾ", price: 110 },
+  { id: "im-pasta-pesto", name: "Pesto Pasta", kannada: "ಪೆಸ್ಟೋ ಪಾಸ್ತಾ", price: 120 }
 ];
 
 const IM_SHAWARMA = [
   { id: "im-shawarma-veg", name: "Veg Shawarma", kannada: "ವೆಜ್ ಶವರ್ಮ", price: 110 },
-  { id: "im-shawarma-paneer", name: "Paneer Shawarma", kannada: "ಪನೀರ್ ಶವರ್ಮ", price: 130 }
+  { id: "im-shawarma-paneer", name: "Paneer Shawarma", kannada: "ಪನೀರ್ ಶವರ್ಮ", price: 130 },
+  { id: "im-shawarma-classic", name: "Classic Shawarma", kannada: "ಕ್ಲಾಸಿಕ್ ಶವರ್ಮ", price: 90 },
+  { id: "im-shawarma-cheese", name: "Cheese Shawarma", kannada: "ಚೀಸ್ ಶವರ್ಮ", price: 100 },
+  { id: "im-shawarma-roasted-corn", name: "Roasted Corn Cheese Shawarma", kannada: "ರೋಸ್ಟೆಡ್ ಕಾರ್ನ್ ಚೀಸ್ ಶವರ್ಮ", price: 110 },
+  { id: "im-shawarma-mexican", name: "Mexican Shawarma", kannada: "ಮೆಕ್ಸಿಕನ್ ಶವರ್ಮ", price: 120 },
+  { id: "im-shawarma-mushroom-cheese", name: "Mushroom Cheese Shawarma", kannada: "ಮಶ್ರೂಮ್ ಚೀಸ್ ಶವರ್ಮ", price: 120 }
 ];
 
 const SNACKS_ITEMS = {

@@ -54,6 +54,7 @@ export default function GanisRestaurantFiltered() {
                 name={item.name}
                 kannada={item.kannada}
                 price={item.price}
+                parcelCharge={item.parcelCharge}
                 subsection={sectionName}
               />
             ))}

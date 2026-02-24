@@ -3,39 +3,33 @@ import { useNavigate } from "react-router-dom";
 import ItemCard from "../components/ItemCard";
 
 const ITEMS = [
-  { id: 'chicken-palav-full', name: 'Chicken Palav (Full)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 139.99 },
-  { id: 'chicken-palav-half', name: 'Chicken Palav (Half)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 89.99 },
-
-  { id: 'mutton-pulav-full', name: 'Mutton Pulav (Full)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 239.99 },
-  { id: 'mutton-pulav-half', name: 'Mutton Pulav (Half)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 139.99 },
-
-  { id: 'pulav-rice-egg', name: 'Pulav Rice + Egg', kannada: 'ಪುಲಾವ್ ರೈಸ್ + ಮೊಟ್ಟೆ', price: 74.99 },
-
-  { id: 'chicken-kabab-full', name: 'Chicken Kabab / Chops (Full)', kannada: 'ಚಿಕನ್ (ಕಬಾಬ್)/(ಚಾಪ್ಸ್)', price: 139.99 },
-  { id: 'chicken-kabab-half', name: 'Chicken Kabab / Chops (Half)', kannada: 'ಚಿಕನ್ (ಕಬಾಬ್)/(ಚಾಪ್ಸ್)', price: 99.99 },
-
-  { id: 'chicken-leg-piece', name: 'Chicken Leg Piece', kannada: 'ಚಿಕನ್ (ಲೆಗ್ ಪೀಸ್)', price: 89.99 },
-
-  { id: 'chicken-lollipop-full', name: 'Chicken Lollipop / Liver (Full)', kannada: 'ಚಿಕನ್ (ಲಾಲಿಪಾಪ್ / ಲಿವರ್)', price: 139.99 },
-  { id: 'chicken-lollipop-half', name: 'Chicken Lollipop / Liver (Half)', kannada: 'ಚಿಕನ್ (ಲಾಲಿಪಾಪ್ / ಲಿವರ್)', price: 99.99 },
-
-  { id: 'kal-soup', name: 'Kal Soup (1 Cup)', kannada: 'ಕಾಲು ಸೂಪ್ (1 ಕಪ್)', price: 129.99 },
-
-  { id: 'boti-full', name: 'Boti (Full)', kannada: 'ಬೋಟಿ', price: 149.99 },
-  { id: 'boti-half', name: 'Boti (Half)', kannada: 'ಬೋಟಿ', price: 99.99 },
-
-  { id: 'mutton-keema-full', name: 'Mutton Keema (Full)', kannada: 'ಮಟನ್ ಕೀಮಾ', price: 159.99 },
-  { id: 'mutton-keema-half', name: 'Mutton Keema (Half)', kannada: 'ಮಟನ್ ಕೀಮಾ', price: 89.99 },
-
-  { id: 'thale-mamsa-full', name: 'Thale Mamsa (Full)', kannada: 'ತಲೆ ಮಾಂಸ', price: 149.99 },
-  { id: 'thale-mamsa-half', name: 'Thale Mamsa (Half)', kannada: 'ತಲೆ ಮಾಂಸ', price: 99.99 },
-
-  { id: 'keema-fry-full', name: 'Keema Fry (Full)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 209.99 },
-  { id: 'keema-fry-half', name: 'Keema Fry (Half)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 109.99 },
-
-  { id: 'nati-koli-palav-full', name: 'Nati Koli Palav (Full)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 159.99 },
-  { id: 'nati-koli-palav-half', name: 'Nati Koli Palav (Half)', kannada: 'ನಾಟಿಕೋಳಿ ಪುಲಾವ್', price: 99.99 },
+  { id: 'gp-lunch-chicken-palav-full', name: 'Chicken Palav (Full)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 139.99 },
+  { id: 'gp-lunch-chicken-palav-half', name: 'Chicken Palav (Half)', kannada: 'ಚಿಕನ್ ಪುಲಾವ್', price: 89.99 },
+  { id: 'gp-lunch-mutton-pulav-full', name: 'Mutton Pulav (Full)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 239.99 },
+  { id: 'gp-lunch-mutton-pulav-half', name: 'Mutton Pulav (Half)', kannada: 'ಮಟನ್ ಪುಲಾವ್', price: 139.99 },
+  { id: 'gp-lunch-pulav-rice-egg', name: 'Pulav Rice + Egg', kannada: 'ಪುಲಾವ್ ರೈಸ್ + ಮೊಟ್ಟೆ', price: 74.99 },
+  { id: 'gp-lunch-chicken-kabab-full', name: 'Chicken Kabab full', kannada: 'ಚಿಕನ್ (ಕಬಾಬ್)', price: 139.99 },
+  { id: 'gp-lunch-chicken-kabab-full', name: 'Chicken chops full', kannada: 'ಚಿಕನ್ (ಚಾಪ್ಸ್)', price: 139.99 },
+  { id: 'gp-lunch-chicken-kabab-half', name: 'Chicken Kabab (Half)', kannada: 'ಚಿಕನ್ (ಕಬಾಬ್)', price: 99.99 },
+  { id: 'gp-lunch-chicken-kabab-half', name: 'Chicken chops (Half)', kannada: 'ಚಿಕನ್ (ಚಾಪ್ಸ್)', price: 99.99 },
+  { id: 'gp-lunch-chicken-leg', name: 'Chicken Leg Piece', kannada: 'ಚಿಕನ್ (ಲೆಗ್ ಪೀಸ್)', price: 89.99 },
+  { id: 'gp-lunch-chicken-lollipop-full', name: 'Chicken Lollipop  (Full)', kannada: 'ಚಿಕನ್ (ಲಾಲಿಪಾಪ್)', price: 139.99 },
+  { id: 'gp-lunch-chicken-liver-full', name: 'Chicken Liver  (Full)', kannada: 'ಚಿಕನ್ (ಲಿವರ್)', price: 139.99 },
+  { id: 'gp-lunch-chicken-lollipop-half', name: 'Chicken Lollipop  (Half)', kannada: 'ಚಿಕನ್ (ಲಾಲಿಪಾಪ್ )', price: 99.99 },
+  { id: 'gp-lunch-chicken-liver-half', name: 'Chicken Liver  (Half)', kannada: 'ಚಿಕನ್ (ಲಿವರ್)', price: 99.99 },
+  { id: 'gp-lunch-kal-soup', name: 'Kal Soup (1 Cup)', kannada: 'ಕಾಲು ಸೂಪ್ (1 ಕಪ್)', price: 129.99 },
+  { id: 'gp-lunch-boti-full', name: 'Boti (Full)', kannada: 'ಬೋಟಿ', price: 149.99 },
+  { id: 'gp-lunch-boti-half', name: 'Boti (Half)', kannada: 'ಬೋಟಿ', price: 99.99 },
+  { id: 'gp-lunch-mutton-keema-full', name: 'Mutton Keema (Full)', kannada: 'ಮಟನ್ ಕೀಮಾ', price: 159.99 },
+  { id: 'gp-lunch-mutton-keema-half', name: 'Mutton Keema (Half)', kannada: 'ಮಟನ್ ಕೀಮಾ', price: 89.99 },
+  { id: 'gp-lunch-thale-mamsa-full', name: 'Thale Mamsa (Full)', kannada: 'ತಲೆ ಮಾಂಸ', price: 149.99 },
+  { id: 'gp-lunch-thale-mamsa-half', name: 'Thale Mamsa (Half)', kannada: 'ತಲೆ ಮಾಂಸ', price: 99.99 },
+  { id: 'gp-lunch-keema-fry-full', name: 'Keema Fry (Full)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 209.99 },
+  { id: 'gp-lunch-keema-fry-half', name: 'Keema Fry (Half)', kannada: 'ಕೀಮಾ ಫ್ರೈ', price: 109.99 },
+  { id: 'gp-lunch-nati-koli-full', name: 'Nati Koli Palav (Full)', kannada: 'ನಾಟಿ ಕೋಳಿ ಪುಲಾವ್', price: 159.99 },
+  { id: 'gp-lunch-nati-koli-half', name: 'Nati Koli Palav (Half)', kannada: 'ನಾಟಿ ಕೋಳಿ ಪುಲಾವ್', price: 99.99 },
 ];
+
 
 export default function GowdaPalavCentre(){
   const navigate = useNavigate();

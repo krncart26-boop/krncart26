@@ -40,7 +40,7 @@ export default function ShriHotelMorning(){
       </div>
 
       <div style={{marginTop:12}}>
-        <div style={{display:'flex',flexDirection:'column',gap:12}}>
+        <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
           {ITEMS.map(it => (
             <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} />
           ))}

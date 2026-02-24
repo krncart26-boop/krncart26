@@ -1,6 +1,6 @@
 export const VB_BAKERY_ITEMS = [
-  { itemName: "Chocolate Cake", kannadaName: "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", price: 17.99, category: "bakery" },
-  { itemName: "Chocolate Cake", kannadaName: "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", price: 22.99, category: "bakery" },
+  { itemName: "Chocolate Cake half", kannadaName: "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", price: 17.99, category: "bakery" },
+  { itemName: "Chocolate Cake full", kannadaName: "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", price: 22.99, category: "bakery" },
   { itemName: "Hani Cake", kannadaName: "ಹನಿ ಕೇಕ್", price: 12.99, category: "bakery" },
   { itemName: "Jam Roll Cake", kannadaName: "ಜ್ಯಾಮ್ ರೋಲ್ ಕೇಕ್", price: 12.99, category: "bakery" },
   { itemName: "Cream Cake", kannadaName: "ಕ್ರೀಮ್ ಕೇಕ್", price: 17.99, category: "bakery" },
@@ -28,7 +28,6 @@ export const VB_BAKERY_ITEMS = [
   { itemName: "Dates Burfi (250 gm)", kannadaName: "ಡೇಟ್ಸ್ ಬರ್ಫಿ", price: 102.99, category: "bakery" },
   { itemName: "Cream Roll", kannadaName: "ಕ್ರೀಮ್ ರೋಲ್", price: 17.99, category: "bakery" },
   { itemName: "Plain Cake (100 gm)", kannadaName: "ಪ್ಲೇನ್ ಕೇಕ್", price: 32.99, category: "bakery" },
-  { itemName: "Plum Cake (100 gm)", kannadaName: "ಪ್ಲಮ್ ಕೇಕ್", price: 32.99, category: "bakery" },
   { itemName: "Plain Cake (250 gm)", kannadaName: "ಪ್ಲೇನ್ ಕೇಕ್", price: 72.99, category: "bakery" },
   { itemName: "Banana Chips (100 gm)", kannadaName: "ಬಾಳೆಹಣ್ಣು ಚಿಪ್ಸ್", price: 42.99, category: "bakery" },
   { itemName: "Potato Chips (100 gm)", kannadaName: "ಆಲೂಗಡ್ಡೆ ಚಿಪ್ಸ್", price: 42.99, category: "bakery" },
@@ -70,5 +69,5 @@ export const VB_BAKERY_ITEMS = [
   { itemName: "Dairy Day Cone", kannadaName: "ಡೈರಿ ಡೇ ಕೋನ್", price: 12.99, category: "bakery" },
   { itemName: "Dairy Day Cone (Big)", kannadaName: "ಡೈರಿ ಡೇ ಕೋನ್ (ಬಿಗ್)", price: 22.99, category: "bakery" },
   { itemName: "Chocobar", kannadaName: "ಚಾಕೋಬಾರ್", price: 12.99, category: "bakery" },
-  { itemName: "Goodbad", kannadaName: "ಗುಡ್‌ಬ್ಯಾಡ್", price: 52.99, category: "bakery" },
+  { itemName: "Gudbud", kannadaName: "ಗುಡ್‌ಬ್ಯಾಡ್", price: 52.99, category: "bakery" },
 ];

@@ -3,11 +3,15 @@ import React from "react";
 
 export default function HeroCard(){
   return (
-    <div className="hero-card">
+    <div className="hero-card" style={{background:'linear-gradient(135deg, #ff6b9d 0%, #ff8fab 50%, #ffc4d6 100%)'}}>
       <div>
-        <h3>🎉 February Special</h3>
-        <p>Free Delivery this month!</p>
-        <p>Order your favorite food across K R Nagar</p>
+        <h3 style={{fontSize:'18px'}}>Order the food and enjoy the meal</h3>
+        <p style={{fontSize:'14px', fontWeight:'600', marginTop:'8px'}}>
+          we care! we deliver!
+        </p>
+        <p style={{fontSize:'12px', opacity:'0.9', marginTop:'6px'}}>
+          Share a special meal with your loved one ✨
+        </p>
       </div>
       <p className="hero-subtext">⏰ Open: 7:00 AM - 9:30 PM</p>
     </div>

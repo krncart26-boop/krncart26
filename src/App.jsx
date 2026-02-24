@@ -10,6 +10,8 @@ import KRNRestaurant from "./pages/KRNRestaurant";
 import SectionPlaceholder from "./pages/SectionPlaceholder";
 import IceMagic from "./pages/IceMagic";
 import IceSection from "./pages/IceSection";
+import IceMagicLunchFilter from "./pages/IceMagicLunchFilter";
+import IceMagicEveningFilter from "./pages/IceMagicEveningFilter";
 import UdupiHotel from "./pages/UdupiHotel";
 import UdupiSection from "./pages/UdupiSection";
 import GowdaPalavCentre from "./pages/GowdaPalavCentre";
@@ -25,6 +27,8 @@ import Rajkumar from "./pages/Rajkumar";
 import RajkumarSection from "./pages/RajkumarSection";
 import VBBakery from "./pages/VBBakery";
 import VBBakerySection from "./pages/VBBakerySection";
+import AyyangarsSection from "./pages/AyyangarsSection";
+import AyyangarssBakery from "./pages/AyyangarssBakery";
 import GanisRestaurant from "./pages/GanisRestaurant";
 import SanjuGobiHouse from "./pages/SanjuGobiHouse";
 import JuiceJunction from "./pages/JuiceJunction";
@@ -60,7 +64,6 @@ import PopularBiriyaniPalaceFiltered from "./pages/PopularBiriyaniPalaceFiltered
 
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
-
 import { CartProvider } from "./context/CartContext";
 
 export default function App() {
@@ -100,6 +103,12 @@ export default function App() {
             <Route path="/ice-magic/ice-cream-sundaes/:sectionSlug" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/ice-cream-sundaes" element={<IceMagicFiltered />} />
             <Route path="/ice-magic/filter/ice-cream-sundaes" element={<IceMagicFiltered />} />
+            <Route path="/ice-magic/filter/lunch/:sectionSlug" element={<IceMagicLunchFilter />} />
+            <Route path="/ice-magic/filter/lunch" element={<IceMagicLunchFilter />} />
+            <Route path="/ice-magic/filter/evening-food/:sectionSlug" element={<IceMagicEveningFilter />} />
+            <Route path="/ice-magic/filter/evening-food" element={<IceMagicEveningFilter />} />
+            <Route path="/ice-magic/filter/evening/:sectionSlug" element={<IceMagicEveningFilter />} />
+            <Route path="/ice-magic/filter/evening" element={<IceMagicEveningFilter />} />
             <Route path="/ice-magic/filter/juice/:sectionSlug" element={<IceMagicJuiceFiltered />} />
             <Route path="/ice-magic/filter/juice" element={<IceMagicJuiceFiltered />} />
             <Route path="/ice-magic/filter/:categorySlug" element={<IceMagicFiltered />} />
@@ -176,6 +185,8 @@ export default function App() {
             <Route path="/rajkumar/:sectionSlug" element={<RajkumarSection />} />
             <Route path="/vb-bakery" element={<VBBakery />} />
             <Route path="/vb-bakery/:sectionSlug" element={<VBBakerySection />} />
+            <Route path="/ayyangars-bakery" element={<AyyangarssBakery />} />
+            <Route path="/ayyangars-bakery/:sectionSlug" element={<AyyangarsSection />} />
             <Route path="/ganis-restaurant" element={<GanisRestaurant />} />
             <Route path="/sanju-gobi-house" element={<SanjuGobiHouse />} />
             <Route path="/juice-junction" element={<JuiceJunction />} />

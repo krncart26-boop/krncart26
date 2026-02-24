@@ -2094,3 +2094,77 @@ body{
     font-size: 13px;
   }
 }
+
+/* ========== VALENTINE'S DAY ANIMATION ========== */
+
+/* Falling hearts animation */
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(50vh) rotateZ(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotateZ(360deg);
+  }
+}
+
+/* Floating wobble effect */
+@keyframes wobble {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-8px);
+  }
+  75% {
+    transform: translateX(8px);
+  }
+}
+
+/* Heart burst on click animation */
+@keyframes heartBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) rotateZ(0deg);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--burst-end-x), var(--burst-end-y)) scale(0.3) rotateZ(360deg);
+  }
+}
+
+/* Valentine hearts container - fade out */
+@keyframes heartsContainerFadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.valentine-hearts-container {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.valentine-hearts-container.fade-out {
+  animation: heartsContainerFadeOut 1s ease-in forwards;
+}
+
+.valentine-heart {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* Ensure hearts are clickable through */
+.valentine-hearts-container * {
+  pointer-events: none;
+}

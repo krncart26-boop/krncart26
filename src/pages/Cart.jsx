@@ -97,7 +97,7 @@ export default function Cart(){
     // Build minimal order details lines
     const itemsLines = cartItems.map(i => {
       const lineTotal = (i.basePrice * i.qty).toFixed(2);
-      return `- ${i.name} | ${i.hotelName || 'Unknown'} | Qty: ${i.qty} | Price: ₹${lineTotal}`;
+      return `- ${i.name} | ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''} | Qty: ${i.qty} | Price: ₹${lineTotal}`;
     }).join('\n');
 
     const total = (totals.total + deliveryCharge).toFixed(2);
@@ -123,7 +123,7 @@ export default function Cart(){
       const br = computeItemBreakdown(i);
       const itemPrice = (i.basePrice).toFixed(2);
       const parcelCharge = br.parcelRate.toFixed(2);
-      return `${idx+1}. ${i.name}\n   Hotel: ${i.hotelName || 'Unknown'}\n   Qty: ${i.qty}   Price: ₹${itemPrice}\n   Parcel Charge: ₹${parcelCharge}`;
+      return `${idx+1}. ${i.name}\n   Hotel: ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''}\n   Qty: ${i.qty}   Price: ₹${itemPrice}\n   Parcel Charge: ₹${parcelCharge}`;
     }).join('\n\n');
 
     const subtotalNum = Number(totals.subtotal || 0);
@@ -132,7 +132,7 @@ export default function Cart(){
     const deliveryNum = subtotalNum < 100 ? 20 : 0;
     const grandTotalNum = Number((subtotalNum + gstNum + platformFeeNum + deliveryNum).toFixed(2));
 
-    const finalMsg = `🌟 KRN Cart — Order Confirmation 🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
+    const finalMsg = `🌟🌟KRN Cart — Order Confirmation🌟🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
 
     // Redirect using exact method (open in new tab with encoded message)
     window.open("https://wa.me/8660769547?text=" + encodeURIComponent(finalMsg), '_blank');

@@ -18,8 +18,8 @@ const SECTION_MAP = {
 
 const DATA = {
   "bakery-sweets": [
-    ["Chocolate Cake", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 17.99],
-    ["Chocolate Cake", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 22.99],
+    ["Chocolate Cake half", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 17.99],
+    ["Chocolate Cake full", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 22.99],
     ["Hani Cake", "ಹನಿ ಕೇಕ್", 12.99],
     ["Jam Roll Cake", "ಜ್ಯಾಮ್ ರೋಲ್ ಕೇಕ್", 12.99],
     ["Cream Cake", "ಕ್ರೀಮ್ ಕೇಕ್", 17.99],
@@ -50,7 +50,6 @@ const DATA = {
 
   "cakes-snacks": [
     ["Plain Cake (100 gm)", "ಪ್ಲೇನ್ ಕೇಕ್", 32.99],
-    ["Plum Cake (100 gm)", "ಪ್ಲಮ್ ಕೇಕ್", 32.99],
     ["Plain Cake (250 gm)", "ಪ್ಲೇನ್ ಕೇಕ್", 72.99],
     ["Banana Chips (100 gm)", "ಬಾಳೆಹಣ್ಣು ಚಿಪ್ಸ್", 42.99],
     ["Potato Chips (100 gm)", "ಆಲೂಗಡ್ಡೆ ಚಿಪ್ಸ್", 42.99],

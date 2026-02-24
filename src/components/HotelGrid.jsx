@@ -3,8 +3,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const hotelDatabase = [
+  { name: "Tirumala Juice", categories: ["Juices"] },
+  { name: "Lakshmi Juice Corner", categories: ["Juices"] },
+  { name: "Ice Magic", categories: ["Lunch", "Evening Food", "Juices", "Snacks", "Ice Cream & Sundaes"] },
   { name: "Udupi Palace", categories: ["Breakfast", "Lunch", "Juices", "Snacks", "Chats", "Ice Cream & Sundaes"] },
-  { name: "Ice Magic", categories: ["Juices", "Snacks", "Ice Cream & Sundaes"] },
   { name: "Shri Hotel", categories: ["Breakfast", "Evening Food"] },
   { name: "Gani's Restaurant", categories: ["Lunch"] },
   { name: "KRN Restaurant", categories: ["Lunch", "Evening Food", "Snacks"] },
@@ -15,8 +17,6 @@ const hotelDatabase = [
   { name: "ShreeSha cafe", categories: ["Juices", "Snacks"] },
   { name: "Sanju Gobi House", categories: ["Chats"] },
   { name: "Rajkumar Panipuri", categories: ["Chats"] },
-  { name: "Tirumala Juice", categories: ["Juices"] },
-  { name: "Lakshmi Juice Corner", categories: ["Juices"] },
   { name: "Keshava Chats", categories: ["Chats"] },
   { name: "Ayyangars Bakery", categories: ["Bakery"] },
 ];
@@ -100,12 +100,6 @@ export default function HotelGrid({ hotels, activeFilter = 'All' }){
 
   const handleHotelClick = (hotelName) => {
     const baseRoute = getHotelRoute(hotelName);
-    
-    // Ayyangars Bakery always shows filtered page with coming soon banner
-    if (hotelName === 'Ayyangars Bakery') {
-      navigate(`${baseRoute}/filter/bakery`);
-      return;
-    }
     
     // If "All" filter is active, navigate to the full hotel menu
     if (activeFilter === 'All') {

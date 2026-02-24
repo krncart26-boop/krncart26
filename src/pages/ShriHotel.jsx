@@ -27,11 +27,8 @@ export default function ShriHotel(){
       </div>
 
       {/* Sub-section cards */}
-      <div style={{marginTop:12}}>
+      <div style={{marginTop:12, display:'flex', flexDirection:'row', flexWrap:'wrap', gap:12}}>
         <SectionCard english="Morning" kannada="" subtitle="7:15 AM – 11:45 AM" onClick={()=>navigate('/shri-hotel/morning')} />
-      </div>
-
-      <div style={{marginTop:12}}>
         <SectionCard english="Evening" kannada="" subtitle="3:15 PM – 7:45 PM" onClick={()=>navigate('/shri-hotel/evening')} />
       </div>
     </div>

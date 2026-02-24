@@ -12,8 +12,8 @@ export const VB_SECTION_MAP = {
 
 export const VB_DATA = {
   "bakery-sweets": [
-    ["Chocolate Cake", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 17.99],
-    ["Chocolate Cake", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 22.99],
+    ["Chocolate Cake half", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 17.99],
+    ["Chocolate Cake full", "ಚಾಕ್ಲೇಟ್ ಕೇಕ್", 22.99],
     ["Hani Cake", "ಹನಿ ಕೇಕ್", 12.99],
     ["Jam Roll Cake", "ಜ್ಯಾಂ ರೋಲ್ ಕೇಕ್", 12.99],
     ["Cream Cake", "ಕ್ರೀಮ್ ಕೇಕ್", 17.99],

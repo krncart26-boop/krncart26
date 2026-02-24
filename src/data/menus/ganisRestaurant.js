@@ -37,8 +37,8 @@ export const GANIS_RESTAURANT_MENU = {
     { id: "gani-egg-masala", name: "Egg Masala", kannada: "ಎಗ್ ಮಸಾಲಾ", price: 149 },
   ],
   'combo-meals': [
-    { id: "gani-mutton-combo", name: "Roti (1), Mutton Curry (2 pcs), Mutton Chops (2 pcs), Chicken Kabab (1 pc), White Rice, Curd, Salad", kannada: "ರೋಟಿ (1), ಮಟನ್ ಕರಿ (2 ಪೀಸ್), ಮಟನ್ ಚಾಪ್ಸ್ (2 ಪೀಸ್), ಚಿಕನ್ ಕಬಾಬ್ (1 ಪೀಸ್), ಬಿಳಿ ಅನ್ನ, ಮೊಸರು, ಸಲಾಡ್", price: 369 },
-    { id: "gani-chicken-combo", name: "Roti (1), Chicken Curry (2 pcs), Chicken Chops (2 pcs), Chicken Kabab (1 pc), White Rice, Curd, Salad", kannada: "ರೋಟಿ (1), ಚಿಕನ್ ಕರಿ (2 ಪೀಸ್), ಚಿಕನ್ ಚಾಪ್ಸ್ (2 ಪೀಸ್), ಚಿಕನ್ ಕಬಾಬ್ (1 ಪೀಸ್), ಬಿಳಿ ಅನ್ನ, ಮೊಸರು, ಸಲಾಡ್", price: 189 },
+    { id: "gani-mutton-combo", name: "Mutton meals=Roti (1), Mutton Curry (2 pcs), Mutton Chops (2 pcs), Chicken Kabab (1 pc), White Rice, Curd, Salad", kannada: "ರೋಟಿ (1), ಮಟನ್ ಕರಿ (2 ಪೀಸ್), ಮಟನ್ ಚಾಪ್ಸ್ (2 ಪೀಸ್), ಚಿಕನ್ ಕಬಾಬ್ (1 ಪೀಸ್), ಬಿಳಿ ಅನ್ನ, ಮೊಸರು, ಸಲಾಡ್", price: 369, parcelCharge: 30 },
+    { id: "gani-chicken-combo", name: "Chicken meals=Roti (1), Chicken Curry (2 pcs), Chicken Chops (2 pcs), Chicken Kabab (1 pc), White Rice, Curd, Salad", kannada: "ರೋಟಿ (1), ಚಿಕನ್ ಕರಿ (2 ಪೀಸ್), ಚಿಕನ್ ಚಾಪ್ಸ್ (2 ಪೀಸ್), ಚಿಕನ್ ಕಬಾಬ್ (1 ಪೀಸ್), ಬಿಳಿ ಅನ್ನ, ಮೊಸರು, ಸಲಾಡ್", price: 189, parcelCharge: 30 },
   ],
   'palav-rice-items': [
     { id: "gani-egg-palav", name: "Egg Palav", kannada: "ಎಗ್ ಪಲಾವ್", price: 120 },

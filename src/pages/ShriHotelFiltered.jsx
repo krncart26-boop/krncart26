@@ -46,7 +46,7 @@ export default function ShriHotelFiltered() {
         </div>
 
         <div style={{marginTop:12}}>
-          <div style={{display:'flex',flexDirection:'column',gap:12}}>
+          <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
             {SHRI_HOTEL_BREAKFAST_ITEMS.map(it => (
               <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} />
             ))}
@@ -69,7 +69,7 @@ export default function ShriHotelFiltered() {
         </div>
 
         <div style={{marginTop:12}}>
-          <div style={{display:'flex',flexDirection:'column',gap:12}}>
+          <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
             {EVENING_ITEMS.map(it => (
               <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} />
             ))}

@@ -46,7 +46,7 @@ export default function ShriTiffanysFiltered() {
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -122,7 +122,7 @@ export default function ShriTiffanysFiltered() {
           </div>
         )}
 
-        <div className="items-list">
+        <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
           {items.map(item => (
             <ItemCard
               key={item.id}

@@ -29,7 +29,7 @@ const EVENING_ITEMS = [
 ];
 
 const DOSA_ITEMS = [
-  { id: 'tiff-set-dosa', name: 'Set Dosa', kannada: 'ಸೆಟ್ ದೋಸೆ', price: 18.00 },
+  { id: 'tiff-set-dosa', name: 'Set Dosa single', kannada: 'ಸೆಟ್ ದೋಸೆ', price: 18.00 },
   { id: 'tiff-benne-dosa-1', name: 'Benne Dosa (1)', kannada: 'ಬೆಣ್ಣೆ ದೋಸೆ (1)', price: 28.00 },
   { id: 'tiff-benne-dosa-2', name: 'Benne Dosa (2)', kannada: 'ಬೆಣ್ಣೆ ದೋಸೆ (2)', price: 55.00 },
   { id: 'tiff-plain-dosa', name: 'Plain Dosa', kannada: 'ಪ್ಲೇನ್ ದೋಸೆ', price: 50.00 },
@@ -58,7 +58,7 @@ export default function ShriTiffanys(){
           <span className="clock-emoji">⚠️</span>
         </div>
         <div className="timing-text">
-          <div className="timing-title">Closed on Thursday</div>
+          <div className="timing-title">Closed on Tuesday</div>
           <div style={{fontSize:'13px',color:'rgba(17,24,39,0.7)',marginTop:'4px'}}>
             Morning: 7:00 AM – 11:30 AM<br/>
             Evening: 4:30 PM – 8:30 PM
@@ -67,17 +67,19 @@ export default function ShriTiffanys(){
       </div>
 
       {/* Dosa Items Section (clickable card) */}
-      <div style={{marginTop:12}}>
+      <div style={{marginTop:12, display:'flex', flexDirection:'row', flexWrap:'wrap', gap:12}}>
         <SectionCard 
           english="Dosa Items" 
           kannada="ದೋಸೆ ಪದಾರ್ಥಗಳು" 
           onClick={() => setShowDosaItems(!showDosaItems)} 
         />
+        <SectionCard english="Morning" kannada="ಬೆಳಿಗ್ಗೆ" subtitle="7:00 AM – 11:30 AM" onClick={()=>navigate('/shri-tiffanys/morning')} />
+        <SectionCard english="Evening" kannada="ಸಂಜೆ" subtitle="4:30 PM – 8:30 PM" onClick={()=>navigate('/shri-tiffanys/evening')} />
       </div>
 
       {/* Dosa Items List */}
       {showDosaItems && (
-        <div className="items-list" style={{marginTop: 12}}>
+        <div style={{marginTop: 12, display:'flex',flexDirection:'row',flexWrap:'wrap',gap:12}}>
           {DOSA_ITEMS.map(item => (
             <ItemCard
               key={item.id}
@@ -89,16 +91,6 @@ export default function ShriTiffanys(){
           ))}
         </div>
       )}
-
-      {/* Morning section (tappable) */}
-      <div style={{marginTop:12}}>
-        <SectionCard english="Morning" kannada="ಬೆಳಿಗ್ಗೆ" subtitle="7:00 AM – 11:30 AM" onClick={()=>navigate('/shri-tiffanys/morning')} />
-      </div>
-
-      {/* Evening section (tappable) */}
-      <div style={{marginTop:18}}>
-        <SectionCard english="Evening" kannada="ಸಂಜೆ" subtitle="4:30 PM – 8:30 PM" onClick={()=>navigate('/shri-tiffanys/evening')} />
-      </div>
     </div>
   );
 }
