@@ -19,7 +19,6 @@ const hotelDatabase = [
   { name: "Gani's Restaurant", categories: ["Lunch"] },
   { name: "VB Bakery", categories: ["Bakery"] },
   { name: "ShreeSha cafe", categories: ["Juices", "Snacks"] },
-  { name: "Ayyangars Bakery", categories: ["Bakery"] },
 ];
 
 // Color palette for each hotel
@@ -57,8 +56,7 @@ function getHotelIcon(hotelName) {
     "Sanju Gobi House": "🫘",
     "Keshava Chats": "🥘",
     "Tirumala Juice": "🧃",
-    "Ayyangars Bakery": "🥖",
-    "Ayyangars Cake House": "🍰",
+    "Ayyangars Cake House": "🥖",
     "Lakshmi Juice Corner": "🍹",
     "Gani's Restaurant": "🍳",
     "ShreeSha cafe": "🥤",
