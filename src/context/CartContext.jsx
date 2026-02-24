@@ -52,6 +52,8 @@ export function CartProvider({ children }){
       'Lakshmi Juice Corner': 10.00,
       'ShreeSha India': 7.99,
       "Gani's Restaurant": 9.99,
+      "Ayyangars Bakery": 1.99,
+      "Ayyangars Cake House": 1.99,
     };
     return rates[hotelName] ?? 10; // default to 10 for other hotels
   }
