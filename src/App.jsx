@@ -32,6 +32,7 @@ import AyyangarssBakery from "./pages/AyyangarssBakery";
 import AyyangarssCakeHouse from "./pages/AyyangarssCakeHouse";
 import AyyangarssCakeHouseSection from "./pages/AyyangarssCakeHouseSection";
 import GanisRestaurant from "./pages/GanisRestaurant";
+import GanisLunchFilter from "./pages/GanisLunchFilter";
 import SanjuGobiHouse from "./pages/SanjuGobiHouse";
 import JuiceJunction from "./pages/JuiceJunction";
 import JuiceSection from "./pages/JuiceSection";
@@ -155,6 +156,9 @@ export default function App() {
             <Route path="/ayyangars-cake-house/filter/:categorySlug" element={<AyyangarssCakeHouseFiltered />} />
             <Route path="/juice-junction/filter/juices/:sectionSlug" element={<LakshmiJuiceCornerFiltered />} />
             <Route path="/juice-junction/filter/:categorySlug" element={<LakshmiJuiceCornerFiltered />} />
+            {/* Gani's Restaurant Lunch filter with sections */}
+            <Route path="/ganis-restaurant/filter/lunch/:sectionSlug" element={<GanisLunchFilter />} />
+            <Route path="/ganis-restaurant/filter/lunch" element={<GanisLunchFilter />} />
             {/* Gani's Restaurant ALL filter with sections */}
             <Route path="/ganis-restaurant/filter/all/:sectionSlug" element={<GanisRestaurantFiltered />} />
             <Route path="/ganis-restaurant/filter/:categorySlug" element={<GanisRestaurantFiltered />} />
