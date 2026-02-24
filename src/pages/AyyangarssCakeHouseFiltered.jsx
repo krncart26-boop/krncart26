@@ -8,7 +8,6 @@ const SECTIONS = [
   { english: 'Pizza', kannada: 'ಪಿಜ್ಜಾ', slug: 'pizza' },
   { english: 'Breads / Buns', kannada: 'ಬ್ರೆಡ್‌ಗಳು / ಬನ್‌ಗಳು', slug: 'breads-buns' },
   { english: 'Sweets', kannada: 'ಮಿಠಾಯಿಗಳು', slug: 'sweets' },
-  { english: 'Biscuits', kannada: 'ಬಿಸ್ಕಟ್‌ಗಳು', slug: 'biscuits' },
 ];
 
 export default function AyyangarssCakeHouseFiltered() {
