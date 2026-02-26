@@ -5,7 +5,7 @@ export default function HeroCard(){
   return (
     <div className="hero-card" style={{background:'linear-gradient(135deg, #ff6b9d 0%, #ff8fab 50%, #ffc4d6 100%)'}}>
       <div>
-        <h3 style={{fontSize:'18px'}}>Order the food and enjoy the meal</h3>
+        <h3 style={{fontSize:'18px'}}>enjoy the home food! order on AMMA MANE UTA</h3>
         <p style={{fontSize:'14px', fontWeight:'600', marginTop:'8px'}}>
           we care! we deliver!
         </p>

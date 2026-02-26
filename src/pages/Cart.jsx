@@ -1,20 +1,33 @@
 // Cart page: lists cart items with breakdown and controls
 import React from "react";
 import { useCart } from "../context/CartContext";
+import LocationMap from "../components/LocationMap";
+import { 
+  getUserLocation, 
+  reverseGeocode, 
+  formatLocationDetails,
+  saveLocationToStorage,
+  getStoredLocation,
+  calculateDeliveryFeasibility,
+  RESTAURANT_CENTER
+} from "../utils/locationUtils";
 
 export default function Cart(){
   const { cartItems, count, totals, updateItemQty, removeItem, clearCart, computeItemBreakdown } = useCart();
   const [address, setAddress] = React.useState('');
-  const [coords, setCoords] = React.useState(null);
+  const [userLocationData, setUserLocationData] = React.useState(null);
+  const [deliveryLocationData, setDeliveryLocationData] = React.useState(null);
   const [locationLoading, setLocationLoading] = React.useState(false);
   const [locationError, setLocationError] = React.useState(null);
+  const [showMap, setShowMap] = React.useState(false);
+  const [deliveryFeasibility, setDeliveryFeasibility] = React.useState(null);
 
   // Saved account details (if any)
   const [savedCustomerName, setSavedCustomerName] = React.useState('');
   const [savedCustomerPhone, setSavedCustomerPhone] = React.useState('');
   const [savedCustomerAddress, setSavedCustomerAddress] = React.useState('');
 
-  // Load saved account details on mount and pre-fill address if available
+  // Load saved account details and location on mount
   React.useEffect(()=>{
     const n = localStorage.getItem('customerName') || '';
     const p = localStorage.getItem('customerPhone') || '';
@@ -23,60 +36,98 @@ export default function Cart(){
     if(p) setSavedCustomerPhone(p);
     if(a) setSavedCustomerAddress(a);
 
+    // Try to load stored location
+    const storedLocation = getStoredLocation();
+    if(storedLocation && storedLocation.lat && storedLocation.lon){
+      // Ensure lat/lon are numbers
+      const validLocation = {
+        ...storedLocation,
+        lat: parseFloat(storedLocation.lat),
+        lon: parseFloat(storedLocation.lon),
+        accuracy: storedLocation.accuracy ? parseFloat(storedLocation.accuracy) : null
+      };
+      setUserLocationData(validLocation);
+      if(validLocation.formattedAddress){
+        setAddress(validLocation.formattedAddress);
+      }
+    }
+
     // Pre-fill delivery address only if cart address is currently empty
     if(a && !address){ setAddress(a); }
   }, []);
+
+  // Calculate delivery feasibility when user location changes
+  React.useEffect(()=>{
+    if(userLocationData?.lat && userLocationData?.lon){
+      const feasibility = calculateDeliveryFeasibility(
+        Number(userLocationData.lat), 
+        Number(userLocationData.lon),
+        { maxDistanceKm: 5 }
+      );
+      setDeliveryFeasibility(feasibility);
+    }
+  }, [userLocationData]);
 
   // Derived final address and contact for validation
   const finalAddressPreview = address || savedCustomerAddress;
   const hasContactInfo = Boolean(savedCustomerName && savedCustomerPhone);
 
-  // Center point (C9QM+GWF, Krishnarajanagara) approx coords
-  const CENTER = { lat: 12.4385610, lon: 76.3836699 };
+  // Detect location with status
+  const useMyLocation = async () => {
+    setLocationLoading(true);
+    setLocationError(null);
+    
+    try{
+      // Get current position
+      const position = await getUserLocation();
+      
+      // Reverse geocode to get address details
+      const geocoded = await reverseGeocode(position.lat, position.lon);
+      const formatted = formatLocationDetails(geocoded);
+      
+      // Store the full location data - ensure numeric values
+      const fullLocationData = {
+        ...position,
+        ...geocoded,
+        ...formatted,
+        lat: Number(position.lat),
+        lon: Number(position.lon),
+        accuracy: position.accuracy ? Number(position.accuracy) : null
+      };
+      
+      setUserLocationData(fullLocationData);
+      setAddress(formatted.formattedAddress || geocoded.displayName);
+      
+      // Save to localStorage
+      saveLocationToStorage(fullLocationData);
 
-  function toRad(value){ return value * Math.PI / 180; }
-  function haversineDistanceKm(lat1, lon1, lat2, lon2){
-    const R = 6371; // km
-    const dLat = toRad(lat2 - lat1);
-    const dLon = toRad(lon2 - lon1);
-    const a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon/2) * Math.sin(dLon/2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    return R * c;
-  }
-
-  function useMyLocation(){
-    if(!navigator.geolocation){ setLocationError('Geolocation not supported'); return; }
-    setLocationLoading(true); setLocationError(null);
-    navigator.geolocation.getCurrentPosition(async pos => {
-      const lat = pos.coords.latitude; const lon = pos.coords.longitude;
-      setCoords({ lat, lon });
-        // Reverse geocode using Nominatim to auto-fill address
-      try{
-        const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lon}&accept-language=en`;
-        const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
-        if(res.ok){
-          const data = await res.json();
-          const display = data.display_name || `${lat}, ${lon}`;
-          setAddress(display);
-        } else {
-          setLocationError('Reverse geocode failed');
-        }
-      }catch(e){
-        setLocationError('Reverse geocode failed');
-      } finally {
-        setLocationLoading(false);
+      // Create delivery location marker (show on map)
+      if(geocoded){
+        setDeliveryLocationData({
+          lat: Number(geocoded.lat),
+          lon: Number(geocoded.lon),
+          address: geocoded.displayName
+        });
       }
-    }, err => {
-      setLocationError(err.message || 'Failed to get location');
-      setLocationLoading(false);
-    }, { enableHighAccuracy: true, timeout: 10000 });
-  }
 
-  // Delivery charge: ₹20 if subtotal < 100, otherwise free
+      setShowMap(true);
+    }catch(error){
+      setLocationError(error.message);
+    }finally{
+      setLocationLoading(false);
+    }
+  };
+
+  // Delivery charge: use item-specific delivery charge if available, otherwise apply default logic (₹20 if subtotal < 100, else free)
   const deliveryCharge = React.useMemo(()=>{
+    // If items have custom delivery charges, return the sum (already calculated in totals)
+    if(cartItems.some(item => item.deliveryCharge !== undefined)){
+      return totals.deliveryFee || 0;
+    }
+    // Otherwise use default logic
     if(!totals || typeof totals.subtotal === 'undefined') return 0;
     return totals.subtotal < 100 ? 20 : 0;
-  }, [totals]);
+  }, [totals, cartItems]);
 
   function confirmOrder(){
     // Force redirect behavior per request: do not block for missing fields. Only block if cart is empty.
@@ -129,10 +180,15 @@ export default function Cart(){
     const subtotalNum = Number(totals.subtotal || 0);
     const gstNum = Number((subtotalNum * 0.03).toFixed(2));
     const platformFeeNum = Number((subtotalNum * 0.02).toFixed(2));
-    const deliveryNum = subtotalNum < 100 ? 20 : 0;
+    const deliveryNum = Number(deliveryCharge || 0);
     const grandTotalNum = Number((subtotalNum + gstNum + platformFeeNum + deliveryNum).toFixed(2));
 
-    const finalMsg = `🌟🌟KRN Cart — Order Confirmation🌟🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
+    // Include location coordinates if available
+    const locationInfo = userLocationData && userLocationData.lat && userLocationData.lon
+      ? `\n📍 Delivery Coordinates: ${Number(userLocationData.lat).toFixed(6)}, ${Number(userLocationData.lon).toFixed(6)}`
+      : '';
+
+    const finalMsg = `🌟🌟KRN Cart — Order Confirmation🌟🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}${locationInfo}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
 
     // Redirect using exact method (open in new tab with encoded message)
     window.open("https://wa.me/8660769547?text=" + encodeURIComponent(finalMsg), '_blank');
@@ -158,7 +214,18 @@ export default function Cart(){
             delivery: Number(deliveryCharge),
             grandTotal: Number((totals.total + deliveryCharge).toFixed(2)),
           },
-          coords: coords || null,
+          location: userLocationData ? {
+            latitude: userLocationData.lat,
+            longitude: userLocationData.lon,
+            accuracy: userLocationData.accuracy,
+            address: userLocationData.displayName || userLocationData.formattedAddress,
+            formattedAddress: userLocationData.formattedAddress,
+            country: userLocationData.country,
+            state: userLocationData.state,
+            city: userLocationData.city,
+            postcode: userLocationData.postcode,
+            timestamp: userLocationData.timestamp
+          } : null,
         };
         const old = JSON.parse(localStorage.getItem('orderHistory') || '[]');
         old.unshift(order);
@@ -197,6 +264,7 @@ export default function Cart(){
                     <div style={{fontSize:13,color:'var(--muted)'}}>Hotel: <strong style={{color:'#111827'}}>{item.hotelName || 'Unknown'}</strong>{item.subsection && <span>{' > '}<strong style={{color:'#111827'}}>{item.subsection}</strong></span>}</div>
                     <div>Base: <strong>₹{breakdown.base.toFixed(2)}</strong></div>
                     <div>Parcel Charge (@ ₹{breakdown.parcelRate.toFixed(2)}): <strong>₹{breakdown.parcelFee.toFixed(2)}</strong></div>
+                    {breakdown.deliveryFee > 0 && <div>Delivery Charge (@ ₹{breakdown.deliveryRate.toFixed(2)}): <strong>₹{breakdown.deliveryFee.toFixed(2)}</strong></div>}
                     <div style={{marginTop:6}}>Line Total: <strong>₹{breakdown.total.toFixed(2)}</strong></div>
                   </div>
 
@@ -247,15 +315,95 @@ export default function Cart(){
             </div>
 
             <div style={{marginTop:12, display:'flex',flexDirection:'column',gap:8}}>
-              <label style={{fontWeight:700}}>Delivery Address</label>
-              <textarea value={address} onChange={e=>setAddress(e.target.value)} placeholder="Enter delivery address" style={{padding:10,borderRadius:10,border:'1px solid #e5e7eb'}} rows={3} />
-
-              <div style={{display:'flex',gap:8}}>
-                <button className="button" onClick={useMyLocation} disabled={locationLoading} style={{flex:1}}>{locationLoading ? 'Detecting...' : 'Use My Live Location'}</button>
-                <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>
-                  {locationError && <div style={{fontSize:13,color:'red'}}>{locationError}</div>}
+              <label style={{fontWeight:700}}>📍 Delivery Location</label>
+              
+              {/* User Location Info */}
+              {userLocationData && (
+                <div style={{padding:12,borderRadius:10,background:'#ecfdf5',border:'1px solid #d1fae5'}}>
+                  <div style={{fontWeight:600,color:'#065f46',marginBottom:8}}>✅ Your Location Detected</div>
+                  <div style={{fontSize:13,color:'#047857',lineHeight:'1.6'}}>
+                    {userLocationData.lat && <div><strong>Latitude:</strong> {Number(userLocationData.lat).toFixed(6)}</div>}
+                    {userLocationData.lon && <div><strong>Longitude:</strong> {Number(userLocationData.lon).toFixed(6)}</div>}
+                    {userLocationData.accuracy && <div><strong>Accuracy:</strong> ±{Number(userLocationData.accuracy).toFixed(1)}m</div>}
+                    {userLocationData.formattedAddress && <div style={{marginTop:6}}><strong>Address:</strong><br/>{userLocationData.formattedAddress}</div>}
+                    {userLocationData.city && <div style={{marginTop:4}}><strong>City:</strong> {userLocationData.city}{userLocationData.state && `, ${userLocationData.state}`}</div>}
+                  </div>
+                  
+                  {/* Delivery Feasibility */}
+                  {deliveryFeasibility && (
+                    <div style={{marginTop:10,padding:8,borderRadius:8,background:'rgba(255,255,255,0.7)'}}>
+                      <div style={{color: deliveryFeasibility.isDeliverable ? '#065f46' : '#7c2d12'}}>
+                        {deliveryFeasibility.message}
+                      </div>
+                      <div style={{fontSize:12,marginTop:4,color:'#555'}}>
+                        Distance from restaurant: {deliveryFeasibility.distance.toFixed(2)} km
+                      </div>
+                    </div>
+                  )}
                 </div>
+              )}
+
+              {/* Live Location Map */}
+              {showMap && userLocationData && userLocationData.lat && userLocationData.lon && (
+                <div style={{marginTop:8}}>
+                  <div style={{fontSize:13,fontWeight:600,marginBottom:6,color:'#666'}}>📌 Live Location Map</div>
+                  <LocationMap 
+                    userLocation={{
+                      lat: Number(userLocationData.lat),
+                      lon: Number(userLocationData.lon),
+                      address: userLocationData.formattedAddress
+                    }}
+                    deliveryLocation={{
+                      lat: Number(userLocationData.lat),
+                      lon: Number(userLocationData.lon),
+                      address: userLocationData.formattedAddress
+                    }}
+                    height="300px"
+                  />
+                </div>
+              )}
+
+              {/* Address Textarea */}
+              <textarea 
+                value={address} 
+                onChange={e=>setAddress(e.target.value)} 
+                placeholder="Your complete delivery address will appear here after location detection..." 
+                style={{padding:10,borderRadius:10,border:'1px solid #e5e7eb',fontSize:14}} 
+                rows={3} 
+              />
+
+              {/* Location Action Buttons */}
+              <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+                <button 
+                  className="button" 
+                  onClick={useMyLocation} 
+                  disabled={locationLoading}
+                  style={{flex:1, minWidth:'180px'}}
+                >
+                  {locationLoading ? '🔄 Detecting Location...' : '📍 Use My Live Location'}
+                </button>
+                {userLocationData && (
+                  <button 
+                    className="button secondary" 
+                    onClick={() => {
+                      setUserLocationData(null);
+                      setAddress('');
+                      setShowMap(false);
+                      setLocationError(null);
+                    }}
+                    style={{flex:1, minWidth:'120px'}}
+                  >
+                    Clear Location
+                  </button>
+                )}
               </div>
+
+              {/* Error Messages */}
+              {locationError && (
+                <div style={{padding:10,borderRadius:10,background:'#fef2f2',border:'1px solid #fecaca',color:'#991b1b',fontSize:13}}>
+                  ⚠️ {locationError}
+                </div>
+              )}
 
               {/* Delivery notice: show only when delivery charge applies (subtotal < 100) */}
               {deliveryCharge > 0 && (
@@ -264,9 +412,10 @@ export default function Cart(){
                 </div>
               )}
 
+              {/* Confirm Order Buttons */}
               <div style={{display:'flex',gap:8}}>
-                <button type="button" className="button" style={{flex:1}} onClick={confirmOrder}>Confirm Order</button>
-                <button className="button secondary" style={{flex:1}} onClick={()=>alert('Save for later (placeholder)')}>Save</button>
+                <button type="button" className="button" style={{flex:1}} onClick={confirmOrder}>✅ Confirm Order</button>
+                <button className="button secondary" style={{flex:1}} onClick={()=>alert('Save for later (placeholder)')}>💾 Save</button>
               </div>
             </div>
           </div>

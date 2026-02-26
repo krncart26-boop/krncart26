@@ -64,9 +64,12 @@ export function CartProvider({ children }){
     // Use item-specific parcel charge if available, otherwise use hotel-based rate
     const parcelRate = item.parcelCharge !== undefined ? item.parcelCharge : Number(getParcelRate(item.hotelName).toFixed(2));
     const parcelFee = Number((parcelRate * item.qty).toFixed(2));
+    // Use item-specific delivery charge if available, otherwise use default logic (₹20 if subtotal < 100, else free)
+    const deliveryRate = item.deliveryCharge !== undefined ? item.deliveryCharge : 0;
+    const deliveryFee = Number((deliveryRate * item.qty).toFixed(2));
     // Note: GST and platform fee are order-level (calculated in totals)
-    const total = Number((base + parcelFee).toFixed(2));
-    return { base, parcelRate, parcelFee, total };
+    const total = Number((base + parcelFee + deliveryFee).toFixed(2));
+    return { base, parcelRate, parcelFee, deliveryRate, deliveryFee, total };
   }
 
   // Cart totals
@@ -80,12 +83,19 @@ export function CartProvider({ children }){
     }, 0);
     const parcelFee = Number(parcelRaw.toFixed(2));
 
-    const subtotal = Number((base + parcelFee).toFixed(2));
+    // Calculate delivery fee: use item-specific delivery charge if available
+    const deliveryRaw = cartItems.reduce((s,i)=>{
+      const rate = i.deliveryCharge !== undefined ? i.deliveryCharge : 0;
+      return s + rate * i.qty;
+    }, 0);
+    const deliveryFee = Number(deliveryRaw.toFixed(2));
+
+    const subtotal = Number((base + parcelFee + deliveryFee).toFixed(2));
     const gst = Number((subtotal * 0.03).toFixed(2));
     const platformFee = Number((subtotal * 0.02).toFixed(2));
 
     const total = Number((subtotal + gst + platformFee).toFixed(2));
-    return { base, parcelFee, subtotal, gst, platformFee, total };
+    return { base, parcelFee, deliveryFee, subtotal, gst, platformFee, total };
   }, [cartItems]);
   function clearCart(){ setCartItems([]); }
 

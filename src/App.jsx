@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Hotel from "./pages/Hotel";
 import KeshavaChats from "./pages/KeshavaChats";
 import KRNRestaurant from "./pages/KRNRestaurant";
+import AmmaManeUta from "./pages/AmmaManeUta";
 import SectionPlaceholder from "./pages/SectionPlaceholder";
 import IceMagic from "./pages/IceMagic";
 import IceSection from "./pages/IceSection";
@@ -122,6 +123,10 @@ export default function App() {
             <Route path="/krn-restaurant/filter/evening/:sectionSlug" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/evening" element={<KRNRestaurantFiltered />} />
             <Route path="/krn-restaurant/filter/:categorySlug" element={<KRNRestaurantFiltered />} />
+            {/* Amma Mane Uta - All category filters redirect to main items view */}
+            <Route path="/amma-mane-uta/filter/lunch" element={<AmmaManeUta />} />
+            <Route path="/amma-mane-uta/filter/evening-food" element={<AmmaManeUta />} />
+            <Route path="/amma-mane-uta/filter/:categorySlug" element={<AmmaManeUta />} />
             {/* Shri Tiffany's Breakfast filter with sections */}
             <Route path="/shri-tiffanys/filter/breakfast/:sectionSlug" element={<ShriTiffanysFiltered />} />
             <Route path="/shri-tiffanys/filter/breakfast" element={<ShriTiffanysFiltered />} />
@@ -172,6 +177,7 @@ export default function App() {
             <Route path="/keshava-chats" element={<KeshavaChats />} />
             <Route path="/krn-restaurant" element={<KRNRestaurant />} />
             <Route path="/krn-restaurant/:sectionSlug" element={<SectionPlaceholder />} />
+            <Route path="/amma-mane-uta" element={<AmmaManeUta />} />
             <Route path="/ice-magic" element={<IceMagic />} />
             <Route path="/ice-magic/:sectionSlug" element={<IceSection />} />
             <Route path="/udupi-hotel" element={<UdupiHotel />} />

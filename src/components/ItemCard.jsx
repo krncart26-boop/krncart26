@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 
 import { useLocation } from "react-router-dom";
 
-export default function ItemCard({ id, name, kannada, price, parcelCharge, subsection: propSubsection }){
+export default function ItemCard({ id, name, kannada, price, parcelCharge, deliveryCharge, subsection: propSubsection }){
   const { addToCart } = useCart();
   const [qty, setQty] = useState(1);
   const location = useLocation();
@@ -18,6 +18,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, subse
     const map = {
       'vb-bakery': 'VB Bakery',
       'ice-magic': 'Ice Magic',
+      'amma-mane-uta': 'Amma Mane Uta',
       'udupi-hotel': 'Udupi Hotel',
       'udupi-palace': 'Udupi Palace',
       'krn-restaurant': 'KRN Restaurant',
@@ -80,6 +81,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, subse
     const subsection = propSubsection || getSubsectionFromPath(location.pathname);
     const cartItem = { id, name, basePrice: price, hotelName, subsection };
     if(parcelCharge !== undefined) cartItem.parcelCharge = parcelCharge;
+    if(deliveryCharge !== undefined) cartItem.deliveryCharge = deliveryCharge;
     addToCart(cartItem, qty);
     showToast(`${name} x${qty} added to cart`);
     setQty(1);

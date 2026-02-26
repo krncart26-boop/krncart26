@@ -10,6 +10,7 @@ const hotelDatabase = [
   { name: "Gowda Palav Centre", categories: ["Lunch"] },
   { name: "Popular Biriyani Palace", categories: ["Lunch", "Evening Food"] },
   { name: "KRN Restaurant", categories: ["Lunch", "Evening Food", "Snacks"] },
+  { name: "Amma Mane Uta", categories: ["Lunch", "Evening Food"] },
   { name: "Keshava Chats", categories: ["Chats"] },
   { name: "Rajkumar Panipuri", categories: ["Chats"] },
   { name: "Sanju Gobi House", categories: ["Chats"] },
@@ -26,6 +27,7 @@ const hotelColors = {
   "Udupi Palace": "#6BB6D6",
   "Ice Magic": "#C9B1D0",
   "KRN Restaurant": "#E4B5A0",
+  "Amma Mane Uta": "#D4A574",
   "Shri Tiffany's": "#E8B4C8",
   "Shri Hotel": "#B5E7B8",
   "Rajkumar Panipuri": "#F0E4A8",
@@ -48,15 +50,16 @@ function getHotelIcon(hotelName) {
     "Udupi Palace": "🍛",
     "Ice Magic": "🍦",
     "KRN Restaurant": "🍗",
+    "Amma Mane Uta": "🏠",
     "Shri Tiffany's": "☕",
     "Shri Hotel": "🍲",
     "Rajkumar Panipuri": "🫔",
     "Gowda Palav Centre": "🍚",
-    "VB Bakery": "🍰",
+    "VB Bakery": "🥐",
     "Sanju Gobi House": "🫘",
     "Keshava Chats": "🥘",
     "Tirumala Juice": "🧃",
-    "Ayyangars Cake House": "🥖",
+    "Ayyangars Cake House": "🍰",
     "Lakshmi Juice Corner": "🍹",
     "Gani's Restaurant": "🍳",
     "ShreeSha cafe": "🥤",
@@ -70,6 +73,7 @@ function getHotelRoute(hotelName) {
   switch(hotelName) {
     case 'Keshava Chats': return '/keshava-chats';
     case 'KRN Restaurant': return '/krn-restaurant';
+    case 'Amma Mane Uta': return '/amma-mane-uta';
     case 'Ice Magic': return '/ice-magic';
     case 'Gowda Palav Centre': return '/gowda-palav-centre';
     case "Shri Tiffany's": return '/shri-tiffanys';
