@@ -3,7 +3,7 @@
 export const SHRI_HOTEL_BREAKFAST_ITEMS = [
   { id: "sh-breakfast-idli", name: "Idli", kannada: "ಇಡ್ಲಿ", price: 20.99 },
   { id: "sh-breakfast-vada", name: "Vada", kannada: "ವಡೆ", price: 26.99 },
-  { id: "sh-breakfast-khali-dosa", name: "Khali Dosa", kannada: "ಖಾಲಿ ದೋಸೆ", price: 20.99 },
+  { id: "sh-breakfast-khali-dosa", name: "Khali Dosa(2)", kannada: "ಖಾಲಿ ದೋಸೆ", price: 39.99 },
   { id: "sh-breakfast-special-khali", name: "Special Khali Dosa", kannada: "ಸ್ಪೆಷಲ್ ಖಾಲಿ ದೋಸೆ", price: 30.99 },
   { id: "sh-breakfast-masala-dosa", name: "Masala Dosa", kannada: "ಮಸಾಲೆ ದೋಸೆ", price: 57.99 },
   { id: "sh-breakfast-set-masala", name: "Set Masala Dosa", kannada: "ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ", price: 59.99 },

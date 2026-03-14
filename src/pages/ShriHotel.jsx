@@ -4,6 +4,18 @@ import SectionCard from "../components/SectionCard";
 import { SHRI_MORNING_ITEMS } from "../data/menus/shriHotelMorning";
 import { SHRI_EVENING_ITEMS } from "../data/menus/shriHotelEvening";
 
+export const hotelId = 'shri-hotel';
+export const hotelName = 'Shri Hotel';
+export const routePrefix = 'shri-hotel';
+export const menu = {
+  morning: SHRI_MORNING_ITEMS,
+  evening: SHRI_EVENING_ITEMS
+};
+export const sectionMap = {
+  morning: 'Morning',
+  evening: 'Evening'
+};
+
 export default function ShriHotel(){
   const navigate = useNavigate();
 

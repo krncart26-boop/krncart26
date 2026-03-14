@@ -5,9 +5,9 @@ export const SHRI_HOTEL_BREAKFAST_ITEMS = [
   // Dosa Section
   {
     id: 'sh-khali-dosa',
-    itemName: 'Khali Dosa',
+    itemName: 'Khali Dosa(2)',
     kannadaName: 'ಖಾಲಿ ದೋಸೆ',
-    price: 20.99,
+    price: 39.99,
     category: 'Dosa'
   },
   {

@@ -4,6 +4,7 @@
 export const ICE_MAGIC_SECTION_MAP = {
   "im-special-ice-cream": { english: "IM SPECIAL ICE CREAM" },
   "pastry": { english: "PASTRY" },
+  "desserts": { english: "DESSERTS" },
   "falooda-special": { english: "FALOODA & SPECIAL ITEMS" },
   "fruits-custard": { english: "FRUITS & CUSTARD" },
   "special-combinations": { english: "SPECIAL COMBINATIONS" },
@@ -40,6 +41,10 @@ export const ICE_MAGIC_DATA = {
     ["Hot DBC with Ice Cream","",159.99],
     ["Hot Brownie with Ice Cream","",139.99],
     ["Donuts","",49.99],
+  ],
+  "desserts": [
+    ["Lotus Biscoff Dessert","ಲೋಟಸ್ ಬಿಸ್ಕಾಫ್ ಮಿಠಾಯಿ",190],
+    ["Kunafa Pistachio","ಕುನಾಫಾ ಪಿಸ್ತಾಚಿಓ",210],
   ],
   "falooda-special": [
     ["Falooda Queen","ಕಲೋಡಾ ಕ್ವೀನ್",119.99],

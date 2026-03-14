@@ -11,6 +11,10 @@ import * as ShriHotel from '../pages/ShriHotel';
 import * as ShriTiffanys from '../pages/ShriTiffanys';
 import * as VBBakery from '../pages/VBBakery';
 import * as TirumalaJuice from '../pages/TirumalaJuice';
+import * as HarishGobiCentre from '../pages/HarishGobiCentre';
+import * as AmericanCuisine from '../pages/AmericanCuisine';
+import * as SriSudarshan from '../pages/SriSudarshan';
+import * as PunjabiKitchen from '../pages/PunjabiKitchen';
 
 const HOTELS = [
   {
@@ -82,6 +86,34 @@ const HOTELS = [
     menu: TirumalaJuice.menu || {},
     sectionMap: TirumalaJuice.sectionMap || {},
     routePrefix: TirumalaJuice.routePrefix || 'tirumala-juice',
+  },
+  {
+    hotelId: HarishGobiCentre.hotelId || 'harish-gobi-centre',
+    hotelName: HarishGobiCentre.hotelName || 'Harish Gobi Centre',
+    menu: HarishGobiCentre.menu || {},
+    sectionMap: HarishGobiCentre.sectionMap || {},
+    routePrefix: HarishGobiCentre.routePrefix || 'harish-gobi-centre',
+  },
+  {
+    hotelId: AmericanCuisine.hotelId || 'american-cuisine',
+    hotelName: AmericanCuisine.hotelName || 'American Cuisine',
+    menu: AmericanCuisine.menu || {},
+    sectionMap: AmericanCuisine.sectionMap || {},
+    routePrefix: AmericanCuisine.routePrefix || 'american-cuisine',
+  },
+  {
+    hotelId: SriSudarshan.hotelId || 'sri-sudarshan',
+    hotelName: SriSudarshan.hotelName || 'Sri Sudarshan',
+    menu: SriSudarshan.menu || {},
+    sectionMap: SriSudarshan.sectionMap || {},
+    routePrefix: SriSudarshan.routePrefix || 'sri-sudarshan',
+  },
+  {
+    hotelId: PunjabiKitchen.hotelId || 'punjabi-hotel',
+    hotelName: PunjabiKitchen.hotelName || 'Punjabi Kitchen',
+    menu: PunjabiKitchen.menu || {},
+    sectionMap: PunjabiKitchen.sectionMap || {},
+    routePrefix: PunjabiKitchen.routePrefix || 'punjabi-hotel',
   },
 ];
 

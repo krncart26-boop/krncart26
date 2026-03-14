@@ -7,6 +7,7 @@ import { ICE_MAGIC_DATA, ICE_MAGIC_SECTION_MAP } from "../data/menus/iceMagic";
 const SECTIONS = [
   { english: "IM SPECIAL ICE CREAM", kannada: "", slug: "im-special-ice-cream" },
   { english: "PASTRY", kannada: "", slug: "pastry" },
+  { english: "🍰 DESSERTS", kannada: "ಮಿಠಾಯಿ", slug: "desserts" },
   { english: "FALOODA & SPECIAL ITEMS", kannada: "", slug: "falooda-special" },
   { english: "🍓 FRUITS & CUSTARD", kannada: "", slug: "fruits-custard" },
   { english: "🍧 SPECIAL COMBINATIONS", kannada: "", slug: "special-combinations" },

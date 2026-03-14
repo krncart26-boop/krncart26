@@ -18,9 +18,9 @@ export const AYYANGARS_CAKE_HOUSE_DATA = {
     { id: 'achh-roll-veg', name: 'Veg Roll', kannada: 'ವೆಜ್ ರೋಲ್', price: 30 },
   ],
   'pizza': [
-    { id: 'achh-pizza-veg', name: 'Veg Pizza', kannada: 'ವೆಜ್ ಪಿಜ್ಜಾ', price: 59 },
-    { id: 'achh-pizza-cheese', name: 'mushroom Pizza', kannada: 'ಮಶ್ರೂಮ್ ಪಿಜ್ಜಾ', price: 59 },
-    { id: 'achh-pizza-paneer', name: 'Paneer Pizza', kannada: 'ಪನೀರ್ ಪಿಜ್ಜಾ', price: 59 },
+    { id: 'achh-pizza-veg', name: 'Veg Pizza', kannada: 'ವೆಜ್ ಪಿಜ್ಜಾ', price: 59, parcelCharge: 5 },
+    { id: 'achh-pizza-cheese', name: 'mushroom Pizza', kannada: 'ಮಶ್ರೂಮ್ ಪಿಜ್ಜಾ', price: 59, parcelCharge: 5 },
+    { id: 'achh-pizza-paneer', name: 'Paneer Pizza', kannada: 'ಪನೀರ್ ಪಿಜ್ಜಾ', price: 59, parcelCharge: 5 },
   ],
   'breads-buns': [
     { id: 'achh-bread-white', name: 'White Bread', kannada: 'ಬಿಳಿ ಬ್ರೆಡ್', price: 6 },

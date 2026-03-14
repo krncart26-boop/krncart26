@@ -28,6 +28,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
       'shri-tiffanys': "Shri Tiffany's",
       'rajkumar': 'Rajkumar Panipuri',
       'sanju-gobi-house': 'Sanju Gobi House',
+      'harish-gobi-centre': 'Harish Gobi Centre',
       'keshava-chats': 'Keshava Chats',
       'juice-junction': 'Lakshmi Juice Corner',
       'lakshmi-juice-corner': 'Lakshmi Juice Corner',
@@ -37,6 +38,9 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
       'shreesha-cafe': 'ShreeSha cafe',
       'ganis-restaurant': "Gani's Restaurant",
       'popular-biriyani-palace': 'Popular Biriyani Palace',
+      'american-cuisine': 'American Cuisine',
+      'sri-sudarshan': 'Sri Sudarshan',
+      'punjabi-hotel': 'Punjabi Hotel',
     };
 
     if(map[first]) return map[first];

@@ -118,18 +118,34 @@ export default function Cart(){
     }
   };
 
-  // Delivery charge: use item-specific delivery charge if available, otherwise apply default logic (₹20 if subtotal < 100, else free)
+
+  // Delivery charge: for any order with Amma Mane Uta items, use flat 15; for grocery items use 20; otherwise use default logic
   const deliveryCharge = React.useMemo(()=>{
-    // If items have custom delivery charges, return the sum (already calculated in totals)
-    if(cartItems.some(item => item.deliveryCharge !== undefined)){
-      return totals.deliveryFee || 0;
+    // Check if ANY items are from Amma Mane Uta (charge 15rs for entire order)
+    const hasAmmaManeUta = cartItems.length > 0 && cartItems.some(item => item.hotelName === 'Amma Mane Uta');
+    if(hasAmmaManeUta){
+      return 15; // Flat delivery charge for any order containing Amma Mane Uta
     }
-    // Otherwise use default logic
-    if(!totals || typeof totals.subtotal === 'undefined') return 0;
-    return totals.subtotal < 100 ? 20 : 0;
+    
+    // Check if ANY items are from Grocery Store (charge 20rs for entire order)
+    const hasGrocery = cartItems.length > 0 && cartItems.some(item => item.hotelName === 'Grocery Store');
+    if(hasGrocery){
+      return 20; // Flat delivery charge for any order containing Grocery items
+    }
+    
+    // For other restaurants, use default logic (₹20 if subtotal < 100, else free)
+    const baseSubtotal = totals.base + totals.parcelFee; // Subtotal without delivery charge
+    if(!totals || typeof baseSubtotal === 'undefined') return 0;
+    return baseSubtotal < 100 ? 20 : 0;
   }, [totals, cartItems]);
 
   function confirmOrder(){
+    // Check if user has enabled live location
+    if(!userLocationData || !userLocationData.lat || !userLocationData.lon){
+      alert('Please tap "Use My Location" button to enable live location tracking. This helps us deliver your order accurately.');
+      return;
+    }
+
     // Force redirect behavior per request: do not block for missing fields. Only block if cart is empty.
     if(!cartItems || cartItems.length === 0){
       alert('Your cart is empty');
@@ -148,14 +164,10 @@ export default function Cart(){
     // Build minimal order details lines
     const itemsLines = cartItems.map(i => {
       const lineTotal = (i.basePrice * i.qty).toFixed(2);
-      return `- ${i.name} | ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''} | Qty: ${i.qty} | Price: ₹${lineTotal}`;
+      return `- ${i.name} | ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''} | Qty: ${i.qty} | Price: Rs.${lineTotal}`;
     }).join('\n');
 
     const total = (totals.total + deliveryCharge).toFixed(2);
-
-    const message = `🌟 KRN Cart — Order Confirmation 🌟\n\nCustomer Name: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}\n\nOrder Details:\n${itemsLines}\n\nTotal: ₹${total}\n\nOrder again at:\nhttps://krncart.com`;
-
-
 
     // Build WhatsApp message in the exact required format
     const now = new Date();
@@ -174,7 +186,7 @@ export default function Cart(){
       const br = computeItemBreakdown(i);
       const itemPrice = (i.basePrice).toFixed(2);
       const parcelCharge = br.parcelRate.toFixed(2);
-      return `${idx+1}. ${i.name}\n   Hotel: ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''}\n   Qty: ${i.qty}   Price: ₹${itemPrice}\n   Parcel Charge: ₹${parcelCharge}`;
+      return `${idx+1}. ${i.name}\n   Hotel: ${i.hotelName || 'Unknown'}${i.subsection ? ' > ' + i.subsection : ''}\n   Qty: ${i.qty}   Price: Rs.${itemPrice}\n   Parcel Charge: Rs.${parcelCharge}`;
     }).join('\n\n');
 
     const subtotalNum = Number(totals.subtotal || 0);
@@ -183,15 +195,16 @@ export default function Cart(){
     const deliveryNum = Number(deliveryCharge || 0);
     const grandTotalNum = Number((subtotalNum + gstNum + platformFeeNum + deliveryNum).toFixed(2));
 
-    // Include location coordinates if available
+    // Include location link if available
     const locationInfo = userLocationData && userLocationData.lat && userLocationData.lon
-      ? `\n📍 Delivery Coordinates: ${Number(userLocationData.lat).toFixed(6)}, ${Number(userLocationData.lon).toFixed(6)}`
+      ? `\n📍Delivery Location:\nhttps://maps.google.com/?q=${Number(userLocationData.lat).toFixed(6)},${Number(userLocationData.lon).toFixed(6)}`
       : '';
 
-    const finalMsg = `🌟🌟KRN Cart — Order Confirmation🌟🌟\n\nOrder Date: ${dateStr}    Order Time: ${timeStr}\n\n👤 Customer Details\nName: ${name}\nPhone: ${phone}\nAddress: ${finalAddress}${locationInfo}\n\n📋 Order Details\n${itemsBlocks}\n\n💰 Bill Summary\nSubtotal: ₹${subtotalNum.toFixed(2)}\nService Charge (3%): ₹${gstNum.toFixed(2)}\nPlatform Fee (2%): ₹${platformFeeNum.toFixed(2)}\nDelivery Charge: ₹${deliveryNum.toFixed(2)}\n\nTOTAL: ₹${grandTotalNum.toFixed(2)}\n\n✨ Freshness Delivered — Enjoy your meal! 🍽️\nOrder again at: https://krncart.com`;
+    const finalMsg = `\n😍KRN CART - ORDER CONFIRMATION😍\n\n🗓️Date: ${dateStr}\n⏰Time: ${timeStr}\n\n🫶CUSTOMER DETAILS🫶\n\nName👤: ${name}\nPhone📱: ${phone}\nAddress📍: ${finalAddress}${locationInfo}\n\n\nORDER DETAILS\n\n${itemsBlocks}\n\nBILL SUMMARY📜\n\nSubtotal: Rs.${subtotalNum.toFixed(2)}\nService Charge (3%): Rs.${gstNum.toFixed(2)}\nPlatform Fee (2%): Rs.${platformFeeNum.toFixed(2)}\nDelivery Charge🚚: Rs.${deliveryNum.toFixed(2)}\n\n\nTOTAL: Rs.${grandTotalNum.toFixed(2)}\n\n😍Freshness Delivered - Enjoy your meal😍!\n\nOrder again at:\nhttps://krncart.com`;
 
-    // Redirect using exact method (open in new tab with encoded message)
-    window.open("https://wa.me/8660769547?text=" + encodeURIComponent(finalMsg), '_blank');
+    // Send to WhatsApp
+    const waUrl = "https://wa.me/8660769547?text=" + encodeURIComponent(finalMsg);
+    window.open(waUrl, '_blank');
 
     // After redirect, save order and clear cart (delayed to avoid interfering with popup gesture)
     setTimeout(()=>{
@@ -405,8 +418,8 @@ export default function Cart(){
                 </div>
               )}
 
-              {/* Delivery notice: show only when delivery charge applies (subtotal < 100) */}
-              {deliveryCharge > 0 && (
+              {/* Delivery notice: show only when subtotal is below ₹100 */}
+              {totals && totals.subtotal < 100 && (
                 <div className="delivery-notice" style={{padding:12,background:'#fff7ed',border:'1px solid #ffedd5',borderRadius:10,color:'#92400e'}}>
                   <strong>⚠️ Delivery Notice:</strong> Orders below ₹100 will have ₹20 delivery charge. Add more items to get FREE delivery.
                 </div>

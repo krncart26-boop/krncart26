@@ -1,10 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ItemCard from "../components/ItemCard";
-import { AMMA_MANE_UTA_ITEMS } from "../data/menus/ammaManeUtaMenu";
+import SectionCard from "../components/SectionCard";
+import { AMMA_MANE_UTA_DATA, AMMA_MANE_UTA_SECTION_MAP } from "../data/menus/ammaManeUtaMenu";
+
+const SECTIONS = [
+  { english: "🍽️ ಉಪಹಾರ | Breakfast", kannada: "", slug: "breakfast" },
+  { english: "🍛 ಮಧ್ಯಾಹ್ನ ಊಟ | Afternoon Lunch", kannada: "", slug: "lunch" },
+  { english: "⭐ ವಿಶೇಷ | Special", kannada: "", slug: "special" },
+];
 
 export default function AmmaManeUta(){
   const navigate = useNavigate();
+
+  const handleSectionClick = (slug) => {
+    navigate(`/amma-mane-uta/${slug}`);
+  };
 
   return (
     <div>
@@ -24,27 +34,15 @@ export default function AmmaManeUta(){
         </div>
       </div>
 
-      {/* Direct items list */}
-      <div style={{ padding: '12px' }}>
-        {AMMA_MANE_UTA_ITEMS.length > 0 ? (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {AMMA_MANE_UTA_ITEMS.map((item) => (
-              <ItemCard
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                kannada={item.kannada}
-                price={item.price}
-                parcelCharge={item.parcelCharge}
-                deliveryCharge={item.deliveryCharge}
-              />
-            ))}
-          </div>
-        ) : (
-          <div style={{ padding: '20px', textAlign: 'center', marginTop: '20px' }}>
-            <p style={{ color: 'var(--muted)' }}>No items available</p>
-          </div>
-        )}
+      <div className="section-list" style={{marginTop:12}}>
+        {SECTIONS.map(s => (
+          <SectionCard
+            key={s.slug}
+            english={s.english}
+            kannada={s.kannada}
+            onClick={() => handleSectionClick(s.slug)}
+          />
+        ))}
       </div>
     </div>
   );

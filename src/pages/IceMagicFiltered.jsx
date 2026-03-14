@@ -21,6 +21,7 @@ const ICE_CREAM_SUNDAES_SECTIONS = [
 ];
 
 const SNACKS_SECTIONS = [
+  { english: "🍰 DESSERTS", kannada: "ಮಿಠಾಯಿ", slug: "desserts" },
   { english: "Starters", kannada: "ಸ್ಟಾರ್ಟರ್ಸ್", slug: "starters" },
   { english: "Veg Momos", kannada: "ವೆಜ್ ಮೋಮೋ", slug: "veg-momos" },
   { english: "Sandwich", kannada: "ಸ್ಯಾಂಡ್ವಿಚ್", slug: "sandwich" },
@@ -138,7 +139,13 @@ const IM_SHAWARMA = [
   { id: "im-shawarma-mushroom-cheese", name: "Mushroom Cheese Shawarma", kannada: "ಮಶ್ರೂಮ್ ಚೀಸ್ ಶವರ್ಮ", price: 120 }
 ];
 
+const IM_DESSERTS = [
+  { id: "im-dessert-lotus", name: "Lotus Biscoff Dessert", kannada: "ಲೋಟಸ್ ಬಿಸ್ಕಾಫ್ ಮಿಠಾಯಿ", price: 190 },
+  { id: "im-dessert-kunafa", name: "Kunafa Pistachio", kannada: "ಕುನಾಫಾ ಪಿಸ್ತಾಚಿಓ", price: 210 }
+];
+
 const SNACKS_ITEMS = {
+  "desserts": IM_DESSERTS,
   "starters": IM_STARTERS,
   "veg-momos": IM_VEG_MOMOS,
   "sandwich": IM_SANDWICH,

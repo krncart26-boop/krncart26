@@ -37,6 +37,9 @@ export function CartProvider({ children }){
 
   // Pricing helpers per item
   function getParcelRate(hotelName){
+    // Grocery items have no per-item parcel charge
+    if(hotelName === 'Grocery Store') return 0;
+    
     const rates = {
       'VB Bakery': 1.99,
       'Ice Magic': 9.99,
@@ -49,6 +52,7 @@ export function CartProvider({ children }){
       'Rajkumar Panipuri': 1.99,
       'Sanju Gobi House': 2.50,
       'Keshava Chats': 1.99,
+      'Harish Gobi Centre': 1.99,
       'Lakshmi Juice Corner': 10.00,
       'ShreeSha India': 7.99,
       "Gani's Restaurant": 9.99,
@@ -72,6 +76,11 @@ export function CartProvider({ children }){
     return { base, parcelRate, parcelFee, deliveryRate, deliveryFee, total };
   }
 
+  // Helper: check if any items are from Amma Mane Uta
+  function isAmmaManeUtaOrder(){
+    return cartItems.length > 0 && cartItems.some(item => item.hotelName === 'Amma Mane Uta');
+  }
+
   // Cart totals
   const totals = useMemo(()=>{
     const baseRaw = cartItems.reduce((s,i)=>s + i.basePrice * i.qty, 0);
@@ -81,20 +90,23 @@ export function CartProvider({ children }){
       const rate = i.parcelCharge !== undefined ? i.parcelCharge : getParcelRate(i.hotelName);
       return s + rate * i.qty;
     }, 0);
-    const parcelFee = Number(parcelRaw.toFixed(2));
+    
+    // Add 5rs parcel charge if there are grocery items
+    const hasGrocery = cartItems.some(item => item.hotelName === 'Grocery Store');
+    const groceryParcelCharge = hasGrocery ? 5 : 0;
+    
+    const parcelFee = Number((parcelRaw + groceryParcelCharge).toFixed(2));
 
-    // Calculate delivery fee: use item-specific delivery charge if available
-    const deliveryRaw = cartItems.reduce((s,i)=>{
-      const rate = i.deliveryCharge !== undefined ? i.deliveryCharge : 0;
-      return s + rate * i.qty;
-    }, 0);
-    const deliveryFee = Number(deliveryRaw.toFixed(2));
+    // Note: Delivery fees are handled at the UI level (in Cart.jsx), not included in subtotal here
+    // This avoids double-counting when delivery charge is added in the UI
 
-    const subtotal = Number((base + parcelFee + deliveryFee).toFixed(2));
+    const subtotal = Number((base + parcelFee).toFixed(2));
     const gst = Number((subtotal * 0.03).toFixed(2));
     const platformFee = Number((subtotal * 0.02).toFixed(2));
 
     const total = Number((subtotal + gst + platformFee).toFixed(2));
+    // deliveryFee is kept for reference but not included in subtotal
+    const deliveryFee = isAmmaManeUtaOrder() ? 15 : 0;
     return { base, parcelFee, deliveryFee, subtotal, gst, platformFee, total };
   }, [cartItems]);
   function clearCart(){ setCartItems([]); }

@@ -31,7 +31,7 @@ export default function AyyangarssCakeHouseSection() {
         ) : (
           <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
             {items.map(it => (
-              <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} subsection={section.english} />
+              <ItemCard key={it.id} id={it.id} name={it.name} kannada={it.kannada} price={it.price} parcelCharge={it.parcelCharge} subsection={section.english} />
             ))}
           </div>
         )}

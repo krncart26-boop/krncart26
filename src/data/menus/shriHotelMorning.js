@@ -2,7 +2,7 @@
 export const SHRI_MORNING_ITEMS = [
   { id: 'sh-idli', name: 'Idli', kannada: 'ಇಡ್ಲಿ', price: 20.99 },
   { id: 'sh-vada', name: 'Vada', kannada: 'ವಡೆ', price: 26.99 },
-  { id: 'sh-khali-dosa', name: 'Khali Dosa', kannada: 'ಖಾಲಿ ದೋಸೆ', price: 20.99 },
+  { id: 'sh-khali-dosa', name: 'Khali Dosa(2)', kannada: 'ಖಾಲಿ ದೋಸೆ', price: 39.99 },
   { id: 'sh-special-khali', name: 'Special Khali Dosa', kannada: 'ಸ್ಪೆಶಲ್ ಖಾಲಿ ದೋಸೆ', price: 30.99 },
   { id: 'sh-masala-dosa', name: 'Masala Dosa', kannada: 'ಮಸಾಲೆ ದೋಸೆ', price: 57.99 },
   { id: 'sh-set-masala', name: 'Set Masala Dosa', kannada: 'ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ', price: 59.99 },

@@ -13,6 +13,7 @@ import ItemCard from "../components/ItemCard";
 const SECTION_MAP = {
   "im-special-ice-cream": { english: "IM SPECIAL ICE CREAM" },
   "pastry": { english: "PASTRY" },
+  "desserts": { english: "DESSERTS" },
   "falooda-special": { english: "FALOODA & SPECIAL ITEMS" },
   "fruits-custard": { english: "FRUITS & CUSTARD" },
   "special-combinations": { english: "SPECIAL COMBINATIONS" },
@@ -59,6 +60,11 @@ const DATA = {
     ["Chocolate Truffle pastry","",89.99],
     ["Red Velvet pastry","",99.99],
     ["Donuts pastry","",49.99],
+  ],
+
+  "desserts": [
+    ["Lotus Biscoff Dessert","ಲೋಟಸ್ ಬಿಸ್ಕಾಫ್ ಮಿಠಾಯಿ",190],
+    ["Kunafa Pistachio","ಕುನಾಫಾ ಪಿಸ್ತಾಚಿಓ",210],
   ],
 
   "falooda-special": [

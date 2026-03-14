@@ -1,6 +1,8 @@
 // Home page: header provided by Header component; includes search, hero card, and hotels grid
 import React, { useState, useRef, useEffect } from "react";
-import HeroCard from "../components/HeroCard";
+import HeroBannerCarousel from "../components/HeroBannerCarousel";
+import PopularDishesCarousel from "../components/PopularDishesCarousel";
+import StatsCard from "../components/StatsCard";
 import HotelGrid, { hotelDatabase } from "../components/HotelGrid";
 import SearchResults from "../components/SearchResults";
 import SEARCH_INDEX from "../data/searchIndexAuto";
@@ -70,7 +72,11 @@ export default function Home(){
           )}
         </div>
 
-        <HeroCard />
+        <HeroBannerCarousel />
+
+        <StatsCard />
+
+        <PopularDishesCarousel />
 
         <div className="category-tabs-container" ref={tabsRef}>
           <div className="category-tabs">

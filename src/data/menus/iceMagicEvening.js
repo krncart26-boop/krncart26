@@ -2,6 +2,7 @@
 // Same items as snacks filter - all sections and items
 
 export const IM_EVENING_SECTIONS = [
+  { english: "Desserts", kannada: "ಮಿಠಾಯಿ", slug: "desserts" },
   { english: "Starters", kannada: "ಸ್ಟಾರ್ಟರ್ಸ್", slug: "starters" },
   { english: "Veg Momos", kannada: "ವೆಜ್ ಮೋಮೋ", slug: "veg-momos" },
   { english: "Sandwich", kannada: "ಸ್ಯಾಂಡ್ವಿಚ್", slug: "sandwich" },
@@ -26,6 +27,10 @@ export const IM_EVENING_ITEMS = {
     { id: "im-cheesy-nuggets", name: "Cheesy Nuggets", kannada: "ಚೀಸಿ ನಗೆಟ್ಸ್", price: 89.99 },
     { id: "im-creamy-special", name: "IM Special Creamy Fries", kannada: "ಸ್ಪೆಷಲ್ ಕ್ರಿಮಿ ಫ್ರೈಸ್", price: 99.99 },
     { id: "im-creamy-fries", name: "Creamy Fries", kannada: "ಕ್ರಿಮಿ ಫ್ರೈಸ್", price: 89.99 }
+  ],
+  "desserts": [
+    { id: "im-dessert-lotus", name: "Lotus Biscoff Dessert", kannada: "ಲೋಟಸ್ ಬಿಸ್ಕಾಫ್ ಮಿಠಾಯಿ", price: 190 },
+    { id: "im-dessert-kunafa", name: "Kunafa Pistachio", kannada: "ಕುನಾಫಾ ಪಿಸ್ತಾಚಿಓ", price: 210 }
   ],
   "veg-momos": [
     { id: "im-momos-steam", name: "Steam Momos (6 pcs)", kannada: "ಸ್ಟೀಮ್ ಮೋಮೋ", price: 110 },

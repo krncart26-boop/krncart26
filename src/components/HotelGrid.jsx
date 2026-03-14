@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const hotelDatabase = [
   { name: "Ice Magic", categories: ["Lunch", "Evening Food", "Juices", "Snacks", "Ice Cream & Sundaes"] },
   { name: "Udupi Palace", categories: ["Breakfast", "Lunch", "Juices", "Snacks", "Chats", "Ice Cream & Sundaes"] },
-  { name: "Shri Hotel", categories: ["Breakfast", "Evening Food"] },
   { name: "Shri Tiffany's", categories: ["Breakfast", "Evening Food"] },
   { name: "Gowda Palav Centre", categories: ["Lunch"] },
   { name: "Popular Biriyani Palace", categories: ["Lunch", "Evening Food"] },
@@ -19,7 +18,10 @@ const hotelDatabase = [
   { name: "Lakshmi Juice Corner", categories: ["Juices"] },
   { name: "Gani's Restaurant", categories: ["Lunch"] },
   { name: "VB Bakery", categories: ["Bakery"] },
-  { name: "ShreeSha cafe", categories: ["Juices", "Snacks"] },
+  { name: "Harish Gobi Centre", categories: ["Chats"] },
+  { name: "American Cuisine", categories: ["Lunch", "Evening Food", "Snacks"] },
+  { name: "Sri Sudarshan", categories: ["Breakfast", "Lunch", "Evening Food"] },
+  { name: "Punjabi Hotel", categories: ["Breakfast", "Lunch", "Evening Food", "Snacks"] },
 ];
 
 // Color palette for each hotel
@@ -42,6 +44,10 @@ const hotelColors = {
   "Gani's Restaurant": "#E0D8B0",
   "ShreeSha cafe": "#E8B8D0",
   "Popular Biriyani Palace": "#E8B8C4",
+  "Harish Gobi Centre": "#D8E8A8",
+  "American Cuisine": "#E8A8C8",
+  "Sri Sudarshan": "#B8D8E8",
+  "Punjabi Hotel": "#E8C8A8",
 };
 
 // Get first letter or icon for hotel
@@ -53,17 +59,21 @@ function getHotelIcon(hotelName) {
     "Amma Mane Uta": "🏠",
     "Shri Tiffany's": "☕",
     "Shri Hotel": "🍲",
-    "Rajkumar Panipuri": "🫔",
+    "Rajkumar Panipuri": "🍜",
     "Gowda Palav Centre": "🍚",
     "VB Bakery": "🥐",
-    "Sanju Gobi House": "🫘",
-    "Keshava Chats": "🥘",
+    "Sanju Gobi House": "🥦",
+    "Keshava Chats": "🥣",
     "Tirumala Juice": "🧃",
     "Ayyangars Cake House": "🍰",
     "Lakshmi Juice Corner": "🍹",
     "Gani's Restaurant": "🍳",
     "ShreeSha cafe": "🥤",
     "Popular Biriyani Palace": "🍛",
+    "Harish Gobi Centre": "🥬",
+    "American Cuisine": "🍔",
+    "Sri Sudarshan": "🍲",
+    "Punjabi Hotel": "🥘",
   };
   return icons[hotelName] || hotelName.charAt(0).toUpperCase();
 }
@@ -91,6 +101,10 @@ function getHotelRoute(hotelName) {
     case 'Ayyangars Bakery': return '/ayyangars-bakery';
     case 'Ayyangars Cake House': return '/ayyangars-cake-house';
     case 'Popular Biriyani Palace': return '/popular-biriyani-palace';
+    case 'Harish Gobi Centre': return '/harish-gobi-centre';
+    case 'American Cuisine': return '/american-cuisine';
+    case 'Sri Sudarshan': return '/sri-sudarshan';
+    case 'Punjabi Hotel': return '/punjabi-hotel';
     default: return `/hotel/${encodeURIComponent(hotelName)}`;
   }
 }

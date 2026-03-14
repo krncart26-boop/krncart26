@@ -3,11 +3,17 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Splash from "./pages/Splash";
-import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import FoodAndSnacks from "./pages/FoodAndSnacks";
+import Grocery from "./pages/Grocery";
+import Medicines from "./pages/Medicines";
+import MedicalDisclaimer from "./pages/MedicalDisclaimer";
+import MilkWater from "./pages/MilkWater";
 import Hotel from "./pages/Hotel";
 import KeshavaChats from "./pages/KeshavaChats";
 import KRNRestaurant from "./pages/KRNRestaurant";
 import AmmaManeUta from "./pages/AmmaManeUta";
+import AmmaManeUtaSection from "./pages/AmmaManeUtaSection";
 import SectionPlaceholder from "./pages/SectionPlaceholder";
 import IceMagic from "./pages/IceMagic";
 import IceSection from "./pages/IceSection";
@@ -39,6 +45,14 @@ import ShreeShaIndia from "./pages/ShreeShaIndia";
 import ShreeShaIndiaSection from "./pages/ShreeShaIndiaSection";
 import ShreeShaIndiaFiltered from "./pages/ShreeShaIndiaFiltered";
 import PopularBiriyaniPalace from "./pages/PopularBiriyaniPalace";
+import HarishGobiCentre from "./pages/HarishGobiCentre";
+import AmericanCuisine from "./pages/AmericanCuisine";
+import AmericanCuisineSection from "./pages/AmericanCuisineSection";
+import AmericanCuisineFiltered from "./pages/AmericanCuisineFiltered";
+import SriSudarshan from "./pages/SriSudarshan";
+import SriSudarshanSection from "./pages/SriSudarshanSection";
+import PunjabiKitchen from "./pages/PunjabiKitchen";
+import PunjabiKitchenSection from "./pages/PunjabiKitchenSection";
 import Cart from "./pages/Cart"; 
 import Account from "./pages/Account";
 import Help from "./pages/Help";
@@ -82,7 +96,12 @@ export default function App() {
         <main className="app-content">
           <Routes>
             <Route path="/" element={<Splash />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/home" element={<Categories />} />
+            <Route path="/food-and-snacks" element={<FoodAndSnacks />} />
+            <Route path="/grocery" element={<Grocery />} />
+            <Route path="/medicines" element={<Medicines />} />
+            <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+            <Route path="/milk-water" element={<MilkWater />} />
             
             {/* Filtered hotel routes MUST come before generic :sectionSlug routes */}
             {/* Udupi Palace Breakfast filter with sections */}
@@ -178,6 +197,7 @@ export default function App() {
             <Route path="/krn-restaurant" element={<KRNRestaurant />} />
             <Route path="/krn-restaurant/:sectionSlug" element={<SectionPlaceholder />} />
             <Route path="/amma-mane-uta" element={<AmmaManeUta />} />
+            <Route path="/amma-mane-uta/:sectionSlug" element={<AmmaManeUtaSection />} />
             <Route path="/ice-magic" element={<IceMagic />} />
             <Route path="/ice-magic/:sectionSlug" element={<IceSection />} />
             <Route path="/udupi-hotel" element={<UdupiHotel />} />
@@ -199,6 +219,14 @@ export default function App() {
             <Route path="/ayyangars-cake-house/:sectionSlug" element={<AyyangarssCakeHouseSection />} />
             <Route path="/ganis-restaurant" element={<GanisRestaurant />} />
             <Route path="/sanju-gobi-house" element={<SanjuGobiHouse />} />
+            <Route path="/harish-gobi-centre" element={<HarishGobiCentre />} />
+            <Route path="/american-cuisine" element={<AmericanCuisine />} />
+            <Route path="/american-cuisine/filter/:categorySlug" element={<AmericanCuisineFiltered />} />
+            <Route path="/american-cuisine/:sectionSlug" element={<AmericanCuisineSection />} />
+            <Route path="/sri-sudarshan" element={<SriSudarshan />} />
+            <Route path="/sri-sudarshan/:sectionSlug" element={<SriSudarshanSection />} />
+            <Route path="/punjabi-hotel" element={<PunjabiKitchen />} />
+            <Route path="/punjabi-hotel/:sectionSlug" element={<PunjabiKitchenSection />} />
             <Route path="/juice-junction" element={<JuiceJunction />} />
             <Route path="/juice-junction/:sectionSlug" element={<JuiceSection />} />
             <Route path="/shreesha-india" element={<ShreeShaIndia />} />

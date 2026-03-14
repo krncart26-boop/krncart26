@@ -6,7 +6,7 @@ import { SHRI_HOTEL_BREAKFAST_ITEMS } from "../data/menus/shriHotelBreakfastFilt
 
 const EVENING_ITEMS = [
   { id: "sh-e-onion-dosa", name: "Onion Dosa", kannada: "ಈರುಳ್ಳಿ ದೋಸೆ", price: 62.99 },
-  { id: "sh-e-khali-dosa", name: "Khali Dosa", kannada: "ಖಾಲಿ ದೋಸೆ", price: 20.99 },
+  { id: "sh-e-khali-dosa", name: "Khali Dosa(2)", kannada: "ಖಾಲಿ ದೋಸೆ", price: 39.99 },
   { id: "sh-e-special-khali", name: "Special Khali Dosa", kannada: "ಸ್ಪೆಷಲ್ ಖಾಲಿ ದೋಸೆ", price: 30.99 },
   { id: "sh-e-masala-dosa", name: "Masala Dosa", kannada: "ಮಸಾಲೆ ದೋಸೆ", price: 57.99 },
   { id: "sh-e-set-masala", name: "Set Masala Dosa", kannada: "ಸೆಟ್ ಮಸಾಲೆ ದೋಸೆ", price: 59.99 },

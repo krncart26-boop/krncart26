@@ -1,0 +1,46 @@
+// Punjabi Kitchen menu data
+export const PUNJAB_KITCHEN_SECTION_MAP = {
+  "breakfast": { english: "🌅 MORNING BREAKFAST" },
+  "lunch": { english: "🍛 AFTERNOON MEALS" },
+  "momos-snacks": { english: "🥟 MOMOS & SNACKS" },
+  "burgers-rolls": { english: "🍔 BURGERS & ROLLS" },
+};
+
+export const PUNJAB_KITCHEN_DATA = {
+  "breakfast": [
+    ["Palak Paneer + 2 Butter Roti + Salad (Monday)", "", 159.99],
+    ["Aloo Paratha (2 pcs) + Curd + Salad (Tuesday)", "", 159.99],
+    ["Chole Bhature (2 pcs) + Salad (Wednesday)", "", 159.99],
+    ["2 Roti + Baingan Bharta + Salad (Thursday)", "", 159.99],
+    ["2 Roti + Dal Makhani + Salad (Friday)", "", 159.99],
+    ["2 Gobi Paratha + Chole + Salad (Saturday)", "", 159.99],
+  ],
+  "lunch": [
+    ["Special Chicken Combo", "", 259.99],
+    ["Chicken Biryani", "", 98.99],
+    ["Chicken Masala", "", 159.99],
+    ["Butter Chicken", "", 159.99],
+    ["Chicken Chilli", "", 159.99],
+    ["Biryani Rice + Egg", "", 69.99],
+    ["Kabab Full Plate (8 pcs)", "", 129.99],
+    ["Egg Fried Rice", "", 89.99],
+    ["Chicken Fried Rice", "", 129.99],
+    ["1 Parota", "", 34.99],
+    ["1 Chapati", "", 34.99],
+  ],
+  "momos-snacks": [
+    ["Paneer Momos", "", 89.99],
+    ["Corn & Cheese Momos", "", 89.99],
+    ["Veg Nuggets", "", 59.99],
+    ["Chicken Nuggets", "", 109.99],
+    ["Smiley Nuggets", "", 59.99],
+    ["French Fries", "", 59.99],
+    ["Hot & Crispy Chicken", "", 129.99],
+  ],
+  "burgers-rolls": [
+    ["Classic Chicken Roll", "", 89.99],
+    ["Classic Double Egg + Chicken Roll", "", 119.99],
+    ["Chicken Burger", "", 129.99],
+    ["Paneer Tikka", "", 119.99],
+  ],
+};
