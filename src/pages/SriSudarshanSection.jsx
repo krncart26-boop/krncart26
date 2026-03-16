@@ -23,11 +23,12 @@ export default function SriSudarshanSection() {
         {items.length > 0 ? (
           items.map((item, idx) => (
             <ItemCard
-              key={idx}
+              key={`${sectionSlug}-${idx}`}
+              id={`sri-sudarshan-${sectionSlug}-${idx}`}
               name={item[0]}
               description={item[1]}
               price={item[2]}
-              hotelId="sri-sudarshan"
+              subsection={sectionTitle}
             />
           ))
         ) : (

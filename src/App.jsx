@@ -1,82 +1,82 @@
 // App root: sets up routes and layout
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import Splash from "./pages/Splash";
-import Categories from "./pages/Categories";
-import FoodAndSnacks from "./pages/FoodAndSnacks";
-import Grocery from "./pages/Grocery";
-import Medicines from "./pages/Medicines";
-import MedicalDisclaimer from "./pages/MedicalDisclaimer";
-import MilkWater from "./pages/MilkWater";
-import Hotel from "./pages/Hotel";
-import KeshavaChats from "./pages/KeshavaChats";
-import KRNRestaurant from "./pages/KRNRestaurant";
-import AmmaManeUta from "./pages/AmmaManeUta";
-import AmmaManeUtaSection from "./pages/AmmaManeUtaSection";
-import SectionPlaceholder from "./pages/SectionPlaceholder";
-import IceMagic from "./pages/IceMagic";
-import IceSection from "./pages/IceSection";
-import IceMagicLunchFilter from "./pages/IceMagicLunchFilter";
-import IceMagicEveningFilter from "./pages/IceMagicEveningFilter";
-import UdupiHotel from "./pages/UdupiHotel";
-import UdupiSection from "./pages/UdupiSection";
-import GowdaPalavCentre from "./pages/GowdaPalavCentre";
-import ShriTiffanys from "./pages/ShriTiffanys";
-import ShriTiffanysMorning from "./pages/ShriTiffanysMorning";
-import ShriTiffanysEvening from "./pages/ShriTiffanysEvening";
-import ShriHotel from "./pages/ShriHotel";
-import ShriHotelMorning from "./pages/ShriHotelMorning";
-import ShriHotelEvening from "./pages/ShriHotelEvening";
-import TirumalaJuice from "./pages/TirumalaJuice";
-import TirumalaSection from "./pages/TirumalaSection";
-import Rajkumar from "./pages/Rajkumar";
-import RajkumarSection from "./pages/RajkumarSection";
-import VBBakery from "./pages/VBBakery";
-import VBBakerySection from "./pages/VBBakerySection";
-import AyyangarssCakeHouse from "./pages/AyyangarssCakeHouse";
-import AyyangarssCakeHouseSection from "./pages/AyyangarssCakeHouseSection";
-import GanisRestaurant from "./pages/GanisRestaurant";
-import GanisLunchFilter from "./pages/GanisLunchFilter";
-import SanjuGobiHouse from "./pages/SanjuGobiHouse";
-import JuiceJunction from "./pages/JuiceJunction";
-import JuiceSection from "./pages/JuiceSection";
-import ShreeShaIndia from "./pages/ShreeShaIndia";
-import ShreeShaIndiaSection from "./pages/ShreeShaIndiaSection";
-import ShreeShaIndiaFiltered from "./pages/ShreeShaIndiaFiltered";
-import PopularBiriyaniPalace from "./pages/PopularBiriyaniPalace";
-import HarishGobiCentre from "./pages/HarishGobiCentre";
-import AmericanCuisine from "./pages/AmericanCuisine";
-import AmericanCuisineSection from "./pages/AmericanCuisineSection";
-import AmericanCuisineFiltered from "./pages/AmericanCuisineFiltered";
-import SriSudarshan from "./pages/SriSudarshan";
-import SriSudarshanSection from "./pages/SriSudarshanSection";
-import PunjabiKitchen from "./pages/PunjabiKitchen";
-import PunjabiKitchenSection from "./pages/PunjabiKitchenSection";
-import Cart from "./pages/Cart"; 
-import Account from "./pages/Account";
-import Help from "./pages/Help";
-import OrderHistory from "./pages/OrderHistory";
+const Splash = lazy(() => import("./pages/Splash"));
+const Categories = lazy(() => import("./pages/Categories"));
+const FoodAndSnacks = lazy(() => import("./pages/FoodAndSnacks"));
+const Grocery = lazy(() => import("./pages/Grocery"));
+const Medicines = lazy(() => import("./pages/Medicines"));
+const MedicalDisclaimer = lazy(() => import("./pages/MedicalDisclaimer"));
+const MilkWater = lazy(() => import("./pages/MilkWater"));
+const Hotel = lazy(() => import("./pages/Hotel"));
+const KeshavaChats = lazy(() => import("./pages/KeshavaChats"));
+const KRNRestaurant = lazy(() => import("./pages/KRNRestaurant"));
+const AmmaManeUta = lazy(() => import("./pages/AmmaManeUta"));
+const AmmaManeUtaSection = lazy(() => import("./pages/AmmaManeUtaSection"));
+const SectionPlaceholder = lazy(() => import("./pages/SectionPlaceholder"));
+const IceMagic = lazy(() => import("./pages/IceMagic"));
+const IceSection = lazy(() => import("./pages/IceSection"));
+const IceMagicLunchFilter = lazy(() => import("./pages/IceMagicLunchFilter"));
+const IceMagicEveningFilter = lazy(() => import("./pages/IceMagicEveningFilter"));
+const UdupiHotel = lazy(() => import("./pages/UdupiHotel"));
+const UdupiSection = lazy(() => import("./pages/UdupiSection"));
+const GowdaPalavCentre = lazy(() => import("./pages/GowdaPalavCentre"));
+const ShriTiffanys = lazy(() => import("./pages/ShriTiffanys"));
+const ShriTiffanysMorning = lazy(() => import("./pages/ShriTiffanysMorning"));
+const ShriTiffanysEvening = lazy(() => import("./pages/ShriTiffanysEvening"));
+const ShriHotel = lazy(() => import("./pages/ShriHotel"));
+const ShriHotelMorning = lazy(() => import("./pages/ShriHotelMorning"));
+const ShriHotelEvening = lazy(() => import("./pages/ShriHotelEvening"));
+const TirumalaJuice = lazy(() => import("./pages/TirumalaJuice"));
+const TirumalaSection = lazy(() => import("./pages/TirumalaSection"));
+const Rajkumar = lazy(() => import("./pages/Rajkumar"));
+const RajkumarSection = lazy(() => import("./pages/RajkumarSection"));
+const VBBakery = lazy(() => import("./pages/VBBakery"));
+const VBBakerySection = lazy(() => import("./pages/VBBakerySection"));
+const AyyangarssCakeHouse = lazy(() => import("./pages/AyyangarssCakeHouse"));
+const AyyangarssCakeHouseSection = lazy(() => import("./pages/AyyangarssCakeHouseSection"));
+const GanisRestaurant = lazy(() => import("./pages/GanisRestaurant"));
+const GanisLunchFilter = lazy(() => import("./pages/GanisLunchFilter"));
+const SanjuGobiHouse = lazy(() => import("./pages/SanjuGobiHouse"));
+const JuiceJunction = lazy(() => import("./pages/JuiceJunction"));
+const JuiceSection = lazy(() => import("./pages/JuiceSection"));
+const ShreeShaIndia = lazy(() => import("./pages/ShreeShaIndia"));
+const ShreeShaIndiaSection = lazy(() => import("./pages/ShreeShaIndiaSection"));
+const ShreeShaIndiaFiltered = lazy(() => import("./pages/ShreeShaIndiaFiltered"));
+const PopularBiriyaniPalace = lazy(() => import("./pages/PopularBiriyaniPalace"));
+const HarishGobiCentre = lazy(() => import("./pages/HarishGobiCentre"));
+const AmericanCuisine = lazy(() => import("./pages/AmericanCuisine"));
+const AmericanCuisineSection = lazy(() => import("./pages/AmericanCuisineSection"));
+const AmericanCuisineFiltered = lazy(() => import("./pages/AmericanCuisineFiltered"));
+const SriSudarshan = lazy(() => import("./pages/SriSudarshan"));
+const SriSudarshanSection = lazy(() => import("./pages/SriSudarshanSection"));
+const PunjabiKitchen = lazy(() => import("./pages/PunjabiKitchen"));
+const PunjabiKitchenSection = lazy(() => import("./pages/PunjabiKitchenSection"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Account = lazy(() => import("./pages/Account"));
+const Help = lazy(() => import("./pages/Help"));
+const OrderHistory = lazy(() => import("./pages/OrderHistory"));
 
 // Filtered hotel pages
-import UdupiPalaceFiltered from "./pages/UdupiPalaceFiltered";
-import IceMagicFiltered from "./pages/IceMagicFiltered";
-import IceMagicJuiceFiltered from "./pages/IceMagicJuiceFiltered";
-import KRNRestaurantFiltered from "./pages/KRNRestaurantFiltered";
-import ShriTiffanysFiltered from "./pages/ShriTiffanysFiltered";
-import ShriHotelFiltered from "./pages/ShriHotelFiltered";
-import RajkumarPanipuriFiltered from "./pages/RajkumarPanipuriFiltered";
-import GowdaPalavCentreFiltered from "./pages/GowdaPalavCentreFiltered";
-import VBBakeryFiltered from "./pages/VBBakeryFiltered";
-import SanjuGobiBouseFiltered from "./pages/SanjuGobiBouseFiltered";
-import SanjuGobiHouseChatsFilter from "./pages/SanjuGobiHouseChatsFilter";
-import KeshavaChatsFiltered from "./pages/KeshavaChatsFiltered";
-import TirumalaJuiceFiltered from "./pages/TirumalaJuiceFiltered";
-import AyyangarssCakeHouseFiltered from "./pages/AyyangarssCakeHouseFiltered";
-import LakshmiJuiceCornerFiltered from "./pages/LakshmiJuiceCornerFiltered";
-import GanisRestaurantFiltered from "./pages/GanisRestaurantFiltered";
-import ShreeShaCafeFiltered from "./pages/ShreeShaCafeFiltered";
-import PopularBiriyaniPalaceFiltered from "./pages/PopularBiriyaniPalaceFiltered";
+const UdupiPalaceFiltered = lazy(() => import("./pages/UdupiPalaceFiltered"));
+const IceMagicFiltered = lazy(() => import("./pages/IceMagicFiltered"));
+const IceMagicJuiceFiltered = lazy(() => import("./pages/IceMagicJuiceFiltered"));
+const KRNRestaurantFiltered = lazy(() => import("./pages/KRNRestaurantFiltered"));
+const ShriTiffanysFiltered = lazy(() => import("./pages/ShriTiffanysFiltered"));
+const ShriHotelFiltered = lazy(() => import("./pages/ShriHotelFiltered"));
+const RajkumarPanipuriFiltered = lazy(() => import("./pages/RajkumarPanipuriFiltered"));
+const GowdaPalavCentreFiltered = lazy(() => import("./pages/GowdaPalavCentreFiltered"));
+const VBBakeryFiltered = lazy(() => import("./pages/VBBakeryFiltered"));
+const SanjuGobiBouseFiltered = lazy(() => import("./pages/SanjuGobiBouseFiltered"));
+const SanjuGobiHouseChatsFilter = lazy(() => import("./pages/SanjuGobiHouseChatsFilter"));
+const KeshavaChatsFiltered = lazy(() => import("./pages/KeshavaChatsFiltered"));
+const TirumalaJuiceFiltered = lazy(() => import("./pages/TirumalaJuiceFiltered"));
+const AyyangarssCakeHouseFiltered = lazy(() => import("./pages/AyyangarssCakeHouseFiltered"));
+const LakshmiJuiceCornerFiltered = lazy(() => import("./pages/LakshmiJuiceCornerFiltered"));
+const GanisRestaurantFiltered = lazy(() => import("./pages/GanisRestaurantFiltered"));
+const ShreeShaCafeFiltered = lazy(() => import("./pages/ShreeShaCafeFiltered"));
+const PopularBiriyaniPalaceFiltered = lazy(() => import("./pages/PopularBiriyaniPalaceFiltered"));
 
 import Header from "./components/Header";
 import BottomNav from "./components/BottomNav";
@@ -94,7 +94,8 @@ export default function App() {
         {!isSplash && <Header />}
 
         <main className="app-content">
-          <Routes>
+          <Suspense fallback={<div className="route-loading">Loading...</div>}>
+            <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/home" element={<Categories />} />
             <Route path="/food-and-snacks" element={<FoodAndSnacks />} />
@@ -240,7 +241,8 @@ export default function App() {
             <Route path="/help" element={<Help />} />
             <Route path="/account" element={<Account />} />
             <Route path="/order-history" element={<OrderHistory />} />
-          </Routes>
+            </Routes>
+          </Suspense>
         </main>
 
         {!isSplash && <BottomNav />}

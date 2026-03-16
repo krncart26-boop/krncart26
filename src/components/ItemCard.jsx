@@ -4,7 +4,7 @@ import { useCart } from "../context/CartContext";
 
 import { useLocation } from "react-router-dom";
 
-export default function ItemCard({ id, name, kannada, price, parcelCharge, deliveryCharge, subsection: propSubsection }){
+export default function ItemCard({ id, name, kannada, price, parcelCharge, deliveryCharge, subsection: propSubsection, quantity }){
   const { addToCart } = useCart();
   const [qty, setQty] = useState(1);
   const location = useLocation();
@@ -41,6 +41,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
       'american-cuisine': 'American Cuisine',
       'sri-sudarshan': 'Sri Sudarshan',
       'punjabi-hotel': 'Punjabi Hotel',
+      'grocery': 'Grocery Store',
     };
 
     if(map[first]) return map[first];
@@ -84,6 +85,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
     // Use prop subsection if provided, otherwise extract from path
     const subsection = propSubsection || getSubsectionFromPath(location.pathname);
     const cartItem = { id, name, basePrice: price, hotelName, subsection };
+    if(quantity) cartItem.productQuantity = quantity;
     if(parcelCharge !== undefined) cartItem.parcelCharge = parcelCharge;
     if(deliveryCharge !== undefined) cartItem.deliveryCharge = deliveryCharge;
     addToCart(cartItem, qty);
@@ -93,25 +95,24 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
 
   return (
     <div className="item-card">
-      <div className="item-card-row">
-        <div className="item-meta">
+      <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:'8px',marginBottom:'8px'}}>
+        <div style={{flex:1}}>
           <div className="item-name">{name}</div>
           <div className="item-kannada">{kannada}</div>
         </div>
+        <div className="item-price">₹{price.toFixed(2)}</div>
+      </div>
 
-        <div className="item-card-right">
-          <div className="item-price">₹{price.toFixed(2)}</div>
+      {quantity && <div style={{fontSize:'11px',color:'var(--muted)',marginBottom:'8px'}}>Size: {quantity}</div>}
 
-          <div className="controls">
-            <div className="qty-controls">
-              <button className="qty-btn" onClick={dec}>-</button>
-              <div className="qty-number">{qty}</div>
-              <button className="qty-btn" onClick={inc}>+</button>
-            </div>
-
-            <button className="add-btn" onClick={handleAdd}>Add</button>
-          </div>
+      <div className="controls">
+        <div className="qty-controls">
+          <button className="qty-btn" onClick={dec}>-</button>
+          <div className="qty-number">{qty}</div>
+          <button className="qty-btn" onClick={inc}>+</button>
         </div>
+
+        <button className="add-btn" onClick={handleAdd}>Add</button>
       </div>
 
       {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}

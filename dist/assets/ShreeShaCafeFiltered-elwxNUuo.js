@@ -1,0 +1,1 @@
+import{b as a,R as t}from"./index-BNTYC9Qf.js";import{F as r}from"./FilteredHotelPage-CCfAD6ZA.js";function m(){const{categorySlug:e}=a();return t.createElement(r,{hotelName:"ShreeSha cafe",categorySlug:e})}export{m as default};

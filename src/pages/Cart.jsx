@@ -1,5 +1,6 @@
 // Cart page: lists cart items with breakdown and controls
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import LocationMap from "../components/LocationMap";
 import { 
@@ -13,6 +14,7 @@ import {
 } from "../utils/locationUtils";
 
 export default function Cart(){
+  const navigate = useNavigate();
   const { cartItems, count, totals, updateItemQty, removeItem, clearCart, computeItemBreakdown } = useCart();
   const [address, setAddress] = React.useState('');
   const [userLocationData, setUserLocationData] = React.useState(null);
@@ -140,12 +142,44 @@ export default function Cart(){
   }, [totals, cartItems]);
 
   function confirmOrder(){
-    // Check if user has enabled live location
+    // Auto-detect location if not already detected
     if(!userLocationData || !userLocationData.lat || !userLocationData.lon){
-      alert('Please tap "Use My Location" button to enable live location tracking. This helps us deliver your order accurately.');
+      setLocationLoading(true);
+      setLocationError(null);
+      
+      getUserLocation()
+        .then(position => reverseGeocode(position.lat, position.lon))
+        .then(geocoded => {
+          const formatted = formatLocationDetails(geocoded);
+          const fullLocationData = {
+            ...geocoded,
+            ...formatted,
+            lat: Number(geocoded.lat),
+            lon: Number(geocoded.lon),
+            accuracy: geocoded.accuracy ? Number(geocoded.accuracy) : null
+          };
+          
+          setUserLocationData(fullLocationData);
+          setAddress(formatted.formattedAddress || geocoded.displayName);
+          saveLocationToStorage(fullLocationData);
+          
+          // Proceed with order after location is set
+          proceedWithOrder(fullLocationData);
+        })
+        .catch(error => {
+          setLocationError(error.message);
+          setLocationLoading(false);
+          // Allow user to continue without location
+          proceedWithOrder(null);
+        });
       return;
     }
+    
+    // Location already detected, proceed with order
+    proceedWithOrder(userLocationData);
+  }
 
+  function proceedWithOrder(locationData){
     // Force redirect behavior per request: do not block for missing fields. Only block if cart is empty.
     if(!cartItems || cartItems.length === 0){
       alert('Your cart is empty');
@@ -196,8 +230,8 @@ export default function Cart(){
     const grandTotalNum = Number((subtotalNum + gstNum + platformFeeNum + deliveryNum).toFixed(2));
 
     // Include location link if available
-    const locationInfo = userLocationData && userLocationData.lat && userLocationData.lon
-      ? `\n📍Delivery Location:\nhttps://maps.google.com/?q=${Number(userLocationData.lat).toFixed(6)},${Number(userLocationData.lon).toFixed(6)}`
+    const locationInfo = locationData && locationData.lat && locationData.lon
+      ? `\n📍Delivery Location:\nhttps://maps.google.com/?q=${Number(locationData.lat).toFixed(6)},${Number(locationData.lon).toFixed(6)}`
       : '';
 
     const finalMsg = `\n😍KRN CART - ORDER CONFIRMATION😍\n\n🗓️Date: ${dateStr}\n⏰Time: ${timeStr}\n\n🫶CUSTOMER DETAILS🫶\n\nName👤: ${name}\nPhone📱: ${phone}\nAddress📍: ${finalAddress}${locationInfo}\n\n\nORDER DETAILS\n\n${itemsBlocks}\n\nBILL SUMMARY📜\n\nSubtotal: Rs.${subtotalNum.toFixed(2)}\nService Charge (3%): Rs.${gstNum.toFixed(2)}\nPlatform Fee (2%): Rs.${platformFeeNum.toFixed(2)}\nDelivery Charge🚚: Rs.${deliveryNum.toFixed(2)}\n\n\nTOTAL: Rs.${grandTotalNum.toFixed(2)}\n\n😍Freshness Delivered - Enjoy your meal😍!\n\nOrder again at:\nhttps://krncart.com`;
@@ -217,7 +251,9 @@ export default function Cart(){
           customerAddress: finalAddress,
           items: cartItems.map(i => {
             const br = computeItemBreakdown(i);
-            return { id: i.id, name: i.name, qty: i.qty, base: Number((i.basePrice * i.qty).toFixed(2)), parcelRate: br.parcelRate, parcelFee: br.parcelFee, lineTotal: br.total, hotelName: i.hotelName, subsection: i.subsection };
+            const itemObj = { id: i.id, name: i.name, qty: i.qty, base: Number((i.basePrice * i.qty).toFixed(2)), parcelRate: br.parcelRate, parcelFee: br.parcelFee, lineTotal: br.total, hotelName: i.hotelName, subsection: i.subsection };
+            if(i.productQuantity) itemObj.productQuantity = i.productQuantity;
+            return itemObj;
           }),
           totals: {
             base: Number(totals.base),
@@ -227,17 +263,17 @@ export default function Cart(){
             delivery: Number(deliveryCharge),
             grandTotal: Number((totals.total + deliveryCharge).toFixed(2)),
           },
-          location: userLocationData ? {
-            latitude: userLocationData.lat,
-            longitude: userLocationData.lon,
-            accuracy: userLocationData.accuracy,
-            address: userLocationData.displayName || userLocationData.formattedAddress,
-            formattedAddress: userLocationData.formattedAddress,
-            country: userLocationData.country,
-            state: userLocationData.state,
-            city: userLocationData.city,
-            postcode: userLocationData.postcode,
-            timestamp: userLocationData.timestamp
+          location: locationData ? {
+            latitude: locationData.lat,
+            longitude: locationData.lon,
+            accuracy: locationData.accuracy,
+            address: locationData.displayName || locationData.formattedAddress,
+            formattedAddress: locationData.formattedAddress,
+            country: locationData.country,
+            state: locationData.state,
+            city: locationData.city,
+            postcode: locationData.postcode,
+            timestamp: locationData.timestamp
           } : null,
         };
         const old = JSON.parse(localStorage.getItem('orderHistory') || '[]');
@@ -249,12 +285,16 @@ export default function Cart(){
 
       // Clear cart after saving
       clearCart();
+      setLocationLoading(false);
     }, 1000);
   }
 
   return (
     <div>
-      <h2 className="page-heading">Your Cart</h2>
+      <div style={{display:'flex',alignItems:'center',gap:8}}>
+        <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
+        <h2 className="page-heading" style={{margin:0}}>Your Cart</h2>
+      </div>
 
       {count === 0 ? (
         <div className="empty">
@@ -275,6 +315,7 @@ export default function Cart(){
                 <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
                   <div style={{minWidth:160}}>
                     <div style={{fontSize:13,color:'var(--muted)'}}>Hotel: <strong style={{color:'#111827'}}>{item.hotelName || 'Unknown'}</strong>{item.subsection && <span>{' > '}<strong style={{color:'#111827'}}>{item.subsection}</strong></span>}</div>
+                    {item.productQuantity && <div style={{fontSize:13,color:'var(--muted)',marginTop:'4px'}}>Size: <strong style={{color:'#111827'}}>{item.productQuantity}</strong></div>}
                     <div>Base: <strong>₹{breakdown.base.toFixed(2)}</strong></div>
                     <div>Parcel Charge (@ ₹{breakdown.parcelRate.toFixed(2)}): <strong>₹{breakdown.parcelFee.toFixed(2)}</strong></div>
                     {breakdown.deliveryFee > 0 && <div>Delivery Charge (@ ₹{breakdown.deliveryRate.toFixed(2)}): <strong>₹{breakdown.deliveryFee.toFixed(2)}</strong></div>}
@@ -385,31 +426,21 @@ export default function Cart(){
                 rows={3} 
               />
 
-              {/* Location Action Buttons */}
-              <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+              {/* Location Action Buttons - Removed "Use My Location" button */}
+              {userLocationData && (
                 <button 
-                  className="button" 
-                  onClick={useMyLocation} 
-                  disabled={locationLoading}
-                  style={{flex:1, minWidth:'180px'}}
+                  className="button secondary" 
+                  onClick={() => {
+                    setUserLocationData(null);
+                    setAddress('');
+                    setShowMap(false);
+                    setLocationError(null);
+                  }}
+                  style={{flex:1, minWidth:'120px'}}
                 >
-                  {locationLoading ? '🔄 Detecting Location...' : '📍 Use My Live Location'}
+                  Clear Location
                 </button>
-                {userLocationData && (
-                  <button 
-                    className="button secondary" 
-                    onClick={() => {
-                      setUserLocationData(null);
-                      setAddress('');
-                      setShowMap(false);
-                      setLocationError(null);
-                    }}
-                    style={{flex:1, minWidth:'120px'}}
-                  >
-                    Clear Location
-                  </button>
-                )}
-              </div>
+              )}
 
               {/* Error Messages */}
               {locationError && (
@@ -418,8 +449,8 @@ export default function Cart(){
                 </div>
               )}
 
-              {/* Delivery notice: show only when subtotal is below ₹100 */}
-              {totals && totals.subtotal < 100 && (
+              {/* Delivery notice: show only when subtotal is below ₹100 and NOT a grocery order */}
+              {totals && totals.subtotal < 100 && !cartItems.some(item => item.hotelName === 'Grocery Store') && (
                 <div className="delivery-notice" style={{padding:12,background:'#fff7ed',border:'1px solid #ffedd5',borderRadius:10,color:'#92400e'}}>
                   <strong>⚠️ Delivery Notice:</strong> Orders below ₹100 will have ₹20 delivery charge. Add more items to get FREE delivery.
                 </div>

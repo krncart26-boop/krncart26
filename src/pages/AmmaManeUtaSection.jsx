@@ -28,6 +28,7 @@ export default function AmmaManeUtaSection() {
               name={item[0]}
               kannada={item[1]}
               price={item[2]}
+              subsection={sectionTitle}
             />
           ))
         ) : (

@@ -14,9 +14,17 @@ export function CartProvider({ children }){
   // Add item to cart (or increase qty if exists)
   function addToCart(item, qty = 1){
     setCartItems(prev => {
-      const existing = prev.find(p => p.id === item.id);
+      // Create a unique key combining id, hotelName, and subsection
+      const itemKey = `${item.id}|${item.hotelName}|${item.subsection || ''}`;
+      const existing = prev.find(p => {
+        const pKey = `${p.id}|${p.hotelName}|${p.subsection || ''}`;
+        return pKey === itemKey;
+      });
       if(existing){
-        return prev.map(p => p.id === item.id ? { ...p, qty: p.qty + qty } : p);
+        return prev.map(p => {
+          const pKey = `${p.id}|${p.hotelName}|${p.subsection || ''}`;
+          return pKey === itemKey ? { ...p, qty: p.qty + qty } : p;
+        });
       }
       return [...prev, { ...item, qty }];
     });
@@ -37,7 +45,7 @@ export function CartProvider({ children }){
 
   // Pricing helpers per item
   function getParcelRate(hotelName){
-    // Grocery items have no per-item parcel charge
+    // Grocery items have no per-item parcel charge (handled at order level)
     if(hotelName === 'Grocery Store') return 0;
     
     const rates = {
@@ -91,7 +99,7 @@ export function CartProvider({ children }){
       return s + rate * i.qty;
     }, 0);
     
-    // Add 5rs parcel charge if there are grocery items
+    // Add 5rs parcel charge if there are grocery items (per order, not per item)
     const hasGrocery = cartItems.some(item => item.hotelName === 'Grocery Store');
     const groceryParcelCharge = hasGrocery ? 5 : 0;
     

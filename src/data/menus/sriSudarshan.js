@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export const SRI_SUDARSHAN_SECTION_MAP = {
   breakfast: { english: "BREAKFAST" },
   lunch: { english: "LUNCH" },

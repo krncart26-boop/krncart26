@@ -22,6 +22,7 @@ const hotelDatabase = [
   { name: "American Cuisine", categories: ["Lunch", "Evening Food", "Snacks"] },
   { name: "Sri Sudarshan", categories: ["Breakfast", "Lunch", "Evening Food"] },
   { name: "Punjabi Hotel", categories: ["Breakfast", "Lunch", "Evening Food", "Snacks"] },
+  { name: "ShreeSha India", categories: ["Lunch", "Evening Food", "Snacks"] },
 ];
 
 // Color palette for each hotel
@@ -43,6 +44,7 @@ const hotelColors = {
   "Lakshmi Juice Corner": "#A8E8D8",
   "Gani's Restaurant": "#E0D8B0",
   "ShreeSha cafe": "#E8B8D0",
+  "ShreeSha India": "#E8B8D0",
   "Popular Biriyani Palace": "#E8B8C4",
   "Harish Gobi Centre": "#D8E8A8",
   "American Cuisine": "#E8A8C8",
@@ -69,6 +71,7 @@ function getHotelIcon(hotelName) {
     "Lakshmi Juice Corner": "🍹",
     "Gani's Restaurant": "🍳",
     "ShreeSha cafe": "🥤",
+    "ShreeSha India": "🍽️",
     "Popular Biriyani Palace": "🍛",
     "Harish Gobi Centre": "🥬",
     "American Cuisine": "🍔",

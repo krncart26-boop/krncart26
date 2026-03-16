@@ -240,8 +240,15 @@ export default function OrderHistory(){
                 <ul>
                   {o.items.map(it => (
                     <li key={it.id}>
-                      <div>{it.name} x {it.qty} — Parcel ₹{it.parcelRate.toFixed(2)} each → ₹{it.parcelFee.toFixed(2)}</div>
-                      <div style={{fontSize:12,color:'var(--muted)',marginLeft:16}}>
+                      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                        <div>{it.name}</div>
+                        <div style={{fontWeight:700,background:'#e3f2fd',padding:'4px 8px',borderRadius:'6px',fontSize:'13px'}}>Qty: {it.qty}</div>
+                      </div>
+                      {it.productQuantity && <div style={{fontSize:12,color:'var(--muted)',marginTop:4}}>Size: {it.productQuantity}</div>}
+                      <div style={{fontSize:12,color:'var(--muted)',marginLeft:0,marginTop:4}}>
+                        Parcel ₹{it.parcelRate.toFixed(2)} each → ₹{it.parcelFee.toFixed(2)}
+                      </div>
+                      <div style={{fontSize:12,color:'var(--muted)',marginLeft:0}}>
                         {it.hotelName && <span>{it.hotelName}</span>}
                         {it.subsection && <span>{' > '}{it.subsection}</span>}
                       </div>

@@ -1220,30 +1220,30 @@ body{
 
 /* Item cards (menu items) */
 /* Use existing app colors for consistency: sky blue via var(--sky) and body text color #111827 */
-.item-card{display:flex;flex-direction:column;align-items:stretch;padding:10px 8px;border-radius:10px;background:rgba(14,165,233,0.06);box-shadow:0 4px 12px rgba(2,6,23,0.04);width:100%;box-sizing:border-box;gap:8px}
+.item-card{display:flex;flex-direction:column;align-items:stretch;padding:12px;border-radius:12px;background:rgba(14,165,233,0.06);box-shadow:0 4px 12px rgba(2,6,23,0.04);width:100%;box-sizing:border-box;gap:8px;min-height:auto}
 .item-meta{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0;word-break:break-word;}
-.item-name{font-weight:800;color:#111827;font-size:14px;line-height:1.2;max-height:2.4em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.item-kannada{font-size:12px;color:var(--muted)}
-.item-price{font-weight:800;color:var(--sky);font-size:13px}
+.item-name{font-weight:800;color:#111827;font-size:13px;line-height:1.3;max-height:2.6em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item-kannada{font-size:11px;color:var(--muted)}
+.item-price{font-weight:800;color:var(--sky);font-size:14px;white-space:nowrap}
 
 /* Controls are touch-friendly */
-.controls{display:flex;gap:6px;align-items:stretch;flex-direction:column;width:100%}
-.qty-controls{display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border-radius:999px;background:#fff;min-height:40px;box-sizing:border-box}
-.qty-btn{background:transparent;border:0;padding:6px 8px;border-radius:6px;font-weight:700;min-width:36px;min-height:36px}
-.qty-number{min-width:24px;text-align:center;font-weight:700;font-size:13px}
-.add-btn{background:var(--sky);color:#fff;padding:8px 10px;border-radius:8px;border:0;font-weight:700;min-height:40px;font-size:13px;width:100%;box-sizing:border-box}
+.controls{display:flex;gap:8px;align-items:center;flex-direction:row;width:100%}
+.qty-controls{display:flex;align-items:center;justify-content:center;padding:4px 6px;border-radius:999px;background:#fff;min-height:36px;box-sizing:border-box;gap:4px}
+.qty-btn{background:transparent;border:0;padding:4px 6px;border-radius:6px;font-weight:700;min-width:28px;min-height:28px;font-size:14px}
+.qty-number{min-width:20px;text-align:center;font-weight:700;font-size:12px}
+.add-btn{background:var(--sky);color:#fff;padding:8px 12px;border-radius:8px;border:0;font-weight:700;min-height:36px;font-size:12px;white-space:nowrap;flex:1}
 
 @media (min-width: 481px) {
-  .item-card{display:flex;flex-direction:row;padding:12px;border-radius:12px}
+  .item-card{display:flex;flex-direction:column;padding:12px;border-radius:12px}
   .item-meta{flex:1}
-  .item-name{font-size:15px}
-  .item-kannada{font-size:13px}
-  .item-price{font-size:14px;min-width:70px;text-align:right}
-  .controls{flex-direction:row;gap:8px}
-  .qty-controls{min-height:44px;padding:8px 10px;border-radius:999px}
-  .qty-btn{min-width:44px;min-height:44px;padding:8px 12px}
-  .qty-number{min-width:28px;font-size:14px}
-  .add-btn{min-width:100px;min-height:44px;padding:10px 16px;font-size:14px}
+  .item-name{font-size:14px}
+  .item-kannada{font-size:12px}
+  .item-price{font-size:15px}
+  .controls{flex-direction:row;gap:8px;align-items:center}
+  .qty-controls{min-height:36px;padding:4px 6px}
+  .qty-btn{min-width:28px;min-height:28px;padding:4px 6px}
+  .qty-number{min-width:20px;font-size:12px}
+  .add-btn{min-height:36px;padding:8px 12px;font-size:12px}
 }
 .qty-controls{display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;background:#fff}
 .qty-btn{background:transparent;border:0;padding:6px 10px;border-radius:8px;font-weight:700}
@@ -1251,26 +1251,15 @@ body{
 
 /* Mobile (≤480px) responsive tweaks for item cards */
 @media (max-width:480px){
-  /* Stack main content vertically */
-  .item-card-row{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; width:100% }
-
-  /* Make meta and price full-width and left aligned */
-  .item-meta{width:100%}
-  .item-card-right{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:100%}
-  .item-price{width:100%;text-align:left;font-size:15px;margin-top:4px;min-width:0}
-
-  /* Item name: max 2 lines with ellipsis and slightly smaller font */
-  .item-name{font-size:15px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis;max-height:2.4em}
-
-  /* Controls: stack vertically, quantity pill full width and add button full width */
-  .controls{width:100%;display:flex;flex-direction:column;gap:8px;align-items:stretch;justify-content:flex-start}
-  .qty-controls{width:100%;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:999px;background:#fff;min-height:44px}
-  .qty-controls .qty-btn{padding:10px 12px;min-width:44px;border-radius:8px;min-height:44px}
-  .qty-number{min-width:28px;text-align:center;font-weight:700}
-  .add-btn{width:100%;min-height:44px;padding:10px 12px;border-radius:10px;flex:none}
-
-  /* Ensure no overflow and nice spacing */
-  .item-card{padding:12px}
+  .item-card{padding:10px}
+  .item-name{font-size:13px}
+  .item-kannada{font-size:11px}
+  .item-price{font-size:13px}
+  .controls{flex-direction:row;gap:6px;align-items:center}
+  .qty-controls{min-height:32px;padding:3px 4px;gap:3px}
+  .qty-btn{min-width:24px;min-height:24px;padding:2px 4px;font-size:12px}
+  .qty-number{min-width:16px;font-size:11px}
+  .add-btn{min-height:32px;padding:6px 10px;font-size:11px}
 }
 
 /* Desktop helpers: maintain original row layout using explicit classes */

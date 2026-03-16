@@ -24,10 +24,11 @@ export default function AmericanCuisineSection() {
           items.map((item, idx) => (
             <ItemCard
               key={idx}
+              id={`american-${sectionSlug}-${idx}`}
               name={item[0]}
               description={item[1]}
               price={item[2]}
-              hotelId="american-cuisine"
+              subsection={sectionTitle}
             />
           ))
         ) : (

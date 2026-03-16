@@ -1,0 +1,1 @@
+import{b as t,R as a}from"./index-BNTYC9Qf.js";import{F as o}from"./FilteredHotelPage-CCfAD6ZA.js";function u(){const{categorySlug:e}=t();return a.createElement(o,{hotelName:"Sanju Gobi House",categorySlug:e})}export{u as default};
