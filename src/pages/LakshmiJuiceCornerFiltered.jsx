@@ -28,10 +28,9 @@ export default function LakshmiJuiceCornerFiltered() {
 
   // Handle Juice filter landing page - show sections
   if (isJuiceFilterLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{display:'flex',alignItems:'center',gap:8}}>
-          <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={()=>navigate('/lakshmi-juice-corner')}>← Back</button>
           <h2 style={{margin:0}} className="page-heading">Lakshmi Juice Corner</h2>
         </div>
 
@@ -67,3 +66,5 @@ export default function LakshmiJuiceCornerFiltered() {
   // For other filters, use generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Lakshmi Juice Corner" categorySlug={categorySlug} />;
 }
+
+

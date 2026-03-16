@@ -22,10 +22,9 @@ export default function VBBakeryFiltered() {
   // Handle Bakery filter - show all items directly (no sections)
   if (isBakeryHandler) {
     console.log('✅ Bakery filter detected!', { items_count: VB_BAKERY_ITEMS.length });
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/vb-bakery')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">VB Bakery - Bakery</h2>
         </div>
 
@@ -50,3 +49,5 @@ export default function VBBakeryFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="VB Bakery" categorySlug={categorySlug} />;
 }
+
+

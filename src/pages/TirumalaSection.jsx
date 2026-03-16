@@ -66,8 +66,7 @@ export default function TirumalaSection(){
   const section = SECTION_MAP[sectionSlug] || { english: prettify(sectionSlug || 'Section') };
   const items = DATA[sectionSlug] || [];
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{position:'relative',padding:'8px 0'}}>
         <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/tirumala-juice')}>← Back</button>
 
@@ -91,3 +90,4 @@ export default function TirumalaSection(){
     </div>
   );
 }
+

@@ -22,8 +22,7 @@ export default function KeshavaChatsFiltered() {
   // Handle Chats filter - show all items directly (no sections)
   if (isChatsHandler) {
     console.log('✅ Chats filter detected!', { items_count: KESHAVA_CHATS_ITEMS.length });
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Keshava Chats - Chats</h2>
@@ -50,3 +49,4 @@ export default function KeshavaChatsFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Keshava Chats" categorySlug={categorySlug} />;
 }
+

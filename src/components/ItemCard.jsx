@@ -84,34 +84,40 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
     const hotelName = getHotelNameFromPath(location.pathname);
     // Use prop subsection if provided, otherwise extract from path
     const subsection = propSubsection || getSubsectionFromPath(location.pathname);
-    const cartItem = { id, name, basePrice: price, hotelName, subsection };
+    
+    // For grocery items, use Kannada name; for others use English name
+    const itemName = hotelName === 'Grocery Store' ? kannada : name;
+    
+    const cartItem = { id, name: itemName, basePrice: price, hotelName, subsection };
     if(quantity) cartItem.productQuantity = quantity;
     if(parcelCharge !== undefined) cartItem.parcelCharge = parcelCharge;
     if(deliveryCharge !== undefined) cartItem.deliveryCharge = deliveryCharge;
     addToCart(cartItem, qty);
-    showToast(`${name} x${qty} added to cart`);
+    showToast(`${itemName} x${qty} added to cart`);
     setQty(1);
   }
 
   return (
     <div className="item-card">
+      {/* Header: Name and Price */}
       <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:'8px',marginBottom:'8px'}}>
-        <div style={{flex:1}}>
+        <div style={{flex:1,minWidth:0}}>
           <div className="item-name">{name}</div>
           <div className="item-kannada">{kannada}</div>
         </div>
         <div className="item-price">₹{price.toFixed(2)}</div>
       </div>
 
+      {/* Quantity/Size */}
       {quantity && <div style={{fontSize:'11px',color:'var(--muted)',marginBottom:'8px'}}>Size: {quantity}</div>}
 
+      {/* Controls: Qty and Add Button in a row */}
       <div className="controls">
         <div className="qty-controls">
-          <button className="qty-btn" onClick={dec}>-</button>
+          <button className="qty-btn" onClick={dec}>−</button>
           <div className="qty-number">{qty}</div>
           <button className="qty-btn" onClick={inc}>+</button>
         </div>
-
         <button className="add-btn" onClick={handleAdd}>Add</button>
       </div>
 

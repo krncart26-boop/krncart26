@@ -350,13 +350,13 @@ export default function IceMagicFiltered() {
     }
 
     return (
-      <div>
+      <div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/ice-magic/ice-cream-sundaes')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -375,7 +375,7 @@ export default function IceMagicFiltered() {
   // Handle ice cream landing page (/ice-magic/filter/ice-cream-sundaes)
   if (isIceCreamLanding) {
     return (
-      <div>
+      <div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Ice Magic - Ice Cream & Sundaes</h2>
@@ -404,13 +404,13 @@ export default function IceMagicFiltered() {
     }
 
     return (
-      <div>
+      <div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/ice-magic/snacks')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -428,8 +428,7 @@ export default function IceMagicFiltered() {
 
   // Handle snacks landing page (/ice-magic/snacks)
   if (isSnacksLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Ice Magic</h2>
@@ -452,3 +451,4 @@ export default function IceMagicFiltered() {
   // For other filters (Juices, etc.), use generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Ice Magic" categorySlug={categorySlug} />;
 }
+

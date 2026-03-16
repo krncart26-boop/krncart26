@@ -338,8 +338,7 @@ export default function IceSection(){
   const section = SECTION_MAP[sectionSlug] || { english: prettify(sectionSlug || 'Section') };
   const items = DATA[sectionSlug] || [];
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{position:'relative',padding:'8px 0'}}>
         <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/ice-magic')}>← Back</button>
 
@@ -363,3 +362,4 @@ export default function IceSection(){
     </div>
   );
 }
+

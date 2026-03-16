@@ -20,22 +20,20 @@ export default function IceMagicJuiceFiltered() {
     const items = ICE_MAGIC_JUICE_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
-          <button className="header-btn" onClick={() => navigate('/ice-magic/filter/juice')}>← Back</button>
+      return (<div className="page-container">
+          <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
           <p style={{ textAlign: 'center', marginTop: 20 }}>Section not found</p>
         </div>
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/ice-magic/filter/juice')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -53,8 +51,7 @@ export default function IceMagicJuiceFiltered() {
 
   // Handle juice landing page (/ice-magic/filter/juice)
   if (isJuiceLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Ice Magic</h2>
@@ -75,10 +72,13 @@ export default function IceMagicJuiceFiltered() {
   }
 
   // Fallback
-  return (
-    <div>
+  return (<div className="page-container">
       <button className="header-btn" onClick={() => navigate('/ice-magic')}>← Back</button>
       <p style={{ textAlign: 'center', marginTop: 20 }}>No content available</p>
     </div>
   );
 }
+
+
+
+

@@ -56,10 +56,9 @@ export default function KRNRestaurantFiltered() {
       return <FilteredHotelPage hotelName="KRN Restaurant" categorySlug="snacks" />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/krn-restaurant/filter/snacks')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -69,7 +68,7 @@ export default function KRNRestaurantFiltered() {
           </p>
         )}
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -94,10 +93,9 @@ export default function KRNRestaurantFiltered() {
       return <FilteredHotelPage hotelName="KRN Restaurant" categorySlug="lunch" />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/krn-restaurant/filter/lunch')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -107,7 +105,7 @@ export default function KRNRestaurantFiltered() {
           </p>
         )}
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -125,10 +123,9 @@ export default function KRNRestaurantFiltered() {
 
   // Handle Snacks filter - landing page with section cards (URL: /krn-restaurant/filter/snacks)
   if (isSnacksLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">KRN Restaurant</h2>
         </div>
 
@@ -163,10 +160,9 @@ export default function KRNRestaurantFiltered() {
 
   // Handle Lunch filter - landing page with section cards (URL: /krn-restaurant/filter/lunch)
   if (isLunchLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">KRN Restaurant</h2>
         </div>
 
@@ -208,14 +204,13 @@ export default function KRNRestaurantFiltered() {
       return <FilteredHotelPage hotelName="KRN Restaurant" categorySlug="evening" />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/krn-restaurant/filter/evening')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -239,10 +234,9 @@ export default function KRNRestaurantFiltered() {
       sections: LUNCH_SECTIONS.map(s => s.slug)
     });
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/krn-restaurant')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">KRN Restaurant</h2>
         </div>
 
@@ -290,3 +284,7 @@ export default function KRNRestaurantFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="KRN Restaurant" categorySlug={categorySlug} />;
 }
+
+
+
+

@@ -18,10 +18,9 @@ export default function AyyangarssCakeHouseFiltered() {
     navigate(`/ayyangars-cake-house/${slug}`);
   };
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-        <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+        <button className="header-btn" onClick={() => navigate('/ayyangars-cake-house')}>← Back</button>
         <h2 style={{ margin: 0 }} className="page-heading">Ayyangars Cake House</h2>
       </div>
 
@@ -38,3 +37,5 @@ export default function AyyangarssCakeHouseFiltered() {
     </div>
   );
 }
+
+

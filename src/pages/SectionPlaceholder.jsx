@@ -144,8 +144,7 @@ export default function SectionPlaceholder(){
   const items = DATA[sectionSlug] || [];
 
   if(!section){
-    return (
-      <div>
+    return (<div className="page-container">
         <button className="header-btn" onClick={()=>navigate('/krn-restaurant')}>← Back</button>
         <h2 className="page-heading">Section not found</h2>
         <p>Unknown section. Please go back.</p>
@@ -153,8 +152,7 @@ export default function SectionPlaceholder(){
     );
   }
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{position:'relative',padding:'8px 0'}}>
         <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/krn-restaurant')}>← Back</button>
 
@@ -178,3 +176,4 @@ export default function SectionPlaceholder(){
     </div>
   );
 }
+

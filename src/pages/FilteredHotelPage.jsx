@@ -11,8 +11,7 @@ export default function FilteredHotelPage({ hotelName, categorySlug }) {
   const navigate = useNavigate();
   const categoryName = prettifyCategory(categorySlug);
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{display:'flex',alignItems:'center',gap:8}}>
         <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
         <h2 style={{margin:0}} className="page-heading">{hotelName} - {categoryName}</h2>
@@ -50,3 +49,4 @@ export default function FilteredHotelPage({ hotelName, categorySlug }) {
     </div>
   );
 }
+

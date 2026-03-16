@@ -28,14 +28,13 @@ export default function RajkumarPanipuriFiltered() {
       return <FilteredHotelPage hotelName="Rajkumar Panipuri" categorySlug={categorySlug} />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/rajkumar/filter/chats')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/rajkumar')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map((item, idx) => {
             // Handle array format [name, kannada, price]
             const [itemName, kannada, price] = item;
@@ -58,10 +57,9 @@ export default function RajkumarPanipuriFiltered() {
 
   // Handle Chats filter - landing page with section cards (URL: /rajkumar/filter/chats)
   if (isChatsLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/rajkumar')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Rajkumar Panipuri</h2>
         </div>
 
@@ -97,3 +95,7 @@ export default function RajkumarPanipuriFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Rajkumar Panipuri" categorySlug={categorySlug} />;
 }
+
+
+
+

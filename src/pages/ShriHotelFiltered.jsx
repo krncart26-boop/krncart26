@@ -36,10 +36,9 @@ export default function ShriHotelFiltered() {
 
   // Handle Breakfast filter - show all items
   if (isBreakfastHandler) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{position:'relative',padding:'8px 0'}}>
-          <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/home')}>← Back</button>
+          <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/shri-hotel')}>← Back</button>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
             <h2 style={{margin:0}} className="page-heading">Shri Hotel</h2>
           </div>
@@ -58,10 +57,9 @@ export default function ShriHotelFiltered() {
 
   // Handle Evening Food filter - show all items
   if (categorySlug === 'evening-food') {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{position:'relative',padding:'8px 0'}}>
-          <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/home')}>← Back</button>
+          <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/shri-hotel')}>← Back</button>
           <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
             <h2 style={{margin:0}} className="page-heading">Shri Hotel</h2>
             <div style={{color:'var(--muted)',marginTop:6}}>Evening • 3:15 PM – 7:45 PM</div>
@@ -82,3 +80,5 @@ export default function ShriHotelFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Shri Hotel" categorySlug={categorySlug} />;
 }
+
+

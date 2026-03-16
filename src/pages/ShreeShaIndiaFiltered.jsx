@@ -179,14 +179,13 @@ export default function ShreeShaIndiaFiltered() {
       return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug="snacks" />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -203,8 +202,7 @@ export default function ShreeShaIndiaFiltered() {
 
   // Handle snacks landing page (/shreesha-cafe/snacks or /shreesha-cafe/filter/snacks)
   if (isSnacksLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
@@ -233,14 +231,13 @@ export default function ShreeShaIndiaFiltered() {
       return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug="juices" />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -257,8 +254,7 @@ export default function ShreeShaIndiaFiltered() {
 
   // Handle juice landing page (/shreesha-cafe/juice or /shreesha-cafe/filter/juices)
   if (isJuiceLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
@@ -280,8 +276,7 @@ export default function ShreeShaIndiaFiltered() {
 
   // Handle all filter - show all categories
   if (isAllFilter) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">ShreeSha cafe</h2>
@@ -305,14 +300,13 @@ export default function ShreeShaIndiaFiltered() {
   if (isAllSubsection && sectionSlug) {
     // Handle ice-creams directly
     if (sectionSlug === 'ice-creams') {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Ice Creams</h2>
           </div>
 
-          <div className="items-list">
+          <div className="items-grid">
             {SHREESHA_CAFE_ICECREAM_ITEMS.map(item => (
               <ItemCard
                 key={item.id}
@@ -329,14 +323,13 @@ export default function ShreeShaIndiaFiltered() {
 
     // Handle combos-specials directly
     if (sectionSlug === 'combos-specials') {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Combos Specials</h2>
           </div>
 
-          <div className="items-list">
+          <div className="items-grid">
             {SHREESHA_CAFE_COMBO_ITEMS.map(item => (
               <ItemCard
                 key={item.id}
@@ -355,13 +348,12 @@ export default function ShreeShaIndiaFiltered() {
     const snacksItems = SNACKS_ITEMS[sectionSlug];
     if (snacksItems) {
       const sectionName = sectionSlug.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">{sectionName}</h2>
           </div>
-          <div className="items-list">
+          <div className="items-grid">
             {snacksItems.map(item => (
               <ItemCard
                 key={item.id}
@@ -389,13 +381,12 @@ export default function ShreeShaIndiaFiltered() {
     
     if (juiceItems) {
       const sectionName = sectionSlug.replace(/[-_]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
             <button className="header-btn" onClick={() => navigate(-1)}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">{sectionName}</h2>
           </div>
-          <div className="items-list">
+          <div className="items-grid">
             {juiceItems.map(item => (
               <ItemCard
                 key={item.id}
@@ -417,3 +408,7 @@ export default function ShreeShaIndiaFiltered() {
   // Default fallback
   return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug="snacks" />;
 }
+
+
+
+

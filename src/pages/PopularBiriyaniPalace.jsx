@@ -7,8 +7,7 @@ export default function PopularBiriyaniPalace() {
   const navigate = useNavigate();
   const menuItems = POPULAR_BIRIYANI_PALACE_LUNCH;
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
         <h2 style={{ margin: 0 }} className="page-heading">Popular Biriyani Palace</h2>
@@ -35,7 +34,7 @@ export default function PopularBiriyaniPalace() {
       </div>
 
       {/* Menu items list */}
-      <div className="items-list">
+      <div className="items-grid">
         {menuItems.map(item => (
           <ItemCard
             key={item.id}
@@ -49,3 +48,4 @@ export default function PopularBiriyaniPalace() {
     </div>
   );
 }
+

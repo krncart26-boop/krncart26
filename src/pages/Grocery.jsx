@@ -73,6 +73,7 @@ export default function Grocery() {
         section.subcategories.flatMap((sub, subIdx) => 
           sub.items.map((item, itemIdx) => ({
             ...item,
+            subcategoryId: sub.id,
             uniqueKey: `${section.id}-${subIdx}-${itemIdx}`
           }))
         )
@@ -81,6 +82,7 @@ export default function Grocery() {
     const selected = allSubcategories.find(sub => sub.id === activeSubcategory);
     return selected ? selected.items.map((item, idx) => ({
       ...item,
+      subcategoryId: selected.id,
       uniqueKey: `${selected.id}-${idx}`
     })) : [];
   };
@@ -196,12 +198,12 @@ export default function Grocery() {
             {displayItems.map(item => (
               <ItemCard
                 key={item.uniqueKey}
-                id={`grocery-${item.id}`}
+                id={item.uniqueKey}
                 name={item.englishName}
                 kannada={item.name}
                 price={item.price}
                 quantity={item.quantity}
-                subsection="Grocery"
+                subsection={item.subcategoryId}
               />
             ))}
           </div>

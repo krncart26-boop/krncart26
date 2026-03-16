@@ -111,10 +111,9 @@ export default function UdupiPalaceFiltered() {
   if (isBreakfastHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Breakfast</h2>
           </div>
 
@@ -137,10 +136,9 @@ export default function UdupiPalaceFiltered() {
     const items = UDUPI_BREAKFAST_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -150,10 +148,9 @@ export default function UdupiPalaceFiltered() {
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/udupi-hotel/filter/breakfast')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
         </div>
 
@@ -162,7 +159,7 @@ export default function UdupiPalaceFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={`${item.itemName.toLowerCase().replace(/\s+/g, '-')}`}
@@ -181,10 +178,9 @@ export default function UdupiPalaceFiltered() {
   if (isLunchHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Lunch</h2>
           </div>
 
@@ -207,10 +203,9 @@ export default function UdupiPalaceFiltered() {
     const items = UDUPI_LUNCH_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -220,10 +215,9 @@ export default function UdupiPalaceFiltered() {
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/udupi-hotel/filter/lunch')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
         </div>
 
@@ -232,7 +226,7 @@ export default function UdupiPalaceFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={`${item.itemName.toLowerCase().replace(/\s+/g, '-')}`}
@@ -251,10 +245,9 @@ export default function UdupiPalaceFiltered() {
   if (isSnacksHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Snacks</h2>
           </div>
 
@@ -277,10 +270,9 @@ export default function UdupiPalaceFiltered() {
     const items = UDUPI_SNACKS_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -290,10 +282,9 @@ export default function UdupiPalaceFiltered() {
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/udupi-hotel/filter/snacks')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
         </div>
 
@@ -302,7 +293,7 @@ export default function UdupiPalaceFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={`${item.itemName.toLowerCase().replace(/\s+/g, '-')}`}
@@ -321,10 +312,9 @@ export default function UdupiPalaceFiltered() {
   if (isJuiceHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Juices</h2>
           </div>
 
@@ -347,10 +337,9 @@ export default function UdupiPalaceFiltered() {
     const items = UDUPI_JUICE_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -360,10 +349,9 @@ export default function UdupiPalaceFiltered() {
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/udupi-hotel/filter/juice')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
         </div>
 
@@ -372,7 +360,7 @@ export default function UdupiPalaceFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -391,10 +379,9 @@ export default function UdupiPalaceFiltered() {
   if (isChatsHandler) {
     // Landing page: show clickable section cards
     if (!sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Chats</h2>
           </div>
 
@@ -417,10 +404,9 @@ export default function UdupiPalaceFiltered() {
     const items = UDUPI_CHATS_ITEMS[sectionSlug] || [];
 
     if (!section) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
           </div>
           <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -430,10 +416,9 @@ export default function UdupiPalaceFiltered() {
       );
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/udupi-hotel/filter/chats')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
         </div>
 
@@ -442,7 +427,7 @@ export default function UdupiPalaceFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -461,10 +446,9 @@ export default function UdupiPalaceFiltered() {
   if (isIceCreamLanding || isIceCreamDetail) {
     // Landing page: show clickable section cards
     if (isIceCreamLanding && !sectionSlug) {
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace - Ice Cream & Sundaes</h2>
           </div>
 
@@ -488,10 +472,9 @@ export default function UdupiPalaceFiltered() {
       const items = UDUPI_ICE_CREAM_ITEMS[sectionSlug] || [];
       
       if (!section) {
-        return (
-          <div>
+        return (<div className="page-container">
             <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+              <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
               <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
             </div>
             <div style={{ padding: '20px', textAlign: 'center', marginTop: '40px' }}>
@@ -501,10 +484,9 @@ export default function UdupiPalaceFiltered() {
         );
       }
 
-      return (
-        <div>
+      return (<div className="page-container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-            <button className="header-btn" onClick={() => navigate('/udupi-hotel/ice-cream-sundaes')}>← Back</button>
+            <button className="header-btn" onClick={() => navigate('/udupi-hotel')}>← Back</button>
             <h2 style={{ margin: 0 }} className="page-heading">Udupi Palace</h2>
           </div>
 
@@ -513,7 +495,7 @@ export default function UdupiPalaceFiltered() {
             <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>{section.kannada}</p>
           </div>
 
-          <div className="items-list">
+          <div className="items-grid">
             {items.map(item => (
               <ItemCard
                 key={item.id}
@@ -532,3 +514,7 @@ export default function UdupiPalaceFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Udupi Palace" categorySlug={categorySlug} />;
 }
+
+
+
+

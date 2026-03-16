@@ -6,3 +6,5 @@ export default function SanjuGobiBouseFiltered() {
   const { categorySlug } = useParams();
   return <FilteredHotelPage hotelName="Sanju Gobi House" categorySlug={categorySlug} />;
 }
+
+

@@ -129,16 +129,14 @@ export default function ShreeShaIndiaSection(){
   const items = DATA[sectionSlug] || [];
 
   if(!section){
-    return (
-      <div>
+    return (<div className="page-container">
         <button className="header-btn" onClick={()=>navigate(-1)}>← Back</button>
         <h2 className="page-heading">Section not found</h2>
       </div>
     );
   }
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{position:'relative',padding:'8px 0'}}>
         <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate(-1)}>← Back</button>
 
@@ -161,3 +159,4 @@ export default function ShreeShaIndiaSection(){
     </div>
   );
 }
+

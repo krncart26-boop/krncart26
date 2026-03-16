@@ -39,10 +39,9 @@ export default function ShriTiffanysFiltered() {
       return <FilteredHotelPage hotelName="Shri Tiffany's" categorySlug={categorySlug} />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/shri-tiffanys/filter/breakfast')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/shri-tiffanys')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -63,10 +62,9 @@ export default function ShriTiffanysFiltered() {
 
   // Handle Breakfast filter - landing page with section cards (URL: /shri-tiffanys/filter/breakfast)
   if (isBreakfastLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/shri-tiffanys')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Shri Tiffany's</h2>
         </div>
 
@@ -100,10 +98,9 @@ export default function ShriTiffanysFiltered() {
       return <FilteredHotelPage hotelName="Shri Tiffany's" categorySlug={categorySlug} />;
     }
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/shri-tiffanys/filter/evening-food')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/shri-tiffanys')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">{section.english}</h2>
         </div>
 
@@ -139,10 +136,9 @@ export default function ShriTiffanysFiltered() {
 
   // Handle Evening Food filter - landing page with section cards (URL: /shri-tiffanys/filter/evening-food)
   if (isEveningLanding) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/shri-tiffanys')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Shri Tiffany's</h2>
         </div>
 
@@ -164,3 +160,5 @@ export default function ShriTiffanysFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Shri Tiffany's" categorySlug={categorySlug} />;
 }
+
+

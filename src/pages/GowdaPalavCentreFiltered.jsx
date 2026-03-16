@@ -37,10 +37,9 @@ export default function GowdaPalavCentreFiltered() {
 
   // Handle Lunch filter - show lunch specials only
   if (categorySlug === 'lunch') {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-          <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
+          <button className="header-btn" onClick={() => navigate('/gowda-palav-centre')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Gowda Palav Centre</h2>
         </div>
 
@@ -49,7 +48,7 @@ export default function GowdaPalavCentreFiltered() {
           <p style={{ margin: '0', fontSize: '0.9em', color: 'var(--muted)' }}>ಲಂಚ್ ವಿಶೇಷ</p>
         </div>
 
-        <div className="items-list">
+        <div className="items-grid">
           {LUNCH_ITEMS.map(item => (
             <ItemCard
               key={item.id}
@@ -67,3 +66,7 @@ export default function GowdaPalavCentreFiltered() {
   // For all other filters, use the generic FilteredHotelPage
   return <FilteredHotelPage hotelName="Gowda Palav Centre" categorySlug={categorySlug} />;
 }
+
+
+
+

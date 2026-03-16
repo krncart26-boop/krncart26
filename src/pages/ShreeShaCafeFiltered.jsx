@@ -6,3 +6,4 @@ export default function ShreeShaCafeFiltered() {
   const { categorySlug } = useParams();
   return <FilteredHotelPage hotelName="ShreeSha cafe" categorySlug={categorySlug} />;
 }
+

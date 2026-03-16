@@ -12,8 +12,7 @@ export default function GanisLunchFilter() {
 
   // Landing page: show clickable section cards
   if (!sectionSlug) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Gani's Restaurant - Lunch</h2>
@@ -38,8 +37,7 @@ export default function GanisLunchFilter() {
   const items = GANIS_LUNCH_ITEMS[sectionSlug] || [];
 
   if (!section) {
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <button className="header-btn" onClick={() => navigate('/home')}>← Back</button>
           <h2 style={{ margin: 0 }} className="page-heading">Not Found</h2>
@@ -51,8 +49,7 @@ export default function GanisLunchFilter() {
     );
   }
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
         <button 
           className="header-btn" 
@@ -68,7 +65,7 @@ export default function GanisLunchFilter() {
           <h3 style={{ color: 'var(--muted)' }}>No items available</h3>
         </div>
       ) : (
-        <div className="items-list">
+        <div className="items-grid">
           {items.map(item => (
             <ItemCard
               key={item.id}
@@ -85,3 +82,5 @@ export default function GanisLunchFilter() {
     </div>
   );
 }
+
+

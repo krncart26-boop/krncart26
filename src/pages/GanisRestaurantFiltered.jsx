@@ -34,8 +34,7 @@ export default function GanisRestaurantFiltered() {
       menuKeys: Object.keys(GANIS_RESTAURANT_MENU),
     });
 
-    return (
-      <div>
+    return (<div className="page-container">
         <div style={{display:'flex',alignItems:'center',gap:8}}>
           <button className="header-btn" onClick={()=>navigate('/ganis-restaurant')}>← Back</button>
           <h2 style={{margin:0}} className="page-heading">Gani's - {sectionName}</h2>
@@ -46,7 +45,7 @@ export default function GanisRestaurantFiltered() {
             <h3 style={{color:'var(--muted)'}}>No items available</h3>
           </div>
         ) : (
-          <div className="items-list">
+          <div className="items-grid">
             {items.map(item => (
               <ItemCard
                 key={item.id}
@@ -67,3 +66,7 @@ export default function GanisRestaurantFiltered() {
   // For non-ALL categories, show coming soon
   return <FilteredHotelPage hotelName="Gani's Restaurant" categorySlug={categorySlug} />;
 }
+
+
+
+

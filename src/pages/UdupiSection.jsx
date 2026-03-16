@@ -248,8 +248,7 @@ export default function UdupiSection(){
   const section = SECTION_MAP[sectionSlug] || { english: prettify(sectionSlug || 'Section') };
   const items = DATA[sectionSlug] || [];
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{position:'relative',padding:'8px 0'}}>
         <button className="header-btn" style={{position:'absolute',left:0,top:6}} onClick={()=>navigate('/udupi-hotel')}>← Back</button>
 
@@ -273,3 +272,4 @@ export default function UdupiSection(){
     </div>
   );
 }
+

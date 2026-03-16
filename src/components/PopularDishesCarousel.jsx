@@ -46,9 +46,9 @@ export default function PopularDishesCarousel() {
     addToCart({
       id: `${dish.hotel}-${dish.name}`,
       name: dish.name,
-      price: dish.price,
-      hotelId: dish.hotel.toLowerCase().replace(/\s+/g, "-"),
-      quantity: 1,
+      basePrice: dish.price,
+      hotelName: dish.hotel,
+      subsection: null,
     });
   };
 

@@ -14,8 +14,7 @@ export default function AyyangarssCakeHouseSection() {
   const section = AYYANGARS_CAKE_HOUSE_SECTION_MAP[sectionSlug] || { english: prettify(sectionSlug || 'Section') };
   const items = AYYANGARS_CAKE_HOUSE_DATA[sectionSlug] || [];
 
-  return (
-    <div>
+  return (<div className="page-container">
       <div style={{ position: 'relative', padding: '8px 0' }}>
         <button className="header-btn" style={{ position: 'absolute', left: 0, top: 6 }} onClick={() => navigate('/ayyangars-cake-house')}>← Back</button>
 
@@ -39,3 +38,4 @@ export default function AyyangarssCakeHouseSection() {
     </div>
   );
 }
+
