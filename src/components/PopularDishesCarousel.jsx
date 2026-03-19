@@ -1,32 +1,40 @@
-import React, { useState, useEffect, useRef, useContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useCart } from "../context/CartContext";
 
-const POPULAR_DISHES = [
-  { name: "Obbattu/Holige", hotel: "Home Made", price: 60.00, emoji: "🥘" },
-  { name: "Sweet 1", hotel: "Home Made", price: 50.00, emoji: "🍯" },
-  { name: "Kadle Kalu Gojju", hotel: "Home Made", price: 45.00, emoji: "🍲" },
-  { name: "Mavinkayi Chitranna", hotel: "Home Made", price: 55.00, emoji: "🍚" },
-  { name: "Rice Samber", hotel: "Home Made", price: 40.00, emoji: "🍛" },
-  { name: "Vada and Bonda", hotel: "Home Made", price: 35.00, emoji: "🥟" },
-  { name: "Kosambari Palya", hotel: "Home Made", price: 30.00, emoji: "🥗" },
+const UGADI_MEALS = [
+  {
+    id: "ugadi-special-1",
+    title: "🌸 Ugadi Special Meals",
+    description: "Obbattu/Holige, Sweet 1, Kadle Kalu Gojju, Mavinkayi Chitranna, Rice Samber, Vada and Bonda, Kosambari Palya",
+    price: 179.00,
+    hotel: "Home Made",
+    emoji: "🌸"
+  },
+  {
+    id: "ugadi-special-2",
+    title: "🌸 Ugadi Special Meals",
+    description: "Obbattu/Holige, Sweet 1, Kadle Kalu Gojju, Mavinkayi Chitranna, Rice Samber, Vada and Bonda, Kosambari Palya",
+    price: 179.00,
+    hotel: "Home Made",
+    emoji: "🌸"
+  }
 ];
 
 export default function PopularDishesCarousel() {
   const { addToCart } = useCart();
   const scrollContainerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoScroll, setIsAutoScroll] = useState(true);
 
+  // Auto-scroll every 2.5 seconds
   useEffect(() => {
-    if (!isAutoScroll) return;
-
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % POPULAR_DISHES.length);
-    }, 4000);
+      setCurrentIndex((prev) => (prev + 1) % UGADI_MEALS.length);
+    }, 2500);
 
     return () => clearInterval(interval);
-  }, [isAutoScroll]);
+  }, []);
 
+  // Scroll to current item
   useEffect(() => {
     if (scrollContainerRef.current) {
       const itemWidth = scrollContainerRef.current.querySelector(".dish-item")?.offsetWidth || 0;
@@ -36,17 +44,12 @@ export default function PopularDishesCarousel() {
     }
   }, [currentIndex]);
 
-  const handleScroll = () => {
-    setIsAutoScroll(false);
-    setTimeout(() => setIsAutoScroll(true), 5000);
-  };
-
-  const handleAddToCart = (dish) => {
+  const handleAddToCart = (meal) => {
     addToCart({
-      id: `${dish.hotel}-${dish.name}`,
-      name: dish.name,
-      basePrice: dish.price,
-      hotelName: dish.hotel,
+      id: meal.id,
+      name: meal.title,
+      basePrice: meal.price,
+      hotelName: meal.hotel,
       subsection: null,
     });
   };
@@ -57,39 +60,60 @@ export default function PopularDishesCarousel() {
       <div
         className="popular-dishes-carousel"
         ref={scrollContainerRef}
-        onScroll={handleScroll}
+        style={{ scrollBehavior: 'smooth' }}
       >
-        {POPULAR_DISHES.map((dish, index) => (
-          <div key={index} className="dish-item">
-            <div className="dish-emoji">{dish.emoji}</div>
+        {UGADI_MEALS.map((meal, index) => (
+          <div key={index} className="dish-item" style={{ minWidth: '100%', flex: '0 0 100%' }}>
+            <div className="dish-emoji" style={{ fontSize: '48px', marginBottom: '12px' }}>{meal.emoji}</div>
             <div className="dish-info">
-              <h4 className="dish-name">{dish.name}</h4>
-              <p className="dish-hotel">{dish.hotel}</p>
-              <div className="dish-footer">
-                <span className="dish-price">₹{dish.price}</span>
+              <h4 className="dish-name" style={{ fontSize: '18px', fontWeight: '900', marginBottom: '8px' }}>{meal.title}</h4>
+              <p className="dish-description" style={{ fontSize: '13px', color: '#666', marginBottom: '12px', lineHeight: '1.5' }}>
+                {meal.description}
+              </p>
+              <p className="dish-hotel" style={{ fontSize: '12px', color: '#999', marginBottom: '12px' }}>{meal.hotel}</p>
+              <div className="dish-footer" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span className="dish-price" style={{ fontSize: '20px', fontWeight: '900', color: '#2E7D32' }}>₹{meal.price.toFixed(2)}</span>
                 <button
                   className="dish-add-btn"
-                  onClick={() => handleAddToCart(dish)}
+                  onClick={() => handleAddToCart(meal)}
                   title="Add to cart"
+                  style={{
+                    background: '#2E7D32',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    fontSize: '14px',
+                    fontWeight: '700',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s'
+                  }}
+                  onMouseEnter={(e) => e.target.style.background = '#1b5e20'}
+                  onMouseLeave={(e) => e.target.style.background = '#2E7D32'}
                 >
-                  +
+                  Add to Cart
                 </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="popular-dishes-dots">
-        {POPULAR_DISHES.map((_, index) => (
+      <div className="popular-dishes-dots" style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '16px' }}>
+        {UGADI_MEALS.map((_, index) => (
           <button
             key={index}
             className={`dish-dot ${index === currentIndex ? "active" : ""}`}
-            onClick={() => {
-              setCurrentIndex(index);
-              setIsAutoScroll(false);
-              setTimeout(() => setIsAutoScroll(true), 5000);
+            onClick={() => setCurrentIndex(index)}
+            style={{
+              width: '10px',
+              height: '10px',
+              borderRadius: '50%',
+              border: 'none',
+              background: index === currentIndex ? '#2E7D32' : '#ddd',
+              cursor: 'pointer',
+              transition: 'all 0.2s'
             }}
-            aria-label={`Go to dish ${index + 1}`}
+            aria-label={`Go to meal ${index + 1}`}
           />
         ))}
       </div>
