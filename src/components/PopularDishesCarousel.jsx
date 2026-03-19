@@ -2,14 +2,13 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { useCart } from "../context/CartContext";
 
 const POPULAR_DISHES = [
-  { name: "Masala Dosa", hotel: "Udupi Palace", price: 79.99, emoji: "🥘" },
-  { name: "Idli Vada", hotel: "Sri Sudarshan", price: 42.99, emoji: "🍲" },
-  { name: "Egg Burger", hotel: "American Cuisine", price: 69.99, emoji: "🍔" },
-  { name: "Kunafa Pistachio dessert", hotel: "Ice Magic", price: 209.99, emoji: " 🍰" },
-  { name: "Masala", hotel: "Keshava Chats", price: 39.99, emoji: "🍲" },
-  { name: "chicken Biryani", hotel: "Popular Biriyani Palace", price: 149.99, emoji: "🍚" },
-  { name: "Samosa", hotel: "Rajkumar Panipuri", price: 25.00, emoji: "🥟" },
-  { name: "Champakali(1 piece)", hotel: "Ayyangars Cake House", price: 19.99, emoji: "🍰" },
+  { name: "Obbattu/Holige", hotel: "Home Made", price: 60.00, emoji: "🥘" },
+  { name: "Sweet 1", hotel: "Home Made", price: 50.00, emoji: "🍯" },
+  { name: "Kadle Kalu Gojju", hotel: "Home Made", price: 45.00, emoji: "🍲" },
+  { name: "Mavinkayi Chitranna", hotel: "Home Made", price: 55.00, emoji: "🍚" },
+  { name: "Rice Samber", hotel: "Home Made", price: 40.00, emoji: "🍛" },
+  { name: "Vada and Bonda", hotel: "Home Made", price: 35.00, emoji: "🥟" },
+  { name: "Kosambari Palya", hotel: "Home Made", price: 30.00, emoji: "🥗" },
 ];
 
 export default function PopularDishesCarousel() {
@@ -54,7 +53,7 @@ export default function PopularDishesCarousel() {
 
   return (
     <div className="popular-dishes-section">
-      <h3 className="popular-dishes-title">🌟 Popular Dishes</h3>
+      <h3 className="popular-dishes-title">🌸 Ugadi Special Meals 🌸</h3>
       <div
         className="popular-dishes-carousel"
         ref={scrollContainerRef}
