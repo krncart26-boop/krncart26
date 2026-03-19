@@ -111,7 +111,7 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
       <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',gap:'8px',marginBottom:'8px'}}>
         <div style={{flex:1,minWidth:0}}>
           <div className="item-name">{name}</div>
-          <div className="item-kannada">{kannada}</div>
+          {name !== kannada && <div className="item-kannada">{kannada}</div>}
         </div>
         <div className="item-price">₹{price.toFixed(2)}</div>
       </div>

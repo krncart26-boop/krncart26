@@ -202,7 +202,7 @@ export default function Grocery() {
               <ItemCard
                 key={item.uniqueKey}
                 id={item.uniqueKey}
-                name={item.englishName}
+                name={item.name}
                 kannada={item.name}
                 price={item.price}
                 quantity={item.quantity}
