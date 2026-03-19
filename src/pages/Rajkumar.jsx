@@ -2,6 +2,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import ClosedHotelBanner from "../components/ClosedHotelBanner";
 import { RAJKUMAR_DATA, RAJKUMAR_SECTION_MAP } from "../data/menus/rajkumar";
 
 const SECTIONS = [
@@ -18,6 +19,8 @@ export default function Rajkumar(){
         <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
         <h2 style={{margin:0}} className="page-heading">Rajkumar (Chats)</h2>
       </div>
+
+      <ClosedHotelBanner />
 
       {/* Timing banner (darker blue) */}
       <div className="ice-timing-banner" role="region" aria-label="Rajkumar opening hours">

@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import ClosedHotelBanner from "../components/ClosedHotelBanner";
 import { SRI_SUDARSHAN_DATA, SRI_SUDARSHAN_SECTION_MAP } from "../data/menus/sriSudarshan";
 
 const SECTIONS = [
@@ -29,6 +30,8 @@ export default function SriSudarshan() {
         <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
         <h2 style={{margin:0}} className="page-heading">Sri Sudarshan</h2>
       </div>
+
+      <ClosedHotelBanner />
 
       <div className="section-list" style={{marginTop:12}}>
         {SECTIONS.map(s => (

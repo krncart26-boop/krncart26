@@ -1,6 +1,7 @@
 // Reusable ItemCard: shows item name, Kannada name, price, qty controls and Add to Cart
 import React, {useState} from "react";
 import { useCart } from "../context/CartContext";
+import { isHotelClosed } from "../data/closedHotels";
 
 import { useLocation } from "react-router-dom";
 
@@ -82,6 +83,13 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
 
   function handleAdd(){
     const hotelName = getHotelNameFromPath(location.pathname);
+    
+    // Check if hotel is closed
+    if(isHotelClosed(hotelName)){
+      showToast('This hotel is closed today');
+      return;
+    }
+    
     // Use prop subsection if provided, otherwise extract from path
     const subsection = propSubsection || getSubsectionFromPath(location.pathname);
     
@@ -114,11 +122,22 @@ export default function ItemCard({ id, name, kannada, price, parcelCharge, deliv
       {/* Controls: Qty and Add Button in a row */}
       <div className="controls">
         <div className="qty-controls">
-          <button className="qty-btn" onClick={dec}>−</button>
+          <button className="qty-btn" onClick={dec} disabled={isHotelClosed(getHotelNameFromPath(location.pathname))}>−</button>
           <div className="qty-number">{qty}</div>
-          <button className="qty-btn" onClick={inc}>+</button>
+          <button className="qty-btn" onClick={inc} disabled={isHotelClosed(getHotelNameFromPath(location.pathname))}>+</button>
         </div>
-        <button className="add-btn" onClick={handleAdd}>Add</button>
+        <button 
+          className="add-btn" 
+          onClick={handleAdd}
+          disabled={isHotelClosed(getHotelNameFromPath(location.pathname))}
+          style={isHotelClosed(getHotelNameFromPath(location.pathname)) ? {
+            opacity: '0.5',
+            cursor: 'not-allowed',
+            background: '#ccc'
+          } : {}}
+        >
+          {isHotelClosed(getHotelNameFromPath(location.pathname)) ? 'Closed' : 'Add'}
+        </button>
       </div>
 
       {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}

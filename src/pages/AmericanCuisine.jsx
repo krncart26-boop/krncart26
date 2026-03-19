@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import SectionCard from "../components/SectionCard";
+import ClosedHotelBanner from "../components/ClosedHotelBanner";
 import { AMERICAN_CUISINE_DATA, AMERICAN_CUISINE_SECTION_MAP } from "../data/menus/americanCuisine";
 
 const SECTIONS = [
@@ -53,6 +54,8 @@ export default function AmericanCuisine() {
         <button className="header-btn" onClick={()=>navigate('/home')}>← Back</button>
         <h2 style={{margin:0}} className="page-heading">American Cuisine</h2>
       </div>
+
+      <ClosedHotelBanner />
 
       {Object.entries(groupedSections).map(([category, sections]) => (
         <div key={category} style={{marginTop:16}}>
