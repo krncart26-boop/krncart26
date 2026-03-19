@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "../styles/grocery.css";
 import GroceryHeroBanner from "../components/GroceryHeroBanner";
+import UgadiBanner from "../components/UgadiBanner";
 import ItemCard from "../components/ItemCard";
 import pulsesAndLentils from "../data/groceryItems/pulsesAndLentils";
 import spices from "../data/groceryItems/spices";
@@ -108,6 +109,8 @@ export default function Grocery() {
       <div style={{maxWidth:'1200px',margin:'0 auto',padding:'24px 16px'}}>
         {/* Hero Banner */}
         <GroceryHeroBanner />
+
+        <UgadiBanner />
 
         {/* Subcategory Filters */}
         <div style={{marginBottom:'32px'}}>

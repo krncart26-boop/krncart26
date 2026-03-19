@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import UgadiBanner from "../components/UgadiBanner";
 import "../styles/categories.css";
 
 export default function Categories() {
@@ -50,6 +51,8 @@ export default function Categories() {
         <h1>What are you looking for?</h1>
         <p>Select a category to get started</p>
       </div>
+
+      <UgadiBanner />
 
       <div className="categories-grid">
         {categories.map(category => (

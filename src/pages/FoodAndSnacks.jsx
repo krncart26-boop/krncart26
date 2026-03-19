@@ -5,6 +5,7 @@ import PopularDishesCarousel from "../components/PopularDishesCarousel";
 import StatsCard from "../components/StatsCard";
 import HotelGrid, { hotelDatabase } from "../components/HotelGrid";
 import SearchResults from "../components/SearchResults";
+import UgadiBanner from "../components/UgadiBanner";
 import SEARCH_INDEX from "../data/searchIndexAuto";
 
 const CATEGORIES = ["All", "Breakfast", "Lunch", "Evening Food", "Snacks", "Juices", "Chats", "Bakery", "Ice Cream & Sundaes"];
@@ -73,6 +74,8 @@ export default function FoodAndSnacks(){
         </div>
 
         <HeroBannerCarousel />
+
+        <UgadiBanner />
 
         <StatsCard />
 
