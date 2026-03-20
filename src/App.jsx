@@ -48,6 +48,7 @@ const PopularBiriyaniPalace = lazy(() => import("./pages/PopularBiriyaniPalace")
 const HarishGobiCentre = lazy(() => import("./pages/HarishGobiCentre"));
 const AmericanCuisine = lazy(() => import("./pages/AmericanCuisine"));
 const AmericanCuisineSection = lazy(() => import("./pages/AmericanCuisineSection"));
+const SunithCloudKitchen = lazy(() => import("./pages/SunithCloudKitchen"));
 const AmericanCuisineFiltered = lazy(() => import("./pages/AmericanCuisineFiltered"));
 const SriSudarshan = lazy(() => import("./pages/SriSudarshan"));
 const SriSudarshanSection = lazy(() => import("./pages/SriSudarshanSection"));
@@ -103,6 +104,7 @@ export default function App() {
             <Route path="/medicines" element={<Medicines />} />
             <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
             <Route path="/milk-water" element={<MilkWater />} />
+            <Route path="/sunith-cloud-kitchen" element={<SunithCloudKitchen />} />
             
             {/* Filtered hotel routes MUST come before generic :sectionSlug routes */}
             {/* Udupi Palace Breakfast filter with sections */}
