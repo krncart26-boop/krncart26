@@ -3,12 +3,12 @@ import { useCart } from "../context/CartContext";
 
 const UGADI_MEALS = [
   {
-    id: "ugadi-special",
-    title: "🌸 Ugadi Special Meals 🌸",
-    description: "Obbattu/Holige, Sweet 1, Kadle Kalu Gojju, Mavinkayi Chitranna, Rice Samber, Vada and Bonda, Kosambari Palya",
-    price: 179.00,
+    id: "hosatodaku-special",
+    title: "🍛 Hosatodaku Special Meals Combo 🍛",
+    description: "Mudde, Mutton Samber, Biriyani Rice, Chicken Chops, Papper Chicken, White Rice, Banana",
+    price: 249.00,
     hotel: "Home Made",
-    emoji: "🌸"
+    emoji: "🍛"
   }
 ];
 
