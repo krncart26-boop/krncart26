@@ -29,15 +29,15 @@ export default function PopularDishesCarousel() {
   return (
     <div style={{ marginBottom: '16px' }}>
       <div style={{
-        background: 'linear-gradient(135deg, #A7F3D0 0%, #6EE7B7 50%, #A7F3D0 100%)',
+        background: 'linear-gradient(135deg, #FCA5A5 0%, #F87171 50%, #EF4444 100%)',
         borderRadius: '12px',
         padding: '14px 12px',
         position: 'relative',
         overflow: 'hidden',
-        boxShadow: '0 4px 12px rgba(16, 185, 129, 0.15)',
-        border: '2px solid #D1FAE5'
+        boxShadow: '0 4px 12px rgba(239, 68, 68, 0.2)',
+        border: '2px solid #FECACA'
       }}>
-        {/* Decorative festive elements */}
+        {/* Decorative non-veg elements */}
         <div style={{
           position: 'absolute',
           top: '-15px',
@@ -45,7 +45,7 @@ export default function PopularDishesCarousel() {
           fontSize: '60px',
           opacity: '0.1',
           animation: 'spin 20s linear infinite'
-        }}>🎉</div>
+        }}>🍗</div>
         <div style={{
           position: 'absolute',
           bottom: '-18px',
@@ -53,21 +53,21 @@ export default function PopularDishesCarousel() {
           fontSize: '70px',
           opacity: '0.08',
           animation: 'spin 25s linear infinite reverse'
-        }}>🎊</div>
+        }}>🍖</div>
         <div style={{
           position: 'absolute',
           top: '8px',
           right: '14px',
           fontSize: '20px',
           animation: 'bounce 2s infinite'
-        }}>🌸</div>
+        }}>🍗</div>
         <div style={{
           position: 'absolute',
           bottom: '14px',
           left: '14px',
           fontSize: '20px',
           animation: 'bounce 2s infinite 0.5s'
-        }}>🌸</div>
+        }}>🍖</div>
 
         {/* Main content */}
         <div style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
@@ -81,7 +81,7 @@ export default function PopularDishesCarousel() {
             fontSize: '16px',
             fontWeight: '900',
             margin: '0 0 4px 0',
-            color: '#047857',
+            color: '#7f1d1d',
             textShadow: '1px 1px 2px rgba(255,255,255,0.5)',
             letterSpacing: '0.3px'
           }}>
@@ -92,7 +92,7 @@ export default function PopularDishesCarousel() {
           <p style={{
             fontSize: '11px',
             fontWeight: '600',
-            color: '#059669',
+            color: '#991b1b',
             margin: '0 0 6px 0',
             opacity: '0.9',
             textShadow: '1px 1px 2px rgba(255,255,255,0.3)'
@@ -103,7 +103,7 @@ export default function PopularDishesCarousel() {
           {/* Description */}
           <p style={{
             fontSize: '11px',
-            color: '#047857',
+            color: '#7f1d1d',
             margin: '0 0 10px 0',
             lineHeight: '1.4',
             opacity: '0.85',
@@ -131,7 +131,7 @@ export default function PopularDishesCarousel() {
               <span style={{
                 fontSize: '18px',
                 fontWeight: '900',
-                color: '#047857',
+                color: '#7f1d1d',
                 textShadow: '1px 1px 2px rgba(255,255,255,0.5)'
               }}>
                 ₹{meal.price.toFixed(2)}
@@ -141,7 +141,7 @@ export default function PopularDishesCarousel() {
             <button
               onClick={handleAddToCart}
               style={{
-                background: '#10B981',
+                background: '#DC2626',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',
