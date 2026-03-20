@@ -5,8 +5,8 @@ const UGADI_MEALS = [
   {
     id: "hosatodaku-special",
     title: "🍛 Hosatodaku Special Meals Combo 🍛",
-    description: "Mudde, Mutton Samber, Biriyani Rice, Chicken Chops, Papper Chicken, White Rice, Banana",
-    price: 249.00,
+    description: "Mudde, Mutton Samber, Biriyani Rice, Chicken Chops, Papper Chicken, White Rice, Mosarbajji, Banana",
+    price: 299.00,
     hotel: "Home Made",
     emoji: "🍛"
   }
